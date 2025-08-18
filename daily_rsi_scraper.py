@@ -342,7 +342,7 @@ class DailyRSIScraper:
     <div class="container">
         <div class="header">
             <h1>Daily RSI Monitor</h1>
-            <p>Colombo Stock Exchange - Last Updated: {sl_time.strftime('%B %d, %Y at %I:%M %p')} (SL Time)</p>
+            <p>Colombo Stock Exchange</p>
         </div>
         
         <div class="stats">
@@ -363,8 +363,8 @@ class DailyRSIScraper:
             </div>
             <div class="stat-card">
                 <div class="stat-number">{len(successful_results)}</div>
-                <div>Total Monitored</div>
-                <small>of {len(self.symbols)} symbols</small>
+                <div>Shown Here</div>
+                <small>of {len(self.symbols)} companies</small>
             </div>
         </div>
         
@@ -398,7 +398,7 @@ class DailyRSIScraper:
         
         <div class="footer">
             <p>Updated daily at market close</p>
-            <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')} (Sri Lanka Time)</p>
+            <p>Last successful update: {sl_time.strftime('%B %d, %Y at %I:%M %p')}</p>
         </div>
     </div>
 
