@@ -370,7 +370,6 @@ class DailyRSIScraper:
                         <th class="sortable" onclick="sortTable(0)">Symbol</th>
                         <th class="sortable" onclick="sortTable(1)">Company</th>
                         <th class="sortable" onclick="sortTable(2)">RSI Value</th>
-                        <th class="sortable" onclick="sortTable(3)">Status</th>
                     </tr>
                 </thead>
                 <tbody id="stockTableBody">"""
@@ -380,22 +379,11 @@ class DailyRSIScraper:
             company_name = SYMBOL_TO_COMPANY.get(symbol, "Unknown Company")
             rsi = data['rsi']
             
-            if rsi < 30:
-                status_class = "status-oversold"
-                status_text = "Oversold"
-            elif rsi > 70:
-                status_class = "status-overbought"
-                status_text = "Overbought"
-            else:
-                status_class = "status-neutral"
-                status_text = "Neutral"
-            
             html += f"""
                     <tr>
                         <td class="symbol-cell">{clean_symbol}</td>
                         <td class="company-cell">{company_name}</td>
                         <td class="rsi-cell">{rsi:.1f}</td>
-                        <td><span class="{status_class}">{status_text}</span></td>
                     </tr>"""
         
         html += f"""
@@ -419,19 +407,9 @@ class DailyRSIScraper:
             company_name = SYMBOL_TO_COMPANY.get(symbol, "Unknown Company")
             rsi = data['rsi']
             
-            if rsi < 30:
-                status_text = "Oversold"
-                status_value = 1  # For sorting
-            elif rsi > 70:
-                status_text = "Overbought"
-                status_value = 3  # For sorting
-            else:
-                status_text = "Neutral"
-                status_value = 2  # For sorting
-            
             comma = "," if i < len(sorted_results) - 1 else ""
             html += f"""
-            ["{clean_symbol}", "{company_name}", {rsi}, "{status_text}", {status_value}]{comma}"""
+            ["{clean_symbol}", "{company_name}", {rsi}]{comma}"""
         
         html += f"""
         ];
@@ -469,9 +447,6 @@ class DailyRSIScraper:
                 }} else if (columnIndex === 2) {{ // RSI Value
                     valueA = parseFloat(a[2]);
                     valueB = parseFloat(b[2]);
-                }} else if (columnIndex === 3) {{ // Status
-                    valueA = a[4]; // Use numeric status value for sorting
-                    valueB = b[4];
                 }}
                 
                 if (currentSort.direction === 'asc') {{
@@ -510,22 +485,6 @@ class DailyRSIScraper:
                 rsiTd.textContent = row[2].toFixed(1);
                 tr.appendChild(rsiTd);
                 
-                // Status
-                const statusTd = document.createElement('td');
-                const statusSpan = document.createElement('span');
-                statusSpan.textContent = row[3];
-                
-                if (row[3].includes('Oversold')) {{
-                    statusSpan.className = 'status-oversold';
-                }} else if (row[3].includes('Overbought')) {{
-                    statusSpan.className = 'status-overbought';
-                }} else {{
-                    statusSpan.className = 'status-neutral';
-                }}
-                
-                statusTd.appendChild(statusSpan);
-                tr.appendChild(statusTd);
-                
                 tbody.appendChild(tr);
             }});
         }}
@@ -550,6 +509,34 @@ STOCK_DATA = [
     {"symbol": "CSELK-AFSL.N0000", "company": "ABANS FINANCE PLC"},
     {"symbol": "CSELK-AEL.N0000", "company": "ACCESS ENGINEERING PLC"},
     {"symbol": "CSELK-ACL.N0000", "company": "ACL CABLES PLC"},
+    {"symbol": "CSELK-APLA.N0000", "company": "ACL PLASTICS PLC"},
+    {"symbol": "CSELK-ACME.N0000", "company": "ACME PRINTING & PACKAGING PLC"},
+    {"symbol": "CSELK-AGAL.N0000", "company": "AGALAWATTE PLANTATIONS PLC"},
+    {"symbol": "CSELK-AGST.N0000", "company": "AGSTAR PLC"},
+    {"symbol": "CSELK-AGST.X0000", "company": "AGSTAR PLC - Non Voting"},
+    {"symbol": "CSELK-AHUN.N0000", "company": "AHUNGALLA RESORTS LTD"},
+    {"symbol": "CSELK-ASPM.N0000", "company": "ASIA SIYAKA COMMODITIES PLC"},
+    {"symbol": "CSELK-SPEN.N0000", "company": "ASIAN ALLIANCE INSURANCE PLC"},
+    {"symbol": "CSELK-ALLI.N0000", "company": "ALLIANCE FINANCE COMPANY PLC"},
+    {"symbol": "CSELK-AFS.N0000", "company": "ASIA ASSET FINANCE PLC"},
+    {"symbol": "CSELK-ALUM.N0000", "company": "ALUMEX PLC"},
+    {"symbol": "CSELK-ABL.N0000", "company": "AMANA BANK PLC"},
+    {"symbol": "CSELK-ATL.N0000", "company": "AMANA TAKAFUL PLC"},
+    {"symbol": "CSELK-ATLL.N0000", "company": "AMANA TAKAFUL LIFE PLC"},
+    {"symbol": "CSELK-TAP.N0000", "company": "THE KINGSBURY PLC"},
+    {"symbol": "CSELK-GREG.N0000", "company": "AMBEON HOLDINGS PLC"},
+    {"symbol": "CSELK-AMCL.N0000", "company": "AMW CAPITAL LEASING & FINANCE PLC"},
+    {"symbol": "CSELK-ALHP.N0000", "company": "ALHOKAIR GROUP (LANKA) LIMITED"},
+    {"symbol": "CSELK-AINS.N0000", "company": "AITKEN SPENCE INSURANCE PLC"},
+    {"symbol": "CSELK-AAF.N0000", "company": "ASIA ASSET FINANCE PLC"},
+    {"symbol": "CSELK-AAF.P0000", "company": "ASIA ASSET FINANCE PLC - Preference"},
+    {"symbol": "CSELK-ACAP.N0000", "company": "ACCESS CAPITAL PARTNERS PLC"},
+    {"symbol": "CSELK-ASIY.N0000", "company": "ASIA SIYAKA COMMODITIES PLC"},
+    {"symbol": "CSELK-AHPL.N0000", "company": "AITKEN SPENCE HOTEL HOLDINGS PLC"},
+    {"symbol": "CSELK-AMSL.N0000", "company": "AITKEN SPENCE MARITIME & LOGISTICS PLC"},
+    {"symbol": "CSELK-ASIR.N0000", "company": "AITKEN SPENCE INSURANCE REINSURANCE PLC"},
+    {"symbol": "CSELK-AMF.N0000", "company": "ASIA ASSET FINANCE PLC"},
+    {"symbol": "CSELK-AGPL.N0000", "company": "AGALAWATTE PLANTATIONS PLC"},
 ]
 
 # Extract just symbols for backward compatibility
