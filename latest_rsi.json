@@ -1,29 +1,29 @@
 {
   "date": "2025-08-18",
-  "timestamp": "2025-08-18T06:26:44.288865",
+  "timestamp": "2025-08-18T06:52:14.490470",
   "total_symbols": 4,
   "successful_fetches": 4,
   "failed_fetches": 0,
   "data": {
     "CSELK-ABAN.N0000": {
-      "rsi": 83.77,
+      "rsi": 79.62,
       "status": "success",
-      "timestamp": "2025-08-18T06:26:08.682973"
+      "timestamp": "2025-08-18T06:51:39.599483"
     },
     "CSELK-AFSL.N0000": {
       "rsi": 49.8,
       "status": "success",
-      "timestamp": "2025-08-18T06:26:20.908835"
+      "timestamp": "2025-08-18T06:51:51.264699"
     },
     "CSELK-AEL.N0000": {
       "rsi": 62.3,
       "status": "success",
-      "timestamp": "2025-08-18T06:26:32.498665"
+      "timestamp": "2025-08-18T06:52:02.785846"
     },
     "CSELK-ACL.N0000": {
-      "rsi": 69.86,
+      "rsi": 68.08,
       "status": "success",
-      "timestamp": "2025-08-18T06:26:44.288836"
+      "timestamp": "2025-08-18T06:52:14.490437"
     }
   }
 }
