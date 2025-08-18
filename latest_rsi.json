@@ -1,6 +1,6 @@
 {
   "date": "2025-08-18",
-  "timestamp": "2025-08-18T16:49:36.674716",
+  "timestamp": "2025-08-18T16:55:01.354911",
   "timeframes": [
     "1h",
     "1D",
@@ -11,22 +11,22 @@
   "successful_fetches": 3,
   "failed_fetches": 1,
   "data": {
-    "CSELK-ABAN.N0000": {
+    "CSELK-AFSL.N0000": {
       "rsi_data": null,
       "status": "failed",
       "error": "Could not create Chrome driver",
-      "timestamp": "2025-08-18T16:49:05.359094"
+      "timestamp": "2025-08-18T16:54:29.680629"
     },
-    "CSELK-AFSL.N0000": {
+    "CSELK-ABAN.N0000": {
       "rsi_data": {
-        "1h": 46.4,
-        "1D": 52.0,
-        "1W": 69.4,
-        "1M": 80.9
+        "1h": 65.7,
+        "1D": 77.69,
+        "1W": 82.64,
+        "1M": 86.27
       },
       "status": "success",
       "successful_timeframes": 4,
-      "timestamp": "2025-08-18T16:49:23.809621"
+      "timestamp": "2025-08-18T16:54:48.515575"
     },
     "CSELK-AEL.N0000": {
       "rsi_data": {
@@ -37,7 +37,7 @@
       },
       "status": "success",
       "successful_timeframes": 4,
-      "timestamp": "2025-08-18T16:49:23.892585"
+      "timestamp": "2025-08-18T16:54:48.526525"
     },
     "CSELK-ACL.N0000": {
       "rsi_data": {
@@ -48,7 +48,7 @@
       },
       "status": "success",
       "successful_timeframes": 4,
-      "timestamp": "2025-08-18T16:49:36.674527"
+      "timestamp": "2025-08-18T16:55:01.354727"
     }
   }
 }
