@@ -474,7 +474,7 @@ class MultiTimeframeRSIScraper:
                     <tr>
                         <th class="sortable" onclick="sortTable(0)">Symbol</th>
                         <th class="sortable" onclick="sortTable(1)">Company</th>
-                        <th class="sortable" onclick="sortTable(2)" id="rsiHeader">RSI Value (1D)</th>
+                        <th class="sortable" onclick="sortTable(2)" id="rsiHeader">RSI</th>
                     </tr>
                 </thead>
                 <tbody id="stockTableBody">
@@ -793,7 +793,7 @@ class MultiTimeframeRSIScraper:
             currentTimeframe = select.value;
             
             // Update header
-            document.getElementById('rsiHeader').textContent = `RSI Value (${{currentTimeframe}})`;
+            document.getElementById('rsiHeader').textContent = `RSI`;
             
             // Update stats
             updateStats(currentTimeframe);
