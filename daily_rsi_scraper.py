@@ -156,7 +156,7 @@ class DailyRSIScraper:
         }
         
         # Save to daily file
-        filename = f"rsi_data_{timestamp.strftime('%Y_%m_%d')}.json"
+        filename = f"dailydata/rsi_data_{timestamp.strftime('%Y_%m_%d')}.json"
         with open(filename, 'w') as f:
             json.dump(daily_data, f, indent=2)
         
@@ -253,6 +253,27 @@ class DailyRSIScraper:
             background: #f8f9fa;
             font-weight: 600;
             color: #555;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }}
+        th:hover {{
+            background: #e9ecef;
+        }}
+        th.sortable::after {{
+            content: ' ↕️';
+            font-size: 0.8em;
+            opacity: 0.5;
+        }}
+        th.sort-asc::after {{
+            content: ' ↑';
+            color: #007bff;
+            opacity: 1;
+        }}
+        th.sort-desc::after {{
+            content: ' ↓';
+            color: #007bff;
+            opacity: 1;
         }}
         .rsi-cell {{
             font-weight: bold;
@@ -334,12 +355,12 @@ class DailyRSIScraper:
             <table>
                 <thead>
                     <tr>
-                        <th>Stock Symbol</th>
-                        <th>RSI Value</th>
-                        <th>Status</th>
+                        <th class="sortable" onclick="sortTable(0)">Stock Symbol</th>
+                        <th class="sortable" onclick="sortTable(1)">RSI Value</th>
+                        <th class="sortable" onclick="sortTable(2)">Status</th>
                     </tr>
                 </thead>
-                <tbody>"""
+                <tbody id="stockTableBody">"""
         
         for symbol, data in sorted_results:
             clean_symbol = symbol.replace("CSELK-", "")
@@ -372,6 +393,122 @@ class DailyRSIScraper:
             <p>Last successful update: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
+
+    <script>
+        // Stock data for sorting
+        const stockData = ["""
+        
+        # Add stock data as JavaScript array
+        for i, (symbol, data) in enumerate(sorted_results):
+            clean_symbol = symbol.replace("CSELK-", "")
+            rsi = data['rsi']
+            
+            if rsi < 30:
+                status_text = "🔥 Oversold"
+                status_value = 1  # For sorting
+            elif rsi > 70:
+                status_text = "⚠️ Overbought"
+                status_value = 3  # For sorting
+            else:
+                status_text = "📊 Neutral"
+                status_value = 2  # For sorting
+            
+            comma = "," if i < len(sorted_results) - 1 else ""
+            html += f"""
+            ["{clean_symbol}", {rsi}, "{status_text}", {status_value}]{comma}"""
+        
+        html += f"""
+        ];
+
+        let currentSort = {{ column: 1, direction: 'asc' }}; // Default sort by RSI ascending
+
+        function sortTable(columnIndex) {{
+            const headers = document.querySelectorAll('th.sortable');
+            
+            // Remove previous sort classes
+            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+            
+            // Determine sort direction
+            if (currentSort.column === columnIndex) {{
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            }} else {{
+                currentSort.direction = 'asc';
+            }}
+            currentSort.column = columnIndex;
+            
+            // Add sort class to current header
+            const currentHeader = headers[columnIndex];
+            currentHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+            
+            // Sort the data
+            const sortedData = [...stockData].sort((a, b) => {{
+                let valueA, valueB;
+                
+                if (columnIndex === 0) {{ // Stock Symbol
+                    valueA = a[0].toLowerCase();
+                    valueB = b[0].toLowerCase();
+                }} else if (columnIndex === 1) {{ // RSI Value
+                    valueA = parseFloat(a[1]);
+                    valueB = parseFloat(b[1]);
+                }} else if (columnIndex === 2) {{ // Status
+                    valueA = a[3]; // Use numeric status value for sorting
+                    valueB = b[3];
+                }}
+                
+                if (currentSort.direction === 'asc') {{
+                    return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
+                }} else {{
+                    return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
+                }}
+            }});
+            
+            // Update table body
+            updateTableBody(sortedData);
+        }}
+
+        function updateTableBody(data) {{
+            const tbody = document.getElementById('stockTableBody');
+            tbody.innerHTML = '';
+            
+            data.forEach(row => {{
+                const tr = document.createElement('tr');
+                
+                // Stock Symbol
+                const symbolTd = document.createElement('td');
+                symbolTd.textContent = row[0];
+                tr.appendChild(symbolTd);
+                
+                // RSI Value
+                const rsiTd = document.createElement('td');
+                rsiTd.className = 'rsi-cell';
+                rsiTd.textContent = row[1].toFixed(1);
+                tr.appendChild(rsiTd);
+                
+                // Status
+                const statusTd = document.createElement('td');
+                const statusSpan = document.createElement('span');
+                statusSpan.textContent = row[2];
+                
+                if (row[2].includes('Oversold')) {{
+                    statusSpan.className = 'status-oversold';
+                }} else if (row[2].includes('Overbought')) {{
+                    statusSpan.className = 'status-overbought';
+                }} else {{
+                    statusSpan.className = 'status-neutral';
+                }}
+                
+                statusTd.appendChild(statusSpan);
+                tr.appendChild(statusTd);
+                
+                tbody.appendChild(tr);
+            }});
+        }}
+
+        // Initialize table with default sort
+        document.addEventListener('DOMContentLoaded', function() {{
+            sortTable(1); // Sort by RSI by default
+        }});
+    </script>
 </body>
 </html>"""
         
