@@ -346,9 +346,9 @@ class MultiTimeframeRSIScraper:
             font-weight: bold;
             margin-bottom: 5px;
         }}
-        .oversold {{ color: #e74c3c; }}
-        .overbought {{ color: #f39c12; }}
-        .neutral {{ color: #27ae60; }}
+        .oversold {{ color: #27ae5f; }}
+        .overbought {{ color: #e74c3c; }}
+        .neutral {{ color: #f39c12; }}
         .table-container {{
             padding: 0 30px 30px 30px;
         }}
@@ -407,7 +407,7 @@ class MultiTimeframeRSIScraper:
             text-align: center;
         }}
         .rsi-oversold {{
-            color: #2e7d32;
+            color: #27ae5f;
         }}
         .rsi-overbought {{
             color: #e74c3c;
@@ -453,10 +453,10 @@ class MultiTimeframeRSIScraper:
         <div class="timeframe-selector">
             <label class="selector-label">Select Timeframe:</label>
             <select class="timeframe-dropdown" id="timeframeSelect" onchange="switchTimeframe()">
-                <option value="1h">1 Hour RSI</option>
-                <option value="1D" selected>1 Day RSI (Default)</option>
-                <option value="1W">1 Week RSI</option>
-                <option value="1M">1 Month RSI</option>
+                <option value="1h">1 Hour</option>
+                <option value="1D" selected>1 Day</option>
+                <option value="1W">1 Week</option>
+                <option value="1M">1 Month</option>
             </select>
         </div>
         
@@ -557,8 +557,8 @@ class MultiTimeframeRSIScraper:
                 </div>
                 <div class="stat-card" onclick="filterStocks('all')" id="allCard">
                     <div class="stat-number">${{total}}</div>
-                    <div>Total Available</div>
-                    <small>of {len(self.symbols)} symbols</small>
+                    <div>Monitored</div>
+                    <small>out of 286 companies</small>
                 </div>
             `;
             
