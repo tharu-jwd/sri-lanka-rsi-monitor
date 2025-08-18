@@ -1,236 +1,43 @@
 {
   "date": "2025-08-18",
-  "timestamp": "2025-08-18T13:19:07.804918",
-  "total_symbols": 45,
-  "successful_fetches": 43,
-  "failed_fetches": 2,
+  "timestamp": "2025-08-18T16:04:30.084657",
+  "timeframes": [
+    "1h",
+    "1D",
+    "1W",
+    "1M"
+  ],
+  "total_symbols": 3,
+  "successful_fetches": 2,
+  "failed_fetches": 1,
   "data": {
     "CSELK-ABAN.N0000": {
-      "rsi": 77.69,
-      "status": "success",
-      "timestamp": "2025-08-18T13:09:37.983440"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Could not create Chrome driver",
+      "timestamp": "2025-08-18T16:04:15.006662"
     },
     "CSELK-AFSL.N0000": {
-      "rsi": 52.0,
+      "rsi_data": {
+        "1h": 46.4,
+        "1D": 52.0,
+        "1W": 69.4,
+        "1M": 80.9
+      },
       "status": "success",
-      "timestamp": "2025-08-18T13:09:49.861927"
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T16:04:29.042362"
     },
     "CSELK-AEL.N0000": {
-      "rsi": 61.9,
+      "rsi_data": {
+        "1h": 48.5,
+        "1D": 61.9,
+        "1W": 77.2,
+        "1M": 82.9
+      },
       "status": "success",
-      "timestamp": "2025-08-18T13:10:01.302753"
-    },
-    "CSELK-ACL.N0000": {
-      "rsi": 63.63,
-      "status": "success",
-      "timestamp": "2025-08-18T13:10:13.066681"
-    },
-    "CSELK-APLA.N0000": {
-      "rsi": 88.7,
-      "status": "success",
-      "timestamp": "2025-08-18T13:10:24.489761"
-    },
-    "CSELK-ACME.N0000": {
-      "rsi": 51.4,
-      "status": "success",
-      "timestamp": "2025-08-18T13:10:36.106675"
-    },
-    "CSELK-AGAL.N0000": {
-      "rsi": 49.4,
-      "status": "success",
-      "timestamp": "2025-08-18T13:10:47.547992"
-    },
-    "CSELK-AGST.N0000": {
-      "rsi": 58.3,
-      "status": "success",
-      "timestamp": "2025-08-18T13:10:59.341820"
-    },
-    "CSELK-AGST.X0000": {
-      "rsi": 83.2,
-      "status": "success",
-      "timestamp": "2025-08-18T13:11:10.888358"
-    },
-    "CSELK-AHUN.N0000": {
-      "rsi": 52.7,
-      "status": "success",
-      "timestamp": "2025-08-18T13:11:22.807285"
-    },
-    "CSELK-ASPM.N0000": {
-      "rsi": null,
-      "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x562e980a601a <unknown>\n#1 0x562e97b45a70 <unknown>\n#2 0x562e97b97907 <unknown>\n#3 0x562e97b97b01 <unknown>\n#4 0x562e97be5d54 <unknown>\n#5 0x562e97bbd40d <unknown>\n#6 0x562e97be314f <unknown>\n#7 0x562e97bbd1b3 <unknown>\n#8 0x562e97b8959b <unknown>\n#9 0x562e97b8a971 <unknown>\n#10 0x562e9806b1eb <unknown>\n#11 0x562e9806ef39 <unknown>\n#12 0x562e980522c9 <unknown>\n#13 0x562e9806fae8 <unknown>\n#14 0x562e98036baf <unknown>\n#15 0x562e980930a8 <unknown>\n#16 0x562e98093286 <unknown>\n#17 0x562e980a4ff6 <unknown>\n#18 0x7f77a0e9caa4 <unknown>\n#19 0x7f77a0f29c3c <unknown>\n",
-      "timestamp": "2025-08-18T13:12:02.028339"
-    },
-    "CSELK-SPEN.N0000": {
-      "rsi": 62.15,
-      "status": "success",
-      "timestamp": "2025-08-18T13:12:13.889679"
-    },
-    "CSELK-ALLI.N0000": {
-      "rsi": 49.58,
-      "status": "success",
-      "timestamp": "2025-08-18T13:12:25.458217"
-    },
-    "CSELK-AFS.N0000": {
-      "rsi": 83.8,
-      "status": "success",
-      "timestamp": "2025-08-18T13:12:37.040980"
-    },
-    "CSELK-ALUM.N0000": {
-      "rsi": 54.5,
-      "status": "success",
-      "timestamp": "2025-08-18T13:12:48.615217"
-    },
-    "CSELK-ABL.N0000": {
-      "rsi": 73.7,
-      "status": "success",
-      "timestamp": "2025-08-18T13:13:00.318298"
-    },
-    "CSELK-ATL.N0000": {
-      "rsi": 69.8,
-      "status": "success",
-      "timestamp": "2025-08-18T13:13:11.915684"
-    },
-    "CSELK-ATLL.N0000": {
-      "rsi": 53.6,
-      "status": "success",
-      "timestamp": "2025-08-18T13:13:23.528069"
-    },
-    "CSELK-GREG.N0000": {
-      "rsi": 73.27,
-      "status": "success",
-      "timestamp": "2025-08-18T13:13:35.017908"
-    },
-    "CSELK-AMCL.N0000": {
-      "rsi": null,
-      "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x556c2848801a <unknown>\n#1 0x556c27f27a70 <unknown>\n#2 0x556c27f79907 <unknown>\n#3 0x556c27f79b01 <unknown>\n#4 0x556c27fc7d54 <unknown>\n#5 0x556c27f9f40d <unknown>\n#6 0x556c27fc514f <unknown>\n#7 0x556c27f9f1b3 <unknown>\n#8 0x556c27f6b59b <unknown>\n#9 0x556c27f6c971 <unknown>\n#10 0x556c2844d1eb <unknown>\n#11 0x556c28450f39 <unknown>\n#12 0x556c284342c9 <unknown>\n#13 0x556c28451ae8 <unknown>\n#14 0x556c28418baf <unknown>\n#15 0x556c284750a8 <unknown>\n#16 0x556c28475286 <unknown>\n#17 0x556c28486ff6 <unknown>\n#18 0x7fefeea9caa4 <unknown>\n#19 0x7fefeeb29c3c <unknown>\n",
-      "timestamp": "2025-08-18T13:14:14.545972"
-    },
-    "CSELK-ALHP.N0000": {
-      "rsi": 39.6,
-      "status": "success",
-      "timestamp": "2025-08-18T13:14:26.592218"
-    },
-    "CSELK-AINS.N0000": {
-      "rsi": 55.5,
-      "status": "success",
-      "timestamp": "2025-08-18T13:14:38.240160"
-    },
-    "CSELK-AAF.N0000": {
-      "rsi": 55.3,
-      "status": "success",
-      "timestamp": "2025-08-18T13:14:49.791971"
-    },
-    "CSELK-AAF.P0000": {
-      "rsi": 52.9,
-      "status": "success",
-      "timestamp": "2025-08-18T13:15:01.486848"
-    },
-    "CSELK-ACAP.N0000": {
-      "rsi": 54.6,
-      "status": "success",
-      "timestamp": "2025-08-18T13:15:13.096424"
-    },
-    "CSELK-ASIY.N0000": {
-      "rsi": 47.0,
-      "status": "success",
-      "timestamp": "2025-08-18T13:15:24.723862"
-    },
-    "CSELK-AHPL.N0000": {
-      "rsi": 52.6,
-      "status": "success",
-      "timestamp": "2025-08-18T13:15:36.315150"
-    },
-    "CSELK-AMSL.N0000": {
-      "rsi": 58.1,
-      "status": "success",
-      "timestamp": "2025-08-18T13:15:47.992826"
-    },
-    "CSELK-ASIR.N0000": {
-      "rsi": 64.5,
-      "status": "success",
-      "timestamp": "2025-08-18T13:15:59.589528"
-    },
-    "CSELK-AMF.N0000": {
-      "rsi": 78.9,
-      "status": "success",
-      "timestamp": "2025-08-18T13:16:11.184178"
-    },
-    "CSELK-AGPL.N0000": {
-      "rsi": 64.6,
-      "status": "success",
-      "timestamp": "2025-08-18T13:16:22.818889"
-    },
-    "CSELK-BPPL.N0000": {
-      "rsi": 44.8,
-      "status": "success",
-      "timestamp": "2025-08-18T13:16:34.257071"
-    },
-    "CSELK-BFL.N0000": {
-      "rsi": 35.1,
-      "status": "success",
-      "timestamp": "2025-08-18T13:16:45.896571"
-    },
-    "CSELK-BALA.N0000": {
-      "rsi": 61.8,
-      "status": "success",
-      "timestamp": "2025-08-18T13:16:57.442497"
-    },
-    "CSELK-BRR.N0000": {
-      "rsi": 54.9,
-      "status": "success",
-      "timestamp": "2025-08-18T13:17:09.204059"
-    },
-    "CSELK-BERU.N0000": {
-      "rsi": 50.4,
-      "status": "success",
-      "timestamp": "2025-08-18T13:17:20.769068"
-    },
-    "CSELK-BLI.N0000": {
-      "rsi": 48.4,
-      "status": "success",
-      "timestamp": "2025-08-18T13:17:32.436237"
-    },
-    "CSELK-BLUE.X0000": {
-      "rsi": 47.0,
-      "status": "success",
-      "timestamp": "2025-08-18T13:17:44.250799"
-    },
-    "CSELK-BLUE.N0000": {
-      "rsi": 43.0,
-      "status": "success",
-      "timestamp": "2025-08-18T13:17:55.906301"
-    },
-    "CSELK-BOGA.N0000": {
-      "rsi": 72.53,
-      "status": "success",
-      "timestamp": "2025-08-18T13:18:09.700657"
-    },
-    "CSELK-BOPL.N0000": {
-      "rsi": 57.2,
-      "status": "success",
-      "timestamp": "2025-08-18T13:18:21.324660"
-    },
-    "CSELK-BRWN.N0000": {
-      "rsi": 49.37,
-      "status": "success",
-      "timestamp": "2025-08-18T13:18:32.884067"
-    },
-    "CSELK-BBH.N0000": {
-      "rsi": 52.0,
-      "status": "success",
-      "timestamp": "2025-08-18T13:18:44.447539"
-    },
-    "CSELK-BIL.N0000": {
-      "rsi": 44.0,
-      "status": "success",
-      "timestamp": "2025-08-18T13:18:56.111096"
-    },
-    "CSELK-BUKI.N0000": {
-      "rsi": 70.56,
-      "status": "success",
-      "timestamp": "2025-08-18T13:19:07.804892"
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T16:04:30.084437"
     }
   }
 }

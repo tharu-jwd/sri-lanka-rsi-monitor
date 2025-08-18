@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily RSI Monitor - Sri Lanka Stocks</title>
+    <title>Multi-Timeframe RSI Monitor - Sri Lanka Stocks</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -13,7 +13,7 @@
             color: #333;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 8px;
@@ -34,6 +34,32 @@
         .header p {
             margin: 10px 0 0 0;
             opacity: 0.9;
+        }
+        .timeframe-selector {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        .selector-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .timeframe-dropdown {
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            min-width: 200px;
+        }
+        .timeframe-dropdown:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
         .stats {
             display: grid;
@@ -77,6 +103,9 @@
             cursor: pointer;
             user-select: none;
             position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         th:hover {
             background: #e9ecef;
@@ -104,31 +133,27 @@
         .company-cell {
             color: #666;
             font-size: 0.9em;
+            min-width: 200px;
         }
         .rsi-cell {
             font-weight: bold;
             font-size: 1.1em;
+            text-align: center;
         }
-        .status-oversold {
-            background: #ffe6e6;
-            color: #c0392b;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .rsi-oversold {
+            color: #e74c3c;
+            background: #ffebee;
         }
-        .status-overbought {
-            background: #fff3cd;
-            color: #856404;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .rsi-overbought {
+            color: #f57c00;
+            background: #fff3e0;
         }
-        .status-neutral {
-            background: #e8f5e8;
-            color: #155724;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .rsi-neutral {
+            color: #2e7d32;
+        }
+        .no-data {
+            color: #999;
+            font-style: italic;
         }
         .footer {
             text-align: center;
@@ -148,6 +173,9 @@
                 padding: 0 15px 20px 15px;
                 overflow-x: auto;
             }
+            .company-cell {
+                min-width: 150px;
+            }
         }
     </style>
 </head>
@@ -158,27 +186,18 @@
             <p>Colombo Stock Exchange</p>
         </div>
         
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">0</div>
-                <div class="oversold">Oversold Stocks</div>
-                <small>(RSI < 30)</small>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">9</div>
-                <div class="overbought">Overbought Stocks</div>
-                <small>(RSI > 70)</small>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">34</div>
-                <div class="neutral">Neutral Stocks</div>
-                <small>(RSI 30-70)</small>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">43</div>
-                <div>Total Monitored</div>
-                <small>Out of 286 companies</small>
-            </div>
+        <div class="timeframe-selector">
+            <label class="selector-label">Select Timeframe:</label>
+            <select class="timeframe-dropdown" id="timeframeSelect" onchange="switchTimeframe()">
+                <option value="1h">1 Hour</option>
+                <option value="1D" selected>1 Day</option>
+                <option value="1W">1 Week</option>
+                <option value="1M">1 Month</option>
+            </select>
+        </div>
+        
+        <div class="stats" id="statsSection">
+            <!-- Stats will be updated by JavaScript -->
         </div>
         
         <div class="table-container">
@@ -187,330 +206,75 @@
                     <tr>
                         <th class="sortable" onclick="sortTable(0)">Symbol</th>
                         <th class="sortable" onclick="sortTable(1)">Company</th>
-                        <th class="sortable" onclick="sortTable(2)">RSI Value</th>
+                        <th class="sortable" onclick="sortTable(2)" id="rsiHeader">RSI Value (1D)</th>
                     </tr>
                 </thead>
                 <tbody id="stockTableBody">
-                    <tr>
-                        <td class="symbol-cell">BFL.N0000</td>
-                        <td class="company-cell">BAIRAHA FARMS PLC</td>
-                        <td class="rsi-cell">35.1</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ALHP.N0000</td>
-                        <td class="company-cell">ALHOKAIR GROUP (LANKA) LIMITED</td>
-                        <td class="rsi-cell">39.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BLUE.N0000</td>
-                        <td class="company-cell">BLUE DIAMONDS JEWELLERY WORLDWIDE PLC</td>
-                        <td class="rsi-cell">43.0</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BIL.N0000</td>
-                        <td class="company-cell">BROWNS INVESTMENTS PLC</td>
-                        <td class="rsi-cell">44.0</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BPPL.N0000</td>
-                        <td class="company-cell">B P P L HOLDINGS PLC</td>
-                        <td class="rsi-cell">44.8</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ASIY.N0000</td>
-                        <td class="company-cell">ASIA SIYAKA COMMODITIES PLC</td>
-                        <td class="rsi-cell">47.0</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BLUE.X0000</td>
-                        <td class="company-cell">BLUE DIAMONDS JEWELLERY WORLDWIDE PLC - Non Voting</td>
-                        <td class="rsi-cell">47.0</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BLI.N0000</td>
-                        <td class="company-cell">BIMPUTH LANKA INVESTMENTS PLC</td>
-                        <td class="rsi-cell">48.4</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BRWN.N0000</td>
-                        <td class="company-cell">BROWN & COMPANY PLC</td>
-                        <td class="rsi-cell">49.4</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AGAL.N0000</td>
-                        <td class="company-cell">AGALAWATTE PLANTATIONS PLC</td>
-                        <td class="rsi-cell">49.4</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ALLI.N0000</td>
-                        <td class="company-cell">ALLIANCE FINANCE COMPANY PLC</td>
-                        <td class="rsi-cell">49.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BERU.N0000</td>
-                        <td class="company-cell">BERUWALA RESORTS PLC</td>
-                        <td class="rsi-cell">50.4</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ACME.N0000</td>
-                        <td class="company-cell">ACME PRINTING & PACKAGING PLC</td>
-                        <td class="rsi-cell">51.4</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AFSL.N0000</td>
-                        <td class="company-cell">ABANS FINANCE PLC</td>
-                        <td class="rsi-cell">52.0</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BBH.N0000</td>
-                        <td class="company-cell">BROWNS BEACH HOTELS PLC</td>
-                        <td class="rsi-cell">52.0</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AHPL.N0000</td>
-                        <td class="company-cell">AITKEN SPENCE HOTEL HOLDINGS PLC</td>
-                        <td class="rsi-cell">52.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AHUN.N0000</td>
-                        <td class="company-cell">AHUNGALLA RESORTS LTD</td>
-                        <td class="rsi-cell">52.7</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AAF.P0000</td>
-                        <td class="company-cell">ASIA ASSET FINANCE PLC - Preference</td>
-                        <td class="rsi-cell">52.9</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ATLL.N0000</td>
-                        <td class="company-cell">AMANA TAKAFUL LIFE PLC</td>
-                        <td class="rsi-cell">53.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ALUM.N0000</td>
-                        <td class="company-cell">ALUMEX PLC</td>
-                        <td class="rsi-cell">54.5</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ACAP.N0000</td>
-                        <td class="company-cell">ACCESS CAPITAL PARTNERS PLC</td>
-                        <td class="rsi-cell">54.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BRR.N0000</td>
-                        <td class="company-cell">BANSEI ROYAL RESORTS HIKKADUWA PLC</td>
-                        <td class="rsi-cell">54.9</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AAF.N0000</td>
-                        <td class="company-cell">ASIA ASSET FINANCE PLC</td>
-                        <td class="rsi-cell">55.3</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AINS.N0000</td>
-                        <td class="company-cell">AITKEN SPENCE INSURANCE PLC</td>
-                        <td class="rsi-cell">55.5</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BOPL.N0000</td>
-                        <td class="company-cell">BOGAWANTALAWA TEA ESTATES PLC</td>
-                        <td class="rsi-cell">57.2</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AMSL.N0000</td>
-                        <td class="company-cell">AITKEN SPENCE MARITIME & LOGISTICS PLC</td>
-                        <td class="rsi-cell">58.1</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AGST.N0000</td>
-                        <td class="company-cell">AGSTAR PLC</td>
-                        <td class="rsi-cell">58.3</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BALA.N0000</td>
-                        <td class="company-cell">BALANGODA PLANTATIONS PLC</td>
-                        <td class="rsi-cell">61.8</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AEL.N0000</td>
-                        <td class="company-cell">ACCESS ENGINEERING PLC</td>
-                        <td class="rsi-cell">61.9</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">SPEN.N0000</td>
-                        <td class="company-cell">ASIAN ALLIANCE INSURANCE PLC</td>
-                        <td class="rsi-cell">62.1</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ACL.N0000</td>
-                        <td class="company-cell">ACL CABLES PLC</td>
-                        <td class="rsi-cell">63.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ASIR.N0000</td>
-                        <td class="company-cell">AITKEN SPENCE INSURANCE REINSURANCE PLC</td>
-                        <td class="rsi-cell">64.5</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AGPL.N0000</td>
-                        <td class="company-cell">AGALAWATTE PLANTATIONS PLC</td>
-                        <td class="rsi-cell">64.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ATL.N0000</td>
-                        <td class="company-cell">AMANA TAKAFUL PLC</td>
-                        <td class="rsi-cell">69.8</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BUKI.N0000</td>
-                        <td class="company-cell">BUKIT DARAH PLC</td>
-                        <td class="rsi-cell">70.6</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">BOGA.N0000</td>
-                        <td class="company-cell">BOGALA GRAPHITE LANKA PLC</td>
-                        <td class="rsi-cell">72.5</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">GREG.N0000</td>
-                        <td class="company-cell">AMBEON HOLDINGS PLC</td>
-                        <td class="rsi-cell">73.3</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ABL.N0000</td>
-                        <td class="company-cell">AMANA BANK PLC</td>
-                        <td class="rsi-cell">73.7</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">ABAN.N0000</td>
-                        <td class="company-cell">ABANS ELECTRICALS PLC</td>
-                        <td class="rsi-cell">77.7</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AMF.N0000</td>
-                        <td class="company-cell">ASIA ASSET FINANCE PLC</td>
-                        <td class="rsi-cell">78.9</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AGST.X0000</td>
-                        <td class="company-cell">AGSTAR PLC - Non Voting</td>
-                        <td class="rsi-cell">83.2</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">AFS.N0000</td>
-                        <td class="company-cell">ASIA ASSET FINANCE PLC</td>
-                        <td class="rsi-cell">83.8</td>
-                    </tr>
-                    <tr>
-                        <td class="symbol-cell">APLA.N0000</td>
-                        <td class="company-cell">ACL PLASTICS PLC</td>
-                        <td class="rsi-cell">88.7</td>
-                    </tr>
+                    <!-- Table body will be populated by JavaScript -->
                 </tbody>
             </table>
         </div>
         
         <div class="footer">
-            <p>Updated daily at market close</p>
-            <p>Last successful update: August 18, 2025 at 06:49 PM</p>
+            <p>Updated daily at 4 pm</p>
+            <p>Last successful update: 2025-08-18 21:34:30</p>
         </div>
     </div>
 
     <script>
-        // Stock data for sorting
-        const stockData = [
-            ["BFL.N0000", "BAIRAHA FARMS PLC", 35.1],
-            ["ALHP.N0000", "ALHOKAIR GROUP (LANKA) LIMITED", 39.6],
-            ["BLUE.N0000", "BLUE DIAMONDS JEWELLERY WORLDWIDE PLC", 43.0],
-            ["BIL.N0000", "BROWNS INVESTMENTS PLC", 44.0],
-            ["BPPL.N0000", "B P P L HOLDINGS PLC", 44.8],
-            ["ASIY.N0000", "ASIA SIYAKA COMMODITIES PLC", 47.0],
-            ["BLUE.X0000", "BLUE DIAMONDS JEWELLERY WORLDWIDE PLC - Non Voting", 47.0],
-            ["BLI.N0000", "BIMPUTH LANKA INVESTMENTS PLC", 48.4],
-            ["BRWN.N0000", "BROWN & COMPANY PLC", 49.37],
-            ["AGAL.N0000", "AGALAWATTE PLANTATIONS PLC", 49.4],
-            ["ALLI.N0000", "ALLIANCE FINANCE COMPANY PLC", 49.58],
-            ["BERU.N0000", "BERUWALA RESORTS PLC", 50.4],
-            ["ACME.N0000", "ACME PRINTING & PACKAGING PLC", 51.4],
-            ["AFSL.N0000", "ABANS FINANCE PLC", 52.0],
-            ["BBH.N0000", "BROWNS BEACH HOTELS PLC", 52.0],
-            ["AHPL.N0000", "AITKEN SPENCE HOTEL HOLDINGS PLC", 52.6],
-            ["AHUN.N0000", "AHUNGALLA RESORTS LTD", 52.7],
-            ["AAF.P0000", "ASIA ASSET FINANCE PLC - Preference", 52.9],
-            ["ATLL.N0000", "AMANA TAKAFUL LIFE PLC", 53.6],
-            ["ALUM.N0000", "ALUMEX PLC", 54.5],
-            ["ACAP.N0000", "ACCESS CAPITAL PARTNERS PLC", 54.6],
-            ["BRR.N0000", "BANSEI ROYAL RESORTS HIKKADUWA PLC", 54.9],
-            ["AAF.N0000", "ASIA ASSET FINANCE PLC", 55.3],
-            ["AINS.N0000", "AITKEN SPENCE INSURANCE PLC", 55.5],
-            ["BOPL.N0000", "BOGAWANTALAWA TEA ESTATES PLC", 57.2],
-            ["AMSL.N0000", "AITKEN SPENCE MARITIME & LOGISTICS PLC", 58.1],
-            ["AGST.N0000", "AGSTAR PLC", 58.3],
-            ["BALA.N0000", "BALANGODA PLANTATIONS PLC", 61.8],
-            ["AEL.N0000", "ACCESS ENGINEERING PLC", 61.9],
-            ["SPEN.N0000", "ASIAN ALLIANCE INSURANCE PLC", 62.15],
-            ["ACL.N0000", "ACL CABLES PLC", 63.63],
-            ["ASIR.N0000", "AITKEN SPENCE INSURANCE REINSURANCE PLC", 64.5],
-            ["AGPL.N0000", "AGALAWATTE PLANTATIONS PLC", 64.6],
-            ["ATL.N0000", "AMANA TAKAFUL PLC", 69.8],
-            ["BUKI.N0000", "BUKIT DARAH PLC", 70.56],
-            ["BOGA.N0000", "BOGALA GRAPHITE LANKA PLC", 72.53],
-            ["GREG.N0000", "AMBEON HOLDINGS PLC", 73.27],
-            ["ABL.N0000", "AMANA BANK PLC", 73.7],
-            ["ABAN.N0000", "ABANS ELECTRICALS PLC", 77.69],
-            ["AMF.N0000", "ASIA ASSET FINANCE PLC", 78.9],
-            ["AGST.X0000", "AGSTAR PLC - Non Voting", 83.2],
-            ["AFS.N0000", "ASIA ASSET FINANCE PLC", 83.8],
-            ["APLA.N0000", "ACL PLASTICS PLC", 88.7]
+        // Stock data with all timeframes
+        const stockData = [["AFSL.N0000", "ABANS FINANCE PLC", 46.4, 52.0, 69.4, 80.9],
+            ["AEL.N0000", "ACCESS ENGINEERING PLC", 48.5, 61.9, 77.2, 82.9]
         ];
 
-        let currentSort = { column: 2, direction: 'asc' }; // Default sort by RSI ascending
+        const timeframes = ["1h", "1D", "1W", "1M"];
+        let currentTimeframe = '1D';
+        let currentSort = { column: 2, direction: 'asc' };
 
-        function sortTable(columnIndex) {
-            const headers = document.querySelectorAll('th.sortable');
+        function getTimeframeIndex(timeframe) {
+            return timeframes.indexOf(timeframe) + 2; // +2 because first two columns are symbol and company
+        }
+
+        function updateStats(timeframe) {
+            const timeframeIndex = getTimeframeIndex(timeframe);
+            let oversold = 0, overbought = 0, neutral = 0, total = 0;
             
-            // Remove previous sort classes
-            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
-            
-            // Determine sort direction
-            if (currentSort.column === columnIndex) {
-                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-            } else {
-                currentSort.direction = 'asc';
-            }
-            currentSort.column = columnIndex;
-            
-            // Add sort class to current header
-            const currentHeader = headers[columnIndex];
-            currentHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
-            
-            // Sort the data
-            const sortedData = [...stockData].sort((a, b) => {
-                let valueA, valueB;
-                
-                if (columnIndex === 0) { // Symbol
-                    valueA = a[0].toLowerCase();
-                    valueB = b[0].toLowerCase();
-                } else if (columnIndex === 1) { // Company
-                    valueA = a[1].toLowerCase();
-                    valueB = b[1].toLowerCase();
-                } else if (columnIndex === 2) { // RSI Value
-                    valueA = parseFloat(a[2]);
-                    valueB = parseFloat(b[2]);
-                }
-                
-                if (currentSort.direction === 'asc') {
-                    return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
-                } else {
-                    return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
+            stockData.forEach(row => {
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue !== null) {
+                    total++;
+                    if (rsiValue < 30) oversold++;
+                    else if (rsiValue > 70) overbought++;
+                    else neutral++;
                 }
             });
             
-            // Update table body
-            updateTableBody(sortedData);
+            document.getElementById('statsSection').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${oversold}</div>
+                    <div class="oversold">Oversold Stocks</div>
+                    <small>(RSI < 30)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${overbought}</div>
+                    <div class="overbought">Overbought Stocks</div>
+                    <small>(RSI > 70)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${neutral}</div>
+                    <div class="neutral">Neutral Stocks</div>
+                    <small>(RSI 30-70)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${total}</div>
+                    <div>Total Available</div>
+                    <small>of 3 symbols</small>
+                </div>
+            `;
         }
 
-        function updateTableBody(data) {
+        function updateTableBody(data, timeframe) {
+            const timeframeIndex = getTimeframeIndex(timeframe);
             const tbody = document.getElementById('stockTableBody');
             tbody.innerHTML = '';
             
@@ -532,15 +296,93 @@
                 // RSI Value
                 const rsiTd = document.createElement('td');
                 rsiTd.className = 'rsi-cell';
-                rsiTd.textContent = row[2].toFixed(1);
-                tr.appendChild(rsiTd);
                 
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue !== null) {
+                    rsiTd.textContent = rsiValue.toFixed(1);
+                    if (rsiValue < 30) {
+                        rsiTd.classList.add('rsi-oversold');
+                    } else if (rsiValue > 70) {
+                        rsiTd.classList.add('rsi-overbought');
+                    } else {
+                        rsiTd.classList.add('rsi-neutral');
+                    }
+                } else {
+                    rsiTd.textContent = '--';
+                    rsiTd.classList.add('no-data');
+                }
+                
+                tr.appendChild(rsiTd);
                 tbody.appendChild(tr);
             });
         }
 
-        // Initialize table with default sort
+        function sortTable(columnIndex) {
+            const headers = document.querySelectorAll('th.sortable');
+            
+            // Remove previous sort classes
+            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+            
+            // Determine sort direction
+            if (currentSort.column === columnIndex) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.direction = 'asc';
+            }
+            currentSort.column = columnIndex;
+            
+            // Add sort class to current header
+            const currentHeader = headers[columnIndex];
+            currentHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+            
+            // Sort the data
+            const timeframeIndex = getTimeframeIndex(currentTimeframe);
+            const sortedData = [...stockData].sort((a, b) => {
+                let valueA, valueB;
+                
+                if (columnIndex === 0) { // Symbol
+                    valueA = a[0].toLowerCase();
+                    valueB = b[0].toLowerCase();
+                } else if (columnIndex === 1) { // Company
+                    valueA = a[1].toLowerCase();
+                    valueB = b[1].toLowerCase();
+                } else if (columnIndex === 2) { // RSI Value
+                    valueA = a[timeframeIndex];
+                    valueB = b[timeframeIndex];
+                    
+                    // Handle null values
+                    if (valueA === null && valueB === null) return 0;
+                    if (valueA === null) return 1;
+                    if (valueB === null) return -1;
+                }
+                
+                if (currentSort.direction === 'asc') {
+                    return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
+                } else {
+                    return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
+                }
+            });
+            
+            updateTableBody(sortedData, currentTimeframe);
+        }
+
+        function switchTimeframe() {
+            const select = document.getElementById('timeframeSelect');
+            currentTimeframe = select.value;
+            
+            // Update header
+            document.getElementById('rsiHeader').textContent = `RSI Value (${currentTimeframe})`;
+            
+            // Update stats
+            updateStats(currentTimeframe);
+            
+            // Update table
+            sortTable(currentSort.column);
+        }
+
+        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
+            switchTimeframe(); // Initialize with default timeframe
             sortTable(2); // Sort by RSI by default
         });
     </script>
