@@ -363,8 +363,8 @@ class DailyRSIScraper:
             </div>
             <div class="stat-card">
                 <div class="stat-number">{len(successful_results)}</div>
-                <div>Shown Here</div>
-                <small>of {len(self.symbols)} companies</small>
+                <div>Total Monitored</div>
+                <small>Out of 286 companies</small>
             </div>
         </div>
         
