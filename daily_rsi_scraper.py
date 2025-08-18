@@ -310,6 +310,36 @@ class MultiTimeframeRSIScraper:
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }}
+        .stat-card:hover {{
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }}
+        .stat-card.active {{
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }}
+        .filter-info {{
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 30px 0 30px;
+            text-align: center;
+            color: #1976d2;
+            font-weight: 500;
+        }}
+        .filter-info .clear-filter {{
+            color: #d32f2f;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-left: 10px;
+        }}
+        .filter-info .clear-filter:hover {{
+            color: #b71c1c;
         }}
         .stat-number {{
             font-size: 2em;
@@ -377,15 +407,13 @@ class MultiTimeframeRSIScraper:
             text-align: center;
         }}
         .rsi-oversold {{
-            color: #e74c3c;
-            background: #ffebee;
+            color: #2e7d32;
         }}
         .rsi-overbought {{
-            color: #f57c00;
-            background: #fff3e0;
+            color: #e74c3c;
         }}
         .rsi-neutral {{
-            color: #2e7d32;
+            color: #f57c00;
         }}
         .no-data {{
             color: #999;
@@ -425,15 +453,19 @@ class MultiTimeframeRSIScraper:
         <div class="timeframe-selector">
             <label class="selector-label">Select Timeframe:</label>
             <select class="timeframe-dropdown" id="timeframeSelect" onchange="switchTimeframe()">
-                <option value="1h">1 Hour</option>
-                <option value="1D" selected>1 Day</option>
-                <option value="1W">1 Week</option>
-                <option value="1M">1 Month</option>
+                <option value="1h">1 Hour RSI</option>
+                <option value="1D" selected>1 Day RSI (Default)</option>
+                <option value="1W">1 Week RSI</option>
+                <option value="1M">1 Month RSI</option>
             </select>
         </div>
         
         <div class="stats" id="statsSection">
             <!-- Stats will be updated by JavaScript -->
+        </div>
+        
+        <div class="filter-info" id="filterInfo" style="display: none;">
+            <!-- Filter info will be shown here -->
         </div>
         
         <div class="table-container">
@@ -452,7 +484,7 @@ class MultiTimeframeRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Updated daily at 4 pm</p>
+            <p>Updated daily at 4 PM</p>
             <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
@@ -487,6 +519,7 @@ class MultiTimeframeRSIScraper:
         const timeframes = {json.dumps(self.timeframes)};
         let currentTimeframe = '1D';
         let currentSort = {{ column: 2, direction: 'asc' }};
+        let currentFilter = null; // 'oversold', 'overbought', 'neutral', or null
 
         function getTimeframeIndex(timeframe) {{
             return timeframes.indexOf(timeframe) + 2; // +2 because first two columns are symbol and company
@@ -500,42 +533,174 @@ class MultiTimeframeRSIScraper:
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {{
                     total++;
-                    if (rsiValue < 30) oversold++;
+                    if (rsiValue < 50) oversold++;
                     else if (rsiValue > 70) overbought++;
                     else neutral++;
                 }}
             }});
             
             document.getElementById('statsSection').innerHTML = `
-                <div class="stat-card">
+                <div class="stat-card" onclick="filterStocks('oversold')" id="oversoldCard">
                     <div class="stat-number">${{oversold}}</div>
                     <div class="oversold">Oversold Stocks</div>
-                    <small>(RSI < 30)</small>
+                    <small>(RSI < 50)</small>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="filterStocks('overbought')" id="overboughtCard">
                     <div class="stat-number">${{overbought}}</div>
                     <div class="overbought">Overbought Stocks</div>
                     <small>(RSI > 70)</small>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="filterStocks('neutral')" id="neutralCard">
                     <div class="stat-number">${{neutral}}</div>
                     <div class="neutral">Neutral Stocks</div>
-                    <small>(RSI 30-70)</small>
+                    <small>(RSI 50-70)</small>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="filterStocks('all')" id="allCard">
                     <div class="stat-number">${{total}}</div>
                     <div>Total Available</div>
                     <small>of {len(self.symbols)} symbols</small>
                 </div>
             `;
+            
+            // Reapply active state if filter is active
+            if (currentFilter) {{
+                const activeCard = document.getElementById(currentFilter + 'Card');
+                if (activeCard) {{
+                    activeCard.classList.add('active');
+                }}
+            }}
+        }}
+
+        function getFilteredData(data, filter) {{
+            if (!filter || filter === 'all') {{
+                return data;
+            }}
+            
+            const timeframeIndex = getTimeframeIndex(currentTimeframe);
+            
+            return data.filter(row => {{
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue === null) return false;
+                
+                switch(filter) {{
+                    case 'oversold':
+                        return rsiValue < 50;
+                    case 'overbought':
+                        return rsiValue > 70;
+                    case 'neutral':
+                        return rsiValue >= 50 && rsiValue <= 70;
+                    default:
+                        return true;
+                }}
+            }});
+        }}
+
+        function updateFilterInfo() {{
+            const filterInfo = document.getElementById('filterInfo');
+            
+            if (!currentFilter || currentFilter === 'all') {{
+                filterInfo.style.display = 'none';
+                return;
+            }}
+            
+            let filterText = '';
+            let countText = '';
+            
+            switch(currentFilter) {{
+                case 'oversold':
+                    filterText = 'Oversold Stocks (RSI < 50)';
+                    countText = 'green';
+                    break;
+                case 'overbought':
+                    filterText = 'Overbought Stocks (RSI > 70)';
+                    countText = 'red';
+                    break;
+                case 'neutral':
+                    filterText = 'Neutral Stocks (RSI 50-70)';
+                    countText = 'orange';
+                    break;
+            }}
+            
+            const filteredData = getFilteredData(stockData, currentFilter);
+            
+            filterInfo.innerHTML = `
+                Showing ${{filteredData.length}} ${{filterText}} for ${{currentTimeframe}} timeframe
+                <span class="clear-filter" onclick="clearFilter()">Show All Stocks</span>
+            `;
+            filterInfo.style.display = 'block';
+        }}
+
+        function filterStocks(filterType) {{
+            // Remove active class from all cards
+            document.querySelectorAll('.stat-card').forEach(card => {{
+                card.classList.remove('active');
+            }});
+            
+            // Set current filter
+            currentFilter = filterType === 'all' ? null : filterType;
+            
+            // Add active class to clicked card
+            if (filterType !== 'all') {{
+                const activeCard = document.getElementById(filterType + 'Card');
+                if (activeCard) {{
+                    activeCard.classList.add('active');
+                }}
+            }} else {{
+                const allCard = document.getElementById('allCard');
+                if (allCard) {{
+                    allCard.classList.add('active');
+                }}
+            }}
+            
+            // Update filter info
+            updateFilterInfo();
+            
+            // Apply filter and re-sort
+            sortTable(currentSort.column);
+        }}
+
+        function clearFilter() {{
+            currentFilter = null;
+            
+            // Remove active class from all cards
+            document.querySelectorAll('.stat-card').forEach(card => {{
+                card.classList.remove('active');
+            }});
+            
+            // Add active to "all" card
+            const allCard = document.getElementById('allCard');
+            if (allCard) {{
+                allCard.classList.add('active');
+            }}
+            
+            updateFilterInfo();
+            sortTable(currentSort.column);
         }}
 
         function updateTableBody(data, timeframe) {{
             const timeframeIndex = getTimeframeIndex(timeframe);
+            
+            // Apply current filter
+            const filteredData = getFilteredData(data, currentFilter);
+            
             const tbody = document.getElementById('stockTableBody');
             tbody.innerHTML = '';
             
-            data.forEach(row => {{
+            if (filteredData.length === 0) {{
+                const tr = document.createElement('tr');
+                const td = document.createElement('td');
+                td.colSpan = 3;
+                td.style.textAlign = 'center';
+                td.style.padding = '30px';
+                td.style.color = '#666';
+                td.style.fontStyle = 'italic';
+                td.textContent = 'No stocks match the current filter criteria';
+                tr.appendChild(td);
+                tbody.appendChild(tr);
+                return;
+            }}
+            
+            filteredData.forEach(row => {{
                 const tr = document.createElement('tr');
                 
                 // Symbol
@@ -557,7 +722,7 @@ class MultiTimeframeRSIScraper:
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {{
                     rsiTd.textContent = rsiValue.toFixed(1);
-                    if (rsiValue < 30) {{
+                    if (rsiValue < 50) {{
                         rsiTd.classList.add('rsi-oversold');
                     }} else if (rsiValue > 70) {{
                         rsiTd.classList.add('rsi-overbought');
@@ -633,6 +798,9 @@ class MultiTimeframeRSIScraper:
             // Update stats
             updateStats(currentTimeframe);
             
+            // Update filter info
+            updateFilterInfo();
+            
             // Update table
             sortTable(currentSort.column);
         }}
@@ -658,6 +826,7 @@ STOCK_DATA = [
     {"symbol": "CSELK-ABAN.N0000", "company": "ABANS ELECTRICALS PLC"},
     {"symbol": "CSELK-AFSL.N0000", "company": "ABANS FINANCE PLC"},
     {"symbol": "CSELK-AEL.N0000", "company": "ACCESS ENGINEERING PLC"},
+    {"symbol": "CSELK-ACL.N0000", "company": "ACL CABLES PLC"},
 ]
 
 # Extract just symbols for backward compatibility
