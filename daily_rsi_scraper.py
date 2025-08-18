@@ -114,9 +114,9 @@ class DailyRSIScraper:
                 
                 # Determine status
                 if rsi_value < 30:
-                    status_text = "OVERSOLD"
+                    status_text = "OVERSOLD 🔥"
                 elif rsi_value > 70:
-                    status_text = "OVERBOUGHT"
+                    status_text = "OVERBOUGHT ⚠️"
                 else:
                     status_text = "NEUTRAL"
                 
@@ -163,7 +163,7 @@ class DailyRSIScraper:
         with open(filename, 'w') as f:
             json.dump(daily_data, f, indent=2)
         
-        # Also save to latest.json for the webpage (in root)
+        # Also save to latest.json for the webpage
         with open('latest_rsi.json', 'w') as f:
             json.dump(daily_data, f, indent=2)
         
@@ -278,6 +278,15 @@ class DailyRSIScraper:
             color: #007bff;
             opacity: 1;
         }}
+        .symbol-cell {{
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #0066cc;
+        }}
+        .company-cell {{
+            color: #666;
+            font-size: 0.9em;
+        }}
         .rsi-cell {{
             font-weight: bold;
             font-size: 1.1em;
@@ -358,15 +367,17 @@ class DailyRSIScraper:
             <table>
                 <thead>
                     <tr>
-                        <th class="sortable" onclick="sortTable(0)">Stock Symbol</th>
-                        <th class="sortable" onclick="sortTable(1)">RSI Value</th>
-                        <th class="sortable" onclick="sortTable(2)">Status</th>
+                        <th class="sortable" onclick="sortTable(0)">Symbol</th>
+                        <th class="sortable" onclick="sortTable(1)">Company</th>
+                        <th class="sortable" onclick="sortTable(2)">RSI Value</th>
+                        <th class="sortable" onclick="sortTable(3)">Status</th>
                     </tr>
                 </thead>
                 <tbody id="stockTableBody">"""
         
         for symbol, data in sorted_results:
             clean_symbol = symbol.replace("CSELK-", "")
+            company_name = SYMBOL_TO_COMPANY.get(symbol, "Unknown Company")
             rsi = data['rsi']
             
             if rsi < 30:
@@ -381,7 +392,8 @@ class DailyRSIScraper:
             
             html += f"""
                     <tr>
-                        <td>{clean_symbol}</td>
+                        <td class="symbol-cell">{clean_symbol}</td>
+                        <td class="company-cell">{company_name}</td>
                         <td class="rsi-cell">{rsi:.1f}</td>
                         <td><span class="{status_class}">{status_text}</span></td>
                     </tr>"""
@@ -404,6 +416,7 @@ class DailyRSIScraper:
         # Add stock data as JavaScript array
         for i, (symbol, data) in enumerate(sorted_results):
             clean_symbol = symbol.replace("CSELK-", "")
+            company_name = SYMBOL_TO_COMPANY.get(symbol, "Unknown Company")
             rsi = data['rsi']
             
             if rsi < 30:
@@ -418,12 +431,12 @@ class DailyRSIScraper:
             
             comma = "," if i < len(sorted_results) - 1 else ""
             html += f"""
-            ["{clean_symbol}", {rsi}, "{status_text}", {status_value}]{comma}"""
+            ["{clean_symbol}", "{company_name}", {rsi}, "{status_text}", {status_value}]{comma}"""
         
         html += f"""
         ];
 
-        let currentSort = {{ column: 1, direction: 'asc' }}; // Default sort by RSI ascending
+        let currentSort = {{ column: 2, direction: 'asc' }}; // Default sort by RSI ascending
 
         function sortTable(columnIndex) {{
             const headers = document.querySelectorAll('th.sortable');
@@ -447,15 +460,18 @@ class DailyRSIScraper:
             const sortedData = [...stockData].sort((a, b) => {{
                 let valueA, valueB;
                 
-                if (columnIndex === 0) {{ // Stock Symbol
+                if (columnIndex === 0) {{ // Symbol
                     valueA = a[0].toLowerCase();
                     valueB = b[0].toLowerCase();
-                }} else if (columnIndex === 1) {{ // RSI Value
-                    valueA = parseFloat(a[1]);
-                    valueB = parseFloat(b[1]);
-                }} else if (columnIndex === 2) {{ // Status
-                    valueA = a[3]; // Use numeric status value for sorting
-                    valueB = b[3];
+                }} else if (columnIndex === 1) {{ // Company
+                    valueA = a[1].toLowerCase();
+                    valueB = b[1].toLowerCase();
+                }} else if (columnIndex === 2) {{ // RSI Value
+                    valueA = parseFloat(a[2]);
+                    valueB = parseFloat(b[2]);
+                }} else if (columnIndex === 3) {{ // Status
+                    valueA = a[4]; // Use numeric status value for sorting
+                    valueB = b[4];
                 }}
                 
                 if (currentSort.direction === 'asc') {{
@@ -476,25 +492,32 @@ class DailyRSIScraper:
             data.forEach(row => {{
                 const tr = document.createElement('tr');
                 
-                // Stock Symbol
+                // Symbol
                 const symbolTd = document.createElement('td');
+                symbolTd.className = 'symbol-cell';
                 symbolTd.textContent = row[0];
                 tr.appendChild(symbolTd);
+                
+                // Company Name
+                const companyTd = document.createElement('td');
+                companyTd.className = 'company-cell';
+                companyTd.textContent = row[1];
+                tr.appendChild(companyTd);
                 
                 // RSI Value
                 const rsiTd = document.createElement('td');
                 rsiTd.className = 'rsi-cell';
-                rsiTd.textContent = row[1].toFixed(1);
+                rsiTd.textContent = row[2].toFixed(1);
                 tr.appendChild(rsiTd);
                 
                 // Status
                 const statusTd = document.createElement('td');
                 const statusSpan = document.createElement('span');
-                statusSpan.textContent = row[2];
+                statusSpan.textContent = row[3];
                 
-                if (row[2].includes('Oversold')) {{
+                if (row[3].includes('Oversold')) {{
                     statusSpan.className = 'status-oversold';
-                }} else if (row[2].includes('Overbought')) {{
+                }} else if (row[3].includes('Overbought')) {{
                     statusSpan.className = 'status-overbought';
                 }} else {{
                     statusSpan.className = 'status-neutral';
@@ -509,7 +532,7 @@ class DailyRSIScraper:
 
         // Initialize table with default sort
         document.addEventListener('DOMContentLoaded', function() {{
-            sortTable(1); // Sort by RSI by default
+            sortTable(2); // Sort by RSI by default
         }});
     </script>
 </body>
@@ -521,10 +544,19 @@ class DailyRSIScraper:
         print(f"📄 Generated index.html with {len(successful_results)} stocks")
         return 'index.html'
 
-# Stock symbols from your CSV
-STOCK_SYMBOLS = [
-    "CSELK-ABAN.N0000", "CSELK-AFSL.N0000", "CSELK-AEL.N0000", "CSELK-ACL.N0000"
+# Stock symbols with company names
+STOCK_DATA = [
+    {"symbol": "CSELK-ABAN.N0000", "company": "ABANS ELECTRICALS PLC"},
+    {"symbol": "CSELK-AFSL.N0000", "company": "ABANS FINANCE PLC"},
+    {"symbol": "CSELK-AEL.N0000", "company": "ACCESS ENGINEERING PLC"},
+    {"symbol": "CSELK-ACL.N0000", "company": "ACL CABLES PLC"},
 ]
+
+# Extract just symbols for backward compatibility
+STOCK_SYMBOLS = [stock["symbol"] for stock in STOCK_DATA]
+
+# Create a mapping for easy lookup
+SYMBOL_TO_COMPANY = {stock["symbol"]: stock["company"] for stock in STOCK_DATA}
 
 if __name__ == "__main__":
     print("🤖 Daily RSI Scraper for GitHub Pages")
