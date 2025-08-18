@@ -1,29 +1,171 @@
 {
   "date": "2025-08-18",
-  "timestamp": "2025-08-18T07:15:10.247212",
-  "total_symbols": 4,
-  "successful_fetches": 4,
-  "failed_fetches": 0,
+  "timestamp": "2025-08-18T07:31:21.271929",
+  "total_symbols": 32,
+  "successful_fetches": 30,
+  "failed_fetches": 2,
   "data": {
     "CSELK-ABAN.N0000": {
-      "rsi": 77.69,
+      "rsi": 77.88,
       "status": "success",
-      "timestamp": "2025-08-18T07:14:35.605904"
+      "timestamp": "2025-08-18T07:24:24.443437"
     },
     "CSELK-AFSL.N0000": {
       "rsi": 49.8,
       "status": "success",
-      "timestamp": "2025-08-18T07:14:47.065553"
+      "timestamp": "2025-08-18T07:24:35.950033"
     },
     "CSELK-AEL.N0000": {
-      "rsi": 62.3,
+      "rsi": 62.7,
       "status": "success",
-      "timestamp": "2025-08-18T07:14:58.616277"
+      "timestamp": "2025-08-18T07:24:47.516818"
     },
     "CSELK-ACL.N0000": {
-      "rsi": 68.08,
+      "rsi": 69.86,
       "status": "success",
-      "timestamp": "2025-08-18T07:15:10.247143"
+      "timestamp": "2025-08-18T07:24:59.081809"
+    },
+    "CSELK-APLA.N0000": {
+      "rsi": 87.92,
+      "status": "success",
+      "timestamp": "2025-08-18T07:25:10.686550"
+    },
+    "CSELK-ACME.N0000": {
+      "rsi": 51.4,
+      "status": "success",
+      "timestamp": "2025-08-18T07:25:22.313570"
+    },
+    "CSELK-AGAL.N0000": {
+      "rsi": 53.3,
+      "status": "success",
+      "timestamp": "2025-08-18T07:25:33.984152"
+    },
+    "CSELK-AGST.N0000": {
+      "rsi": 61.0,
+      "status": "success",
+      "timestamp": "2025-08-18T07:25:45.520234"
+    },
+    "CSELK-AGST.X0000": {
+      "rsi": 83.2,
+      "status": "success",
+      "timestamp": "2025-08-18T07:25:57.026693"
+    },
+    "CSELK-AHUN.N0000": {
+      "rsi": 51.9,
+      "status": "success",
+      "timestamp": "2025-08-18T07:26:08.571388"
+    },
+    "CSELK-ASPM.N0000": {
+      "rsi": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55b0c527d01a <unknown>\n#1 0x55b0c4d1ca70 <unknown>\n#2 0x55b0c4d6e907 <unknown>\n#3 0x55b0c4d6eb01 <unknown>\n#4 0x55b0c4dbcd54 <unknown>\n#5 0x55b0c4d9440d <unknown>\n#6 0x55b0c4dba14f <unknown>\n#7 0x55b0c4d941b3 <unknown>\n#8 0x55b0c4d6059b <unknown>\n#9 0x55b0c4d61971 <unknown>\n#10 0x55b0c52421eb <unknown>\n#11 0x55b0c5245f39 <unknown>\n#12 0x55b0c52292c9 <unknown>\n#13 0x55b0c5246ae8 <unknown>\n#14 0x55b0c520dbaf <unknown>\n#15 0x55b0c526a0a8 <unknown>\n#16 0x55b0c526a286 <unknown>\n#17 0x55b0c527bff6 <unknown>\n#18 0x7f294709caa4 <unknown>\n#19 0x7f2947129c3c <unknown>\n",
+      "timestamp": "2025-08-18T07:26:47.763076"
+    },
+    "CSELK-SPEN.N0000": {
+      "rsi": 60.03,
+      "status": "success",
+      "timestamp": "2025-08-18T07:26:59.283542"
+    },
+    "CSELK-ALLI.N0000": {
+      "rsi": 48.87,
+      "status": "success",
+      "timestamp": "2025-08-18T07:27:10.722835"
+    },
+    "CSELK-AFS.N0000": {
+      "rsi": 84.2,
+      "status": "success",
+      "timestamp": "2025-08-18T07:27:22.340715"
+    },
+    "CSELK-ALUM.N0000": {
+      "rsi": 53.0,
+      "status": "success",
+      "timestamp": "2025-08-18T07:27:33.862946"
+    },
+    "CSELK-ABL.N0000": {
+      "rsi": 71.8,
+      "status": "success",
+      "timestamp": "2025-08-18T07:27:45.441574"
+    },
+    "CSELK-ATL.N0000": {
+      "rsi": 69.8,
+      "status": "success",
+      "timestamp": "2025-08-18T07:27:57.011894"
+    },
+    "CSELK-ATLL.N0000": {
+      "rsi": 53.6,
+      "status": "success",
+      "timestamp": "2025-08-18T07:28:08.628738"
+    },
+    "CSELK-TAP.N0000": {
+      "rsi": 59.8,
+      "status": "success",
+      "timestamp": "2025-08-18T07:28:20.225243"
+    },
+    "CSELK-GREG.N0000": {
+      "rsi": 65.88,
+      "status": "success",
+      "timestamp": "2025-08-18T07:28:31.772569"
+    },
+    "CSELK-AMCL.N0000": {
+      "rsi": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56151e5ce01a <unknown>\n#1 0x56151e06da70 <unknown>\n#2 0x56151e0bf907 <unknown>\n#3 0x56151e0bfb01 <unknown>\n#4 0x56151e10dd54 <unknown>\n#5 0x56151e0e540d <unknown>\n#6 0x56151e10b14f <unknown>\n#7 0x56151e0e51b3 <unknown>\n#8 0x56151e0b159b <unknown>\n#9 0x56151e0b2971 <unknown>\n#10 0x56151e5931eb <unknown>\n#11 0x56151e596f39 <unknown>\n#12 0x56151e57a2c9 <unknown>\n#13 0x56151e597ae8 <unknown>\n#14 0x56151e55ebaf <unknown>\n#15 0x56151e5bb0a8 <unknown>\n#16 0x56151e5bb286 <unknown>\n#17 0x56151e5ccff6 <unknown>\n#18 0x7f2d1de9caa4 <unknown>\n#19 0x7f2d1df29c3c <unknown>\n",
+      "timestamp": "2025-08-18T07:29:11.328001"
+    },
+    "CSELK-ALHP.N0000": {
+      "rsi": 39.6,
+      "status": "success",
+      "timestamp": "2025-08-18T07:29:23.019655"
+    },
+    "CSELK-AINS.N0000": {
+      "rsi": 55.5,
+      "status": "success",
+      "timestamp": "2025-08-18T07:29:34.592679"
+    },
+    "CSELK-AAF.N0000": {
+      "rsi": 55.3,
+      "status": "success",
+      "timestamp": "2025-08-18T07:29:46.190308"
+    },
+    "CSELK-AAF.P0000": {
+      "rsi": 57.0,
+      "status": "success",
+      "timestamp": "2025-08-18T07:29:57.646092"
+    },
+    "CSELK-ACAP.N0000": {
+      "rsi": 54.6,
+      "status": "success",
+      "timestamp": "2025-08-18T07:30:09.278626"
+    },
+    "CSELK-ASIY.N0000": {
+      "rsi": 52.7,
+      "status": "success",
+      "timestamp": "2025-08-18T07:30:20.833394"
+    },
+    "CSELK-AHPL.N0000": {
+      "rsi": 51.1,
+      "status": "success",
+      "timestamp": "2025-08-18T07:30:32.372668"
+    },
+    "CSELK-AMSL.N0000": {
+      "rsi": 59.3,
+      "status": "success",
+      "timestamp": "2025-08-18T07:30:43.792666"
+    },
+    "CSELK-ASIR.N0000": {
+      "rsi": 67.6,
+      "status": "success",
+      "timestamp": "2025-08-18T07:30:55.459878"
+    },
+    "CSELK-AMF.N0000": {
+      "rsi": 78.9,
+      "status": "success",
+      "timestamp": "2025-08-18T07:31:06.949009"
+    },
+    "CSELK-AGPL.N0000": {
+      "rsi": 66.1,
+      "status": "success",
+      "timestamp": "2025-08-18T07:31:21.271903"
     }
   }
 }
