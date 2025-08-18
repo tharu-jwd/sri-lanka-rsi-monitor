@@ -96,6 +96,15 @@
             color: #007bff;
             opacity: 1;
         }
+        .symbol-cell {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .company-cell {
+            color: #666;
+            font-size: 0.9em;
+        }
         .rsi-cell {
             font-weight: bold;
             font-size: 1.1em;
@@ -176,30 +185,35 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="sortable" onclick="sortTable(0)">Stock Symbol</th>
-                        <th class="sortable" onclick="sortTable(1)">RSI Value</th>
-                        <th class="sortable" onclick="sortTable(2)">Status</th>
+                        <th class="sortable" onclick="sortTable(0)">Symbol</th>
+                        <th class="sortable" onclick="sortTable(1)">Company</th>
+                        <th class="sortable" onclick="sortTable(2)">RSI Value</th>
+                        <th class="sortable" onclick="sortTable(3)">Status</th>
                     </tr>
                 </thead>
                 <tbody id="stockTableBody">
                     <tr>
-                        <td>AFSL.N0000</td>
+                        <td class="symbol-cell">AFSL.N0000</td>
+                        <td class="company-cell">ABANS FINANCE PLC</td>
                         <td class="rsi-cell">49.8</td>
                         <td><span class="status-neutral">Neutral</span></td>
                     </tr>
                     <tr>
-                        <td>AEL.N0000</td>
+                        <td class="symbol-cell">AEL.N0000</td>
+                        <td class="company-cell">ACCESS ENGINEERING PLC</td>
                         <td class="rsi-cell">62.3</td>
                         <td><span class="status-neutral">Neutral</span></td>
                     </tr>
                     <tr>
-                        <td>ACL.N0000</td>
+                        <td class="symbol-cell">ACL.N0000</td>
+                        <td class="company-cell">ACL CABLES PLC</td>
                         <td class="rsi-cell">68.1</td>
                         <td><span class="status-neutral">Neutral</span></td>
                     </tr>
                     <tr>
-                        <td>ABAN.N0000</td>
-                        <td class="rsi-cell">79.6</td>
+                        <td class="symbol-cell">ABAN.N0000</td>
+                        <td class="company-cell">ABANS ELECTRICALS PLC</td>
+                        <td class="rsi-cell">77.7</td>
                         <td><span class="status-overbought">Overbought</span></td>
                     </tr>
                 </tbody>
@@ -208,20 +222,20 @@
         
         <div class="footer">
             <p>Updated daily at market close</p>
-            <p>Last successful update: 2025-08-18 06:52:14</p>
+            <p>Last successful update: 2025-08-18 07:15:10</p>
         </div>
     </div>
 
     <script>
         // Stock data for sorting
         const stockData = [
-            ["AFSL.N0000", 49.8, "Neutral", 2],
-            ["AEL.N0000", 62.3, "Neutral", 2],
-            ["ACL.N0000", 68.08, "Neutral", 2],
-            ["ABAN.N0000", 79.62, "Overbought", 3]
+            ["AFSL.N0000", "ABANS FINANCE PLC", 49.8, "Neutral", 2],
+            ["AEL.N0000", "ACCESS ENGINEERING PLC", 62.3, "Neutral", 2],
+            ["ACL.N0000", "ACL CABLES PLC", 68.08, "Neutral", 2],
+            ["ABAN.N0000", "ABANS ELECTRICALS PLC", 77.69, "Overbought", 3]
         ];
 
-        let currentSort = { column: 1, direction: 'asc' }; // Default sort by RSI ascending
+        let currentSort = { column: 2, direction: 'asc' }; // Default sort by RSI ascending
 
         function sortTable(columnIndex) {
             const headers = document.querySelectorAll('th.sortable');
@@ -245,15 +259,18 @@
             const sortedData = [...stockData].sort((a, b) => {
                 let valueA, valueB;
                 
-                if (columnIndex === 0) { // Stock Symbol
+                if (columnIndex === 0) { // Symbol
                     valueA = a[0].toLowerCase();
                     valueB = b[0].toLowerCase();
-                } else if (columnIndex === 1) { // RSI Value
-                    valueA = parseFloat(a[1]);
-                    valueB = parseFloat(b[1]);
-                } else if (columnIndex === 2) { // Status
-                    valueA = a[3]; // Use numeric status value for sorting
-                    valueB = b[3];
+                } else if (columnIndex === 1) { // Company
+                    valueA = a[1].toLowerCase();
+                    valueB = b[1].toLowerCase();
+                } else if (columnIndex === 2) { // RSI Value
+                    valueA = parseFloat(a[2]);
+                    valueB = parseFloat(b[2]);
+                } else if (columnIndex === 3) { // Status
+                    valueA = a[4]; // Use numeric status value for sorting
+                    valueB = b[4];
                 }
                 
                 if (currentSort.direction === 'asc') {
@@ -274,25 +291,32 @@
             data.forEach(row => {
                 const tr = document.createElement('tr');
                 
-                // Stock Symbol
+                // Symbol
                 const symbolTd = document.createElement('td');
+                symbolTd.className = 'symbol-cell';
                 symbolTd.textContent = row[0];
                 tr.appendChild(symbolTd);
+                
+                // Company Name
+                const companyTd = document.createElement('td');
+                companyTd.className = 'company-cell';
+                companyTd.textContent = row[1];
+                tr.appendChild(companyTd);
                 
                 // RSI Value
                 const rsiTd = document.createElement('td');
                 rsiTd.className = 'rsi-cell';
-                rsiTd.textContent = row[1].toFixed(1);
+                rsiTd.textContent = row[2].toFixed(1);
                 tr.appendChild(rsiTd);
                 
                 // Status
                 const statusTd = document.createElement('td');
                 const statusSpan = document.createElement('span');
-                statusSpan.textContent = row[2];
+                statusSpan.textContent = row[3];
                 
-                if (row[2].includes('Oversold')) {
+                if (row[3].includes('Oversold')) {
                     statusSpan.className = 'status-oversold';
-                } else if (row[2].includes('Overbought')) {
+                } else if (row[3].includes('Overbought')) {
                     statusSpan.className = 'status-overbought';
                 } else {
                     statusSpan.className = 'status-neutral';
@@ -307,7 +331,7 @@
 
         // Initialize table with default sort
         document.addEventListener('DOMContentLoaded', function() {
-            sortTable(1); // Sort by RSI by default
+            sortTable(2); // Sort by RSI by default
         });
     </script>
 </body>
