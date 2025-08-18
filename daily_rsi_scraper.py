@@ -114,9 +114,9 @@ class DailyRSIScraper:
                 
                 # Determine status
                 if rsi_value < 30:
-                    status_text = "OVERSOLD 🔥"
+                    status_text = "OVERSOLD"
                 elif rsi_value > 70:
-                    status_text = "OVERBOUGHT ⚠️"
+                    status_text = "OVERBOUGHT"
                 else:
                     status_text = "NEUTRAL"
                 
@@ -155,12 +155,15 @@ class DailyRSIScraper:
             'data': self.results
         }
         
+        # Create directory if it doesn't exist
+        os.makedirs('dailydata', exist_ok=True)
+        
         # Save to daily file
         filename = f"dailydata/rsi_data_{timestamp.strftime('%Y_%m_%d')}.json"
         with open(filename, 'w') as f:
             json.dump(daily_data, f, indent=2)
         
-        # Also save to latest.json for the webpage
+        # Also save to latest.json for the webpage (in root)
         with open('latest_rsi.json', 'w') as f:
             json.dump(daily_data, f, indent=2)
         
@@ -324,8 +327,8 @@ class DailyRSIScraper:
 <body>
     <div class="container">
         <div class="header">
-            <h1>Daily RSI Monitor</h1>
-            <p>Colombo Stock Exchange</p>
+            <h1>📊 Daily RSI Monitor</h1>
+            <p>Sri Lanka Stock Exchange - Last Updated: {timestamp.strftime('%B %d, %Y at %I:%M %p')}</p>
         </div>
         
         <div class="stats">
@@ -389,7 +392,7 @@ class DailyRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Updated daily at market close</p>
+            <p>Data sourced from TradingView • Updated daily at market close</p>
             <p>Last successful update: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
