@@ -172,7 +172,12 @@ class DailyRSIScraper:
     
     def generate_html_page(self):
         """Generate HTML page for GitHub Pages"""
-        timestamp = datetime.now()
+        from datetime import timezone, timedelta
+        
+        # Convert to Sri Lanka time (UTC+5:30)
+        utc_now = datetime.utcnow()
+        sl_timezone = timezone(timedelta(hours=5, minutes=30))
+        sl_time = utc_now.replace(tzinfo=timezone.utc).astimezone(sl_timezone)
         
         # Get successful results for display
         successful_results = {k: v for k, v in self.results.items() if v['status'] == 'success'}
@@ -337,7 +342,7 @@ class DailyRSIScraper:
     <div class="container">
         <div class="header">
             <h1>Daily RSI Monitor</h1>
-            <p>Colombo Stock Exchange</p>
+            <p>Colombo Stock Exchange - Last Updated: {sl_time.strftime('%B %d, %Y at %I:%M %p')} (SL Time)</p>
         </div>
         
         <div class="stats">
@@ -393,7 +398,7 @@ class DailyRSIScraper:
         
         <div class="footer">
             <p>Updated daily at market close</p>
-            <p>Last successful update: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}</p>
+            <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')} (Sri Lanka Time)</p>
         </div>
     </div>
 
@@ -508,35 +513,7 @@ STOCK_DATA = [
     {"symbol": "CSELK-ABAN.N0000", "company": "ABANS ELECTRICALS PLC"},
     {"symbol": "CSELK-AFSL.N0000", "company": "ABANS FINANCE PLC"},
     {"symbol": "CSELK-AEL.N0000", "company": "ACCESS ENGINEERING PLC"},
-    {"symbol": "CSELK-ACL.N0000", "company": "ACL CABLES PLC"},
-    {"symbol": "CSELK-APLA.N0000", "company": "ACL PLASTICS PLC"},
-    {"symbol": "CSELK-ACME.N0000", "company": "ACME PRINTING & PACKAGING PLC"},
-    {"symbol": "CSELK-AGAL.N0000", "company": "AGALAWATTE PLANTATIONS PLC"},
-    {"symbol": "CSELK-AGST.N0000", "company": "AGSTAR PLC"},
-    {"symbol": "CSELK-AGST.X0000", "company": "AGSTAR PLC - Non Voting"},
-    {"symbol": "CSELK-AHUN.N0000", "company": "AHUNGALLA RESORTS LTD"},
-    {"symbol": "CSELK-ASPM.N0000", "company": "ASIA SIYAKA COMMODITIES PLC"},
-    {"symbol": "CSELK-SPEN.N0000", "company": "ASIAN ALLIANCE INSURANCE PLC"},
-    {"symbol": "CSELK-ALLI.N0000", "company": "ALLIANCE FINANCE COMPANY PLC"},
-    {"symbol": "CSELK-AFS.N0000", "company": "ASIA ASSET FINANCE PLC"},
-    {"symbol": "CSELK-ALUM.N0000", "company": "ALUMEX PLC"},
-    {"symbol": "CSELK-ABL.N0000", "company": "AMANA BANK PLC"},
-    {"symbol": "CSELK-ATL.N0000", "company": "AMANA TAKAFUL PLC"},
-    {"symbol": "CSELK-ATLL.N0000", "company": "AMANA TAKAFUL LIFE PLC"},
-    {"symbol": "CSELK-TAP.N0000", "company": "THE KINGSBURY PLC"},
-    {"symbol": "CSELK-GREG.N0000", "company": "AMBEON HOLDINGS PLC"},
-    {"symbol": "CSELK-AMCL.N0000", "company": "AMW CAPITAL LEASING & FINANCE PLC"},
-    {"symbol": "CSELK-ALHP.N0000", "company": "ALHOKAIR GROUP (LANKA) LIMITED"},
-    {"symbol": "CSELK-AINS.N0000", "company": "AITKEN SPENCE INSURANCE PLC"},
-    {"symbol": "CSELK-AAF.N0000", "company": "ASIA ASSET FINANCE PLC"},
-    {"symbol": "CSELK-AAF.P0000", "company": "ASIA ASSET FINANCE PLC - Preference"},
-    {"symbol": "CSELK-ACAP.N0000", "company": "ACCESS CAPITAL PARTNERS PLC"},
-    {"symbol": "CSELK-ASIY.N0000", "company": "ASIA SIYAKA COMMODITIES PLC"},
-    {"symbol": "CSELK-AHPL.N0000", "company": "AITKEN SPENCE HOTEL HOLDINGS PLC"},
-    {"symbol": "CSELK-AMSL.N0000", "company": "AITKEN SPENCE MARITIME & LOGISTICS PLC"},
-    {"symbol": "CSELK-ASIR.N0000", "company": "AITKEN SPENCE INSURANCE REINSURANCE PLC"},
-    {"symbol": "CSELK-AMF.N0000", "company": "ASIA ASSET FINANCE PLC"},
-    {"symbol": "CSELK-AGPL.N0000", "company": "AGALAWATTE PLANTATIONS PLC"},
+    {"symbol": "CSELK-ACL.N0000", "company": "ACL CABLES PLC"}
 ]
 
 # Extract just symbols for backward compatibility
