@@ -1,32 +1,21 @@
 {
   "date": "2025-08-18",
-  "timestamp": "2025-08-18T16:55:01.354911",
+  "timestamp": "2025-08-18T17:47:08.290257",
   "timeframes": [
     "1h",
     "1D",
     "1W",
     "1M"
   ],
-  "total_symbols": 4,
-  "successful_fetches": 3,
-  "failed_fetches": 1,
+  "total_symbols": 304,
+  "successful_fetches": 296,
+  "failed_fetches": 8,
   "data": {
     "CSELK-AFSL.N0000": {
       "rsi_data": null,
       "status": "failed",
       "error": "Could not create Chrome driver",
-      "timestamp": "2025-08-18T16:54:29.680629"
-    },
-    "CSELK-ABAN.N0000": {
-      "rsi_data": {
-        "1h": 65.7,
-        "1D": 77.69,
-        "1W": 82.64,
-        "1M": 86.27
-      },
-      "status": "success",
-      "successful_timeframes": 4,
-      "timestamp": "2025-08-18T16:54:48.515575"
+      "timestamp": "2025-08-18T17:12:02.165888"
     },
     "CSELK-AEL.N0000": {
       "rsi_data": {
@@ -37,7 +26,18 @@
       },
       "status": "success",
       "successful_timeframes": 4,
-      "timestamp": "2025-08-18T16:54:48.526525"
+      "timestamp": "2025-08-18T17:12:47.922459"
+    },
+    "CSELK-ABAN.N0000": {
+      "rsi_data": {
+        "1h": 65.7,
+        "1D": 77.69,
+        "1W": 82.64,
+        "1M": 86.27
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:12:47.947250"
     },
     "CSELK-ACL.N0000": {
       "rsi_data": {
@@ -48,7 +48,3272 @@
       },
       "status": "success",
       "successful_timeframes": 4,
-      "timestamp": "2025-08-18T16:55:01.354727"
+      "timestamp": "2025-08-18T17:13:01.438184"
+    },
+    "CSELK-APLA.N0000": {
+      "rsi_data": {
+        "1h": 82.91,
+        "1D": 88.7,
+        "1W": 84.81,
+        "1M": 80.05
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:13:02.390389"
+    },
+    "CSELK-ACME.N0000": {
+      "rsi_data": {
+        "1h": 48.1,
+        "1D": 51.4,
+        "1W": 54.8,
+        "1M": 49.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:13:14.709934"
+    },
+    "CSELK-AGAL.N0000": {
+      "rsi_data": {
+        "1h": 40.3,
+        "1D": 49.4,
+        "1W": 65.3,
+        "1M": 65.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:13:15.320868"
+    },
+    "CSELK-AGST.N0000": {
+      "rsi_data": {
+        "1h": 58.3,
+        "1D": 58.3,
+        "1W": 57.9,
+        "1M": 49.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:13:27.839833"
+    },
+    "CSELK-AGST.X0000": {
+      "rsi_data": {
+        "1h": 71.0,
+        "1D": 83.2,
+        "1W": 82.9,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-18T17:13:33.478035"
+    },
+    "CSELK-AHUN.N0000": {
+      "rsi_data": {
+        "1h": 49.9,
+        "1D": 52.7,
+        "1W": 56.1,
+        "1M": 62.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:13:40.755242"
+    },
+    "CSELK-SPEN.N0000": {
+      "rsi_data": {
+        "1h": 54.46,
+        "1D": 62.15,
+        "1W": 59.16,
+        "1M": 59.44
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:13:53.636312"
+    },
+    "CSELK-ASPM.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5579d493401a <unknown>\n#1 0x5579d43d3a70 <unknown>\n#2 0x5579d4425907 <unknown>\n#3 0x5579d4425b01 <unknown>\n#4 0x5579d4473d54 <unknown>\n#5 0x5579d444b40d <unknown>\n#6 0x5579d447114f <unknown>\n#7 0x5579d444b1b3 <unknown>\n#8 0x5579d441759b <unknown>\n#9 0x5579d4418971 <unknown>\n#10 0x5579d48f91eb <unknown>\n#11 0x5579d48fcf39 <unknown>\n#12 0x5579d48e02c9 <unknown>\n#13 0x5579d48fdae8 <unknown>\n#14 0x5579d48c4baf <unknown>\n#15 0x5579d49210a8 <unknown>\n#16 0x5579d4921286 <unknown>\n#17 0x5579d4932ff6 <unknown>\n#18 0x7fcde409caa4 <unknown>\n#19 0x7fcde4129c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:13:59.439051"
+    },
+    "CSELK-ALLI.N0000": {
+      "rsi_data": {
+        "1h": 35.41,
+        "1D": 49.58,
+        "1W": 74.97,
+        "1M": 86.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:06.674956"
+    },
+    "CSELK-AFS.N0000": {
+      "rsi_data": {
+        "1h": 70.7,
+        "1D": 83.8,
+        "1W": 87.4,
+        "1M": 93.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:12.462803"
+    },
+    "CSELK-ALUM.N0000": {
+      "rsi_data": {
+        "1h": 56.8,
+        "1D": 54.5,
+        "1W": 60.5,
+        "1M": 66.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:20.721871"
+    },
+    "CSELK-ABL.N0000": {
+      "rsi_data": {
+        "1h": 62.2,
+        "1D": 73.7,
+        "1W": 67.9,
+        "1M": 54.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:25.473931"
+    },
+    "CSELK-ATL.N0000": {
+      "rsi_data": {
+        "1h": 68.3,
+        "1D": 69.8,
+        "1W": 72.0,
+        "1M": 72.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:33.604004"
+    },
+    "CSELK-ATLL.N0000": {
+      "rsi_data": {
+        "1h": 51.3,
+        "1D": 53.6,
+        "1W": 60.1,
+        "1M": 58.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:38.568962"
+    },
+    "CSELK-GREG.N0000": {
+      "rsi_data": {
+        "1h": 58.63,
+        "1D": 73.27,
+        "1W": 78.5,
+        "1M": 78.05
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:46.602353"
+    },
+    "CSELK-ALHP.N0000": {
+      "rsi_data": {
+        "1h": 47.4,
+        "1D": 39.6,
+        "1W": 38.5,
+        "1M": 43.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:14:59.565227"
+    },
+    "CSELK-AMCL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55b4634c201a <unknown>\n#1 0x55b462f61a70 <unknown>\n#2 0x55b462fb3907 <unknown>\n#3 0x55b462fb3b01 <unknown>\n#4 0x55b463001d54 <unknown>\n#5 0x55b462fd940d <unknown>\n#6 0x55b462fff14f <unknown>\n#7 0x55b462fd91b3 <unknown>\n#8 0x55b462fa559b <unknown>\n#9 0x55b462fa6971 <unknown>\n#10 0x55b4634871eb <unknown>\n#11 0x55b46348af39 <unknown>\n#12 0x55b46346e2c9 <unknown>\n#13 0x55b46348bae8 <unknown>\n#14 0x55b463452baf <unknown>\n#15 0x55b4634af0a8 <unknown>\n#16 0x55b4634af286 <unknown>\n#17 0x55b4634c0ff6 <unknown>\n#18 0x7f239be9caa4 <unknown>\n#19 0x7f239bf29c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:15:04.358270"
+    },
+    "CSELK-AINS.N0000": {
+      "rsi_data": {
+        "1h": 48.2,
+        "1D": 55.5,
+        "1W": 67.3,
+        "1M": 72.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:12.465642"
+    },
+    "CSELK-AAF.N0000": {
+      "rsi_data": {
+        "1h": 47.5,
+        "1D": 55.3,
+        "1W": 79.5,
+        "1M": 85.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:17.309494"
+    },
+    "CSELK-AAF.P0000": {
+      "rsi_data": {
+        "1h": 46.9,
+        "1D": 52.9,
+        "1W": 65.4,
+        "1M": 79.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:25.464158"
+    },
+    "CSELK-ACAP.N0000": {
+      "rsi_data": {
+        "1h": 52.2,
+        "1D": 54.6,
+        "1W": 58.2,
+        "1M": 58.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:30.170999"
+    },
+    "CSELK-ASIY.N0000": {
+      "rsi_data": {
+        "1h": 44.5,
+        "1D": 47.0,
+        "1W": 56.1,
+        "1M": 65.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:38.375669"
+    },
+    "CSELK-AHPL.N0000": {
+      "rsi_data": {
+        "1h": 43.9,
+        "1D": 52.6,
+        "1W": 64.2,
+        "1M": 59.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:43.001130"
+    },
+    "CSELK-AMSL.N0000": {
+      "rsi_data": {
+        "1h": 62.3,
+        "1D": 58.1,
+        "1W": 71.0,
+        "1M": 60.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:51.375752"
+    },
+    "CSELK-ASIR.N0000": {
+      "rsi_data": {
+        "1h": 58.5,
+        "1D": 64.5,
+        "1W": 78.7,
+        "1M": 72.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:15:55.917276"
+    },
+    "CSELK-AMF.N0000": {
+      "rsi_data": {
+        "1h": 63.1,
+        "1D": 78.9,
+        "1W": 92.7,
+        "1M": 93.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:04.199083"
+    },
+    "CSELK-AGPL.N0000": {
+      "rsi_data": {
+        "1h": 53.3,
+        "1D": 64.6,
+        "1W": 69.6,
+        "1M": 80.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:08.754012"
+    },
+    "CSELK-BPPL.N0000": {
+      "rsi_data": {
+        "1h": 40.8,
+        "1D": 44.8,
+        "1W": 47.3,
+        "1M": 47.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:17.149324"
+    },
+    "CSELK-BFL.N0000": {
+      "rsi_data": {
+        "1h": 34.49,
+        "1D": 35.1,
+        "1W": 55.6,
+        "1M": 58.23
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:21.802687"
+    },
+    "CSELK-BALA.N0000": {
+      "rsi_data": {
+        "1h": 61.4,
+        "1D": 61.8,
+        "1W": 64.7,
+        "1M": 64.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:30.230950"
+    },
+    "CSELK-BRR.N0000": {
+      "rsi_data": {
+        "1h": 56.1,
+        "1D": 54.9,
+        "1W": 67.0,
+        "1M": 73.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:34.780117"
+    },
+    "CSELK-BERU.N0000": {
+      "rsi_data": {
+        "1h": 49.6,
+        "1D": 50.4,
+        "1W": 53.2,
+        "1M": 66.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:46.299239"
+    },
+    "CSELK-BLI.N0000": {
+      "rsi_data": {
+        "1h": 44.5,
+        "1D": 48.4,
+        "1W": 48.3,
+        "1M": 36.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:48.748390"
+    },
+    "CSELK-BLUE.X0000": {
+      "rsi_data": {
+        "1h": 47.5,
+        "1D": 47.0,
+        "1W": 44.1,
+        "1M": 45.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:16:59.538651"
+    },
+    "CSELK-BLUE.N0000": {
+      "rsi_data": {
+        "1h": 51.0,
+        "1D": 43.0,
+        "1W": 28.1,
+        "1M": 41.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:01.712730"
+    },
+    "CSELK-BOGA.N0000": {
+      "rsi_data": {
+        "1h": 57.27,
+        "1D": 72.53,
+        "1W": 73.33,
+        "1M": 73.59
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:12.730211"
+    },
+    "CSELK-BOPL.N0000": {
+      "rsi_data": {
+        "1h": 48.5,
+        "1D": 57.2,
+        "1W": 71.3,
+        "1M": 69.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:14.683682"
+    },
+    "CSELK-BRWN.N0000": {
+      "rsi_data": {
+        "1h": 50.83,
+        "1D": 49.37,
+        "1W": 53.53,
+        "1M": 59.44
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:25.685320"
+    },
+    "CSELK-BBH.N0000": {
+      "rsi_data": {
+        "1h": 43.3,
+        "1D": 52.0,
+        "1W": 59.5,
+        "1M": 66.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:27.513021"
+    },
+    "CSELK-BIL.N0000": {
+      "rsi_data": {
+        "1h": 44.6,
+        "1D": 44.0,
+        "1W": 49.1,
+        "1M": 54.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:38.573118"
+    },
+    "CSELK-BUKI.N0000": {
+      "rsi_data": {
+        "1h": 64.34,
+        "1D": 70.56,
+        "1W": 74.34,
+        "1M": 84.46
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:40.394338"
+    },
+    "CSELK-COLO.N0000": {
+      "rsi_data": {
+        "1h": 45.37,
+        "1D": 57.13,
+        "1W": 73.18,
+        "1M": 91.21
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:51.621506"
+    },
+    "CSELK-CTHR.N0000": {
+      "rsi_data": {
+        "1h": 60.82,
+        "1D": 73.22,
+        "1W": 90.05,
+        "1M": 93.19
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:17:53.301526"
+    },
+    "CSELK-CTLD.N0000": {
+      "rsi_data": {
+        "1h": 54.3,
+        "1D": 59.6,
+        "1W": 63.2,
+        "1M": 62.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:18:04.429062"
+    },
+    "CSELK-CWM.N0000": {
+      "rsi_data": {
+        "1h": 48.14,
+        "1D": 44.24,
+        "1W": 53.59,
+        "1M": 66.54
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:18:06.266351"
+    },
+    "CSELK-CSLK.N0000": {
+      "rsi_data": {
+        "1h": 60.5,
+        "1D": 66.9,
+        "1W": 70.1,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-18T17:18:22.434359"
+    },
+    "CSELK-CALC.U0000": {
+      "rsi_data": {
+        "1h": 38.4,
+        "1D": 40.6,
+        "1W": 29.6,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-18T17:18:35.214063"
+    },
+    "CSELK-CALI.U0000": {
+      "rsi_data": {
+        "1h": 46.0,
+        "1D": 44.8,
+        "1W": 47.8,
+        "1M": 31.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:18:35.546169"
+    },
+    "CSELK-CALT.N0000": {
+      "rsi_data": {
+        "1h": 78.4,
+        "1D": 82.2,
+        "1W": 76.3,
+        "1M": 63.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:18:48.653787"
+    },
+    "CSELK-CARG.N0000": {
+      "rsi_data": {
+        "1h": 62.38,
+        "1D": 77.15,
+        "1W": 88.23,
+        "1M": 91.63
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:01.541425"
+    },
+    "CSELK-CALH.N0000": {
+      "rsi_data": {
+        "1h": 74.7,
+        "1D": 73.6,
+        "1W": null,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 2,
+      "timestamp": "2025-08-18T17:19:09.471360"
+    },
+    "CSELK-CBNK.N0000": {
+      "rsi_data": {
+        "1h": 50.3,
+        "1D": 47.9,
+        "1W": 60.0,
+        "1M": 60.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:14.556124"
+    },
+    "CSELK-CABO.N0000": {
+      "rsi_data": {
+        "1h": 58.58,
+        "1D": 62.17,
+        "1W": 73.75,
+        "1M": 83.73
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:22.319854"
+    },
+    "CSELK-CARS.N0000": {
+      "rsi_data": {
+        "1h": 83.02,
+        "1D": 86.28,
+        "1W": 88.19,
+        "1M": 87.02
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:27.467080"
+    },
+    "CSELK-CFIN.N0000": {
+      "rsi_data": {
+        "1h": 35.0,
+        "1D": 53.31,
+        "1W": 74.18,
+        "1M": 78.78
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:35.219037"
+    },
+    "CSELK-CIND.N0000": {
+      "rsi_data": {
+        "1h": 52.07,
+        "1D": 54.79,
+        "1W": 65.94,
+        "1M": 65.86
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:40.561004"
+    },
+    "CSELK-CINS.X0000": {
+      "rsi_data": {
+        "1h": 48.91,
+        "1D": 58.83,
+        "1W": 71.52,
+        "1M": 78.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:48.143221"
+    },
+    "CSELK-CINS.N0000": {
+      "rsi_data": {
+        "1h": 49.42,
+        "1D": 51.19,
+        "1W": 54.31,
+        "1M": 59.64
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:19:53.457376"
+    },
+    "CSELK-BREW.N0000": {
+      "rsi_data": {
+        "1h": 44.24,
+        "1D": 44.72,
+        "1W": 49.53,
+        "1M": 66.66
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:01.107050"
+    },
+    "CSELK-CCS.N0000": {
+      "rsi_data": {
+        "1h": 45.89,
+        "1D": 47.74,
+        "1W": 65.26,
+        "1M": 75.55
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:06.435746"
+    },
+    "CSELK-GRAN.N0000": {
+      "rsi_data": {
+        "1h": 50.99,
+        "1D": 55.89,
+        "1W": 79.4,
+        "1M": 86.87
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:14.089967"
+    },
+    "CSELK-GUAR.N0000": {
+      "rsi_data": {
+        "1h": 71.68,
+        "1D": 80.03,
+        "1W": 80.87,
+        "1M": 80.62
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:19.441829"
+    },
+    "CSELK-CHL.X0000": {
+      "rsi_data": {
+        "1h": 57.25,
+        "1D": 69.59,
+        "1W": 79.68,
+        "1M": 74.62
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:27.099625"
+    },
+    "CSELK-CHL.N0000": {
+      "rsi_data": {
+        "1h": 60.48,
+        "1D": 69.33,
+        "1W": 72.8,
+        "1M": 78.75
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:32.283628"
+    },
+    "CSELK-CHOT.N0000": {
+      "rsi_data": {
+        "1h": 62.1,
+        "1D": 58.1,
+        "1W": 58.6,
+        "1M": 61.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:40.242264"
+    },
+    "CSELK-CINV.N0000": {
+      "rsi_data": {
+        "1h": 61.43,
+        "1D": 73.78,
+        "1W": 80.45,
+        "1M": 78.75
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:45.276515"
+    },
+    "CSELK-KZOO.N0000": {
+      "rsi_data": {
+        "1h": 52.4,
+        "1D": 61.5,
+        "1W": 64.6,
+        "1M": 61.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:53.204389"
+    },
+    "CSELK-CPRT.N0000": {
+      "rsi_data": {
+        "1h": 52.37,
+        "1D": 53.37,
+        "1W": 55.12,
+        "1M": 58.18
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:20:58.205106"
+    },
+    "CSELK-CTBL.N0000": {
+      "rsi_data": {
+        "1h": 48.5,
+        "1D": 53.1,
+        "1W": 59.9,
+        "1M": 63.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:06.118126"
+    },
+    "CSELK-CTC.N0000": {
+      "rsi_data": {
+        "1h": 65.69,
+        "1D": 84.69,
+        "1W": 72.11,
+        "1M": 76.95
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:11.191320"
+    },
+    "CSELK-CHMX.N0000": {
+      "rsi_data": {
+        "1h": 50.27,
+        "1D": 49.3,
+        "1W": 59.22,
+        "1M": 68.61
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:23.644222"
+    },
+    "CSELK-LLUB.N0000": {
+      "rsi_data": {
+        "1h": 82.15,
+        "1D": 76.63,
+        "1W": 77.0,
+        "1M": 74.05
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:24.202793"
+    },
+    "CSELK-CWL.N0000": {
+      "rsi_data": {
+        "1h": 49.5,
+        "1D": 52.0,
+        "1W": 54.2,
+        "1M": 51.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:36.934598"
+    },
+    "CSELK-CIC.X0000": {
+      "rsi_data": {
+        "1h": 57.59,
+        "1D": 63.1,
+        "1W": 68.76,
+        "1M": 75.63
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:37.310690"
+    },
+    "CSELK-CIC.N0000": {
+      "rsi_data": {
+        "1h": 56.98,
+        "1D": 55.85,
+        "1W": 64.2,
+        "1M": 76.93
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:50.117041"
+    },
+    "CSELK-CDB.N0000": {
+      "rsi_data": {
+        "1h": 48.03,
+        "1D": 52.54,
+        "1W": 76.34,
+        "1M": 78.69
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:21:50.406753"
+    },
+    "CSELK-CDB.X0000": {
+      "rsi_data": {
+        "1h": 55.48,
+        "1D": 51.73,
+        "1W": 71.01,
+        "1M": 87.18
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:03.015226"
+    },
+    "CSELK-REEF.N0000": {
+      "rsi_data": {
+        "1h": 52.2,
+        "1D": 55.1,
+        "1W": 52.5,
+        "1M": 42.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:05.456606"
+    },
+    "CSELK-CHOU.N0000": {
+      "rsi_data": {
+        "1h": 36.7,
+        "1D": 32.1,
+        "1W": 31.8,
+        "1M": 33.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:16.071697"
+    },
+    "CSELK-COOP.N0000": {
+      "rsi_data": {
+        "1h": 57.3,
+        "1D": 61.9,
+        "1W": 73.2,
+        "1M": 64.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:18.498676"
+    },
+    "CSELK-PHAR.N0000": {
+      "rsi_data": {
+        "1h": 48.59,
+        "1D": 64.01,
+        "1W": 74.4,
+        "1M": 77.56
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:28.939169"
+    },
+    "CSELK-DOCK.N0000": {
+      "rsi_data": {
+        "1h": 56.77,
+        "1D": 66.72,
+        "1W": 70.12,
+        "1M": 74.13
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:31.449367"
+    },
+    "CSELK-CFI.N0000": {
+      "rsi_data": {
+        "1h": 53.68,
+        "1D": 72.16,
+        "1W": 89.53,
+        "1M": 92.02
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:42.034391"
+    },
+    "CSELK-CIT.N0000": {
+      "rsi_data": {
+        "1h": 43.75,
+        "1D": 67.78,
+        "1W": 78.27,
+        "1M": 84.52
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:44.371839"
+    },
+    "CSELK-CLND.N0000": {
+      "rsi_data": {
+        "1h": 49.1,
+        "1D": 56.3,
+        "1W": 70.3,
+        "1M": 68.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:55.101848"
+    },
+    "CSELK-COMB.N0000": {
+      "rsi_data": {
+        "1h": 88.14,
+        "1D": 84.92,
+        "1W": 83.56,
+        "1M": 79.57
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:22:57.367662"
+    },
+    "CSELK-COMB.X0000": {
+      "rsi_data": {
+        "1h": 90.21,
+        "1D": 87.78,
+        "1W": 85.69,
+        "1M": 79.67
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:08.123388"
+    },
+    "CSELK-COCR.N0000": {
+      "rsi_data": {
+        "1h": 63.68,
+        "1D": 80.56,
+        "1W": 87.86,
+        "1M": 86.49
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:10.383932"
+    },
+    "CSELK-COMD.N0000": {
+      "rsi_data": {
+        "1h": 49.71,
+        "1D": 57.78,
+        "1W": 77.13,
+        "1M": 79.62
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:21.443973"
+    },
+    "CSELK-SOY.N0000": {
+      "rsi_data": {
+        "1h": 76.98,
+        "1D": 73.03,
+        "1W": 77.12,
+        "1M": 78.74
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:23.229971"
+    },
+    "CSELK-DPL.N0000": {
+      "rsi_data": {
+        "1h": 49.2,
+        "1D": 49.3,
+        "1W": 48.3,
+        "1M": 49.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:34.398007"
+    },
+    "CSELK-DFCC.N0000": {
+      "rsi_data": {
+        "1h": 74.34,
+        "1D": 81.87,
+        "1W": 83.26,
+        "1M": 78.15
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:36.140928"
+    },
+    "CSELK-DIAL.N0000": {
+      "rsi_data": {
+        "1h": 67.3,
+        "1D": 82.8,
+        "1W": 88.9,
+        "1M": 81.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:47.417861"
+    },
+    "CSELK-CALF.N0000": {
+      "rsi_data": {
+        "1h": 49.4,
+        "1D": 65.2,
+        "1W": 73.2,
+        "1M": 67.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:23:49.086884"
+    },
+    "CSELK-DIMO.N0000": {
+      "rsi_data": {
+        "1h": 45.65,
+        "1D": 51.18,
+        "1W": 61.78,
+        "1M": 69.22
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:00.495510"
+    },
+    "CSELK-PKME.N0000": {
+      "rsi_data": {
+        "1h": 59.9,
+        "1D": 75.6,
+        "1W": 82.88,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-18T17:24:07.067138"
+    },
+    "CSELK-CTEA.N0000": {
+      "rsi_data": {
+        "1h": 39.08,
+        "1D": 45.38,
+        "1W": 55.19,
+        "1M": 57.64
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:13.461063"
+    },
+    "CSELK-DIPD.N0000": {
+      "rsi_data": {
+        "1h": 53.2,
+        "1D": 50.0,
+        "1W": 58.1,
+        "1M": 68.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:20.046679"
+    },
+    "CSELK-DIST.N0000": {
+      "rsi_data": {
+        "1h": 58.8,
+        "1D": 60.3,
+        "1W": 69.9,
+        "1M": 79.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:26.433668"
+    },
+    "CSELK-STAF.N0000": {
+      "rsi_data": {
+        "1h": 64.0,
+        "1D": 65.8,
+        "1W": 59.3,
+        "1M": 62.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:33.047096"
+    },
+    "CSELK-ASCO.N0000": {
+      "rsi_data": {
+        "1h": 43.7,
+        "1D": 55.4,
+        "1W": 69.8,
+        "1M": 71.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:39.638862"
+    },
+    "CSELK-ASHO.N0000": {
+      "rsi_data": {
+        "1h": 42.03,
+        "1D": 57.83,
+        "1W": 80.94,
+        "1M": 83.89
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:46.385728"
+    },
+    "CSELK-ASPH.N0000": {
+      "rsi_data": {
+        "1h": 54.6,
+        "1D": 55.9,
+        "1W": 61.7,
+        "1M": 60.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:52.673170"
+    },
+    "CSELK-BFN.N0000": {
+      "rsi_data": {
+        "1h": 61.5,
+        "1D": 68.9,
+        "1W": 86.8,
+        "1M": 91.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:24:59.655004"
+    },
+    "CSELK-CERA.N0000": {
+      "rsi_data": {
+        "1h": 59.26,
+        "1D": 56.97,
+        "1W": 68.99,
+        "1M": 74.75
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:05.606497"
+    },
+    "CSELK-CFVF.N0000": {
+      "rsi_data": {
+        "1h": 91.8,
+        "1D": 88.7,
+        "1W": 80.7,
+        "1M": 69.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:12.500986"
+    },
+    "CSELK-CITH.N0000": {
+      "rsi_data": {
+        "1h": 48.5,
+        "1D": 52.1,
+        "1W": 51.2,
+        "1M": 42.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:18.886465"
+    },
+    "CSELK-CONN.N0000": {
+      "rsi_data": {
+        "1h": 45.1,
+        "1D": 49.2,
+        "1W": 56.5,
+        "1M": 61.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:25.525441"
+    },
+    "CSELK-CSF.N0000": {
+      "rsi_data": {
+        "1h": 43.8,
+        "1D": 46.4,
+        "1W": 37.1,
+        "1M": 34.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:31.915274"
+    },
+    "CSELK-EAST.N0000": {
+      "rsi_data": {
+        "1h": 70.6,
+        "1D": 79.0,
+        "1W": 88.2,
+        "1M": 93.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:38.489858"
+    },
+    "CSELK-EBCR.N0000": {
+      "rsi_data": {
+        "1h": 59.6,
+        "1D": 60.7,
+        "1W": 75.5,
+        "1M": 81.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:44.984955"
+    },
+    "CSELK-ECL.N0000": {
+      "rsi_data": {
+        "1h": 52.3,
+        "1D": 46.4,
+        "1W": 50.5,
+        "1M": 49.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:51.438271"
+    },
+    "CSELK-EDEN.N0000": {
+      "rsi_data": {
+        "1h": 55.2,
+        "1D": 53.7,
+        "1W": 52.2,
+        "1M": 52.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:25:58.047734"
+    },
+    "CSELK-ELPL.N0000": {
+      "rsi_data": {
+        "1h": 55.39,
+        "1D": 75.01,
+        "1W": 80.72,
+        "1M": 74.13
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:04.629182"
+    },
+    "CSELK-EMER.N0000": {
+      "rsi_data": {
+        "1h": 46.1,
+        "1D": 50.3,
+        "1W": 55.1,
+        "1M": 55.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:10.978165"
+    },
+    "CSELK-ETWO.N0000": {
+      "rsi_data": {
+        "1h": 65.1,
+        "1D": 65.6,
+        "1W": 63.0,
+        "1M": 63.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:24.358603"
+    },
+    "CSELK-EML.N0000": {
+      "rsi_data": {
+        "1h": 51.0,
+        "1D": 51.0,
+        "1W": 56.3,
+        "1M": 44.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:25.098610"
+    },
+    "CSELK-EXT.N0000": {
+      "rsi_data": {
+        "1h": 51.5,
+        "1D": 61.7,
+        "1W": 60.6,
+        "1M": 49.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:37.416897"
+    },
+    "CSELK-FCT.N0000": {
+      "rsi_data": {
+        "1h": 80.1,
+        "1D": 86.6,
+        "1W": 83.5,
+        "1M": 64.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:38.326310"
+    },
+    "CSELK-GEST.N0000": {
+      "rsi_data": {
+        "1h": 50.27,
+        "1D": 55.15,
+        "1W": 72.59,
+        "1M": 73.45
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:50.707102"
+    },
+    "CSELK-GHLL.N0000": {
+      "rsi_data": {
+        "1h": 45.3,
+        "1D": 53.7,
+        "1W": 61.8,
+        "1M": 60.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:26:51.414935"
+    },
+    "CSELK-HAPU.N0000": {
+      "rsi_data": {
+        "1h": 45.5,
+        "1D": 51.1,
+        "1W": 56.0,
+        "1M": 59.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:03.802203"
+    },
+    "CSELK-HARI.N0000": {
+      "rsi_data": {
+        "1h": 44.79,
+        "1D": 48.99,
+        "1W": 49.04,
+        "1M": 47.87
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:04.618359"
+    },
+    "CSELK-HASU.N0000": {
+      "rsi_data": {
+        "1h": 47.43,
+        "1D": 53.63,
+        "1W": 70.1,
+        "1M": 74.36
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:17.120792"
+    },
+    "CSELK-HAYC.N0000": {
+      "rsi_data": {
+        "1h": 43.9,
+        "1D": 47.8,
+        "1W": 58.2,
+        "1M": 62.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:17.849106"
+    },
+    "CSELK-HAYL.N0000": {
+      "rsi_data": {
+        "1h": 32.42,
+        "1D": 44.28,
+        "1W": 65.41,
+        "1M": 72.61
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:30.259820"
+    },
+    "CSELK-HBS.N0000": {
+      "rsi_data": {
+        "1h": 49.8,
+        "1D": 50.8,
+        "1W": 54.8,
+        "1M": 37.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:30.943223"
+    },
+    "CSELK-HDFC.N0000": {
+      "rsi_data": {
+        "1h": 64.9,
+        "1D": 55.4,
+        "1W": 54.9,
+        "1M": 60.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:43.340444"
+    },
+    "CSELK-HELA.N0000": {
+      "rsi_data": {
+        "1h": 40.0,
+        "1D": 46.8,
+        "1W": 39.5,
+        "1M": 32.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:44.001044"
+    },
+    "CSELK-HEXP.N0000": {
+      "rsi_data": {
+        "1h": 50.1,
+        "1D": 65.6,
+        "1W": 73.6,
+        "1M": 61.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:56.679342"
+    },
+    "CSELK-HHL.N0000": {
+      "rsi_data": {
+        "1h": 35.8,
+        "1D": 44.8,
+        "1W": 67.0,
+        "1M": 81.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:27:57.097546"
+    },
+    "CSELK-HNB.N0000": {
+      "rsi_data": {
+        "1h": 75.8,
+        "1D": 82.26,
+        "1W": 79.79,
+        "1M": 75.34
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:28:09.887296"
+    },
+    "CSELK-HNB.X0000": {
+      "rsi_data": {
+        "1h": 83.36,
+        "1D": 80.71,
+        "1W": 73.6,
+        "1M": 75.31
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:28:10.201869"
+    },
+    "CSELK-HNBF.N0000": {
+      "rsi_data": {
+        "1h": 51.0,
+        "1D": 65.3,
+        "1W": 79.7,
+        "1M": 68.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:28:22.874358"
+    },
+    "CSELK-HNBF.R0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5648031d701a <unknown>\n#1 0x564802c76a70 <unknown>\n#2 0x564802cc8907 <unknown>\n#3 0x564802cc8b01 <unknown>\n#4 0x564802d16d54 <unknown>\n#5 0x564802cee40d <unknown>\n#6 0x564802d1414f <unknown>\n#7 0x564802cee1b3 <unknown>\n#8 0x564802cba59b <unknown>\n#9 0x564802cbb971 <unknown>\n#10 0x56480319c1eb <unknown>\n#11 0x56480319ff39 <unknown>\n#12 0x5648031832c9 <unknown>\n#13 0x5648031a0ae8 <unknown>\n#14 0x564803167baf <unknown>\n#15 0x5648031c40a8 <unknown>\n#16 0x5648031c4286 <unknown>\n#17 0x5648031d5ff6 <unknown>\n#18 0x7f774ea9caa4 <unknown>\n#19 0x7f774eb29c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:28:36.214734"
+    },
+    "CSELK-HNBF.R0001": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55b9e905101a <unknown>\n#1 0x55b9e8af0a70 <unknown>\n#2 0x55b9e8b42907 <unknown>\n#3 0x55b9e8b42b01 <unknown>\n#4 0x55b9e8b90d54 <unknown>\n#5 0x55b9e8b6840d <unknown>\n#6 0x55b9e8b8e14f <unknown>\n#7 0x55b9e8b681b3 <unknown>\n#8 0x55b9e8b3459b <unknown>\n#9 0x55b9e8b35971 <unknown>\n#10 0x55b9e90161eb <unknown>\n#11 0x55b9e9019f39 <unknown>\n#12 0x55b9e8ffd2c9 <unknown>\n#13 0x55b9e901aae8 <unknown>\n#14 0x55b9e8fe1baf <unknown>\n#15 0x55b9e903e0a8 <unknown>\n#16 0x55b9e903e286 <unknown>\n#17 0x55b9e904fff6 <unknown>\n#18 0x7f88d669caa4 <unknown>\n#19 0x7f88d6729c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:28:48.908856"
+    },
+    "CSELK-HNBF.X0000": {
+      "rsi_data": {
+        "1h": 57.5,
+        "1D": 68.3,
+        "1W": 77.5,
+        "1M": 68.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:28:49.084693"
+    },
+    "CSELK-HOPL.N0000": {
+      "rsi_data": {
+        "1h": 47.0,
+        "1D": 55.6,
+        "1W": 65.9,
+        "1M": 63.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:01.982047"
+    },
+    "CSELK-HPFL.N0000": {
+      "rsi_data": {
+        "1h": 46.2,
+        "1D": 45.5,
+        "1W": 53.1,
+        "1M": 63.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:02.291297"
+    },
+    "CSELK-HPL.N0000": {
+      "rsi_data": {
+        "1h": 48.7,
+        "1D": 45.2,
+        "1W": 49.8,
+        "1M": 55.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:16.021263"
+    },
+    "CSELK-HSIG.N0000": {
+      "rsi_data": {
+        "1h": 58.7,
+        "1D": 61.3,
+        "1W": 60.3,
+        "1M": 66.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:16.107914"
+    },
+    "CSELK-HUNA.N0000": {
+      "rsi_data": {
+        "1h": 49.5,
+        "1D": 51.3,
+        "1W": 38.9,
+        "1M": 41.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:29.248305"
+    },
+    "CSELK-HUNT.N0000": {
+      "rsi_data": {
+        "1h": 44.58,
+        "1D": 48.3,
+        "1W": 52.19,
+        "1M": 58.83
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:29.338334"
+    },
+    "CSELK-HVA.N0000": {
+      "rsi_data": {
+        "1h": 49.3,
+        "1D": 50.0,
+        "1W": 46.3,
+        "1M": 46.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:42.380122"
+    },
+    "CSELK-JAT.N0000": {
+      "rsi_data": {
+        "1h": 46.5,
+        "1D": 53.5,
+        "1W": 70.3,
+        "1M": 77.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:42.521666"
+    },
+    "CSELK-JETS.N0000": {
+      "rsi_data": {
+        "1h": 55.7,
+        "1D": 66.9,
+        "1W": 70.6,
+        "1M": 70.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:55.636587"
+    },
+    "CSELK-JINS.N0000": {
+      "rsi_data": {
+        "1h": 83.1,
+        "1D": 84.8,
+        "1W": 74.6,
+        "1M": 78.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:29:55.711293"
+    },
+    "CSELK-JKH.N0000": {
+      "rsi_data": {
+        "1h": 62.0,
+        "1D": 47.4,
+        "1W": 57.1,
+        "1M": 63.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:08.933431"
+    },
+    "CSELK-JKL.N0000": {
+      "rsi_data": {
+        "1h": 37.5,
+        "1D": 39.6,
+        "1W": 53.1,
+        "1M": 60.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:09.006391"
+    },
+    "CSELK-KAHA.N0000": {
+      "rsi_data": {
+        "1h": 55.0,
+        "1D": 56.0,
+        "1W": 52.5,
+        "1M": 53.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:22.279686"
+    },
+    "CSELK-KCAB.N0000": {
+      "rsi_data": {
+        "1h": 64.41,
+        "1D": 74.77,
+        "1W": 77.11,
+        "1M": 78.03
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:22.315496"
+    },
+    "CSELK-KDL.N0000": {
+      "rsi_data": {
+        "1h": 47.5,
+        "1D": 46.2,
+        "1W": 46.6,
+        "1M": 45.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:35.669331"
+    },
+    "CSELK-KFP.N0000": {
+      "rsi_data": {
+        "1h": 54.09,
+        "1D": 61.59,
+        "1W": 58.9,
+        "1M": 58.27
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:35.700591"
+    },
+    "CSELK-KGAL.N0000": {
+      "rsi_data": {
+        "1h": 49.16,
+        "1D": 48.85,
+        "1W": 50.16,
+        "1M": 53.83
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:48.853929"
+    },
+    "CSELK-KHL.N0000": {
+      "rsi_data": {
+        "1h": 55.9,
+        "1D": 53.9,
+        "1W": 56.1,
+        "1M": 57.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:30:48.983078"
+    },
+    "CSELK-KOTA.N0000": {
+      "rsi_data": {
+        "1h": 42.5,
+        "1D": 46.0,
+        "1W": 48.4,
+        "1M": 58.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:02.110346"
+    },
+    "CSELK-KPHL.N0000": {
+      "rsi_data": {
+        "1h": 55.4,
+        "1D": 54.7,
+        "1W": 52.2,
+        "1M": 43.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:02.212645"
+    },
+    "CSELK-LALU.N0000": {
+      "rsi_data": {
+        "1h": 53.5,
+        "1D": 61.0,
+        "1W": 77.7,
+        "1M": 76.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:15.456562"
+    },
+    "CSELK-KVAL.N0000": {
+      "rsi_data": {
+        "1h": 44.9,
+        "1D": 52.7,
+        "1W": 59.6,
+        "1M": 58.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:22.982258"
+    },
+    "CSELK-LAMB.N0000": {
+      "rsi_data": {
+        "1h": 62.48,
+        "1D": 67.61,
+        "1W": 75.43,
+        "1M": 74.33
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:28.512145"
+    },
+    "CSELK-LCBF.N0000": {
+      "rsi_data": {
+        "1h": 62.2,
+        "1D": 66.2,
+        "1W": 76.0,
+        "1M": 75.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:35.753101"
+    },
+    "CSELK-LCEY.N0000": {
+      "rsi_data": {
+        "1h": 49.3,
+        "1D": 52.3,
+        "1W": 51.9,
+        "1M": 56.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:41.408136"
+    },
+    "CSELK-LDEV.N0000": {
+      "rsi_data": {
+        "1h": 47.1,
+        "1D": 54.9,
+        "1W": 63.9,
+        "1M": 62.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:48.628628"
+    },
+    "CSELK-LFIN.N0000": {
+      "rsi_data": {
+        "1h": 65.76,
+        "1D": 62.12,
+        "1W": 81.82,
+        "1M": 84.54
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:31:54.374560"
+    },
+    "CSELK-LGIL.N0000": {
+      "rsi_data": {
+        "1h": 49.0,
+        "1D": 51.7,
+        "1W": 57.3,
+        "1M": 51.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:01.491515"
+    },
+    "CSELK-LGL.N0000": {
+      "rsi_data": {
+        "1h": 49.1,
+        "1D": 56.3,
+        "1W": 58.5,
+        "1M": 53.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:07.631753"
+    },
+    "CSELK-LGL.X0000": {
+      "rsi_data": {
+        "1h": 50.7,
+        "1D": 52.7,
+        "1W": 62.2,
+        "1M": 56.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:14.357059"
+    },
+    "CSELK-LIOC.N0000": {
+      "rsi_data": {
+        "1h": 46.99,
+        "1D": 48.94,
+        "1W": 54.26,
+        "1M": 55.33
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:20.572103"
+    },
+    "CSELK-LION.N0000": {
+      "rsi_data": {
+        "1h": 60.64,
+        "1D": 53.84,
+        "1W": 61.24,
+        "1M": 75.43
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:27.218402"
+    },
+    "CSELK-LITE.N0000": {
+      "rsi_data": {
+        "1h": 68.3,
+        "1D": 79.0,
+        "1W": 79.3,
+        "1M": 89.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:33.477882"
+    },
+    "CSELK-LMF.N0000": {
+      "rsi_data": {
+        "1h": 54.3,
+        "1D": 56.7,
+        "1W": 64.0,
+        "1M": 77.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:40.152868"
+    },
+    "CSELK-LOFC.N0000": {
+      "rsi_data": {
+        "1h": 54.9,
+        "1D": 56.8,
+        "1W": 51.1,
+        "1M": 49.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:46.394624"
+    },
+    "CSELK-LOLC.N0000": {
+      "rsi_data": {
+        "1h": 55.88,
+        "1D": 54.59,
+        "1W": 48.67,
+        "1M": 54.37
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:53.045249"
+    },
+    "CSELK-LPL.N0000": {
+      "rsi_data": {
+        "1h": 47.8,
+        "1D": 50.2,
+        "1W": 51.4,
+        "1M": 56.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:32:59.340760"
+    },
+    "CSELK-LPL.X0000": {
+      "rsi_data": {
+        "1h": 51.2,
+        "1D": 51.3,
+        "1W": 52.4,
+        "1M": 55.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:05.982840"
+    },
+    "CSELK-LPRT.N0000": {
+      "rsi_data": {
+        "1h": 48.59,
+        "1D": 49.69,
+        "1W": 54.91,
+        "1M": 61.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:12.406804"
+    },
+    "CSELK-LUMX.N0000": {
+      "rsi_data": {
+        "1h": 46.8,
+        "1D": 49.1,
+        "1W": 51.9,
+        "1M": 47.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:19.202786"
+    },
+    "CSELK-LVEF.N0000": {
+      "rsi_data": {
+        "1h": 75.4,
+        "1D": 77.8,
+        "1W": 77.9,
+        "1M": 74.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:25.664371"
+    },
+    "CSELK-LVEN.N0000": {
+      "rsi_data": {
+        "1h": 63.2,
+        "1D": 72.5,
+        "1W": 82.5,
+        "1M": 81.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:32.251330"
+    },
+    "CSELK-LWL.N0000": {
+      "rsi_data": {
+        "1h": 51.1,
+        "1D": 48.9,
+        "1W": 47.6,
+        "1M": 49.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:38.830893"
+    },
+    "CSELK-MADU.N0000": {
+      "rsi_data": {
+        "1h": 50.2,
+        "1D": 47.8,
+        "1W": 46.5,
+        "1M": 51.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:45.310868"
+    },
+    "CSELK-MAL.N0000": {
+      "rsi_data": {
+        "1h": 54.0,
+        "1D": 54.5,
+        "1W": 54.8,
+        "1M": 54.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:52.022835"
+    },
+    "CSELK-MAL.X0000": {
+      "rsi_data": {
+        "1h": 55.1,
+        "1D": 56.2,
+        "1W": 59.6,
+        "1M": 57.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:33:58.287751"
+    },
+    "CSELK-MASK.N0000": {
+      "rsi_data": {
+        "1h": 47.4,
+        "1D": 48.4,
+        "1W": 56.9,
+        "1M": 67.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:34:11.235172"
+    },
+    "CSELK-MAWA.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55a02598701a <unknown>\n#1 0x55a025426a70 <unknown>\n#2 0x55a025478907 <unknown>\n#3 0x55a025478b01 <unknown>\n#4 0x55a0254c6d54 <unknown>\n#5 0x55a02549e40d <unknown>\n#6 0x55a0254c414f <unknown>\n#7 0x55a02549e1b3 <unknown>\n#8 0x55a02546a59b <unknown>\n#9 0x55a02546b971 <unknown>\n#10 0x55a02594c1eb <unknown>\n#11 0x55a02594ff39 <unknown>\n#12 0x55a0259332c9 <unknown>\n#13 0x55a025950ae8 <unknown>\n#14 0x55a025917baf <unknown>\n#15 0x55a0259740a8 <unknown>\n#16 0x55a025974286 <unknown>\n#17 0x55a025985ff6 <unknown>\n#18 0x7f61ad49caa4 <unknown>\n#19 0x7f61ad529c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:34:17.793433"
+    },
+    "CSELK-MBSL.N0000": {
+      "rsi_data": {
+        "1h": 50.9,
+        "1D": 53.3,
+        "1W": 61.8,
+        "1M": 64.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:34:24.334673"
+    },
+    "CSELK-MCPL.N0000": {
+      "rsi_data": {
+        "1h": 78.4,
+        "1D": 76.3,
+        "1W": 75.5,
+        "1M": 67.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:34:30.835373"
+    },
+    "CSELK-MDL.N0000": {
+      "rsi_data": {
+        "1h": 55.2,
+        "1D": 54.2,
+        "1W": 58.9,
+        "1M": 48.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:34:37.436862"
+    },
+    "CSELK-MEL.N0000": {
+      "rsi_data": {
+        "1h": 53.7,
+        "1D": 56.8,
+        "1W": 64.9,
+        "1M": 67.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:34:43.970504"
+    },
+    "CSELK-MELS.N0000": {
+      "rsi_data": {
+        "1h": 74.76,
+        "1D": 75.01,
+        "1W": 78.9,
+        "1M": 80.72
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:34:50.533613"
+    },
+    "CSELK-MFPE.N0000": {
+      "rsi_data": {
+        "1h": 52.5,
+        "1D": 54.7,
+        "1W": 67.5,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-18T17:35:08.736663"
+    },
+    "CSELK-MERC.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5594a6c1701a <unknown>\n#1 0x5594a66b6a70 <unknown>\n#2 0x5594a6708907 <unknown>\n#3 0x5594a6708b01 <unknown>\n#4 0x5594a6756d54 <unknown>\n#5 0x5594a672e40d <unknown>\n#6 0x5594a675414f <unknown>\n#7 0x5594a672e1b3 <unknown>\n#8 0x5594a66fa59b <unknown>\n#9 0x5594a66fb971 <unknown>\n#10 0x5594a6bdc1eb <unknown>\n#11 0x5594a6bdff39 <unknown>\n#12 0x5594a6bc32c9 <unknown>\n#13 0x5594a6be0ae8 <unknown>\n#14 0x5594a6ba7baf <unknown>\n#15 0x5594a6c040a8 <unknown>\n#16 0x5594a6c04286 <unknown>\n#17 0x5594a6c15ff6 <unknown>\n#18 0x7f8a4189caa4 <unknown>\n#19 0x7f8a41929c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:35:09.846885"
+    },
+    "CSELK-MGT.N0000": {
+      "rsi_data": {
+        "1h": 43.4,
+        "1D": 42.1,
+        "1W": 45.6,
+        "1M": 51.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:35:21.851513"
+    },
+    "CSELK-MHDL.N0000": {
+      "rsi_data": {
+        "1h": 47.6,
+        "1D": 57.4,
+        "1W": 69.0,
+        "1M": 79.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:35:22.983767"
+    },
+    "CSELK-MRH.N0000": {
+      "rsi_data": {
+        "1h": 45.9,
+        "1D": 48.7,
+        "1W": 52.9,
+        "1M": 63.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:35:34.931857"
+    },
+    "CSELK-MSL.N0000": {
+      "rsi_data": {
+        "1h": 47.94,
+        "1D": 49.91,
+        "1W": 56.7,
+        "1M": 62.49
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:35:36.169403"
+    },
+    "CSELK-MULL.N0000": {
+      "rsi_data": {
+        "1h": 47.2,
+        "1D": 49.0,
+        "1W": 62.3,
+        "1M": 62.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:35:48.235446"
+    },
+    "CSELK-NAMU.N0000": {
+      "rsi_data": {
+        "1h": 53.15,
+        "1D": 63.25,
+        "1W": 66.8,
+        "1M": 65.19
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:35:49.274788"
+    },
+    "CSELK-NDB.N0000": {
+      "rsi_data": {
+        "1h": 71.73,
+        "1D": 75.51,
+        "1W": 76.36,
+        "1M": 75.34
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:02.947853"
+    },
+    "CSELK-NHL.N0000": {
+      "rsi_data": {
+        "1h": 69.7,
+        "1D": 78.6,
+        "1W": 83.3,
+        "1M": 71.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:15.816811"
+    },
+    "CSELK-NAVF.U0000": {
+      "rsi_data": {
+        "1h": 55.8,
+        "1D": 53.4,
+        "1W": 53.2,
+        "1M": null
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-18T17:36:17.436290"
+    },
+    "CSELK-NTB.N0000": {
+      "rsi_data": {
+        "1h": 78.37,
+        "1D": 88.75,
+        "1W": 81.06,
+        "1M": 86.87
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:28.709563"
+    },
+    "CSELK-NTB.X0000": {
+      "rsi_data": {
+        "1h": 48.98,
+        "1D": 52.47,
+        "1W": 56.32,
+        "1M": 69.04
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:30.401849"
+    },
+    "CSELK-PACK.N0000": {
+      "rsi_data": {
+        "1h": 45.8,
+        "1D": 46.1,
+        "1W": 52.3,
+        "1M": 49.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:41.610136"
+    },
+    "CSELK-SHAW.N0000": {
+      "rsi_data": {
+        "1h": 55.42,
+        "1D": 62.86,
+        "1W": 78.52,
+        "1M": 81.87
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:43.383357"
+    },
+    "CSELK-TILE.N0000": {
+      "rsi_data": {
+        "1h": 46.0,
+        "1D": 43.3,
+        "1W": 46.6,
+        "1M": 51.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:54.536362"
+    },
+    "CSELK-TYRE.N0000": {
+      "rsi_data": {
+        "1h": 43.96,
+        "1D": 59.76,
+        "1W": 81.63,
+        "1M": 74.58
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:36:56.195815"
+    },
+    "CSELK-WAPO.N0000": {
+      "rsi_data": {
+        "1h": 64.0,
+        "1D": 82.6,
+        "1W": 79.2,
+        "1M": 79.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:07.596610"
+    },
+    "CSELK-AAIC.N0000": {
+      "rsi_data": {
+        "1h": 59.5,
+        "1D": 62.2,
+        "1W": 66.8,
+        "1M": 59.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:09.210046"
+    },
+    "CSELK-AUTO.N0000": {
+      "rsi_data": {
+        "1h": 66.17,
+        "1D": 70.12,
+        "1W": 62.59,
+        "1M": 58.55
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:20.561859"
+    },
+    "CSELK-CARE.N0000": {
+      "rsi_data": {
+        "1h": 43.8,
+        "1D": 43.9,
+        "1W": 45.6,
+        "1M": 53.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:22.181430"
+    },
+    "CSELK-CFLB.N0000": {
+      "rsi_data": {
+        "1h": 49.2,
+        "1D": 66.3,
+        "1W": 78.5,
+        "1M": 81.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:33.592238"
+    },
+    "CSELK-COCO.N0000": {
+      "rsi_data": {
+        "1h": 52.2,
+        "1D": 60.1,
+        "1W": 63.9,
+        "1M": 55.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:35.147256"
+    },
+    "CSELK-COCO.X0000": {
+      "rsi_data": {
+        "1h": 59.2,
+        "1D": 62.1,
+        "1W": 69.5,
+        "1M": 57.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:46.446759"
+    },
+    "CSELK-COF.U0000": {
+      "rsi_data": {
+        "1h": 58.1,
+        "1D": 55.2,
+        "1W": 54.2,
+        "1M": 50.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:48.197731"
+    },
+    "CSELK-CRL.N0000": {
+      "rsi_data": {
+        "1h": 54.4,
+        "1D": 54.5,
+        "1W": 54.0,
+        "1M": 45.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:37:59.440960"
+    },
+    "CSELK-CSD.N0000": {
+      "rsi_data": {
+        "1h": 45.4,
+        "1D": 50.0,
+        "1W": 64.0,
+        "1M": 72.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:01.055345"
+    },
+    "CSELK-GLAS.N0000": {
+      "rsi_data": {
+        "1h": 66.5,
+        "1D": 62.9,
+        "1W": 77.5,
+        "1M": 89.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:12.549993"
+    },
+    "CSELK-HPWR.N0000": {
+      "rsi_data": {
+        "1h": 66.2,
+        "1D": 76.0,
+        "1W": 73.7,
+        "1M": 71.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:13.934050"
+    },
+    "CSELK-IDL.N0000": {
+      "rsi_data": {
+        "1h": 40.9,
+        "1D": 29.3,
+        "1W": 28.3,
+        "1M": 36.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:25.383031"
+    },
+    "CSELK-KHC.N0000": {
+      "rsi_data": {
+        "1h": 71.6,
+        "1D": 74.7,
+        "1W": 74.8,
+        "1M": 72.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:26.879914"
+    },
+    "CSELK-LHCL.N0000": {
+      "rsi_data": {
+        "1h": 50.2,
+        "1D": 56.7,
+        "1W": 58.8,
+        "1M": 48.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:38.211424"
+    },
+    "CSELK-LHL.N0000": {
+      "rsi_data": {
+        "1h": 36.0,
+        "1D": 55.4,
+        "1W": 68.3,
+        "1M": 81.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:39.880671"
+    },
+    "CSELK-NEH.N0000": {
+      "rsi_data": {
+        "1h": 56.26,
+        "1D": 65.44,
+        "1W": 86.49,
+        "1M": 79.97
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:51.349407"
+    },
+    "CSELK-ODEL.N0000": {
+      "rsi_data": {
+        "1h": 47.8,
+        "1D": 47.7,
+        "1W": 50.2,
+        "1M": 41.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:38:52.806027"
+    },
+    "CSELK-OFEQ.N0000": {
+      "rsi_data": {
+        "1h": 51.36,
+        "1D": 50.87,
+        "1W": 51.54,
+        "1M": 58.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:04.227568"
+    },
+    "CSELK-ONAL.N0000": {
+      "rsi_data": {
+        "1h": 53.7,
+        "1D": 59.2,
+        "1W": 71.1,
+        "1M": 66.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:05.928961"
+    },
+    "CSELK-OSEA.N0000": {
+      "rsi_data": {
+        "1h": 58.9,
+        "1D": 69.1,
+        "1W": 80.2,
+        "1M": 84.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:17.218254"
+    },
+    "CSELK-PABC.N0000": {
+      "rsi_data": {
+        "1h": 64.4,
+        "1D": 71.4,
+        "1W": 86.7,
+        "1M": 84.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:18.914498"
+    },
+    "CSELK-PALM.N0000": {
+      "rsi_data": {
+        "1h": 53.3,
+        "1D": 55.1,
+        "1W": 56.6,
+        "1M": 62.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:30.169260"
+    },
+    "CSELK-PAP.N0000": {
+      "rsi_data": {
+        "1h": 64.3,
+        "1D": 54.6,
+        "1W": 68.7,
+        "1M": 86.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:31.834265"
+    },
+    "CSELK-PARA.N0000": {
+      "rsi_data": {
+        "1h": 53.8,
+        "1D": 53.9,
+        "1W": 57.5,
+        "1M": 64.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:43.067436"
+    },
+    "CSELK-PARQ.N0000": {
+      "rsi_data": {
+        "1h": 41.2,
+        "1D": 50.9,
+        "1W": 72.6,
+        "1M": 83.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:44.815520"
+    },
+    "CSELK-PEG.N0000": {
+      "rsi_data": {
+        "1h": 36.1,
+        "1D": 44.0,
+        "1W": 48.3,
+        "1M": 55.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:56.313064"
+    },
+    "CSELK-PINS.N0000": {
+      "rsi_data": {
+        "1h": 52.4,
+        "1D": 58.2,
+        "1W": 70.8,
+        "1M": 70.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:39:57.801274"
+    },
+    "CSELK-PLC.N0000": {
+      "rsi_data": {
+        "1h": 41.7,
+        "1D": 51.7,
+        "1W": 67.7,
+        "1M": 76.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:09.226402"
+    },
+    "CSELK-PLR.N0000": {
+      "rsi_data": {
+        "1h": 65.6,
+        "1D": 79.3,
+        "1W": 85.3,
+        "1M": 82.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:10.785276"
+    },
+    "CSELK-PMB.N0000": {
+      "rsi_data": {
+        "1h": 61.0,
+        "1D": 63.8,
+        "1W": 73.2,
+        "1M": 81.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:22.286863"
+    },
+    "CSELK-RAL.N0000": {
+      "rsi_data": {
+        "1h": 41.6,
+        "1D": 49.4,
+        "1W": 54.7,
+        "1M": 52.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:23.744536"
+    },
+    "CSELK-RCH.N0000": {
+      "rsi_data": {
+        "1h": 52.43,
+        "1D": 62.53,
+        "1W": 76.51,
+        "1M": 80.25
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:35.679669"
+    },
+    "CSELK-RCL.N0000": {
+      "rsi_data": {
+        "1h": 58.1,
+        "1D": 57.2,
+        "1W": 65.3,
+        "1M": 60.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:37.840674"
+    },
+    "CSELK-RENU.N0000": {
+      "rsi_data": {
+        "1h": 50.32,
+        "1D": 60.46,
+        "1W": 74.45,
+        "1M": 79.32
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:48.609986"
+    },
+    "CSELK-REXP.N0000": {
+      "rsi_data": {
+        "1h": 50.52,
+        "1D": 51.08,
+        "1W": 48.89,
+        "1M": 39.26
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:40:50.831581"
+    },
+    "CSELK-RFL.N0000": {
+      "rsi_data": {
+        "1h": 48.1,
+        "1D": 47.4,
+        "1W": 53.7,
+        "1M": 61.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:01.679009"
+    },
+    "CSELK-RGEM.N0000": {
+      "rsi_data": {
+        "1h": 64.4,
+        "1D": 70.2,
+        "1W": 61.3,
+        "1M": 55.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:03.828399"
+    },
+    "CSELK-RHL.N0000": {
+      "rsi_data": {
+        "1h": 75.6,
+        "1D": 81.8,
+        "1W": 79.9,
+        "1M": 72.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:14.823406"
+    },
+    "CSELK-RHL.X0000": {
+      "rsi_data": {
+        "1h": 62.3,
+        "1D": 74.0,
+        "1W": 81.2,
+        "1M": 75.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:16.797776"
+    },
+    "CSELK-RHTL.N0000": {
+      "rsi_data": {
+        "1h": 49.3,
+        "1D": 54.0,
+        "1W": 60.1,
+        "1M": 61.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:27.741808"
+    },
+    "CSELK-RICH.N0000": {
+      "rsi_data": {
+        "1h": 46.1,
+        "1D": 58.7,
+        "1W": 59.8,
+        "1M": 59.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:29.929674"
+    },
+    "CSELK-RIL.N0000": {
+      "rsi_data": {
+        "1h": 51.7,
+        "1D": 53.6,
+        "1W": 74.3,
+        "1M": 83.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:40.691740"
+    },
+    "CSELK-RPBH.N0000": {
+      "rsi_data": {
+        "1h": 43.2,
+        "1D": 67.0,
+        "1W": 87.7,
+        "1M": 82.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:43.857356"
+    },
+    "CSELK-RWSL.N0000": {
+      "rsi_data": {
+        "1h": 64.6,
+        "1D": 68.9,
+        "1W": 73.1,
+        "1M": 80.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:53.687578"
+    },
+    "CSELK-SAMP.N0000": {
+      "rsi_data": {
+        "1h": 51.39,
+        "1D": 63.96,
+        "1W": 76.91,
+        "1M": 77.36
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:41:56.787544"
+    },
+    "CSELK-SCAP.N0000": {
+      "rsi_data": {
+        "1h": 46.5,
+        "1D": 54.7,
+        "1W": 55.8,
+        "1M": 46.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:06.653925"
+    },
+    "CSELK-SDB.N0000": {
+      "rsi_data": {
+        "1h": 68.9,
+        "1D": 64.4,
+        "1W": 64.4,
+        "1M": 61.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:09.715206"
+    },
+    "CSELK-SDF.N0000": {
+      "rsi_data": {
+        "1h": 46.2,
+        "1D": 46.1,
+        "1W": 66.9,
+        "1M": 74.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:19.635533"
+    },
+    "CSELK-SEMB.N0000": {
+      "rsi_data": {
+        "1h": 54.3,
+        "1D": 56.5,
+        "1W": 55.6,
+        "1M": 54.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:22.716146"
+    },
+    "CSELK-SEMB.X0000": {
+      "rsi_data": {
+        "1h": 56.4,
+        "1D": 58.1,
+        "1W": 61.1,
+        "1M": 58.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:32.675500"
+    },
+    "CSELK-SERV.N0000": {
+      "rsi_data": {
+        "1h": 52.9,
+        "1D": 62.3,
+        "1W": 68.2,
+        "1M": 68.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:35.635831"
+    },
+    "CSELK-SEYB.N0000": {
+      "rsi_data": {
+        "1h": 64.5,
+        "1D": 72.4,
+        "1W": 76.2,
+        "1M": 76.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:45.620874"
+    },
+    "CSELK-SEYB.X0000": {
+      "rsi_data": {
+        "1h": 62.5,
+        "1D": 69.7,
+        "1W": 76.7,
+        "1M": 75.0
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:48.556223"
+    },
+    "CSELK-SFCL.N0000": {
+      "rsi_data": {
+        "1h": 49.53,
+        "1D": 52.71,
+        "1W": 58.77,
+        "1M": 63.27
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:42:58.600347"
+    },
+    "CSELK-SFIN.N0000": {
+      "rsi_data": {
+        "1h": 74.5,
+        "1D": 73.2,
+        "1W": 81.9,
+        "1M": 88.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:01.482753"
+    },
+    "CSELK-SHL.N0000": {
+      "rsi_data": {
+        "1h": 47.4,
+        "1D": 49.9,
+        "1W": 48.7,
+        "1M": 41.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:11.765275"
+    },
+    "CSELK-SHOT.N0000": {
+      "rsi_data": {
+        "1h": 46.9,
+        "1D": 49.3,
+        "1W": 52.0,
+        "1M": 61.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:24.725944"
+    },
+    "CSELK-SHL.W0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x564e439ae01a <unknown>\n#1 0x564e4344da70 <unknown>\n#2 0x564e4349f907 <unknown>\n#3 0x564e4349fb01 <unknown>\n#4 0x564e434edd54 <unknown>\n#5 0x564e434c540d <unknown>\n#6 0x564e434eb14f <unknown>\n#7 0x564e434c51b3 <unknown>\n#8 0x564e4349159b <unknown>\n#9 0x564e43492971 <unknown>\n#10 0x564e439731eb <unknown>\n#11 0x564e43976f39 <unknown>\n#12 0x564e4395a2c9 <unknown>\n#13 0x564e43977ae8 <unknown>\n#14 0x564e4393ebaf <unknown>\n#15 0x564e4399b0a8 <unknown>\n#16 0x564e4399b286 <unknown>\n#17 0x564e439acff6 <unknown>\n#18 0x7fb7c949caa4 <unknown>\n#19 0x7fb7c9529c3c <unknown>\n",
+      "timestamp": "2025-08-18T17:43:27.346488"
+    },
+    "CSELK-SHOT.X0000": {
+      "rsi_data": {
+        "1h": 47.3,
+        "1D": 52.8,
+        "1W": 54.7,
+        "1M": 63.1
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:37.549578"
+    },
+    "CSELK-SIGV.N0000": {
+      "rsi_data": {
+        "1h": 47.81,
+        "1D": 48.91,
+        "1W": 61.27,
+        "1M": 73.42
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:40.303338"
+    },
+    "CSELK-SIL.N0000": {
+      "rsi_data": {
+        "1h": 62.98,
+        "1D": 62.53,
+        "1W": 61.33,
+        "1M": 54.16
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:50.679890"
+    },
+    "CSELK-SING.N0000": {
+      "rsi_data": {
+        "1h": 76.6,
+        "1D": 79.7,
+        "1W": 83.0,
+        "1M": 65.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:43:53.206736"
+    },
+    "CSELK-SINH.N0000": {
+      "rsi_data": {
+        "1h": 59.3,
+        "1D": 66.7,
+        "1W": 75.3,
+        "1M": 86.5
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:03.656403"
+    },
+    "CSELK-SINS.N0000": {
+      "rsi_data": {
+        "1h": 57.9,
+        "1D": 73.3,
+        "1W": 84.5,
+        "1M": 89.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:06.191456"
+    },
+    "CSELK-SIRA.N0000": {
+      "rsi_data": {
+        "1h": 72.8,
+        "1D": 73.7,
+        "1W": 71.4,
+        "1M": 67.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:16.737860"
+    },
+    "CSELK-SLND.N0000": {
+      "rsi_data": {
+        "1h": 55.03,
+        "1D": 57.89,
+        "1W": 59.1,
+        "1M": 56.87
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:19.152275"
+    },
+    "CSELK-SLTL.N0000": {
+      "rsi_data": {
+        "1h": 60.5,
+        "1D": 59.9,
+        "1W": 51.6,
+        "1M": 43.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:29.877299"
+    },
+    "CSELK-SMOT.N0000": {
+      "rsi_data": {
+        "1h": 38.93,
+        "1D": 48.21,
+        "1W": 72.58,
+        "1M": 78.96
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:32.065605"
+    },
+    "CSELK-SUN.N0000": {
+      "rsi_data": {
+        "1h": 53.7,
+        "1D": 59.7,
+        "1W": 70.9,
+        "1M": 76.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:42.807977"
+    },
+    "CSELK-SWAD.N0000": {
+      "rsi_data": {
+        "1h": 69.61,
+        "1D": 68.03,
+        "1W": 64.63,
+        "1M": 61.26
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:44.977138"
+    },
+    "CSELK-TAFL.N0000": {
+      "rsi_data": {
+        "1h": 43.43,
+        "1D": 42.08,
+        "1W": 69.48,
+        "1M": 73.91
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:55.700771"
+    },
+    "CSELK-TAJ.N0000": {
+      "rsi_data": {
+        "1h": 62.5,
+        "1D": 74.2,
+        "1W": 87.9,
+        "1M": 81.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:44:57.938328"
+    },
+    "CSELK-TANG.N0000": {
+      "rsi_data": {
+        "1h": 41.75,
+        "1D": 57.23,
+        "1W": 71.34,
+        "1M": 74.48
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:08.803012"
+    },
+    "CSELK-TESS.N0000": {
+      "rsi_data": {
+        "1h": 52.8,
+        "1D": 53.1,
+        "1W": 55.2,
+        "1M": 54.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:10.836311"
+    },
+    "CSELK-TESS.X0000": {
+      "rsi_data": {
+        "1h": 51.8,
+        "1D": 54.8,
+        "1W": 62.0,
+        "1M": 61.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:22.768832"
+    },
+    "CSELK-TJL.N0000": {
+      "rsi_data": {
+        "1h": 29.2,
+        "1D": 34.6,
+        "1W": 42.8,
+        "1M": 53.8
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:23.856580"
+    },
+    "CSELK-TKYO.N0000": {
+      "rsi_data": {
+        "1h": 63.7,
+        "1D": 51.4,
+        "1W": 57.8,
+        "1M": 68.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:35.808933"
+    },
+    "CSELK-TKYO.X0000": {
+      "rsi_data": {
+        "1h": 67.7,
+        "1D": 54.9,
+        "1W": 59.9,
+        "1M": 69.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:36.893948"
+    },
+    "CSELK-TPL.N0000": {
+      "rsi_data": {
+        "1h": 58.05,
+        "1D": 66.79,
+        "1W": 69.09,
+        "1M": 69.05
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:49.025145"
+    },
+    "CSELK-TRAN.N0000": {
+      "rsi_data": {
+        "1h": 55.2,
+        "1D": 69.3,
+        "1W": 74.2,
+        "1M": 65.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:45:49.944817"
+    },
+    "CSELK-TSML.N0000": {
+      "rsi_data": {
+        "1h": 58.7,
+        "1D": 70.1,
+        "1W": 70.0,
+        "1M": 57.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:02.028301"
+    },
+    "CSELK-UAL.N0000": {
+      "rsi_data": {
+        "1h": 47.6,
+        "1D": 48.6,
+        "1W": 60.2,
+        "1M": 67.7
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:02.953511"
+    },
+    "CSELK-UBC.N0000": {
+      "rsi_data": {
+        "1h": 53.1,
+        "1D": 70.0,
+        "1W": 71.4,
+        "1M": 65.3
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:15.070970"
+    },
+    "CSELK-UBF.N0000": {
+      "rsi_data": {
+        "1h": 52.5,
+        "1D": 61.5,
+        "1W": 76.7,
+        "1M": 68.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:16.028406"
+    },
+    "CSELK-UCAR.N0000": {
+      "rsi_data": {
+        "1h": 61.74,
+        "1D": 66.97,
+        "1W": 67.59,
+        "1M": 65.89
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:28.438751"
+    },
+    "CSELK-UDPL.N0000": {
+      "rsi_data": {
+        "1h": 62.87,
+        "1D": 76.44,
+        "1W": 65.76,
+        "1M": 67.46
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:29.086212"
+    },
+    "CSELK-UML.N0000": {
+      "rsi_data": {
+        "1h": 48.45,
+        "1D": 55.73,
+        "1W": 73.51,
+        "1M": 78.71
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:41.411751"
+    },
+    "CSELK-VFIN.N0000": {
+      "rsi_data": {
+        "1h": 66.7,
+        "1D": 70.06,
+        "1W": 82.82,
+        "1M": 89.48
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:42.129738"
+    },
+    "CSELK-VLL.N0000": {
+      "rsi_data": {
+        "1h": 55.2,
+        "1D": 65.2,
+        "1W": 69.5,
+        "1M": 84.2
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:54.440497"
+    },
+    "CSELK-VLL.X0000": {
+      "rsi_data": {
+        "1h": 62.4,
+        "1D": 75.2,
+        "1W": 90.6,
+        "1M": 90.4
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:46:55.225649"
+    },
+    "CSELK-VONE.N0000": {
+      "rsi_data": {
+        "1h": 53.8,
+        "1D": 57.8,
+        "1W": 83.4,
+        "1M": 72.9
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:47:07.712787"
+    },
+    "CSELK-VPEL.N0000": {
+      "rsi_data": {
+        "1h": 54.9,
+        "1D": 54.7,
+        "1W": 63.7,
+        "1M": 74.6
+      },
+      "status": "success",
+      "successful_timeframes": 4,
+      "timestamp": "2025-08-18T17:47:08.289892"
     }
   }
 }
