@@ -327,8 +327,8 @@ class DailyRSIScraper:
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 Daily RSI Monitor</h1>
-            <p>Sri Lanka Stock Exchange - Last Updated: {timestamp.strftime('%B %d, %Y at %I:%M %p')}</p>
+            <h1>Daily RSI Monitor</h1>
+            <p>Colombo Stock Exchange</p>
         </div>
         
         <div class="stats">
@@ -392,7 +392,7 @@ class DailyRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Data sourced from TradingView • Updated daily at market close</p>
+            <p>Updated daily at market close</p>
             <p>Last successful update: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
