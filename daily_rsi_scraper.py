@@ -1,7 +1,7 @@
 import time
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,12 +10,14 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from webdriver_manager.chrome import ChromeDriverManager
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-class DailyRSIScraper:
+class MultiTimeframeRSIScraper:
     def __init__(self, base_url, symbols):
         self.base_url = base_url
         self.symbols = symbols
         self.results = {}
+        self.timeframes = ['1h', '1D', '1W', '1M']
     
     def create_driver(self):
         """Create a Chrome driver for scraping"""
@@ -30,7 +32,7 @@ class DailyRSIScraper:
         try:
             service = Service(ChromeDriverManager().install())
             driver = webdriver.Chrome(service=service, options=chrome_options)
-            driver.implicitly_wait(10)
+            driver.implicitly_wait(5)
             return driver
         except Exception as e:
             print(f"Error creating Chrome driver: {e}")
@@ -40,102 +42,153 @@ class DailyRSIScraper:
         """Build complete URL for a given symbol"""
         return self.base_url.replace("{SYMBOL}", symbol)
     
-    def fetch_single_rsi(self, symbol):
-        """Fetch RSI for a single stock symbol"""
-        driver = None
+    def fetch_rsi_for_timeframe(self, driver, timeframe):
+        """Fetch RSI for a specific timeframe"""
         try:
-            driver = self.create_driver()
-            if not driver:
-                return None, "Could not create Chrome driver"
+            # Click on the timeframe button
+            timeframe_button = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, timeframe))
+            )
+            timeframe_button.click()
             
-            url = self.build_url(symbol)
-            driver.get(url)
-            time.sleep(5)
+            # Wait for data to update
+            time.sleep(2)
             
-            wait = WebDriverWait(driver, 30)
-            
-            # Look for RSI row
-            rsi_row = wait.until(
+            # Wait for RSI row to be present
+            rsi_row = WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.XPATH, "//tr[contains(., 'Relative Strength Index')]"))
             )
-            
-            time.sleep(3)
             
             # Get the value cell
             value_cell = driver.find_element(By.XPATH, "//tr[contains(., 'Relative Strength Index')]//td[2]")
             rsi_text = value_cell.text.strip()
             
             # Wait for data to load if showing placeholder
-            if rsi_text in ["—", "", "N/A", "Loading...", "--"]:
-                for attempt in range(6):
-                    time.sleep(5)
-                    value_cell = driver.find_element(By.XPATH, "//tr[contains(., 'Relative Strength Index')]//td[2]")
-                    rsi_text = value_cell.text.strip()
-                    
-                    if rsi_text not in ["—", "", "N/A", "Loading...", "--"]:
-                        break
-                
-                if rsi_text in ["—", "", "N/A", "Loading...", "--"]:
-                    return None, f"RSI data not loaded. Current value: '{rsi_text}'"
+            retry_count = 0
+            while rsi_text in ["—", "", "N/A", "Loading...", "--"] and retry_count < 5:
+                time.sleep(1)
+                value_cell = driver.find_element(By.XPATH, "//tr[contains(., 'Relative Strength Index')]//td[2]")
+                rsi_text = value_cell.text.strip()
+                retry_count += 1
             
-            try:
-                rsi_value = float(rsi_text.replace(',', ''))
-                return rsi_value, None
-            except ValueError:
-                return None, f"Cannot convert '{rsi_text}' to number"
-                
+            if rsi_text in ["—", "", "N/A", "Loading...", "--"]:
+                return None
+            
+            return float(rsi_text.replace(',', ''))
+            
         except Exception as e:
-            return None, f"Error: {e}"
+            print(f"    Error fetching {timeframe}: {e}")
+            return None
+    
+    def fetch_single_stock_all_timeframes(self, symbol):
+        """Fetch RSI for all timeframes for a single stock"""
+        driver = None
+        try:
+            driver = self.create_driver()
+            if not driver:
+                return symbol, None, "Could not create Chrome driver"
+            
+            url = self.build_url(symbol)
+            driver.get(url)
+            time.sleep(3)
+            
+            # Wait for page to load
+            WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//tr[contains(., 'Relative Strength Index')]"))
+            )
+            
+            rsi_data = {}
+            for timeframe in self.timeframes:
+                rsi_value = self.fetch_rsi_for_timeframe(driver, timeframe)
+                rsi_data[timeframe] = rsi_value
+                
+            return symbol, rsi_data, None
+            
+        except Exception as e:
+            return symbol, None, f"Error: {e}"
         finally:
             if driver:
                 driver.quit()
     
     def fetch_all_rsi(self):
-        """Fetch RSI for all symbols"""
-        print(f"🚀 Daily RSI Fetch - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print(f"📊 Processing {len(self.symbols)} symbols...")
-        print("=" * 50)
+        """Fetch RSI for all symbols and timeframes using parallel processing"""
+        print(f"🚀 Multi-Timeframe RSI Fetch - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"📊 Processing {len(self.symbols)} symbols with {len(self.timeframes)} timeframes each...")
+        print("=" * 70)
         
         results = {}
         failed_count = 0
         
-        for i, symbol in enumerate(self.symbols, 1):
-            clean_symbol = symbol.replace("CSELK-", "")
-            print(f"[{i:2d}/{len(self.symbols)}] {clean_symbol:<12}", end=" ")
+        # Use parallel processing with 2 workers to avoid overwhelming the server
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            # Submit all tasks
+            future_to_symbol = {
+                executor.submit(self.fetch_single_stock_all_timeframes, symbol): symbol 
+                for symbol in self.symbols
+            }
             
-            rsi_value, error = self.fetch_single_rsi(symbol)
-            
-            if rsi_value is not None:
-                results[symbol] = {
-                    'rsi': rsi_value,
-                    'status': 'success',
-                    'timestamp': datetime.now().isoformat()
-                }
+            # Collect results as they complete
+            for i, future in enumerate(as_completed(future_to_symbol), 1):
+                symbol = future_to_symbol[future]
+                clean_symbol = symbol.replace("CSELK-", "")
                 
-                # Determine status
-                if rsi_value < 30:
-                    status_text = "OVERSOLD 🔥"
-                elif rsi_value > 70:
-                    status_text = "OVERBOUGHT ⚠️"
-                else:
-                    status_text = "NEUTRAL"
+                print(f"[{i:2d}/{len(self.symbols)}] {clean_symbol:<12}", end=" ")
                 
-                print(f"✅ {rsi_value:5.1f} ({status_text})")
-            else:
-                results[symbol] = {
-                    'rsi': None,
-                    'status': 'failed',
-                    'error': error,
-                    'timestamp': datetime.now().isoformat()
-                }
-                failed_count += 1
-                print(f"❌ FAILED - {error}")
-            
-            # Small delay between requests
-            if i < len(self.symbols):
-                time.sleep(2)
+                try:
+                    symbol_result, rsi_data, error = future.result()
+                    
+                    if rsi_data is not None:
+                        # Check how many timeframes were successful
+                        successful_timeframes = sum(1 for v in rsi_data.values() if v is not None)
+                        
+                        if successful_timeframes > 0:
+                            results[symbol] = {
+                                'rsi_data': rsi_data,
+                                'status': 'success',
+                                'successful_timeframes': successful_timeframes,
+                                'timestamp': datetime.now().isoformat()
+                            }
+                            
+                            # Show summary
+                            timeframe_summary = []
+                            for tf in self.timeframes:
+                                value = rsi_data.get(tf)
+                                if value is not None:
+                                    timeframe_summary.append(f"{tf}:{value:.1f}")
+                                else:
+                                    timeframe_summary.append(f"{tf}:--")
+                            
+                            print(f"✅ {' '.join(timeframe_summary)}")
+                        else:
+                            results[symbol] = {
+                                'rsi_data': rsi_data,
+                                'status': 'failed',
+                                'error': 'No timeframes successful',
+                                'timestamp': datetime.now().isoformat()
+                            }
+                            failed_count += 1
+                            print(f"❌ No data for any timeframe")
+                    else:
+                        results[symbol] = {
+                            'rsi_data': None,
+                            'status': 'failed',
+                            'error': error,
+                            'timestamp': datetime.now().isoformat()
+                        }
+                        failed_count += 1
+                        print(f"❌ {error}")
+                        
+                except Exception as e:
+                    results[symbol] = {
+                        'rsi_data': None,
+                        'status': 'failed',
+                        'error': f"Processing error: {e}",
+                        'timestamp': datetime.now().isoformat()
+                    }
+                    failed_count += 1
+                    print(f"❌ Processing error")
         
-        print("=" * 50)
+        print("=" * 70)
         print(f"✅ Success: {len(results) - failed_count}/{len(self.symbols)}")
         print(f"❌ Failed: {failed_count}/{len(self.symbols)}")
         
@@ -149,6 +202,7 @@ class DailyRSIScraper:
         daily_data = {
             'date': timestamp.strftime('%Y-%m-%d'),
             'timestamp': timestamp.isoformat(),
+            'timeframes': self.timeframes,
             'total_symbols': len(self.symbols),
             'successful_fetches': len([r for r in self.results.values() if r['status'] == 'success']),
             'failed_fetches': len([r for r in self.results.values() if r['status'] == 'failed']),
@@ -171,9 +225,7 @@ class DailyRSIScraper:
         return filename
     
     def generate_html_page(self):
-        """Generate HTML page for GitHub Pages"""
-        from datetime import timezone, timedelta
-        
+        """Generate HTML page with multi-timeframe support"""
         # Convert to Sri Lanka time (UTC+5:30)
         utc_now = datetime.utcnow()
         sl_timezone = timezone(timedelta(hours=5, minutes=30))
@@ -182,15 +234,12 @@ class DailyRSIScraper:
         # Get successful results for display
         successful_results = {k: v for k, v in self.results.items() if v['status'] == 'success'}
         
-        # Sort by RSI value
-        sorted_results = sorted(successful_results.items(), key=lambda x: x[1]['rsi'])
-        
         html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily RSI Monitor - Sri Lanka Stocks</title>
+    <title>Multi-Timeframe RSI Monitor - Sri Lanka Stocks</title>
     <style>
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -200,7 +249,7 @@ class DailyRSIScraper:
             color: #333;
         }}
         .container {{
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 8px;
@@ -221,6 +270,32 @@ class DailyRSIScraper:
         .header p {{
             margin: 10px 0 0 0;
             opacity: 0.9;
+        }}
+        .timeframe-selector {{
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }}
+        .selector-label {{
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }}
+        .timeframe-dropdown {{
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            min-width: 200px;
+        }}
+        .timeframe-dropdown:focus {{
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }}
         .stats {{
             display: grid;
@@ -264,6 +339,9 @@ class DailyRSIScraper:
             cursor: pointer;
             user-select: none;
             position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }}
         th:hover {{
             background: #e9ecef;
@@ -291,31 +369,27 @@ class DailyRSIScraper:
         .company-cell {{
             color: #666;
             font-size: 0.9em;
+            min-width: 200px;
         }}
         .rsi-cell {{
             font-weight: bold;
             font-size: 1.1em;
+            text-align: center;
         }}
-        .status-oversold {{
-            background: #ffe6e6;
-            color: #c0392b;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .rsi-oversold {{
+            color: #e74c3c;
+            background: #ffebee;
         }}
-        .status-overbought {{
-            background: #fff3cd;
-            color: #856404;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .rsi-overbought {{
+            color: #f57c00;
+            background: #fff3e0;
         }}
-        .status-neutral {{
-            background: #e8f5e8;
-            color: #155724;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .rsi-neutral {{
+            color: #2e7d32;
+        }}
+        .no-data {{
+            color: #999;
+            font-style: italic;
         }}
         .footer {{
             text-align: center;
@@ -335,6 +409,9 @@ class DailyRSIScraper:
                 padding: 0 15px 20px 15px;
                 overflow-x: auto;
             }}
+            .company-cell {{
+                min-width: 150px;
+            }}
         }}
     </style>
 </head>
@@ -345,27 +422,18 @@ class DailyRSIScraper:
             <p>Colombo Stock Exchange</p>
         </div>
         
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">{len([r for r in successful_results.values() if r['rsi'] < 30])}</div>
-                <div class="oversold">Oversold Stocks</div>
-                <small>(RSI < 30)</small>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">{len([r for r in successful_results.values() if r['rsi'] > 70])}</div>
-                <div class="overbought">Overbought Stocks</div>
-                <small>(RSI > 70)</small>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">{len([r for r in successful_results.values() if 30 <= r['rsi'] <= 70])}</div>
-                <div class="neutral">Neutral Stocks</div>
-                <small>(RSI 30-70)</small>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">{len(successful_results)}</div>
-                <div>Total Monitored</div>
-                <small>Out of 286 companies</small>
-            </div>
+        <div class="timeframe-selector">
+            <label class="selector-label">Select Timeframe:</label>
+            <select class="timeframe-dropdown" id="timeframeSelect" onchange="switchTimeframe()">
+                <option value="1h">1 Hour</option>
+                <option value="1D" selected>1 Day</option>
+                <option value="1W">1 Week</option>
+                <option value="1M">1 Month</option>
+            </select>
+        </div>
+        
+        <div class="stats" id="statsSection">
+            <!-- Stats will be updated by JavaScript -->
         </div>
         
         <div class="table-container">
@@ -374,98 +442,96 @@ class DailyRSIScraper:
                     <tr>
                         <th class="sortable" onclick="sortTable(0)">Symbol</th>
                         <th class="sortable" onclick="sortTable(1)">Company</th>
-                        <th class="sortable" onclick="sortTable(2)">RSI Value</th>
+                        <th class="sortable" onclick="sortTable(2)" id="rsiHeader">RSI Value (1D)</th>
                     </tr>
                 </thead>
-                <tbody id="stockTableBody">"""
-        
-        for symbol, data in sorted_results:
-            clean_symbol = symbol.replace("CSELK-", "")
-            company_name = SYMBOL_TO_COMPANY.get(symbol, "Unknown Company")
-            rsi = data['rsi']
-            
-            html += f"""
-                    <tr>
-                        <td class="symbol-cell">{clean_symbol}</td>
-                        <td class="company-cell">{company_name}</td>
-                        <td class="rsi-cell">{rsi:.1f}</td>
-                    </tr>"""
-        
-        html += f"""
+                <tbody id="stockTableBody">
+                    <!-- Table body will be populated by JavaScript -->
                 </tbody>
             </table>
         </div>
         
         <div class="footer">
-            <p>Updated daily at market close</p>
-            <p>Last successful update: {sl_time.strftime('%B %d, %Y at %I:%M %p')}</p>
+            <p>Updated daily at 4 pm</p>
+            <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
 
     <script>
-        // Stock data for sorting
+        // Stock data with all timeframes
         const stockData = ["""
         
-        # Add stock data as JavaScript array
-        for i, (symbol, data) in enumerate(sorted_results):
+        # Add stock data as JavaScript array with all timeframes
+        stock_entries = []
+        for symbol, data in successful_results.items():
             clean_symbol = symbol.replace("CSELK-", "")
             company_name = SYMBOL_TO_COMPANY.get(symbol, "Unknown Company")
-            rsi = data['rsi']
+            rsi_data = data.get('rsi_data', {})
             
-            comma = "," if i < len(sorted_results) - 1 else ""
-            html += f"""
-            ["{clean_symbol}", "{company_name}", {rsi}]{comma}"""
+            # Create entry with all timeframes
+            entry = f'["{clean_symbol}", "{company_name}"'
+            for tf in self.timeframes:
+                rsi_value = rsi_data.get(tf)
+                if rsi_value is not None:
+                    entry += f', {rsi_value}'
+                else:
+                    entry += ', null'
+            entry += ']'
+            stock_entries.append(entry)
+        
+        html += ',\n            '.join(stock_entries)
         
         html += f"""
         ];
 
-        let currentSort = {{ column: 2, direction: 'asc' }}; // Default sort by RSI ascending
+        const timeframes = {json.dumps(self.timeframes)};
+        let currentTimeframe = '1D';
+        let currentSort = {{ column: 2, direction: 'asc' }};
 
-        function sortTable(columnIndex) {{
-            const headers = document.querySelectorAll('th.sortable');
+        function getTimeframeIndex(timeframe) {{
+            return timeframes.indexOf(timeframe) + 2; // +2 because first two columns are symbol and company
+        }}
+
+        function updateStats(timeframe) {{
+            const timeframeIndex = getTimeframeIndex(timeframe);
+            let oversold = 0, overbought = 0, neutral = 0, total = 0;
             
-            // Remove previous sort classes
-            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
-            
-            // Determine sort direction
-            if (currentSort.column === columnIndex) {{
-                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-            }} else {{
-                currentSort.direction = 'asc';
-            }}
-            currentSort.column = columnIndex;
-            
-            // Add sort class to current header
-            const currentHeader = headers[columnIndex];
-            currentHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
-            
-            // Sort the data
-            const sortedData = [...stockData].sort((a, b) => {{
-                let valueA, valueB;
-                
-                if (columnIndex === 0) {{ // Symbol
-                    valueA = a[0].toLowerCase();
-                    valueB = b[0].toLowerCase();
-                }} else if (columnIndex === 1) {{ // Company
-                    valueA = a[1].toLowerCase();
-                    valueB = b[1].toLowerCase();
-                }} else if (columnIndex === 2) {{ // RSI Value
-                    valueA = parseFloat(a[2]);
-                    valueB = parseFloat(b[2]);
-                }}
-                
-                if (currentSort.direction === 'asc') {{
-                    return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
-                }} else {{
-                    return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
+            stockData.forEach(row => {{
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue !== null) {{
+                    total++;
+                    if (rsiValue < 30) oversold++;
+                    else if (rsiValue > 70) overbought++;
+                    else neutral++;
                 }}
             }});
             
-            // Update table body
-            updateTableBody(sortedData);
+            document.getElementById('statsSection').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${{oversold}}</div>
+                    <div class="oversold">Oversold Stocks</div>
+                    <small>(RSI < 30)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${{overbought}}</div>
+                    <div class="overbought">Overbought Stocks</div>
+                    <small>(RSI > 70)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${{neutral}}</div>
+                    <div class="neutral">Neutral Stocks</div>
+                    <small>(RSI 30-70)</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${{total}}</div>
+                    <div>Total Available</div>
+                    <small>of {len(self.symbols)} symbols</small>
+                </div>
+            `;
         }}
 
-        function updateTableBody(data) {{
+        function updateTableBody(data, timeframe) {{
+            const timeframeIndex = getTimeframeIndex(timeframe);
             const tbody = document.getElementById('stockTableBody');
             tbody.innerHTML = '';
             
@@ -487,15 +553,93 @@ class DailyRSIScraper:
                 // RSI Value
                 const rsiTd = document.createElement('td');
                 rsiTd.className = 'rsi-cell';
-                rsiTd.textContent = row[2].toFixed(1);
-                tr.appendChild(rsiTd);
                 
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue !== null) {{
+                    rsiTd.textContent = rsiValue.toFixed(1);
+                    if (rsiValue < 30) {{
+                        rsiTd.classList.add('rsi-oversold');
+                    }} else if (rsiValue > 70) {{
+                        rsiTd.classList.add('rsi-overbought');
+                    }} else {{
+                        rsiTd.classList.add('rsi-neutral');
+                    }}
+                }} else {{
+                    rsiTd.textContent = '--';
+                    rsiTd.classList.add('no-data');
+                }}
+                
+                tr.appendChild(rsiTd);
                 tbody.appendChild(tr);
             }});
         }}
 
-        // Initialize table with default sort
+        function sortTable(columnIndex) {{
+            const headers = document.querySelectorAll('th.sortable');
+            
+            // Remove previous sort classes
+            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+            
+            // Determine sort direction
+            if (currentSort.column === columnIndex) {{
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            }} else {{
+                currentSort.direction = 'asc';
+            }}
+            currentSort.column = columnIndex;
+            
+            // Add sort class to current header
+            const currentHeader = headers[columnIndex];
+            currentHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+            
+            // Sort the data
+            const timeframeIndex = getTimeframeIndex(currentTimeframe);
+            const sortedData = [...stockData].sort((a, b) => {{
+                let valueA, valueB;
+                
+                if (columnIndex === 0) {{ // Symbol
+                    valueA = a[0].toLowerCase();
+                    valueB = b[0].toLowerCase();
+                }} else if (columnIndex === 1) {{ // Company
+                    valueA = a[1].toLowerCase();
+                    valueB = b[1].toLowerCase();
+                }} else if (columnIndex === 2) {{ // RSI Value
+                    valueA = a[timeframeIndex];
+                    valueB = b[timeframeIndex];
+                    
+                    // Handle null values
+                    if (valueA === null && valueB === null) return 0;
+                    if (valueA === null) return 1;
+                    if (valueB === null) return -1;
+                }}
+                
+                if (currentSort.direction === 'asc') {{
+                    return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
+                }} else {{
+                    return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
+                }}
+            }});
+            
+            updateTableBody(sortedData, currentTimeframe);
+        }}
+
+        function switchTimeframe() {{
+            const select = document.getElementById('timeframeSelect');
+            currentTimeframe = select.value;
+            
+            // Update header
+            document.getElementById('rsiHeader').textContent = `RSI Value (${{currentTimeframe}})`;
+            
+            // Update stats
+            updateStats(currentTimeframe);
+            
+            // Update table
+            sortTable(currentSort.column);
+        }}
+
+        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {{
+            switchTimeframe(); // Initialize with default timeframe
             sortTable(2); // Sort by RSI by default
         }});
     </script>
@@ -505,7 +649,8 @@ class DailyRSIScraper:
         with open('index.html', 'w') as f:
             f.write(html)
         
-        print(f"📄 Generated index.html with {len(successful_results)} stocks")
+        successful_count = len(successful_results)
+        print(f"📄 Generated index.html with {successful_count} stocks and {len(self.timeframes)} timeframes")
         return 'index.html'
 
 # Stock symbols with company names
@@ -513,49 +658,6 @@ STOCK_DATA = [
     {"symbol": "CSELK-ABAN.N0000", "company": "ABANS ELECTRICALS PLC"},
     {"symbol": "CSELK-AFSL.N0000", "company": "ABANS FINANCE PLC"},
     {"symbol": "CSELK-AEL.N0000", "company": "ACCESS ENGINEERING PLC"},
-    {"symbol": "CSELK-ACL.N0000", "company": "ACL CABLES PLC"},
-    {"symbol": "CSELK-APLA.N0000", "company": "ACL PLASTICS PLC"},
-    {"symbol": "CSELK-ACME.N0000", "company": "ACME PRINTING & PACKAGING PLC"},
-    {"symbol": "CSELK-AGAL.N0000", "company": "AGALAWATTE PLANTATIONS PLC"},
-    {"symbol": "CSELK-AGST.N0000", "company": "AGSTAR PLC"},
-    {"symbol": "CSELK-AGST.X0000", "company": "AGSTAR PLC - Non Voting"},
-    {"symbol": "CSELK-AHUN.N0000", "company": "AHUNGALLA RESORTS LTD"},
-    {"symbol": "CSELK-ASPM.N0000", "company": "ASIA SIYAKA COMMODITIES PLC"},
-    {"symbol": "CSELK-SPEN.N0000", "company": "ASIAN ALLIANCE INSURANCE PLC"},
-    {"symbol": "CSELK-ALLI.N0000", "company": "ALLIANCE FINANCE COMPANY PLC"},
-    {"symbol": "CSELK-AFS.N0000", "company": "ASIA ASSET FINANCE PLC"},
-    {"symbol": "CSELK-ALUM.N0000", "company": "ALUMEX PLC"},
-    {"symbol": "CSELK-ABL.N0000", "company": "AMANA BANK PLC"},
-    {"symbol": "CSELK-ATL.N0000", "company": "AMANA TAKAFUL PLC"},
-    {"symbol": "CSELK-ATLL.N0000", "company": "AMANA TAKAFUL LIFE PLC"},
-    {"symbol": "CSELK-GREG.N0000", "company": "AMBEON HOLDINGS PLC"},
-    {"symbol": "CSELK-AMCL.N0000", "company": "AMW CAPITAL LEASING & FINANCE PLC"},
-    {"symbol": "CSELK-ALHP.N0000", "company": "ALHOKAIR GROUP (LANKA) LIMITED"},
-    {"symbol": "CSELK-AINS.N0000", "company": "AITKEN SPENCE INSURANCE PLC"},
-    {"symbol": "CSELK-AAF.N0000", "company": "ASIA ASSET FINANCE PLC"},
-    {"symbol": "CSELK-AAF.P0000", "company": "ASIA ASSET FINANCE PLC - Preference"},
-    {"symbol": "CSELK-ACAP.N0000", "company": "ACCESS CAPITAL PARTNERS PLC"},
-    {"symbol": "CSELK-ASIY.N0000", "company": "ASIA SIYAKA COMMODITIES PLC"},
-    {"symbol": "CSELK-AHPL.N0000", "company": "AITKEN SPENCE HOTEL HOLDINGS PLC"},
-    {"symbol": "CSELK-AMSL.N0000", "company": "AITKEN SPENCE MARITIME & LOGISTICS PLC"},
-    {"symbol": "CSELK-ASIR.N0000", "company": "AITKEN SPENCE INSURANCE REINSURANCE PLC"},
-    {"symbol": "CSELK-AMF.N0000", "company": "ASIA ASSET FINANCE PLC"},
-    {"symbol": "CSELK-AGPL.N0000", "company": "AGALAWATTE PLANTATIONS PLC"},
-
-    {"symbol": "CSELK-BPPL.N0000", "company": "B P P L HOLDINGS PLC"},
-    {"symbol": "CSELK-BFL.N0000", "company": "BAIRAHA FARMS PLC"},
-    {"symbol": "CSELK-BALA.N0000", "company": "BALANGODA PLANTATIONS PLC"},
-    {"symbol": "CSELK-BRR.N0000", "company": "BANSEI ROYAL RESORTS HIKKADUWA PLC"},
-    {"symbol": "CSELK-BERU.N0000", "company": "BERUWALA RESORTS PLC"},
-    {"symbol": "CSELK-BLI.N0000", "company": "BIMPUTH LANKA INVESTMENTS PLC"},
-    {"symbol": "CSELK-BLUE.X0000", "company": "BLUE DIAMONDS JEWELLERY WORLDWIDE PLC - Non Voting"},
-    {"symbol": "CSELK-BLUE.N0000", "company": "BLUE DIAMONDS JEWELLERY WORLDWIDE PLC"},
-    {"symbol": "CSELK-BOGA.N0000", "company": "BOGALA GRAPHITE LANKA PLC"},
-    {"symbol": "CSELK-BOPL.N0000", "company": "BOGAWANTALAWA TEA ESTATES PLC"},
-    {"symbol": "CSELK-BRWN.N0000", "company": "BROWN & COMPANY PLC"},
-    {"symbol": "CSELK-BBH.N0000", "company": "BROWNS BEACH HOTELS PLC"},
-    {"symbol": "CSELK-BIL.N0000", "company": "BROWNS INVESTMENTS PLC"},
-    {"symbol": "CSELK-BUKI.N0000", "company": "BUKIT DARAH PLC"},
 ]
 
 # Extract just symbols for backward compatibility
@@ -565,14 +667,14 @@ STOCK_SYMBOLS = [stock["symbol"] for stock in STOCK_DATA]
 SYMBOL_TO_COMPANY = {stock["symbol"]: stock["company"] for stock in STOCK_DATA}
 
 if __name__ == "__main__":
-    print("🤖 Daily RSI Scraper for GitHub Pages")
-    print("=" * 50)
+    print("🤖 Multi-Timeframe RSI Scraper for GitHub Pages")
+    print("=" * 60)
     
     # Initialize scraper
     base_url = "https://tradingview.com/symbols/{SYMBOL}/technicals/"
-    scraper = DailyRSIScraper(base_url, STOCK_SYMBOLS)
+    scraper = MultiTimeframeRSIScraper(base_url, STOCK_SYMBOLS)
     
-    # Fetch all RSI data
+    # Fetch all RSI data for all timeframes
     results = scraper.fetch_all_rsi()
     
     if results:
@@ -582,11 +684,12 @@ if __name__ == "__main__":
         # Generate HTML page
         html_file = scraper.generate_html_page()
         
-        print("\n🎉 Daily RSI fetch completed!")
+        print("\n🎉 Multi-timeframe RSI fetch completed!")
         print(f"📊 Generated files:")
-        print(f"   • {json_file} (daily data)")
+        print(f"   • {json_file} (daily data with all timeframes)")
         print(f"   • latest_rsi.json (for API access)")
         print(f"   • {html_file} (GitHub Pages website)")
+        print(f"\n📈 Timeframes included: {', '.join(scraper.timeframes)}")
         print("\n📤 Ready to upload to GitHub!")
         
     else:
