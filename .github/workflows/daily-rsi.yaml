@@ -4,7 +4,7 @@ name: Daily RSI Update
 on:
   schedule:
     # Run every day at 2:40 PM Sri Lanka time (09:10 AM UTC)
-    - cron: '10 09 * * *'
+    - cron: '10 9 * * *'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
