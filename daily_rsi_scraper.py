@@ -17,7 +17,7 @@ class MultiTimeframeRSIScraper:
         self.base_url = base_url
         self.symbols = symbols
         self.results = {}
-        self.timeframes = ['1h', '1D', '1W', '1M']
+        self.timeframes = ['1D', '1W', '1M']
     
     def create_driver(self):
         """Create a Chrome driver for scraping"""
@@ -348,7 +348,7 @@ class MultiTimeframeRSIScraper:
         }}
         .oversold {{ color: #27ae5f; }}
         .overbought {{ color: #e74c3c; }}
-        .neutral {{ color: #f39c12; }}
+        .neutral {{ color: #1299f3; }}
         .table-container {{
             padding: 0 30px 30px 30px;
         }}
@@ -413,7 +413,7 @@ class MultiTimeframeRSIScraper:
             color: #e74c3c;
         }}
         .rsi-neutral {{
-            color: #f57c00;
+            color: #1299f3;
         }}
         .no-data {{
             color: #999;
@@ -453,7 +453,6 @@ class MultiTimeframeRSIScraper:
         <div class="timeframe-selector">
             <label class="selector-label">Select Timeframe:</label>
             <select class="timeframe-dropdown" id="timeframeSelect" onchange="switchTimeframe()">
-                <option value="1h">1 Hour</option>
                 <option value="1D" selected>1 Day</option>
                 <option value="1W">1 Week</option>
                 <option value="1M">1 Month</option>
@@ -484,7 +483,7 @@ class MultiTimeframeRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Updated daily at 4 PM</p>
+            <p>Updates daily at 4 PM</p>
             <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
