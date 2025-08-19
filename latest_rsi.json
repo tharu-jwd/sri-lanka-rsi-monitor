@@ -1,30 +1,20 @@
 {
   "date": "2025-08-19",
-  "timestamp": "2025-08-19T07:50:37.487032",
+  "timestamp": "2025-08-19T10:09:29.771668",
   "timeframes": [
     "1D",
     "1W",
     "1M"
   ],
   "total_symbols": 304,
-  "successful_fetches": 296,
-  "failed_fetches": 8,
+  "successful_fetches": 219,
+  "failed_fetches": 85,
   "data": {
     "CSELK-ABAN.N0000": {
       "rsi_data": null,
       "status": "failed",
       "error": "Could not create Chrome driver",
-      "timestamp": "2025-08-19T07:20:31.137608"
-    },
-    "CSELK-AEL.N0000": {
-      "rsi_data": {
-        "1D": 57.8,
-        "1W": 76.0,
-        "1M": 81.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:20:48.819866"
+      "timestamp": "2025-08-19T09:30:36.067499"
     },
     "CSELK-AFSL.N0000": {
       "rsi_data": {
@@ -34,57 +24,67 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:20:48.896891"
+      "timestamp": "2025-08-19T09:30:52.388932"
+    },
+    "CSELK-AEL.N0000": {
+      "rsi_data": {
+        "1D": 56.6,
+        "1W": 75.4,
+        "1M": 81.5
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:30:52.397076"
     },
     "CSELK-ACL.N0000": {
       "rsi_data": {
-        "1D": 65.4,
-        "1W": 74.74,
-        "1M": 76.91
+        "1D": 65.19,
+        "1W": 74.51,
+        "1M": 76.77
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:00.286606"
+      "timestamp": "2025-08-19T09:31:03.745726"
     },
     "CSELK-APLA.N0000": {
       "rsi_data": {
-        "1D": 87.25,
-        "1W": 84.65,
-        "1M": 79.92
+        "1D": 88.71,
+        "1W": 84.82,
+        "1M": 80.05
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:00.318062"
-    },
-    "CSELK-ACME.N0000": {
-      "rsi_data": {
-        "1D": 51.4,
-        "1W": 54.8,
-        "1M": 49.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:11.687508"
+      "timestamp": "2025-08-19T09:31:03.810921"
     },
     "CSELK-AGAL.N0000": {
       "rsi_data": {
-        "1D": 49.4,
-        "1W": 65.3,
-        "1M": 65.7
+        "1D": 53.1,
+        "1W": 68.0,
+        "1M": 66.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:11.809775"
+      "timestamp": "2025-08-19T09:31:15.132230"
+    },
+    "CSELK-ACME.N0000": {
+      "rsi_data": {
+        "1D": 47.7,
+        "1W": 52.7,
+        "1M": 48.9
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:31:15.167603"
     },
     "CSELK-AGST.N0000": {
       "rsi_data": {
-        "1D": 58.3,
-        "1W": 57.9,
-        "1M": 49.6
+        "1D": 53.4,
+        "1W": 53.9,
+        "1M": 48.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:23.053489"
+      "timestamp": "2025-08-19T09:31:26.365493"
     },
     "CSELK-AGST.X0000": {
       "rsi_data": {
@@ -94,103 +94,103 @@
       },
       "status": "success",
       "successful_timeframes": 2,
-      "timestamp": "2025-08-19T07:21:28.431598"
+      "timestamp": "2025-08-19T09:31:31.525324"
     },
     "CSELK-AHUN.N0000": {
       "rsi_data": {
-        "1D": 63.6,
-        "1W": 61.6,
-        "1M": 65.1
+        "1D": 61.2,
+        "1W": 60.3,
+        "1M": 64.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:34.044965"
+      "timestamp": "2025-08-19T09:31:37.281423"
     },
     "CSELK-SPEN.N0000": {
       "rsi_data": {
-        "1D": 73.33,
-        "1W": 63.61,
-        "1M": 61.57
+        "1D": 70.12,
+        "1W": 62.11,
+        "1M": 60.82
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:45.103127"
+      "timestamp": "2025-08-19T09:31:48.258993"
     },
     "CSELK-ASPM.N0000": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x564f966ef01a <unknown>\n#1 0x564f9618ea70 <unknown>\n#2 0x564f961e0907 <unknown>\n#3 0x564f961e0b01 <unknown>\n#4 0x564f9622ed54 <unknown>\n#5 0x564f9620640d <unknown>\n#6 0x564f9622c14f <unknown>\n#7 0x564f962061b3 <unknown>\n#8 0x564f961d259b <unknown>\n#9 0x564f961d3971 <unknown>\n#10 0x564f966b41eb <unknown>\n#11 0x564f966b7f39 <unknown>\n#12 0x564f9669b2c9 <unknown>\n#13 0x564f966b8ae8 <unknown>\n#14 0x564f9667fbaf <unknown>\n#15 0x564f966dc0a8 <unknown>\n#16 0x564f966dc286 <unknown>\n#17 0x564f966edff6 <unknown>\n#18 0x7f15bde9caa4 <unknown>\n#19 0x7f15bdf29c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:21:54.397173"
+      "error": "Error: Message: \nStacktrace:\n#0 0x55f93cd3e01a <unknown>\n#1 0x55f93c7dda70 <unknown>\n#2 0x55f93c82f907 <unknown>\n#3 0x55f93c82fb01 <unknown>\n#4 0x55f93c87dd54 <unknown>\n#5 0x55f93c85540d <unknown>\n#6 0x55f93c87b14f <unknown>\n#7 0x55f93c8551b3 <unknown>\n#8 0x55f93c82159b <unknown>\n#9 0x55f93c822971 <unknown>\n#10 0x55f93cd031eb <unknown>\n#11 0x55f93cd06f39 <unknown>\n#12 0x55f93ccea2c9 <unknown>\n#13 0x55f93cd07ae8 <unknown>\n#14 0x55f93cccebaf <unknown>\n#15 0x55f93cd2b0a8 <unknown>\n#16 0x55f93cd2b286 <unknown>\n#17 0x55f93cd3cff6 <unknown>\n#18 0x7f199609caa4 <unknown>\n#19 0x7f1996129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:31:57.210295"
     },
     "CSELK-ALLI.N0000": {
       "rsi_data": {
-        "1D": 42.92,
-        "1W": 71.51,
-        "1M": 83.42
+        "1D": 42.36,
+        "1W": 71.18,
+        "1M": 83.17
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:21:56.243400"
+      "timestamp": "2025-08-19T09:31:59.316209"
     },
     "CSELK-AFS.N0000": {
       "rsi_data": {
-        "1D": 80.7,
-        "1W": 87.1,
+        "1D": 82.5,
+        "1W": 87.3,
         "1M": 93.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:05.508821"
+      "timestamp": "2025-08-19T09:32:08.236408"
     },
     "CSELK-ALUM.N0000": {
       "rsi_data": {
-        "1D": 50.9,
-        "1W": 59.4,
-        "1M": 65.5
+        "1D": 49.3,
+        "1W": 58.5,
+        "1M": 65.1
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:07.313740"
+      "timestamp": "2025-08-19T09:32:10.240173"
     },
     "CSELK-ABL.N0000": {
       "rsi_data": {
-        "1D": 74.6,
-        "1W": 68.5,
-        "1M": 54.9
+        "1D": 82.8,
+        "1W": 74.7,
+        "1M": 58.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:16.528190"
+      "timestamp": "2025-08-19T09:32:19.313621"
     },
     "CSELK-ATL.N0000": {
       "rsi_data": {
-        "1D": 78.5,
-        "1W": 78.3,
-        "1M": 77.6
+        "1D": 79.8,
+        "1W": 79.4,
+        "1M": 78.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:18.428412"
+      "timestamp": "2025-08-19T09:32:21.064738"
     },
     "CSELK-ATLL.N0000": {
       "rsi_data": {
-        "1D": 54.4,
-        "1W": 60.7,
-        "1M": 59.2
+        "1D": 68.8,
+        "1W": 71.8,
+        "1M": 68.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:27.954545"
+      "timestamp": "2025-08-19T09:32:30.241357"
     },
     "CSELK-GREG.N0000": {
       "rsi_data": {
-        "1D": 75.61,
-        "1W": 79.52,
-        "1M": 78.57
+        "1D": 73.27,
+        "1W": 78.5,
+        "1M": 78.05
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:29.599090"
+      "timestamp": "2025-08-19T09:32:32.012507"
     },
     "CSELK-ALHP.N0000": {
       "rsi_data": {
@@ -200,7 +200,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:40.640201"
+      "timestamp": "2025-08-19T09:32:42.792406"
     },
     "CSELK-AINS.N0000": {
       "rsi_data": {
@@ -210,13 +210,13 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:22:51.665252"
+      "timestamp": "2025-08-19T09:32:53.691101"
     },
     "CSELK-AMCL.N0000": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x55acee29201a <unknown>\n#1 0x55acedd31a70 <unknown>\n#2 0x55acedd83907 <unknown>\n#3 0x55acedd83b01 <unknown>\n#4 0x55aceddd1d54 <unknown>\n#5 0x55acedda940d <unknown>\n#6 0x55aceddcf14f <unknown>\n#7 0x55acedda91b3 <unknown>\n#8 0x55acedd7559b <unknown>\n#9 0x55acedd76971 <unknown>\n#10 0x55acee2571eb <unknown>\n#11 0x55acee25af39 <unknown>\n#12 0x55acee23e2c9 <unknown>\n#13 0x55acee25bae8 <unknown>\n#14 0x55acee222baf <unknown>\n#15 0x55acee27f0a8 <unknown>\n#16 0x55acee27f286 <unknown>\n#17 0x55acee290ff6 <unknown>\n#18 0x7f9c5b29caa4 <unknown>\n#19 0x7f9c5b329c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:22:53.917678"
+      "error": "Error: Message: \nStacktrace:\n#0 0x55da3694801a <unknown>\n#1 0x55da363e7a70 <unknown>\n#2 0x55da36439907 <unknown>\n#3 0x55da36439b01 <unknown>\n#4 0x55da36487d54 <unknown>\n#5 0x55da3645f40d <unknown>\n#6 0x55da3648514f <unknown>\n#7 0x55da3645f1b3 <unknown>\n#8 0x55da3642b59b <unknown>\n#9 0x55da3642c971 <unknown>\n#10 0x55da3690d1eb <unknown>\n#11 0x55da36910f39 <unknown>\n#12 0x55da368f42c9 <unknown>\n#13 0x55da36911ae8 <unknown>\n#14 0x55da368d8baf <unknown>\n#15 0x55da369350a8 <unknown>\n#16 0x55da36935286 <unknown>\n#17 0x55da36946ff6 <unknown>\n#18 0x7fe8d3c9caa4 <unknown>\n#19 0x7fe8d3d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:32:56.088386"
     },
     "CSELK-AAF.N0000": {
       "rsi_data": {
@@ -226,7 +226,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:02.792208"
+      "timestamp": "2025-08-19T09:33:09.874192"
     },
     "CSELK-AAF.P0000": {
       "rsi_data": {
@@ -236,7 +236,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:05.082894"
+      "timestamp": "2025-08-19T09:33:10.459303"
     },
     "CSELK-ACAP.N0000": {
       "rsi_data": {
@@ -246,7 +246,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:15.519900"
+      "timestamp": "2025-08-19T09:33:21.000192"
     },
     "CSELK-ASIY.N0000": {
       "rsi_data": {
@@ -256,27 +256,27 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:16.236604"
+      "timestamp": "2025-08-19T09:33:21.537968"
     },
     "CSELK-AHPL.N0000": {
       "rsi_data": {
-        "1D": 53.0,
-        "1W": 64.5,
+        "1D": 52.6,
+        "1W": 64.2,
+        "1M": 59.7
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:33:32.103841"
+    },
+    "CSELK-AMSL.N0000": {
+      "rsi_data": {
+        "1D": 56.4,
+        "1W": 70.1,
         "1M": 59.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:26.783552"
-    },
-    "CSELK-AMSL.N0000": {
-      "rsi_data": {
-        "1D": 53.2,
-        "1W": 68.1,
-        "1M": 58.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:27.415395"
+      "timestamp": "2025-08-19T09:33:32.664250"
     },
     "CSELK-ASIR.N0000": {
       "rsi_data": {
@@ -286,77 +286,77 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:37.956741"
+      "timestamp": "2025-08-19T09:33:42.261052"
     },
     "CSELK-AMF.N0000": {
       "rsi_data": {
-        "1D": 74.8,
-        "1W": 89.0,
+        "1D": 75.3,
+        "1W": 89.5,
         "1M": 93.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:38.699161"
+      "timestamp": "2025-08-19T09:33:43.682954"
     },
     "CSELK-AGPL.N0000": {
       "rsi_data": {
-        "1D": 63.8,
-        "1W": 69.1,
-        "1M": 80.3
+        "1D": 58.7,
+        "1W": 65.9,
+        "1M": 79.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:49.126817"
+      "timestamp": "2025-08-19T09:33:53.289588"
     },
     "CSELK-BPPL.N0000": {
       "rsi_data": {
-        "1D": 43.8,
-        "1W": 46.7,
-        "1M": 47.5
+        "1D": 49.5,
+        "1W": 49.9,
+        "1M": 48.9
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:23:49.899171"
+      "timestamp": "2025-08-19T09:33:54.671654"
     },
     "CSELK-BFL.N0000": {
       "rsi_data": {
-        "1D": 43.02,
-        "1W": 59.96,
-        "1M": 60.68
+        "1D": 38.32,
+        "1W": 57.19,
+        "1M": 59.12
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:00.352275"
+      "timestamp": "2025-08-19T09:34:04.186690"
     },
     "CSELK-BALA.N0000": {
       "rsi_data": {
-        "1D": 63.6,
-        "1W": 65.6,
+        "1D": 63.1,
+        "1W": 65.4,
+        "1M": 64.8
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:34:06.676499"
+    },
+    "CSELK-BRR.N0000": {
+      "rsi_data": {
+        "1D": 55.5,
+        "1W": 67.3,
+        "1M": 74.0
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:34:15.202661"
+    },
+    "CSELK-BERU.N0000": {
+      "rsi_data": {
+        "1D": 46.5,
+        "1W": 50.9,
         "1M": 65.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:01.073522"
-    },
-    "CSELK-BRR.N0000": {
-      "rsi_data": {
-        "1D": 54.9,
-        "1W": 67.0,
-        "1M": 73.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:11.804337"
-    },
-    "CSELK-BERU.N0000": {
-      "rsi_data": {
-        "1D": 50.4,
-        "1W": 53.2,
-        "1M": 66.9
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:12.281160"
+      "timestamp": "2025-08-19T09:34:17.519500"
     },
     "CSELK-BLI.N0000": {
       "rsi_data": {
@@ -366,7 +366,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:21.961637"
+      "timestamp": "2025-08-19T09:34:26.203983"
     },
     "CSELK-BLUE.X0000": {
       "rsi_data": {
@@ -376,7 +376,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:23.563971"
+      "timestamp": "2025-08-19T09:34:28.616896"
     },
     "CSELK-BLUE.N0000": {
       "rsi_data": {
@@ -386,17 +386,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:33.134531"
+      "timestamp": "2025-08-19T09:34:37.165035"
     },
     "CSELK-BOGA.N0000": {
       "rsi_data": {
-        "1D": 66.02,
-        "1W": 68.19,
-        "1M": 71.69
+        "1D": 67.7,
+        "1W": 69.5,
+        "1M": 72.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:34.660720"
+      "timestamp": "2025-08-19T09:34:39.551109"
     },
     "CSELK-BOPL.N0000": {
       "rsi_data": {
@@ -406,27 +406,27 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:44.532460"
+      "timestamp": "2025-08-19T09:34:48.152059"
     },
     "CSELK-BRWN.N0000": {
       "rsi_data": {
-        "1D": 45.91,
-        "1W": 51.82,
-        "1M": 58.53
+        "1D": 46.73,
+        "1W": 52.23,
+        "1M": 58.76
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:45.813896"
+      "timestamp": "2025-08-19T09:34:50.452349"
     },
     "CSELK-BBH.N0000": {
       "rsi_data": {
-        "1D": 55.6,
-        "1W": 61.6,
-        "1M": 67.6
+        "1D": 57.2,
+        "1W": 62.5,
+        "1M": 68.1
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:55.829320"
+      "timestamp": "2025-08-19T09:34:59.137065"
     },
     "CSELK-BIL.N0000": {
       "rsi_data": {
@@ -436,37 +436,37 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:24:57.021302"
+      "timestamp": "2025-08-19T09:35:01.396827"
     },
     "CSELK-BUKI.N0000": {
       "rsi_data": {
-        "1D": 75.82,
-        "1W": 76.9,
-        "1M": 85.42
+        "1D": 78.39,
+        "1W": 78.34,
+        "1M": 85.99
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:25:07.236188"
+      "timestamp": "2025-08-19T09:35:10.235170"
     },
     "CSELK-COLO.N0000": {
       "rsi_data": {
-        "1D": 57.13,
-        "1W": 73.18,
-        "1M": 91.21
+        "1D": 54.29,
+        "1W": 71.79,
+        "1M": 89.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:25:08.382378"
+      "timestamp": "2025-08-19T09:35:12.401914"
     },
     "CSELK-CTHR.N0000": {
       "rsi_data": {
-        "1D": 71.44,
-        "1W": 89.88,
-        "1M": 93.11
+        "1D": 68.12,
+        "1W": 89.51,
+        "1M": 92.95
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:25:18.532872"
+      "timestamp": "2025-08-19T09:35:21.200606"
     },
     "CSELK-CTLD.N0000": {
       "rsi_data": {
@@ -476,17 +476,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:25:20.508513"
+      "timestamp": "2025-08-19T09:35:23.370775"
     },
     "CSELK-CWM.N0000": {
       "rsi_data": {
-        "1D": 46.72,
-        "1W": 54.74,
-        "1M": 67.37
+        "1D": 48.99,
+        "1W": 55.95,
+        "1M": 67.78
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:25:29.495291"
+      "timestamp": "2025-08-19T09:35:32.227431"
     },
     "CSELK-CSLK.N0000": {
       "rsi_data": {
@@ -496,57 +496,57 @@
       },
       "status": "success",
       "successful_timeframes": 2,
-      "timestamp": "2025-08-19T07:25:36.801835"
+      "timestamp": "2025-08-19T09:35:39.414720"
     },
     "CSELK-CALI.U0000": {
       "rsi_data": {
-        "1D": 50.2,
-        "1W": 51.0,
-        "1M": 32.3
+        "1D": 52.5,
+        "1W": 52.8,
+        "1M": 33.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:25:47.960116"
+      "timestamp": "2025-08-19T09:35:50.445729"
     },
     "CSELK-CALC.U0000": {
       "rsi_data": {
-        "1D": 60.2,
-        "1W": 46.5,
+        "1D": 54.8,
+        "1W": 38.9,
         "1M": null
       },
       "status": "success",
       "successful_timeframes": 2,
-      "timestamp": "2025-08-19T07:25:56.598360"
+      "timestamp": "2025-08-19T09:35:59.353493"
     },
     "CSELK-CALT.N0000": {
       "rsi_data": {
-        "1D": 70.6,
-        "1W": 73.2,
-        "1M": 62.2
+        "1D": 69.2,
+        "1W": 72.7,
+        "1M": 62.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:07.597372"
+      "timestamp": "2025-08-19T09:36:10.458683"
     },
     "CSELK-CARG.N0000": {
       "rsi_data": {
-        "1D": 63.9,
-        "1W": 77.56,
-        "1M": 90.84
+        "1D": 73.35,
+        "1W": 85.3,
+        "1M": 91.44
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:18.794635"
+      "timestamp": "2025-08-19T09:36:21.470412"
     },
     "CSELK-CALH.N0000": {
       "rsi_data": {
-        "1D": 64.4,
+        "1D": 66.8,
         "1W": null,
         "1M": null
       },
       "status": "success",
       "successful_timeframes": 1,
-      "timestamp": "2025-08-19T07:26:20.102635"
+      "timestamp": "2025-08-19T09:36:22.564790"
     },
     "CSELK-CBNK.N0000": {
       "rsi_data": {
@@ -556,7 +556,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:29.910503"
+      "timestamp": "2025-08-19T09:36:32.628424"
     },
     "CSELK-CABO.N0000": {
       "rsi_data": {
@@ -566,7 +566,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:31.322218"
+      "timestamp": "2025-08-19T09:36:33.689291"
     },
     "CSELK-CARS.N0000": {
       "rsi_data": {
@@ -576,27 +576,27 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:40.980455"
+      "timestamp": "2025-08-19T09:36:43.733652"
     },
     "CSELK-CFIN.N0000": {
       "rsi_data": {
-        "1D": 52.04,
-        "1W": 73.54,
-        "1M": 78.45
+        "1D": 50.84,
+        "1W": 72.92,
+        "1M": 78.12
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:42.711533"
+      "timestamp": "2025-08-19T09:36:44.667486"
     },
     "CSELK-CIND.N0000": {
       "rsi_data": {
-        "1D": 52.07,
-        "1W": 65.24,
-        "1M": 65.43
+        "1D": 49.03,
+        "1W": 63.6,
+        "1M": 64.89
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:52.159907"
+      "timestamp": "2025-08-19T09:36:54.783339"
     },
     "CSELK-CINS.X0000": {
       "rsi_data": {
@@ -606,37 +606,37 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:26:53.886429"
+      "timestamp": "2025-08-19T09:36:55.790577"
     },
     "CSELK-CINS.N0000": {
       "rsi_data": {
-        "1D": 45.36,
-        "1W": 49.64,
-        "1M": 57.3
+        "1D": 45.41,
+        "1W": 49.68,
+        "1M": 57.32
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:03.351712"
+      "timestamp": "2025-08-19T09:37:05.886489"
     },
     "CSELK-BREW.N0000": {
       "rsi_data": {
-        "1D": 44.59,
-        "1W": 49.44,
-        "1M": 66.59
+        "1D": 55.02,
+        "1W": 56.32,
+        "1M": 70.97
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:05.097549"
+      "timestamp": "2025-08-19T09:37:06.851162"
     },
     "CSELK-CCS.N0000": {
       "rsi_data": {
-        "1D": 48.58,
-        "1W": 65.69,
-        "1M": 75.63
+        "1D": 46.97,
+        "1W": 64.83,
+        "1M": 75.47
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:14.625439"
+      "timestamp": "2025-08-19T09:37:16.976748"
     },
     "CSELK-GRAN.N0000": {
       "rsi_data": {
@@ -646,327 +646,241 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:16.332852"
+      "timestamp": "2025-08-19T09:37:17.890661"
     },
     "CSELK-GUAR.N0000": {
       "rsi_data": {
-        "1D": 80.03,
-        "1W": 80.87,
-        "1M": 80.62
+        "1D": 65.65,
+        "1W": 75.85,
+        "1M": 79.58
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:25.863676"
+      "timestamp": "2025-08-19T09:37:28.048558"
     },
     "CSELK-CHL.X0000": {
       "rsi_data": {
-        "1D": 71.11,
-        "1W": 83.31,
-        "1M": 75.29
+        "1D": 69.59,
+        "1W": 79.68,
+        "1M": 74.62
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:27.472021"
+      "timestamp": "2025-08-19T09:37:28.952417"
     },
     "CSELK-CHL.N0000": {
-      "rsi_data": {
-        "1D": 58.54,
-        "1W": 65.65,
-        "1M": 75.87
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:36.990103"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5652d14d701a <unknown>\n#1 0x5652d0f76a70 <unknown>\n#2 0x5652d0fc8907 <unknown>\n#3 0x5652d0fc8b01 <unknown>\n#4 0x5652d1016d54 <unknown>\n#5 0x5652d0fee40d <unknown>\n#6 0x5652d101414f <unknown>\n#7 0x5652d0fee1b3 <unknown>\n#8 0x5652d0fba59b <unknown>\n#9 0x5652d0fbb971 <unknown>\n#10 0x5652d149c1eb <unknown>\n#11 0x5652d149ff39 <unknown>\n#12 0x5652d14832c9 <unknown>\n#13 0x5652d14a0ae8 <unknown>\n#14 0x5652d1467baf <unknown>\n#15 0x5652d14c40a8 <unknown>\n#16 0x5652d14c4286 <unknown>\n#17 0x5652d14d5ff6 <unknown>\n#18 0x7f951ac9caa4 <unknown>\n#19 0x7f951ad29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:37:53.148459"
     },
     "CSELK-CHOT.N0000": {
-      "rsi_data": {
-        "1D": 60.4,
-        "1W": 59.5,
-        "1M": 62.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:38.645916"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x557dae47a01a <unknown>\n#1 0x557dadf19a70 <unknown>\n#2 0x557dadf6b907 <unknown>\n#3 0x557dadf6bb01 <unknown>\n#4 0x557dadfb9d54 <unknown>\n#5 0x557dadf9140d <unknown>\n#6 0x557dadfb714f <unknown>\n#7 0x557dadf911b3 <unknown>\n#8 0x557dadf5d59b <unknown>\n#9 0x557dadf5e971 <unknown>\n#10 0x557dae43f1eb <unknown>\n#11 0x557dae442f39 <unknown>\n#12 0x557dae4262c9 <unknown>\n#13 0x557dae443ae8 <unknown>\n#14 0x557dae40abaf <unknown>\n#15 0x557dae4670a8 <unknown>\n#16 0x557dae467286 <unknown>\n#17 0x557dae478ff6 <unknown>\n#18 0x7f39bb29caa4 <unknown>\n#19 0x7f39bb329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:37:54.029182"
     },
     "CSELK-CINV.N0000": {
-      "rsi_data": {
-        "1D": 74.61,
-        "1W": 81.96,
-        "1M": 78.97
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:48.215345"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5593171c601a <unknown>\n#1 0x559316c65a70 <unknown>\n#2 0x559316cb7907 <unknown>\n#3 0x559316cb7b01 <unknown>\n#4 0x559316d05d54 <unknown>\n#5 0x559316cdd40d <unknown>\n#6 0x559316d0314f <unknown>\n#7 0x559316cdd1b3 <unknown>\n#8 0x559316ca959b <unknown>\n#9 0x559316caa971 <unknown>\n#10 0x55931718b1eb <unknown>\n#11 0x55931718ef39 <unknown>\n#12 0x5593171722c9 <unknown>\n#13 0x55931718fae8 <unknown>\n#14 0x559317156baf <unknown>\n#15 0x5593171b30a8 <unknown>\n#16 0x5593171b3286 <unknown>\n#17 0x5593171c4ff6 <unknown>\n#18 0x7f6bf349caa4 <unknown>\n#19 0x7f6bf3529c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:38:18.326054"
     },
     "CSELK-KZOO.N0000": {
-      "rsi_data": {
-        "1D": 57.7,
-        "1W": 62.0,
-        "1M": 60.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:49.888570"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x561f7f7c401a <unknown>\n#1 0x561f7f263a70 <unknown>\n#2 0x561f7f2b5907 <unknown>\n#3 0x561f7f2b5b01 <unknown>\n#4 0x561f7f303d54 <unknown>\n#5 0x561f7f2db40d <unknown>\n#6 0x561f7f30114f <unknown>\n#7 0x561f7f2db1b3 <unknown>\n#8 0x561f7f2a759b <unknown>\n#9 0x561f7f2a8971 <unknown>\n#10 0x561f7f7891eb <unknown>\n#11 0x561f7f78cf39 <unknown>\n#12 0x561f7f7702c9 <unknown>\n#13 0x561f7f78dae8 <unknown>\n#14 0x561f7f754baf <unknown>\n#15 0x561f7f7b10a8 <unknown>\n#16 0x561f7f7b1286 <unknown>\n#17 0x561f7f7c2ff6 <unknown>\n#18 0x7f552189caa4 <unknown>\n#19 0x7f5521929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:38:19.145564"
     },
     "CSELK-CPRT.N0000": {
-      "rsi_data": {
-        "1D": 53.37,
-        "1W": 55.12,
-        "1M": 58.18
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:27:59.473871"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x564a2f55301a <unknown>\n#1 0x564a2eff2a70 <unknown>\n#2 0x564a2f044907 <unknown>\n#3 0x564a2f044b01 <unknown>\n#4 0x564a2f092d54 <unknown>\n#5 0x564a2f06a40d <unknown>\n#6 0x564a2f09014f <unknown>\n#7 0x564a2f06a1b3 <unknown>\n#8 0x564a2f03659b <unknown>\n#9 0x564a2f037971 <unknown>\n#10 0x564a2f5181eb <unknown>\n#11 0x564a2f51bf39 <unknown>\n#12 0x564a2f4ff2c9 <unknown>\n#13 0x564a2f51cae8 <unknown>\n#14 0x564a2f4e3baf <unknown>\n#15 0x564a2f5400a8 <unknown>\n#16 0x564a2f540286 <unknown>\n#17 0x564a2f551ff6 <unknown>\n#18 0x7fb4dc89caa4 <unknown>\n#19 0x7fb4dc929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:38:43.491725"
     },
     "CSELK-CTBL.N0000": {
-      "rsi_data": {
-        "1D": 53.1,
-        "1W": 59.9,
-        "1M": 63.0
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:01.066081"
-    },
-    "CSELK-CHMX.N0000": {
-      "rsi_data": {
-        "1D": 52.57,
-        "1W": 60.91,
-        "1M": 69.26
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:15.438818"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55d8b0f2a01a <unknown>\n#1 0x55d8b09c9a70 <unknown>\n#2 0x55d8b0a1b907 <unknown>\n#3 0x55d8b0a1bb01 <unknown>\n#4 0x55d8b0a69d54 <unknown>\n#5 0x55d8b0a4140d <unknown>\n#6 0x55d8b0a6714f <unknown>\n#7 0x55d8b0a411b3 <unknown>\n#8 0x55d8b0a0d59b <unknown>\n#9 0x55d8b0a0e971 <unknown>\n#10 0x55d8b0eef1eb <unknown>\n#11 0x55d8b0ef2f39 <unknown>\n#12 0x55d8b0ed62c9 <unknown>\n#13 0x55d8b0ef3ae8 <unknown>\n#14 0x55d8b0ebabaf <unknown>\n#15 0x55d8b0f170a8 <unknown>\n#16 0x55d8b0f17286 <unknown>\n#17 0x55d8b0f28ff6 <unknown>\n#18 0x7f672029caa4 <unknown>\n#19 0x7f6720329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:38:44.252065"
     },
     "CSELK-CTC.N0000": {
-      "rsi_data": {
-        "1D": 84.71,
-        "1W": 72.13,
-        "1M": 76.96
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:15.872766"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55f6aa0b601a <unknown>\n#1 0x55f6a9b55a70 <unknown>\n#2 0x55f6a9ba7907 <unknown>\n#3 0x55f6a9ba7b01 <unknown>\n#4 0x55f6a9bf5d54 <unknown>\n#5 0x55f6a9bcd40d <unknown>\n#6 0x55f6a9bf314f <unknown>\n#7 0x55f6a9bcd1b3 <unknown>\n#8 0x55f6a9b9959b <unknown>\n#9 0x55f6a9b9a971 <unknown>\n#10 0x55f6aa07b1eb <unknown>\n#11 0x55f6aa07ef39 <unknown>\n#12 0x55f6aa0622c9 <unknown>\n#13 0x55f6aa07fae8 <unknown>\n#14 0x55f6aa046baf <unknown>\n#15 0x55f6aa0a30a8 <unknown>\n#16 0x55f6aa0a3286 <unknown>\n#17 0x55f6aa0b4ff6 <unknown>\n#18 0x7f38c7a9caa4 <unknown>\n#19 0x7f38c7b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:39:08.604942"
+    },
+    "CSELK-CHMX.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55c38c90401a <unknown>\n#1 0x55c38c3a3a70 <unknown>\n#2 0x55c38c3f5907 <unknown>\n#3 0x55c38c3f5b01 <unknown>\n#4 0x55c38c443d54 <unknown>\n#5 0x55c38c41b40d <unknown>\n#6 0x55c38c44114f <unknown>\n#7 0x55c38c41b1b3 <unknown>\n#8 0x55c38c3e759b <unknown>\n#9 0x55c38c3e8971 <unknown>\n#10 0x55c38c8c91eb <unknown>\n#11 0x55c38c8ccf39 <unknown>\n#12 0x55c38c8b02c9 <unknown>\n#13 0x55c38c8cdae8 <unknown>\n#14 0x55c38c894baf <unknown>\n#15 0x55c38c8f10a8 <unknown>\n#16 0x55c38c8f1286 <unknown>\n#17 0x55c38c902ff6 <unknown>\n#18 0x7fbdd709caa4 <unknown>\n#19 0x7fbdd7129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:39:09.362950"
     },
     "CSELK-LLUB.N0000": {
-      "rsi_data": {
-        "1D": 73.05,
-        "1W": 76.14,
-        "1M": 73.75
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:26.831583"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55bdcef3801a <unknown>\n#1 0x55bdce9d7a70 <unknown>\n#2 0x55bdcea29907 <unknown>\n#3 0x55bdcea29b01 <unknown>\n#4 0x55bdcea77d54 <unknown>\n#5 0x55bdcea4f40d <unknown>\n#6 0x55bdcea7514f <unknown>\n#7 0x55bdcea4f1b3 <unknown>\n#8 0x55bdcea1b59b <unknown>\n#9 0x55bdcea1c971 <unknown>\n#10 0x55bdceefd1eb <unknown>\n#11 0x55bdcef00f39 <unknown>\n#12 0x55bdceee42c9 <unknown>\n#13 0x55bdcef01ae8 <unknown>\n#14 0x55bdceec8baf <unknown>\n#15 0x55bdcef250a8 <unknown>\n#16 0x55bdcef25286 <unknown>\n#17 0x55bdcef36ff6 <unknown>\n#18 0x7f661e69caa4 <unknown>\n#19 0x7f661e729c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:39:33.708643"
     },
     "CSELK-CWL.N0000": {
-      "rsi_data": {
-        "1D": 50.3,
-        "1W": 53.2,
-        "1M": 50.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:27.158940"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5604a57db01a <unknown>\n#1 0x5604a527aa70 <unknown>\n#2 0x5604a52cc907 <unknown>\n#3 0x5604a52ccb01 <unknown>\n#4 0x5604a531ad54 <unknown>\n#5 0x5604a52f240d <unknown>\n#6 0x5604a531814f <unknown>\n#7 0x5604a52f21b3 <unknown>\n#8 0x5604a52be59b <unknown>\n#9 0x5604a52bf971 <unknown>\n#10 0x5604a57a01eb <unknown>\n#11 0x5604a57a3f39 <unknown>\n#12 0x5604a57872c9 <unknown>\n#13 0x5604a57a4ae8 <unknown>\n#14 0x5604a576bbaf <unknown>\n#15 0x5604a57c80a8 <unknown>\n#16 0x5604a57c8286 <unknown>\n#17 0x5604a57d9ff6 <unknown>\n#18 0x7f78eae9caa4 <unknown>\n#19 0x7f78eaf29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:39:34.420072"
     },
     "CSELK-CIC.X0000": {
-      "rsi_data": {
-        "1D": 62.14,
-        "1W": 68.57,
-        "1M": 75.55
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:38.182127"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x557c0dc4e01a <unknown>\n#1 0x557c0d6eda70 <unknown>\n#2 0x557c0d73f907 <unknown>\n#3 0x557c0d73fb01 <unknown>\n#4 0x557c0d78dd54 <unknown>\n#5 0x557c0d76540d <unknown>\n#6 0x557c0d78b14f <unknown>\n#7 0x557c0d7651b3 <unknown>\n#8 0x557c0d73159b <unknown>\n#9 0x557c0d732971 <unknown>\n#10 0x557c0dc131eb <unknown>\n#11 0x557c0dc16f39 <unknown>\n#12 0x557c0dbfa2c9 <unknown>\n#13 0x557c0dc17ae8 <unknown>\n#14 0x557c0dbdebaf <unknown>\n#15 0x557c0dc3b0a8 <unknown>\n#16 0x557c0dc3b286 <unknown>\n#17 0x557c0dc4cff6 <unknown>\n#18 0x7f480869caa4 <unknown>\n#19 0x7f4808729c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:39:58.805747"
     },
     "CSELK-CIC.N0000": {
-      "rsi_data": {
-        "1D": 54.56,
-        "1W": 63.86,
-        "1M": 76.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:38.360699"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x564c1f86d01a <unknown>\n#1 0x564c1f30ca70 <unknown>\n#2 0x564c1f35e907 <unknown>\n#3 0x564c1f35eb01 <unknown>\n#4 0x564c1f3acd54 <unknown>\n#5 0x564c1f38440d <unknown>\n#6 0x564c1f3aa14f <unknown>\n#7 0x564c1f3841b3 <unknown>\n#8 0x564c1f35059b <unknown>\n#9 0x564c1f351971 <unknown>\n#10 0x564c1f8321eb <unknown>\n#11 0x564c1f835f39 <unknown>\n#12 0x564c1f8192c9 <unknown>\n#13 0x564c1f836ae8 <unknown>\n#14 0x564c1f7fdbaf <unknown>\n#15 0x564c1f85a0a8 <unknown>\n#16 0x564c1f85a286 <unknown>\n#17 0x564c1f86bff6 <unknown>\n#18 0x7f028489caa4 <unknown>\n#19 0x7f0284929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:39:59.515218"
     },
     "CSELK-CDB.N0000": {
-      "rsi_data": {
-        "1D": 51.79,
-        "1W": 75.8,
-        "1M": 78.39
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:49.476403"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55e6831a601a <unknown>\n#1 0x55e682c45a70 <unknown>\n#2 0x55e682c97907 <unknown>\n#3 0x55e682c97b01 <unknown>\n#4 0x55e682ce5d54 <unknown>\n#5 0x55e682cbd40d <unknown>\n#6 0x55e682ce314f <unknown>\n#7 0x55e682cbd1b3 <unknown>\n#8 0x55e682c8959b <unknown>\n#9 0x55e682c8a971 <unknown>\n#10 0x55e68316b1eb <unknown>\n#11 0x55e68316ef39 <unknown>\n#12 0x55e6831522c9 <unknown>\n#13 0x55e68316fae8 <unknown>\n#14 0x55e683136baf <unknown>\n#15 0x55e6831930a8 <unknown>\n#16 0x55e683193286 <unknown>\n#17 0x55e6831a4ff6 <unknown>\n#18 0x7fb678c9caa4 <unknown>\n#19 0x7fb678d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:40:23.894509"
     },
     "CSELK-CDB.X0000": {
-      "rsi_data": {
-        "1D": 50.93,
-        "1W": 70.82,
-        "1M": 86.77
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:28:49.692100"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55837151501a <unknown>\n#1 0x558370fb4a70 <unknown>\n#2 0x558371006907 <unknown>\n#3 0x558371006b01 <unknown>\n#4 0x558371054d54 <unknown>\n#5 0x55837102c40d <unknown>\n#6 0x55837105214f <unknown>\n#7 0x55837102c1b3 <unknown>\n#8 0x558370ff859b <unknown>\n#9 0x558370ff9971 <unknown>\n#10 0x5583714da1eb <unknown>\n#11 0x5583714ddf39 <unknown>\n#12 0x5583714c12c9 <unknown>\n#13 0x5583714deae8 <unknown>\n#14 0x5583714a5baf <unknown>\n#15 0x5583715020a8 <unknown>\n#16 0x558371502286 <unknown>\n#17 0x558371513ff6 <unknown>\n#18 0x7f5b74a9caa4 <unknown>\n#19 0x7f5b74b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:40:24.609786"
     },
     "CSELK-REEF.N0000": {
-      "rsi_data": {
-        "1D": 55.1,
-        "1W": 52.5,
-        "1M": 42.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:00.801346"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55c0a7c8601a <unknown>\n#1 0x55c0a7725a70 <unknown>\n#2 0x55c0a7777907 <unknown>\n#3 0x55c0a7777b01 <unknown>\n#4 0x55c0a77c5d54 <unknown>\n#5 0x55c0a779d40d <unknown>\n#6 0x55c0a77c314f <unknown>\n#7 0x55c0a779d1b3 <unknown>\n#8 0x55c0a776959b <unknown>\n#9 0x55c0a776a971 <unknown>\n#10 0x55c0a7c4b1eb <unknown>\n#11 0x55c0a7c4ef39 <unknown>\n#12 0x55c0a7c322c9 <unknown>\n#13 0x55c0a7c4fae8 <unknown>\n#14 0x55c0a7c16baf <unknown>\n#15 0x55c0a7c730a8 <unknown>\n#16 0x55c0a7c73286 <unknown>\n#17 0x55c0a7c84ff6 <unknown>\n#18 0x7f1151e9caa4 <unknown>\n#19 0x7f1151f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:40:48.998788"
     },
     "CSELK-CHOU.N0000": {
-      "rsi_data": {
-        "1D": 32.1,
-        "1W": 31.8,
-        "1M": 33.0
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:01.039259"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55a483a1901a <unknown>\n#1 0x55a4834b8a70 <unknown>\n#2 0x55a48350a907 <unknown>\n#3 0x55a48350ab01 <unknown>\n#4 0x55a483558d54 <unknown>\n#5 0x55a48353040d <unknown>\n#6 0x55a48355614f <unknown>\n#7 0x55a4835301b3 <unknown>\n#8 0x55a4834fc59b <unknown>\n#9 0x55a4834fd971 <unknown>\n#10 0x55a4839de1eb <unknown>\n#11 0x55a4839e1f39 <unknown>\n#12 0x55a4839c52c9 <unknown>\n#13 0x55a4839e2ae8 <unknown>\n#14 0x55a4839a9baf <unknown>\n#15 0x55a483a060a8 <unknown>\n#16 0x55a483a06286 <unknown>\n#17 0x55a483a17ff6 <unknown>\n#18 0x7ff3d349caa4 <unknown>\n#19 0x7ff3d3529c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:40:49.745591"
     },
     "CSELK-COOP.N0000": {
-      "rsi_data": {
-        "1D": 58.8,
-        "1W": 70.5,
-        "1M": 63.5
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:12.034408"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55bedcfdc01a <unknown>\n#1 0x55bedca7ba70 <unknown>\n#2 0x55bedcacd907 <unknown>\n#3 0x55bedcacdb01 <unknown>\n#4 0x55bedcb1bd54 <unknown>\n#5 0x55bedcaf340d <unknown>\n#6 0x55bedcb1914f <unknown>\n#7 0x55bedcaf31b3 <unknown>\n#8 0x55bedcabf59b <unknown>\n#9 0x55bedcac0971 <unknown>\n#10 0x55bedcfa11eb <unknown>\n#11 0x55bedcfa4f39 <unknown>\n#12 0x55bedcf882c9 <unknown>\n#13 0x55bedcfa5ae8 <unknown>\n#14 0x55bedcf6cbaf <unknown>\n#15 0x55bedcfc90a8 <unknown>\n#16 0x55bedcfc9286 <unknown>\n#17 0x55bedcfdaff6 <unknown>\n#18 0x7fa4cd09caa4 <unknown>\n#19 0x7fa4cd129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:41:14.150345"
     },
     "CSELK-PHAR.N0000": {
-      "rsi_data": {
-        "1D": 64.36,
-        "1W": 75.0,
-        "1M": 77.69
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:12.439916"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56027e3fb01a <unknown>\n#1 0x56027de9aa70 <unknown>\n#2 0x56027deec907 <unknown>\n#3 0x56027deecb01 <unknown>\n#4 0x56027df3ad54 <unknown>\n#5 0x56027df1240d <unknown>\n#6 0x56027df3814f <unknown>\n#7 0x56027df121b3 <unknown>\n#8 0x56027dede59b <unknown>\n#9 0x56027dedf971 <unknown>\n#10 0x56027e3c01eb <unknown>\n#11 0x56027e3c3f39 <unknown>\n#12 0x56027e3a72c9 <unknown>\n#13 0x56027e3c4ae8 <unknown>\n#14 0x56027e38bbaf <unknown>\n#15 0x56027e3e80a8 <unknown>\n#16 0x56027e3e8286 <unknown>\n#17 0x56027e3f9ff6 <unknown>\n#18 0x7f001e69caa4 <unknown>\n#19 0x7f001e729c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:41:14.856661"
     },
     "CSELK-DOCK.N0000": {
-      "rsi_data": {
-        "1D": 61.27,
-        "1W": 67.6,
-        "1M": 73.35
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:23.305400"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x556bf949001a <unknown>\n#1 0x556bf8f2fa70 <unknown>\n#2 0x556bf8f81907 <unknown>\n#3 0x556bf8f81b01 <unknown>\n#4 0x556bf8fcfd54 <unknown>\n#5 0x556bf8fa740d <unknown>\n#6 0x556bf8fcd14f <unknown>\n#7 0x556bf8fa71b3 <unknown>\n#8 0x556bf8f7359b <unknown>\n#9 0x556bf8f74971 <unknown>\n#10 0x556bf94551eb <unknown>\n#11 0x556bf9458f39 <unknown>\n#12 0x556bf943c2c9 <unknown>\n#13 0x556bf9459ae8 <unknown>\n#14 0x556bf9420baf <unknown>\n#15 0x556bf947d0a8 <unknown>\n#16 0x556bf947d286 <unknown>\n#17 0x556bf948eff6 <unknown>\n#18 0x7f21b5e9caa4 <unknown>\n#19 0x7f21b5f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:41:39.234421"
     },
     "CSELK-CFI.N0000": {
-      "rsi_data": {
-        "1D": 72.38,
-        "1W": 89.57,
-        "1M": 92.04
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:23.740358"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x558d4024201a <unknown>\n#1 0x558d3fce1a70 <unknown>\n#2 0x558d3fd33907 <unknown>\n#3 0x558d3fd33b01 <unknown>\n#4 0x558d3fd81d54 <unknown>\n#5 0x558d3fd5940d <unknown>\n#6 0x558d3fd7f14f <unknown>\n#7 0x558d3fd591b3 <unknown>\n#8 0x558d3fd2559b <unknown>\n#9 0x558d3fd26971 <unknown>\n#10 0x558d402071eb <unknown>\n#11 0x558d4020af39 <unknown>\n#12 0x558d401ee2c9 <unknown>\n#13 0x558d4020bae8 <unknown>\n#14 0x558d401d2baf <unknown>\n#15 0x558d4022f0a8 <unknown>\n#16 0x558d4022f286 <unknown>\n#17 0x558d40240ff6 <unknown>\n#18 0x7fbbe709caa4 <unknown>\n#19 0x7fbbe7129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:41:39.940036"
     },
     "CSELK-CIT.N0000": {
-      "rsi_data": {
-        "1D": 68.77,
-        "1W": 79.41,
-        "1M": 84.71
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:34.774105"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5603ec01401a <unknown>\n#1 0x5603ebab3a70 <unknown>\n#2 0x5603ebb05907 <unknown>\n#3 0x5603ebb05b01 <unknown>\n#4 0x5603ebb53d54 <unknown>\n#5 0x5603ebb2b40d <unknown>\n#6 0x5603ebb5114f <unknown>\n#7 0x5603ebb2b1b3 <unknown>\n#8 0x5603ebaf759b <unknown>\n#9 0x5603ebaf8971 <unknown>\n#10 0x5603ebfd91eb <unknown>\n#11 0x5603ebfdcf39 <unknown>\n#12 0x5603ebfc02c9 <unknown>\n#13 0x5603ebfddae8 <unknown>\n#14 0x5603ebfa4baf <unknown>\n#15 0x5603ec0010a8 <unknown>\n#16 0x5603ec001286 <unknown>\n#17 0x5603ec012ff6 <unknown>\n#18 0x7ff74a29caa4 <unknown>\n#19 0x7ff74a329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:42:04.312466"
     },
     "CSELK-CLND.N0000": {
-      "rsi_data": {
-        "1D": 52.0,
-        "1W": 67.0,
-        "1M": 66.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:34.969535"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55e9c276b01a <unknown>\n#1 0x55e9c220aa70 <unknown>\n#2 0x55e9c225c907 <unknown>\n#3 0x55e9c225cb01 <unknown>\n#4 0x55e9c22aad54 <unknown>\n#5 0x55e9c228240d <unknown>\n#6 0x55e9c22a814f <unknown>\n#7 0x55e9c22821b3 <unknown>\n#8 0x55e9c224e59b <unknown>\n#9 0x55e9c224f971 <unknown>\n#10 0x55e9c27301eb <unknown>\n#11 0x55e9c2733f39 <unknown>\n#12 0x55e9c27172c9 <unknown>\n#13 0x55e9c2734ae8 <unknown>\n#14 0x55e9c26fbbaf <unknown>\n#15 0x55e9c27580a8 <unknown>\n#16 0x55e9c2758286 <unknown>\n#17 0x55e9c2769ff6 <unknown>\n#18 0x7fe4c729caa4 <unknown>\n#19 0x7fe4c7329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:42:05.020719"
     },
     "CSELK-COMB.N0000": {
-      "rsi_data": {
-        "1D": 88.03,
-        "1W": 85.36,
-        "1M": 80.58
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:46.093686"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55d992ada01a <unknown>\n#1 0x55d992579a70 <unknown>\n#2 0x55d9925cb907 <unknown>\n#3 0x55d9925cbb01 <unknown>\n#4 0x55d992619d54 <unknown>\n#5 0x55d9925f140d <unknown>\n#6 0x55d99261714f <unknown>\n#7 0x55d9925f11b3 <unknown>\n#8 0x55d9925bd59b <unknown>\n#9 0x55d9925be971 <unknown>\n#10 0x55d992a9f1eb <unknown>\n#11 0x55d992aa2f39 <unknown>\n#12 0x55d992a862c9 <unknown>\n#13 0x55d992aa3ae8 <unknown>\n#14 0x55d992a6abaf <unknown>\n#15 0x55d992ac70a8 <unknown>\n#16 0x55d992ac7286 <unknown>\n#17 0x55d992ad8ff6 <unknown>\n#18 0x7fe16729caa4 <unknown>\n#19 0x7fe167329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:42:29.474902"
     },
     "CSELK-COMB.X0000": {
-      "rsi_data": {
-        "1D": 88.16,
-        "1W": 85.93,
-        "1M": 79.83
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:46.296610"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5613cac4701a <unknown>\n#1 0x5613ca6e6a70 <unknown>\n#2 0x5613ca738907 <unknown>\n#3 0x5613ca738b01 <unknown>\n#4 0x5613ca786d54 <unknown>\n#5 0x5613ca75e40d <unknown>\n#6 0x5613ca78414f <unknown>\n#7 0x5613ca75e1b3 <unknown>\n#8 0x5613ca72a59b <unknown>\n#9 0x5613ca72b971 <unknown>\n#10 0x5613cac0c1eb <unknown>\n#11 0x5613cac0ff39 <unknown>\n#12 0x5613cabf32c9 <unknown>\n#13 0x5613cac10ae8 <unknown>\n#14 0x5613cabd7baf <unknown>\n#15 0x5613cac340a8 <unknown>\n#16 0x5613cac34286 <unknown>\n#17 0x5613cac45ff6 <unknown>\n#18 0x7f600649caa4 <unknown>\n#19 0x7f6006529c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:42:30.128796"
     },
     "CSELK-COCR.N0000": {
       "rsi_data": {
-        "1D": 85.89,
-        "1W": 89.63,
-        "1M": 87.65
+        "1D": 86.09,
+        "1W": 89.71,
+        "1M": 87.7
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:57.420366"
+      "timestamp": "2025-08-19T09:42:40.786577"
     },
     "CSELK-COMD.N0000": {
       "rsi_data": {
-        "1D": 56.97,
-        "1W": 76.41,
-        "1M": 79.14
+        "1D": 57.78,
+        "1W": 77.13,
+        "1M": 79.62
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:29:57.662927"
+      "timestamp": "2025-08-19T09:42:41.397635"
     },
     "CSELK-SOY.N0000": {
       "rsi_data": {
-        "1D": 74.49,
-        "1W": 77.94,
-        "1M": 79.29
+        "1D": 73.27,
+        "1W": 77.25,
+        "1M": 78.83
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:08.759780"
+      "timestamp": "2025-08-19T09:42:51.880502"
     },
     "CSELK-DPL.N0000": {
       "rsi_data": {
-        "1D": 53.2,
-        "1W": 50.2,
-        "1M": 50.5
+        "1D": 47.4,
+        "1W": 47.2,
+        "1M": 49.1
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:09.018160"
-    },
-    "CSELK-DIAL.N0000": {
-      "rsi_data": {
-        "1D": 79.9,
-        "1W": 88.7,
-        "1M": 80.9
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:20.289001"
+      "timestamp": "2025-08-19T09:42:52.480397"
     },
     "CSELK-DFCC.N0000": {
       "rsi_data": {
-        "1D": 82.59,
-        "1W": 83.61,
-        "1M": 78.39
+        "1D": 81.87,
+        "1W": 83.26,
+        "1M": 78.15
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:21.080679"
+      "timestamp": "2025-08-19T09:43:02.961310"
+    },
+    "CSELK-DIAL.N0000": {
+      "rsi_data": {
+        "1D": 83.4,
+        "1W": 89.1,
+        "1M": 81.2
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:43:03.531195"
+    },
+    "CSELK-DIMO.N0000": {
+      "rsi_data": {
+        "1D": 53.53,
+        "1W": 62.6,
+        "1M": 70.0
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:43:14.570190"
     },
     "CSELK-CALF.N0000": {
       "rsi_data": {
@@ -976,17 +890,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:31.493825"
-    },
-    "CSELK-DIMO.N0000": {
-      "rsi_data": {
-        "1D": 51.84,
-        "1W": 62.0,
-        "1M": 69.43
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:32.253846"
+      "timestamp": "2025-08-19T09:43:15.045515"
     },
     "CSELK-CTEA.N0000": {
       "rsi_data": {
@@ -996,67 +900,67 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:43.394033"
+      "timestamp": "2025-08-19T09:43:26.164422"
     },
     "CSELK-PKME.N0000": {
       "rsi_data": {
-        "1D": 77.58,
-        "1W": 88.87,
+        "1D": 76.44,
+        "1W": 85.18,
         "1M": null
       },
       "status": "success",
       "successful_timeframes": 2,
-      "timestamp": "2025-08-19T07:30:47.790925"
+      "timestamp": "2025-08-19T09:43:30.871698"
     },
     "CSELK-DIPD.N0000": {
       "rsi_data": {
-        "1D": 44.4,
-        "1W": 55.8,
-        "1M": 66.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:54.546596"
-    },
-    "CSELK-DIST.N0000": {
-      "rsi_data": {
-        "1D": 57.1,
-        "1W": 69.4,
-        "1M": 79.1
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:30:58.922895"
-    },
-    "CSELK-STAF.N0000": {
-      "rsi_data": {
-        "1D": 73.9,
-        "1W": 64.2,
+        "1D": 43.2,
+        "1W": 55.2,
         "1M": 65.9
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:05.706377"
+      "timestamp": "2025-08-19T09:43:37.027693"
+    },
+    "CSELK-DIST.N0000": {
+      "rsi_data": {
+        "1D": 55.7,
+        "1W": 69.1,
+        "1M": 78.8
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:43:41.738506"
+    },
+    "CSELK-STAF.N0000": {
+      "rsi_data": {
+        "1D": 74.5,
+        "1W": 64.6,
+        "1M": 66.2
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:43:47.991926"
     },
     "CSELK-ASCO.N0000": {
       "rsi_data": {
-        "1D": 52.6,
-        "1W": 67.8,
-        "1M": 69.9
+        "1D": 54.0,
+        "1W": 68.8,
+        "1M": 70.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:10.020534"
+      "timestamp": "2025-08-19T09:43:52.665403"
     },
     "CSELK-ASHO.N0000": {
       "rsi_data": {
-        "1D": 58.21,
-        "1W": 81.36,
-        "1M": 84.2
+        "1D": 58.25,
+        "1W": 81.41,
+        "1M": 84.23
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:16.817828"
+      "timestamp": "2025-08-19T09:43:58.847995"
     },
     "CSELK-ASPH.N0000": {
       "rsi_data": {
@@ -1066,17 +970,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:21.119719"
+      "timestamp": "2025-08-19T09:44:03.597020"
     },
     "CSELK-BFN.N0000": {
       "rsi_data": {
-        "1D": 64.6,
-        "1W": 86.2,
-        "1M": 90.8
+        "1D": 68.9,
+        "1W": 86.8,
+        "1M": 91.1
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:27.900888"
+      "timestamp": "2025-08-19T09:44:09.819460"
     },
     "CSELK-CERA.N0000": {
       "rsi_data": {
@@ -1086,17 +990,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:32.252999"
+      "timestamp": "2025-08-19T09:44:15.400831"
     },
     "CSELK-CFVF.N0000": {
       "rsi_data": {
-        "1D": 81.1,
-        "1W": 79.5,
-        "1M": 68.5
+        "1D": 84.0,
+        "1W": 80.0,
+        "1M": 68.9
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:39.046237"
+      "timestamp": "2025-08-19T09:44:20.731198"
     },
     "CSELK-CITH.N0000": {
       "rsi_data": {
@@ -1106,17 +1010,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:43.351260"
+      "timestamp": "2025-08-19T09:44:26.531633"
     },
     "CSELK-CONN.N0000": {
       "rsi_data": {
-        "1D": 52.8,
-        "1W": 58.3,
-        "1M": 63.0
+        "1D": 49.9,
+        "1W": 56.9,
+        "1M": 62.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:50.201377"
+      "timestamp": "2025-08-19T09:44:31.712303"
     },
     "CSELK-CSF.N0000": {
       "rsi_data": {
@@ -1126,67 +1030,67 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:31:54.474068"
+      "timestamp": "2025-08-19T09:44:37.501032"
     },
     "CSELK-EAST.N0000": {
       "rsi_data": {
-        "1D": 80.5,
-        "1W": 88.7,
-        "1M": 93.6
+        "1D": 79.8,
+        "1W": 88.5,
+        "1M": 93.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:01.398801"
+      "timestamp": "2025-08-19T09:44:42.806815"
     },
     "CSELK-EBCR.N0000": {
       "rsi_data": {
-        "1D": 60.7,
-        "1W": 75.5,
-        "1M": 81.4
+        "1D": 59.0,
+        "1W": 74.4,
+        "1M": 81.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:05.588824"
+      "timestamp": "2025-08-19T09:44:48.581782"
     },
     "CSELK-ECL.N0000": {
       "rsi_data": {
-        "1D": 48.6,
-        "1W": 51.5,
-        "1M": 50.3
+        "1D": 46.4,
+        "1W": 50.5,
+        "1M": 49.7
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:12.493977"
+      "timestamp": "2025-08-19T09:44:53.780927"
     },
     "CSELK-EDEN.N0000": {
       "rsi_data": {
-        "1D": 48.9,
-        "1W": 50.3,
-        "1M": 52.1
+        "1D": 53.7,
+        "1W": 52.2,
+        "1M": 52.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:16.756836"
+      "timestamp": "2025-08-19T09:44:59.824561"
     },
     "CSELK-ELPL.N0000": {
       "rsi_data": {
-        "1D": 66.22,
-        "1W": 74.89,
-        "1M": 73.0
+        "1D": 64.16,
+        "1W": 73.33,
+        "1M": 72.67
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:23.535822"
+      "timestamp": "2025-08-19T09:45:04.731728"
     },
     "CSELK-EMER.N0000": {
       "rsi_data": {
-        "1D": 46.6,
-        "1W": 53.2,
-        "1M": 54.7
+        "1D": 50.3,
+        "1W": 55.1,
+        "1M": 55.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:27.834117"
+      "timestamp": "2025-08-19T09:45:10.805265"
     },
     "CSELK-EML.N0000": {
       "rsi_data": {
@@ -1196,67 +1100,67 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:34.621439"
+      "timestamp": "2025-08-19T09:45:15.640643"
     },
     "CSELK-ETWO.N0000": {
       "rsi_data": {
-        "1D": 65.2,
-        "1W": 62.8,
-        "1M": 63.1
+        "1D": 55.6,
+        "1W": 58.7,
+        "1M": 60.1
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:38.961020"
+      "timestamp": "2025-08-19T09:45:21.715456"
     },
     "CSELK-EXT.N0000": {
       "rsi_data": {
-        "1D": 63.4,
-        "1W": 62.5,
-        "1M": 50.2
+        "1D": 58.9,
+        "1W": 58.8,
+        "1M": 48.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:45.721294"
+      "timestamp": "2025-08-19T09:45:26.660848"
     },
     "CSELK-FCT.N0000": {
       "rsi_data": {
-        "1D": 81.0,
-        "1W": 82.5,
-        "1M": 63.8
+        "1D": 79.9,
+        "1W": 82.3,
+        "1M": 63.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:50.016659"
+      "timestamp": "2025-08-19T09:45:32.623288"
     },
     "CSELK-GEST.N0000": {
       "rsi_data": {
-        "1D": 54.06,
-        "1W": 71.69,
-        "1M": 72.95
+        "1D": 50.39,
+        "1W": 68.58,
+        "1M": 71.15
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:32:56.906075"
+      "timestamp": "2025-08-19T09:45:37.634115"
     },
     "CSELK-GHLL.N0000": {
       "rsi_data": {
-        "1D": 54.6,
-        "1W": 62.8,
-        "1M": 61.0
+        "1D": 53.7,
+        "1W": 61.8,
+        "1M": 60.7
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:01.125976"
+      "timestamp": "2025-08-19T09:45:43.492597"
     },
     "CSELK-HAPU.N0000": {
       "rsi_data": {
-        "1D": 56.6,
-        "1W": 60.0,
-        "1M": 61.0
+        "1D": 56.3,
+        "1W": 59.7,
+        "1M": 60.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:08.040461"
+      "timestamp": "2025-08-19T09:45:48.562498"
     },
     "CSELK-HARI.N0000": {
       "rsi_data": {
@@ -1266,27 +1170,27 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:15.347609"
+      "timestamp": "2025-08-19T09:45:54.504537"
     },
     "CSELK-HASU.N0000": {
       "rsi_data": {
-        "1D": 52.05,
-        "1W": 69.52,
-        "1M": 73.59
+        "1D": 50.08,
+        "1W": 67.75,
+        "1M": 72.57
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:19.236937"
+      "timestamp": "2025-08-19T09:45:59.298726"
     },
     "CSELK-HAYC.N0000": {
       "rsi_data": {
-        "1D": 44.9,
-        "1W": 56.2,
-        "1M": 61.0
+        "1D": 47.8,
+        "1W": 58.2,
+        "1M": 62.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:26.382119"
+      "timestamp": "2025-08-19T09:46:05.482522"
     },
     "CSELK-HAYL.N0000": {
       "rsi_data": {
@@ -1296,17 +1200,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:30.223341"
+      "timestamp": "2025-08-19T09:46:10.174482"
     },
     "CSELK-HBS.N0000": {
       "rsi_data": {
-        "1D": 50.8,
-        "1W": 54.8,
-        "1M": 37.6
+        "1D": 48.8,
+        "1W": 53.0,
+        "1M": 37.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:37.593815"
+      "timestamp": "2025-08-19T09:46:16.403512"
     },
     "CSELK-HDFC.N0000": {
       "rsi_data": {
@@ -1316,57 +1220,49 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:41.374709"
+      "timestamp": "2025-08-19T09:46:21.115597"
     },
     "CSELK-HELA.N0000": {
       "rsi_data": {
-        "1D": 46.8,
-        "1W": 39.5,
-        "1M": 32.2
+        "1D": 51.7,
+        "1W": 41.2,
+        "1M": 32.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:48.789881"
+      "timestamp": "2025-08-19T09:46:27.343732"
     },
     "CSELK-HEXP.N0000": {
-      "rsi_data": {
-        "1D": 65.6,
-        "1W": 73.6,
-        "1M": 61.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:33:52.393481"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56456087401a <unknown>\n#1 0x564560313a70 <unknown>\n#2 0x564560365907 <unknown>\n#3 0x564560365b01 <unknown>\n#4 0x5645603b3d54 <unknown>\n#5 0x56456038b40d <unknown>\n#6 0x5645603b114f <unknown>\n#7 0x56456038b1b3 <unknown>\n#8 0x56456035759b <unknown>\n#9 0x564560358971 <unknown>\n#10 0x5645608391eb <unknown>\n#11 0x56456083cf39 <unknown>\n#12 0x5645608202c9 <unknown>\n#13 0x56456083dae8 <unknown>\n#14 0x564560804baf <unknown>\n#15 0x5645608610a8 <unknown>\n#16 0x564560861286 <unknown>\n#17 0x564560872ff6 <unknown>\n#18 0x7f536ba9caa4 <unknown>\n#19 0x7f536bb29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:46:46.257457"
     },
     "CSELK-HHL.N0000": {
-      "rsi_data": {
-        "1D": 44.8,
-        "1W": 67.0,
-        "1M": 81.9
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:00.065075"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55b08fbf601a <unknown>\n#1 0x55b08f695a70 <unknown>\n#2 0x55b08f6e7907 <unknown>\n#3 0x55b08f6e7b01 <unknown>\n#4 0x55b08f735d54 <unknown>\n#5 0x55b08f70d40d <unknown>\n#6 0x55b08f73314f <unknown>\n#7 0x55b08f70d1b3 <unknown>\n#8 0x55b08f6d959b <unknown>\n#9 0x55b08f6da971 <unknown>\n#10 0x55b08fbbb1eb <unknown>\n#11 0x55b08fbbef39 <unknown>\n#12 0x55b08fba22c9 <unknown>\n#13 0x55b08fbbfae8 <unknown>\n#14 0x55b08fb86baf <unknown>\n#15 0x55b08fbe30a8 <unknown>\n#16 0x55b08fbe3286 <unknown>\n#17 0x55b08fbf4ff6 <unknown>\n#18 0x7f37f569caa4 <unknown>\n#19 0x7f37f5729c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:46:52.427741"
     },
     "CSELK-HNB.N0000": {
       "rsi_data": {
-        "1D": 87.69,
-        "1W": 82.3,
-        "1M": 76.47
+        "1D": 87.82,
+        "1W": 82.38,
+        "1M": 76.51
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:03.593357"
+      "timestamp": "2025-08-19T09:46:57.078758"
     },
     "CSELK-HNB.X0000": {
       "rsi_data": {
-        "1D": 83.35,
-        "1W": 74.96,
-        "1M": 75.84
+        "1D": 82.88,
+        "1W": 74.7,
+        "1M": 75.73
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:11.231085"
+      "timestamp": "2025-08-19T09:47:03.359009"
     },
     "CSELK-HNBF.N0000": {
       "rsi_data": {
@@ -1376,39 +1272,39 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:14.633159"
+      "timestamp": "2025-08-19T09:47:08.042905"
     },
     "CSELK-HNBF.R0000": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x559377e3801a <unknown>\n#1 0x5593778d7a70 <unknown>\n#2 0x559377929907 <unknown>\n#3 0x559377929b01 <unknown>\n#4 0x559377977d54 <unknown>\n#5 0x55937794f40d <unknown>\n#6 0x55937797514f <unknown>\n#7 0x55937794f1b3 <unknown>\n#8 0x55937791b59b <unknown>\n#9 0x55937791c971 <unknown>\n#10 0x559377dfd1eb <unknown>\n#11 0x559377e00f39 <unknown>\n#12 0x559377de42c9 <unknown>\n#13 0x559377e01ae8 <unknown>\n#14 0x559377dc8baf <unknown>\n#15 0x559377e250a8 <unknown>\n#16 0x559377e25286 <unknown>\n#17 0x559377e36ff6 <unknown>\n#18 0x7fb22e69caa4 <unknown>\n#19 0x7fb22e729c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:34:37.316856"
+      "error": "Error: Message: \nStacktrace:\n#0 0x55dc6648801a <unknown>\n#1 0x55dc65f27a70 <unknown>\n#2 0x55dc65f79907 <unknown>\n#3 0x55dc65f79b01 <unknown>\n#4 0x55dc65fc7d54 <unknown>\n#5 0x55dc65f9f40d <unknown>\n#6 0x55dc65fc514f <unknown>\n#7 0x55dc65f9f1b3 <unknown>\n#8 0x55dc65f6b59b <unknown>\n#9 0x55dc65f6c971 <unknown>\n#10 0x55dc6644d1eb <unknown>\n#11 0x55dc66450f39 <unknown>\n#12 0x55dc664342c9 <unknown>\n#13 0x55dc66451ae8 <unknown>\n#14 0x55dc66418baf <unknown>\n#15 0x55dc664750a8 <unknown>\n#16 0x55dc66475286 <unknown>\n#17 0x55dc66486ff6 <unknown>\n#18 0x7f50e1a9caa4 <unknown>\n#19 0x7f50e1b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:47:29.220749"
     },
     "CSELK-HNBF.R0001": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x556803e2c01a <unknown>\n#1 0x5568038cba70 <unknown>\n#2 0x55680391d907 <unknown>\n#3 0x55680391db01 <unknown>\n#4 0x55680396bd54 <unknown>\n#5 0x55680394340d <unknown>\n#6 0x55680396914f <unknown>\n#7 0x5568039431b3 <unknown>\n#8 0x55680390f59b <unknown>\n#9 0x556803910971 <unknown>\n#10 0x556803df11eb <unknown>\n#11 0x556803df4f39 <unknown>\n#12 0x556803dd82c9 <unknown>\n#13 0x556803df5ae8 <unknown>\n#14 0x556803dbcbaf <unknown>\n#15 0x556803e190a8 <unknown>\n#16 0x556803e19286 <unknown>\n#17 0x556803e2aff6 <unknown>\n#18 0x7f558ac9caa4 <unknown>\n#19 0x7f558ad29c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:34:40.623473"
+      "error": "Error: Message: \nStacktrace:\n#0 0x55901949601a <unknown>\n#1 0x559018f35a70 <unknown>\n#2 0x559018f87907 <unknown>\n#3 0x559018f87b01 <unknown>\n#4 0x559018fd5d54 <unknown>\n#5 0x559018fad40d <unknown>\n#6 0x559018fd314f <unknown>\n#7 0x559018fad1b3 <unknown>\n#8 0x559018f7959b <unknown>\n#9 0x559018f7a971 <unknown>\n#10 0x55901945b1eb <unknown>\n#11 0x55901945ef39 <unknown>\n#12 0x5590194422c9 <unknown>\n#13 0x55901945fae8 <unknown>\n#14 0x559019426baf <unknown>\n#15 0x5590194830a8 <unknown>\n#16 0x559019483286 <unknown>\n#17 0x559019494ff6 <unknown>\n#18 0x7f0af129caa4 <unknown>\n#19 0x7f0af1329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:47:33.740337"
     },
     "CSELK-HNBF.X0000": {
       "rsi_data": {
-        "1D": 71.5,
-        "1W": 80.1,
-        "1M": 69.2
+        "1D": 69.5,
+        "1W": 79.2,
+        "1M": 68.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:48.486971"
+      "timestamp": "2025-08-19T09:47:40.548986"
     },
     "CSELK-HOPL.N0000": {
       "rsi_data": {
-        "1D": 55.3,
-        "1W": 65.7,
-        "1M": 63.5
+        "1D": 52.4,
+        "1W": 63.9,
+        "1M": 62.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:52.081268"
+      "timestamp": "2025-08-19T09:47:44.693601"
     },
     "CSELK-HPFL.N0000": {
       "rsi_data": {
@@ -1418,7 +1314,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:34:59.637199"
+      "timestamp": "2025-08-19T09:47:51.447658"
     },
     "CSELK-HPL.N0000": {
       "rsi_data": {
@@ -1428,307 +1324,219 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:03.235808"
+      "timestamp": "2025-08-19T09:47:55.663116"
     },
     "CSELK-HSIG.N0000": {
       "rsi_data": {
-        "1D": 64.9,
-        "1W": 62.4,
+        "1D": 65.1,
+        "1W": 62.5,
         "1M": 67.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:10.675719"
+      "timestamp": "2025-08-19T09:48:02.388639"
     },
     "CSELK-HUNA.N0000": {
       "rsi_data": {
-        "1D": 54.5,
-        "1W": 40.7,
-        "1M": 41.9
+        "1D": 51.3,
+        "1W": 38.9,
+        "1M": 41.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:14.332802"
+      "timestamp": "2025-08-19T09:48:10.386235"
     },
     "CSELK-HUNT.N0000": {
       "rsi_data": {
-        "1D": 62.34,
-        "1W": 69.37,
-        "1M": 70.56
+        "1D": 56.28,
+        "1W": 62.59,
+        "1M": 65.97
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:21.839575"
+      "timestamp": "2025-08-19T09:48:13.269341"
     },
     "CSELK-HVA.N0000": {
       "rsi_data": {
-        "1D": 54.0,
-        "1W": 48.2,
-        "1M": 47.7
+        "1D": 50.0,
+        "1W": 46.3,
+        "1M": 46.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:25.463811"
+      "timestamp": "2025-08-19T09:48:21.373608"
     },
     "CSELK-JAT.N0000": {
       "rsi_data": {
-        "1D": 48.2,
-        "1W": 67.0,
-        "1M": 75.2
+        "1D": 50.7,
+        "1W": 68.6,
+        "1M": 76.1
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:32.890706"
+      "timestamp": "2025-08-19T09:48:24.091758"
     },
     "CSELK-JETS.N0000": {
       "rsi_data": {
-        "1D": 68.9,
-        "1W": 71.3,
-        "1M": 70.6
+        "1D": 69.8,
+        "1W": 71.7,
+        "1M": 70.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:36.536581"
+      "timestamp": "2025-08-19T09:48:32.287353"
     },
     "CSELK-JINS.N0000": {
       "rsi_data": {
-        "1D": 76.9,
-        "1W": 73.0,
-        "1M": 77.5
+        "1D": 74.3,
+        "1W": 72.4,
+        "1M": 77.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:43.976332"
+      "timestamp": "2025-08-19T09:48:35.006248"
     },
     "CSELK-JKH.N0000": {
-      "rsi_data": {
-        "1D": 44.8,
-        "1W": 56.0,
-        "1M": 62.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:47.616656"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55cc9d47c01a <unknown>\n#1 0x55cc9cf1ba70 <unknown>\n#2 0x55cc9cf6d907 <unknown>\n#3 0x55cc9cf6db01 <unknown>\n#4 0x55cc9cfbbd54 <unknown>\n#5 0x55cc9cf9340d <unknown>\n#6 0x55cc9cfb914f <unknown>\n#7 0x55cc9cf931b3 <unknown>\n#8 0x55cc9cf5f59b <unknown>\n#9 0x55cc9cf60971 <unknown>\n#10 0x55cc9d4411eb <unknown>\n#11 0x55cc9d444f39 <unknown>\n#12 0x55cc9d4282c9 <unknown>\n#13 0x55cc9d445ae8 <unknown>\n#14 0x55cc9d40cbaf <unknown>\n#15 0x55cc9d4690a8 <unknown>\n#16 0x55cc9d469286 <unknown>\n#17 0x55cc9d47aff6 <unknown>\n#18 0x7fd8a4a9caa4 <unknown>\n#19 0x7fd8a4b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:48:57.443213"
     },
     "CSELK-JKL.N0000": {
-      "rsi_data": {
-        "1D": 39.6,
-        "1W": 53.1,
-        "1M": 60.9
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:55.099828"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56549d95501a <unknown>\n#1 0x56549d3f4a70 <unknown>\n#2 0x56549d446907 <unknown>\n#3 0x56549d446b01 <unknown>\n#4 0x56549d494d54 <unknown>\n#5 0x56549d46c40d <unknown>\n#6 0x56549d49214f <unknown>\n#7 0x56549d46c1b3 <unknown>\n#8 0x56549d43859b <unknown>\n#9 0x56549d439971 <unknown>\n#10 0x56549d91a1eb <unknown>\n#11 0x56549d91df39 <unknown>\n#12 0x56549d9012c9 <unknown>\n#13 0x56549d91eae8 <unknown>\n#14 0x56549d8e5baf <unknown>\n#15 0x56549d9420a8 <unknown>\n#16 0x56549d942286 <unknown>\n#17 0x56549d953ff6 <unknown>\n#18 0x7fb146c9caa4 <unknown>\n#19 0x7fb146d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:49:00.104012"
     },
     "CSELK-KAHA.N0000": {
-      "rsi_data": {
-        "1D": 51.9,
-        "1W": 51.0,
-        "1M": 52.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:35:58.923622"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55a3a853b01a <unknown>\n#1 0x55a3a7fdaa70 <unknown>\n#2 0x55a3a802c907 <unknown>\n#3 0x55a3a802cb01 <unknown>\n#4 0x55a3a807ad54 <unknown>\n#5 0x55a3a805240d <unknown>\n#6 0x55a3a807814f <unknown>\n#7 0x55a3a80521b3 <unknown>\n#8 0x55a3a801e59b <unknown>\n#9 0x55a3a801f971 <unknown>\n#10 0x55a3a85001eb <unknown>\n#11 0x55a3a8503f39 <unknown>\n#12 0x55a3a84e72c9 <unknown>\n#13 0x55a3a8504ae8 <unknown>\n#14 0x55a3a84cbbaf <unknown>\n#15 0x55a3a85280a8 <unknown>\n#16 0x55a3a8528286 <unknown>\n#17 0x55a3a8539ff6 <unknown>\n#18 0x7f5546c9caa4 <unknown>\n#19 0x7f5546d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:49:22.600400"
     },
     "CSELK-KCAB.N0000": {
-      "rsi_data": {
-        "1D": 72.28,
-        "1W": 75.98,
-        "1M": 77.85
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:06.175576"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55f3b98cf01a <unknown>\n#1 0x55f3b936ea70 <unknown>\n#2 0x55f3b93c0907 <unknown>\n#3 0x55f3b93c0b01 <unknown>\n#4 0x55f3b940ed54 <unknown>\n#5 0x55f3b93e640d <unknown>\n#6 0x55f3b940c14f <unknown>\n#7 0x55f3b93e61b3 <unknown>\n#8 0x55f3b93b259b <unknown>\n#9 0x55f3b93b3971 <unknown>\n#10 0x55f3b98941eb <unknown>\n#11 0x55f3b9897f39 <unknown>\n#12 0x55f3b987b2c9 <unknown>\n#13 0x55f3b9898ae8 <unknown>\n#14 0x55f3b985fbaf <unknown>\n#15 0x55f3b98bc0a8 <unknown>\n#16 0x55f3b98bc286 <unknown>\n#17 0x55f3b98cdff6 <unknown>\n#18 0x7f4c4049caa4 <unknown>\n#19 0x7f4c40529c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:49:25.225991"
     },
     "CSELK-KDL.N0000": {
-      "rsi_data": {
-        "1D": 46.2,
-        "1W": 46.6,
-        "1M": 45.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:10.521731"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56022ec9601a <unknown>\n#1 0x56022e735a70 <unknown>\n#2 0x56022e787907 <unknown>\n#3 0x56022e787b01 <unknown>\n#4 0x56022e7d5d54 <unknown>\n#5 0x56022e7ad40d <unknown>\n#6 0x56022e7d314f <unknown>\n#7 0x56022e7ad1b3 <unknown>\n#8 0x56022e77959b <unknown>\n#9 0x56022e77a971 <unknown>\n#10 0x56022ec5b1eb <unknown>\n#11 0x56022ec5ef39 <unknown>\n#12 0x56022ec422c9 <unknown>\n#13 0x56022ec5fae8 <unknown>\n#14 0x56022ec26baf <unknown>\n#15 0x56022ec830a8 <unknown>\n#16 0x56022ec83286 <unknown>\n#17 0x56022ec94ff6 <unknown>\n#18 0x7f0478a9caa4 <unknown>\n#19 0x7f0478b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:49:47.791427"
     },
     "CSELK-KFP.N0000": {
-      "rsi_data": {
-        "1D": 61.59,
-        "1W": 58.9,
-        "1M": 58.27
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:17.279706"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55b7bb1c401a <unknown>\n#1 0x55b7bac63a70 <unknown>\n#2 0x55b7bacb5907 <unknown>\n#3 0x55b7bacb5b01 <unknown>\n#4 0x55b7bad03d54 <unknown>\n#5 0x55b7bacdb40d <unknown>\n#6 0x55b7bad0114f <unknown>\n#7 0x55b7bacdb1b3 <unknown>\n#8 0x55b7baca759b <unknown>\n#9 0x55b7baca8971 <unknown>\n#10 0x55b7bb1891eb <unknown>\n#11 0x55b7bb18cf39 <unknown>\n#12 0x55b7bb1702c9 <unknown>\n#13 0x55b7bb18dae8 <unknown>\n#14 0x55b7bb154baf <unknown>\n#15 0x55b7bb1b10a8 <unknown>\n#16 0x55b7bb1b1286 <unknown>\n#17 0x55b7bb1c2ff6 <unknown>\n#18 0x7f778f29caa4 <unknown>\n#19 0x7f778f329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:49:50.312325"
     },
     "CSELK-KGAL.N0000": {
-      "rsi_data": {
-        "1D": 47.41,
-        "1W": 48.93,
-        "1M": 53.29
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:21.504312"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x563dccdf601a <unknown>\n#1 0x563dcc895a70 <unknown>\n#2 0x563dcc8e7907 <unknown>\n#3 0x563dcc8e7b01 <unknown>\n#4 0x563dcc935d54 <unknown>\n#5 0x563dcc90d40d <unknown>\n#6 0x563dcc93314f <unknown>\n#7 0x563dcc90d1b3 <unknown>\n#8 0x563dcc8d959b <unknown>\n#9 0x563dcc8da971 <unknown>\n#10 0x563dccdbb1eb <unknown>\n#11 0x563dccdbef39 <unknown>\n#12 0x563dccda22c9 <unknown>\n#13 0x563dccdbfae8 <unknown>\n#14 0x563dccd86baf <unknown>\n#15 0x563dccde30a8 <unknown>\n#16 0x563dccde3286 <unknown>\n#17 0x563dccdf4ff6 <unknown>\n#18 0x7ff9bf09caa4 <unknown>\n#19 0x7ff9bf129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:50:12.922781"
     },
     "CSELK-KHL.N0000": {
-      "rsi_data": {
-        "1D": 60.7,
-        "1W": 59.6,
-        "1M": 59.3
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:28.349899"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x559d04c3601a <unknown>\n#1 0x559d046d5a70 <unknown>\n#2 0x559d04727907 <unknown>\n#3 0x559d04727b01 <unknown>\n#4 0x559d04775d54 <unknown>\n#5 0x559d0474d40d <unknown>\n#6 0x559d0477314f <unknown>\n#7 0x559d0474d1b3 <unknown>\n#8 0x559d0471959b <unknown>\n#9 0x559d0471a971 <unknown>\n#10 0x559d04bfb1eb <unknown>\n#11 0x559d04bfef39 <unknown>\n#12 0x559d04be22c9 <unknown>\n#13 0x559d04bffae8 <unknown>\n#14 0x559d04bc6baf <unknown>\n#15 0x559d04c230a8 <unknown>\n#16 0x559d04c23286 <unknown>\n#17 0x559d04c34ff6 <unknown>\n#18 0x7f27c4c9caa4 <unknown>\n#19 0x7f27c4d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:50:15.428332"
     },
     "CSELK-KOTA.N0000": {
-      "rsi_data": {
-        "1D": 46.0,
-        "1W": 48.4,
-        "1M": 58.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:32.499963"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x559318a5701a <unknown>\n#1 0x5593184f6a70 <unknown>\n#2 0x559318548907 <unknown>\n#3 0x559318548b01 <unknown>\n#4 0x559318596d54 <unknown>\n#5 0x55931856e40d <unknown>\n#6 0x55931859414f <unknown>\n#7 0x55931856e1b3 <unknown>\n#8 0x55931853a59b <unknown>\n#9 0x55931853b971 <unknown>\n#10 0x559318a1c1eb <unknown>\n#11 0x559318a1ff39 <unknown>\n#12 0x559318a032c9 <unknown>\n#13 0x559318a20ae8 <unknown>\n#14 0x5593189e7baf <unknown>\n#15 0x559318a440a8 <unknown>\n#16 0x559318a44286 <unknown>\n#17 0x559318a55ff6 <unknown>\n#18 0x7f185f29caa4 <unknown>\n#19 0x7f185f329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:50:38.027612"
     },
     "CSELK-KPHL.N0000": {
-      "rsi_data": {
-        "1D": 64.5,
-        "1W": 59.5,
-        "1M": 47.1
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:39.519805"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x563dc648e01a <unknown>\n#1 0x563dc5f2da70 <unknown>\n#2 0x563dc5f7f907 <unknown>\n#3 0x563dc5f7fb01 <unknown>\n#4 0x563dc5fcdd54 <unknown>\n#5 0x563dc5fa540d <unknown>\n#6 0x563dc5fcb14f <unknown>\n#7 0x563dc5fa51b3 <unknown>\n#8 0x563dc5f7159b <unknown>\n#9 0x563dc5f72971 <unknown>\n#10 0x563dc64531eb <unknown>\n#11 0x563dc6456f39 <unknown>\n#12 0x563dc643a2c9 <unknown>\n#13 0x563dc6457ae8 <unknown>\n#14 0x563dc641ebaf <unknown>\n#15 0x563dc647b0a8 <unknown>\n#16 0x563dc647b286 <unknown>\n#17 0x563dc648cff6 <unknown>\n#18 0x7fe0b589caa4 <unknown>\n#19 0x7fe0b5929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:50:40.552499"
     },
     "CSELK-KVAL.N0000": {
-      "rsi_data": {
-        "1D": 55.1,
-        "1W": 61.1,
-        "1M": 59.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:43.632283"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55bb9609201a <unknown>\n#1 0x55bb95b31a70 <unknown>\n#2 0x55bb95b83907 <unknown>\n#3 0x55bb95b83b01 <unknown>\n#4 0x55bb95bd1d54 <unknown>\n#5 0x55bb95ba940d <unknown>\n#6 0x55bb95bcf14f <unknown>\n#7 0x55bb95ba91b3 <unknown>\n#8 0x55bb95b7559b <unknown>\n#9 0x55bb95b76971 <unknown>\n#10 0x55bb960571eb <unknown>\n#11 0x55bb9605af39 <unknown>\n#12 0x55bb9603e2c9 <unknown>\n#13 0x55bb9605bae8 <unknown>\n#14 0x55bb96022baf <unknown>\n#15 0x55bb9607f0a8 <unknown>\n#16 0x55bb9607f286 <unknown>\n#17 0x55bb96090ff6 <unknown>\n#18 0x7f41b509caa4 <unknown>\n#19 0x7f41b5129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:51:03.100560"
     },
     "CSELK-LALU.N0000": {
-      "rsi_data": {
-        "1D": 59.1,
-        "1W": 77.2,
-        "1M": 75.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:50.539161"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55cf851a201a <unknown>\n#1 0x55cf84c41a70 <unknown>\n#2 0x55cf84c93907 <unknown>\n#3 0x55cf84c93b01 <unknown>\n#4 0x55cf84ce1d54 <unknown>\n#5 0x55cf84cb940d <unknown>\n#6 0x55cf84cdf14f <unknown>\n#7 0x55cf84cb91b3 <unknown>\n#8 0x55cf84c8559b <unknown>\n#9 0x55cf84c86971 <unknown>\n#10 0x55cf851671eb <unknown>\n#11 0x55cf8516af39 <unknown>\n#12 0x55cf8514e2c9 <unknown>\n#13 0x55cf8516bae8 <unknown>\n#14 0x55cf85132baf <unknown>\n#15 0x55cf8518f0a8 <unknown>\n#16 0x55cf8518f286 <unknown>\n#17 0x55cf851a0ff6 <unknown>\n#18 0x7f0417e9caa4 <unknown>\n#19 0x7f0417f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:51:05.635697"
     },
     "CSELK-LAMB.N0000": {
-      "rsi_data": {
-        "1D": 67.61,
-        "1W": 75.43,
-        "1M": 74.33
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:36:54.826754"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5652d81da01a <unknown>\n#1 0x5652d7c79a70 <unknown>\n#2 0x5652d7ccb907 <unknown>\n#3 0x5652d7ccbb01 <unknown>\n#4 0x5652d7d19d54 <unknown>\n#5 0x5652d7cf140d <unknown>\n#6 0x5652d7d1714f <unknown>\n#7 0x5652d7cf11b3 <unknown>\n#8 0x5652d7cbd59b <unknown>\n#9 0x5652d7cbe971 <unknown>\n#10 0x5652d819f1eb <unknown>\n#11 0x5652d81a2f39 <unknown>\n#12 0x5652d81862c9 <unknown>\n#13 0x5652d81a3ae8 <unknown>\n#14 0x5652d816abaf <unknown>\n#15 0x5652d81c70a8 <unknown>\n#16 0x5652d81c7286 <unknown>\n#17 0x5652d81d8ff6 <unknown>\n#18 0x7fc2a009caa4 <unknown>\n#19 0x7fc2a0129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:51:28.198230"
     },
     "CSELK-LCBF.N0000": {
-      "rsi_data": {
-        "1D": 63.0,
-        "1W": 75.2,
-        "1M": 74.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:02.134119"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5631f3c3901a <unknown>\n#1 0x5631f36d8a70 <unknown>\n#2 0x5631f372a907 <unknown>\n#3 0x5631f372ab01 <unknown>\n#4 0x5631f3778d54 <unknown>\n#5 0x5631f375040d <unknown>\n#6 0x5631f377614f <unknown>\n#7 0x5631f37501b3 <unknown>\n#8 0x5631f371c59b <unknown>\n#9 0x5631f371d971 <unknown>\n#10 0x5631f3bfe1eb <unknown>\n#11 0x5631f3c01f39 <unknown>\n#12 0x5631f3be52c9 <unknown>\n#13 0x5631f3c02ae8 <unknown>\n#14 0x5631f3bc9baf <unknown>\n#15 0x5631f3c260a8 <unknown>\n#16 0x5631f3c26286 <unknown>\n#17 0x5631f3c37ff6 <unknown>\n#18 0x7fa0c289caa4 <unknown>\n#19 0x7fa0c2929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:51:30.723680"
     },
     "CSELK-LCEY.N0000": {
-      "rsi_data": {
-        "1D": 52.8,
-        "1W": 52.2,
-        "1M": 56.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:05.897954"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56152251c01a <unknown>\n#1 0x561521fbba70 <unknown>\n#2 0x56152200d907 <unknown>\n#3 0x56152200db01 <unknown>\n#4 0x56152205bd54 <unknown>\n#5 0x56152203340d <unknown>\n#6 0x56152205914f <unknown>\n#7 0x5615220331b3 <unknown>\n#8 0x561521fff59b <unknown>\n#9 0x561522000971 <unknown>\n#10 0x5615224e11eb <unknown>\n#11 0x5615224e4f39 <unknown>\n#12 0x5615224c82c9 <unknown>\n#13 0x5615224e5ae8 <unknown>\n#14 0x5615224acbaf <unknown>\n#15 0x5615225090a8 <unknown>\n#16 0x561522509286 <unknown>\n#17 0x56152251aff6 <unknown>\n#18 0x7f22a9e9caa4 <unknown>\n#19 0x7f22a9f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:51:53.282202"
     },
     "CSELK-LDEV.N0000": {
-      "rsi_data": {
-        "1D": 57.2,
-        "1W": 66.2,
-        "1M": 62.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:13.347946"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5649f08fb01a <unknown>\n#1 0x5649f039aa70 <unknown>\n#2 0x5649f03ec907 <unknown>\n#3 0x5649f03ecb01 <unknown>\n#4 0x5649f043ad54 <unknown>\n#5 0x5649f041240d <unknown>\n#6 0x5649f043814f <unknown>\n#7 0x5649f04121b3 <unknown>\n#8 0x5649f03de59b <unknown>\n#9 0x5649f03df971 <unknown>\n#10 0x5649f08c01eb <unknown>\n#11 0x5649f08c3f39 <unknown>\n#12 0x5649f08a72c9 <unknown>\n#13 0x5649f08c4ae8 <unknown>\n#14 0x5649f088bbaf <unknown>\n#15 0x5649f08e80a8 <unknown>\n#16 0x5649f08e8286 <unknown>\n#17 0x5649f08f9ff6 <unknown>\n#18 0x7f5828e9caa4 <unknown>\n#19 0x7f5828f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:51:55.859001"
     },
     "CSELK-LFIN.N0000": {
-      "rsi_data": {
-        "1D": 62.58,
-        "1W": 81.93,
-        "1M": 84.59
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:17.066309"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55fafb04e01a <unknown>\n#1 0x55fafaaeda70 <unknown>\n#2 0x55fafab3f907 <unknown>\n#3 0x55fafab3fb01 <unknown>\n#4 0x55fafab8dd54 <unknown>\n#5 0x55fafab6540d <unknown>\n#6 0x55fafab8b14f <unknown>\n#7 0x55fafab651b3 <unknown>\n#8 0x55fafab3159b <unknown>\n#9 0x55fafab32971 <unknown>\n#10 0x55fafb0131eb <unknown>\n#11 0x55fafb016f39 <unknown>\n#12 0x55fafaffa2c9 <unknown>\n#13 0x55fafb017ae8 <unknown>\n#14 0x55fafafdebaf <unknown>\n#15 0x55fafb03b0a8 <unknown>\n#16 0x55fafb03b286 <unknown>\n#17 0x55fafb04cff6 <unknown>\n#18 0x7f0bf3c9caa4 <unknown>\n#19 0x7f0bf3d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:52:18.428715"
     },
     "CSELK-LGIL.N0000": {
-      "rsi_data": {
-        "1D": 45.8,
-        "1W": 54.6,
-        "1M": 50.2
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:24.537620"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55fb1792301a <unknown>\n#1 0x55fb173c2a70 <unknown>\n#2 0x55fb17414907 <unknown>\n#3 0x55fb17414b01 <unknown>\n#4 0x55fb17462d54 <unknown>\n#5 0x55fb1743a40d <unknown>\n#6 0x55fb1746014f <unknown>\n#7 0x55fb1743a1b3 <unknown>\n#8 0x55fb1740659b <unknown>\n#9 0x55fb17407971 <unknown>\n#10 0x55fb178e81eb <unknown>\n#11 0x55fb178ebf39 <unknown>\n#12 0x55fb178cf2c9 <unknown>\n#13 0x55fb178ecae8 <unknown>\n#14 0x55fb178b3baf <unknown>\n#15 0x55fb179100a8 <unknown>\n#16 0x55fb17910286 <unknown>\n#17 0x55fb17921ff6 <unknown>\n#18 0x7fe9d009caa4 <unknown>\n#19 0x7fe9d0129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:52:21.011207"
     },
     "CSELK-LGL.N0000": {
-      "rsi_data": {
-        "1D": 48.0,
-        "1W": 54.1,
-        "1M": 51.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:28.145378"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x556872db301a <unknown>\n#1 0x556872852a70 <unknown>\n#2 0x5568728a4907 <unknown>\n#3 0x5568728a4b01 <unknown>\n#4 0x5568728f2d54 <unknown>\n#5 0x5568728ca40d <unknown>\n#6 0x5568728f014f <unknown>\n#7 0x5568728ca1b3 <unknown>\n#8 0x55687289659b <unknown>\n#9 0x556872897971 <unknown>\n#10 0x556872d781eb <unknown>\n#11 0x556872d7bf39 <unknown>\n#12 0x556872d5f2c9 <unknown>\n#13 0x556872d7cae8 <unknown>\n#14 0x556872d43baf <unknown>\n#15 0x556872da00a8 <unknown>\n#16 0x556872da0286 <unknown>\n#17 0x556872db1ff6 <unknown>\n#18 0x7f0cbd69caa4 <unknown>\n#19 0x7f0cbd729c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:52:43.597962"
     },
     "CSELK-LGL.X0000": {
-      "rsi_data": {
-        "1D": 46.3,
-        "1W": 57.1,
-        "1M": 54.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:35.664016"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x561c1f10501a <unknown>\n#1 0x561c1eba4a70 <unknown>\n#2 0x561c1ebf6907 <unknown>\n#3 0x561c1ebf6b01 <unknown>\n#4 0x561c1ec44d54 <unknown>\n#5 0x561c1ec1c40d <unknown>\n#6 0x561c1ec4214f <unknown>\n#7 0x561c1ec1c1b3 <unknown>\n#8 0x561c1ebe859b <unknown>\n#9 0x561c1ebe9971 <unknown>\n#10 0x561c1f0ca1eb <unknown>\n#11 0x561c1f0cdf39 <unknown>\n#12 0x561c1f0b12c9 <unknown>\n#13 0x561c1f0ceae8 <unknown>\n#14 0x561c1f095baf <unknown>\n#15 0x561c1f0f20a8 <unknown>\n#16 0x561c1f0f2286 <unknown>\n#17 0x561c1f103ff6 <unknown>\n#18 0x7fb36d29caa4 <unknown>\n#19 0x7fb36d329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:52:46.103416"
     },
     "CSELK-LIOC.N0000": {
-      "rsi_data": {
-        "1D": 48.94,
-        "1W": 54.26,
-        "1M": 55.33
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:39.178262"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55c612d9a01a <unknown>\n#1 0x55c612839a70 <unknown>\n#2 0x55c61288b907 <unknown>\n#3 0x55c61288bb01 <unknown>\n#4 0x55c6128d9d54 <unknown>\n#5 0x55c6128b140d <unknown>\n#6 0x55c6128d714f <unknown>\n#7 0x55c6128b11b3 <unknown>\n#8 0x55c61287d59b <unknown>\n#9 0x55c61287e971 <unknown>\n#10 0x55c612d5f1eb <unknown>\n#11 0x55c612d62f39 <unknown>\n#12 0x55c612d462c9 <unknown>\n#13 0x55c612d63ae8 <unknown>\n#14 0x55c612d2abaf <unknown>\n#15 0x55c612d870a8 <unknown>\n#16 0x55c612d87286 <unknown>\n#17 0x55c612d98ff6 <unknown>\n#18 0x7f1ba6a9caa4 <unknown>\n#19 0x7f1ba6b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:53:08.783975"
     },
     "CSELK-LION.N0000": {
-      "rsi_data": {
-        "1D": 53.81,
-        "1W": 61.22,
-        "1M": 75.42
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:46.760166"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55f1dc70d01a <unknown>\n#1 0x55f1dc1aca70 <unknown>\n#2 0x55f1dc1fe907 <unknown>\n#3 0x55f1dc1feb01 <unknown>\n#4 0x55f1dc24cd54 <unknown>\n#5 0x55f1dc22440d <unknown>\n#6 0x55f1dc24a14f <unknown>\n#7 0x55f1dc2241b3 <unknown>\n#8 0x55f1dc1f059b <unknown>\n#9 0x55f1dc1f1971 <unknown>\n#10 0x55f1dc6d21eb <unknown>\n#11 0x55f1dc6d5f39 <unknown>\n#12 0x55f1dc6b92c9 <unknown>\n#13 0x55f1dc6d6ae8 <unknown>\n#14 0x55f1dc69dbaf <unknown>\n#15 0x55f1dc6fa0a8 <unknown>\n#16 0x55f1dc6fa286 <unknown>\n#17 0x55f1dc70bff6 <unknown>\n#18 0x7f50d809caa4 <unknown>\n#19 0x7f50d8129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:53:11.282055"
     },
     "CSELK-LITE.N0000": {
       "rsi_data": {
-        "1D": 75.1,
-        "1W": 76.2,
-        "1M": 88.6
+        "1D": 73.8,
+        "1W": 75.2,
+        "1M": 88.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:50.615790"
+      "timestamp": "2025-08-19T09:53:19.729519"
     },
     "CSELK-LMF.N0000": {
       "rsi_data": {
@@ -1738,7 +1546,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:37:57.770138"
+      "timestamp": "2025-08-19T09:53:22.229398"
     },
     "CSELK-LOFC.N0000": {
       "rsi_data": {
@@ -1748,17 +1556,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:02.441471"
+      "timestamp": "2025-08-19T09:53:30.696317"
     },
     "CSELK-LOLC.N0000": {
       "rsi_data": {
-        "1D": 51.95,
-        "1W": 47.73,
-        "1M": 54.05
+        "1D": 55.43,
+        "1W": 49.03,
+        "1M": 54.49
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:09.140471"
+      "timestamp": "2025-08-19T09:53:33.158984"
     },
     "CSELK-LPL.N0000": {
       "rsi_data": {
@@ -1768,7 +1576,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:15.441218"
+      "timestamp": "2025-08-19T09:53:41.615069"
     },
     "CSELK-LPL.X0000": {
       "rsi_data": {
@@ -1778,67 +1586,51 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:20.216654"
+      "timestamp": "2025-08-19T09:53:44.089962"
     },
     "CSELK-LPRT.N0000": {
-      "rsi_data": {
-        "1D": 49.69,
-        "1W": 54.91,
-        "1M": 61.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:26.564836"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56047abd801a <unknown>\n#1 0x56047a677a70 <unknown>\n#2 0x56047a6c9907 <unknown>\n#3 0x56047a6c9b01 <unknown>\n#4 0x56047a717d54 <unknown>\n#5 0x56047a6ef40d <unknown>\n#6 0x56047a71514f <unknown>\n#7 0x56047a6ef1b3 <unknown>\n#8 0x56047a6bb59b <unknown>\n#9 0x56047a6bc971 <unknown>\n#10 0x56047ab9d1eb <unknown>\n#11 0x56047aba0f39 <unknown>\n#12 0x56047ab842c9 <unknown>\n#13 0x56047aba1ae8 <unknown>\n#14 0x56047ab68baf <unknown>\n#15 0x56047abc50a8 <unknown>\n#16 0x56047abc5286 <unknown>\n#17 0x56047abd6ff6 <unknown>\n#18 0x7f90d7e9caa4 <unknown>\n#19 0x7f90d7f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:54:06.771203"
     },
     "CSELK-LUMX.N0000": {
-      "rsi_data": {
-        "1D": 55.6,
-        "1W": 55.3,
-        "1M": 50.0
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:31.267571"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55e1da41b01a <unknown>\n#1 0x55e1d9ebaa70 <unknown>\n#2 0x55e1d9f0c907 <unknown>\n#3 0x55e1d9f0cb01 <unknown>\n#4 0x55e1d9f5ad54 <unknown>\n#5 0x55e1d9f3240d <unknown>\n#6 0x55e1d9f5814f <unknown>\n#7 0x55e1d9f321b3 <unknown>\n#8 0x55e1d9efe59b <unknown>\n#9 0x55e1d9eff971 <unknown>\n#10 0x55e1da3e01eb <unknown>\n#11 0x55e1da3e3f39 <unknown>\n#12 0x55e1da3c72c9 <unknown>\n#13 0x55e1da3e4ae8 <unknown>\n#14 0x55e1da3abbaf <unknown>\n#15 0x55e1da4080a8 <unknown>\n#16 0x55e1da408286 <unknown>\n#17 0x55e1da419ff6 <unknown>\n#18 0x7fa54fe9caa4 <unknown>\n#19 0x7fa54ff29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:54:09.189189"
     },
     "CSELK-LVEF.N0000": {
-      "rsi_data": {
-        "1D": 72.3,
-        "1W": 77.0,
-        "1M": 73.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:37.740948"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55885c81501a <unknown>\n#1 0x55885c2b4a70 <unknown>\n#2 0x55885c306907 <unknown>\n#3 0x55885c306b01 <unknown>\n#4 0x55885c354d54 <unknown>\n#5 0x55885c32c40d <unknown>\n#6 0x55885c35214f <unknown>\n#7 0x55885c32c1b3 <unknown>\n#8 0x55885c2f859b <unknown>\n#9 0x55885c2f9971 <unknown>\n#10 0x55885c7da1eb <unknown>\n#11 0x55885c7ddf39 <unknown>\n#12 0x55885c7c12c9 <unknown>\n#13 0x55885c7deae8 <unknown>\n#14 0x55885c7a5baf <unknown>\n#15 0x55885c8020a8 <unknown>\n#16 0x55885c802286 <unknown>\n#17 0x55885c813ff6 <unknown>\n#18 0x7efe6389caa4 <unknown>\n#19 0x7efe63929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:54:31.972345"
     },
     "CSELK-LVEN.N0000": {
-      "rsi_data": {
-        "1D": 69.3,
-        "1W": 81.8,
-        "1M": 80.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:42.378845"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56297d29201a <unknown>\n#1 0x56297cd31a70 <unknown>\n#2 0x56297cd83907 <unknown>\n#3 0x56297cd83b01 <unknown>\n#4 0x56297cdd1d54 <unknown>\n#5 0x56297cda940d <unknown>\n#6 0x56297cdcf14f <unknown>\n#7 0x56297cda91b3 <unknown>\n#8 0x56297cd7559b <unknown>\n#9 0x56297cd76971 <unknown>\n#10 0x56297d2571eb <unknown>\n#11 0x56297d25af39 <unknown>\n#12 0x56297d23e2c9 <unknown>\n#13 0x56297d25bae8 <unknown>\n#14 0x56297d222baf <unknown>\n#15 0x56297d27f0a8 <unknown>\n#16 0x56297d27f286 <unknown>\n#17 0x56297d290ff6 <unknown>\n#18 0x7f0bf029caa4 <unknown>\n#19 0x7f0bf0329c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:54:34.361225"
     },
     "CSELK-LWL.N0000": {
       "rsi_data": {
-        "1D": 45.4,
-        "1W": 45.8,
-        "1M": 48.6
+        "1D": 49.7,
+        "1W": 48.0,
+        "1M": 49.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:48.831191"
+      "timestamp": "2025-08-19T09:54:44.222121"
     },
     "CSELK-MADU.N0000": {
       "rsi_data": {
-        "1D": 49.7,
-        "1W": 47.6,
-        "1M": 51.6
+        "1D": 44.4,
+        "1W": 44.1,
+        "1M": 50.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:38:53.539721"
+      "timestamp": "2025-08-19T09:54:45.365741"
     },
     "CSELK-MAL.N0000": {
       "rsi_data": {
@@ -1848,7 +1640,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:00.020415"
+      "timestamp": "2025-08-19T09:54:55.310375"
     },
     "CSELK-MAL.X0000": {
       "rsi_data": {
@@ -1858,43 +1650,43 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:04.619610"
+      "timestamp": "2025-08-19T09:54:56.535278"
     },
     "CSELK-MASK.N0000": {
       "rsi_data": {
-        "1D": 51.8,
-        "1W": 58.4,
-        "1M": 68.8
+        "1D": 52.1,
+        "1W": 58.5,
+        "1M": 68.9
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:15.692267"
+      "timestamp": "2025-08-19T09:55:07.421276"
+    },
+    "CSELK-MBSL.N0000": {
+      "rsi_data": {
+        "1D": 60.4,
+        "1W": 64.3,
+        "1M": 65.1
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:55:18.456014"
     },
     "CSELK-MAWA.N0000": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x556bb02c701a <unknown>\n#1 0x556bafd66a70 <unknown>\n#2 0x556bafdb8907 <unknown>\n#3 0x556bafdb8b01 <unknown>\n#4 0x556bafe06d54 <unknown>\n#5 0x556bafdde40d <unknown>\n#6 0x556bafe0414f <unknown>\n#7 0x556bafdde1b3 <unknown>\n#8 0x556bafdaa59b <unknown>\n#9 0x556bafdab971 <unknown>\n#10 0x556bb028c1eb <unknown>\n#11 0x556bb028ff39 <unknown>\n#12 0x556bb02732c9 <unknown>\n#13 0x556bb0290ae8 <unknown>\n#14 0x556bb0257baf <unknown>\n#15 0x556bb02b40a8 <unknown>\n#16 0x556bb02b4286 <unknown>\n#17 0x556bb02c5ff6 <unknown>\n#18 0x7fbed009caa4 <unknown>\n#19 0x7fbed0129c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:39:26.126842"
-    },
-    "CSELK-MBSL.N0000": {
-      "rsi_data": {
-        "1D": 63.2,
-        "1W": 65.4,
-        "1M": 65.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:26.732429"
+      "error": "Error: Message: \nStacktrace:\n#0 0x55feec48301a <unknown>\n#1 0x55feebf22a70 <unknown>\n#2 0x55feebf74907 <unknown>\n#3 0x55feebf74b01 <unknown>\n#4 0x55feebfc2d54 <unknown>\n#5 0x55feebf9a40d <unknown>\n#6 0x55feebfc014f <unknown>\n#7 0x55feebf9a1b3 <unknown>\n#8 0x55feebf6659b <unknown>\n#9 0x55feebf67971 <unknown>\n#10 0x55feec4481eb <unknown>\n#11 0x55feec44bf39 <unknown>\n#12 0x55feec42f2c9 <unknown>\n#13 0x55feec44cae8 <unknown>\n#14 0x55feec413baf <unknown>\n#15 0x55feec4700a8 <unknown>\n#16 0x55feec470286 <unknown>\n#17 0x55feec481ff6 <unknown>\n#18 0x7f6f3e69caa4 <unknown>\n#19 0x7f6f3e729c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:55:21.209515"
     },
     "CSELK-MCPL.N0000": {
       "rsi_data": {
-        "1D": 76.3,
-        "1W": 75.5,
-        "1M": 67.5
+        "1D": 78.4,
+        "1W": 77.1,
+        "1M": 68.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:37.432694"
+      "timestamp": "2025-08-19T09:55:29.378247"
     },
     "CSELK-MDL.N0000": {
       "rsi_data": {
@@ -1904,7 +1696,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:37.992384"
+      "timestamp": "2025-08-19T09:55:32.184397"
     },
     "CSELK-MEL.N0000": {
       "rsi_data": {
@@ -1914,53 +1706,53 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:48.564165"
+      "timestamp": "2025-08-19T09:55:40.203520"
     },
     "CSELK-MELS.N0000": {
       "rsi_data": {
-        "1D": 75.01,
-        "1W": 78.9,
-        "1M": 80.72
+        "1D": 68.21,
+        "1W": 77.86,
+        "1M": 80.32
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:39:49.174711"
+      "timestamp": "2025-08-19T09:55:43.307229"
     },
     "CSELK-MFPE.N0000": {
       "rsi_data": {
-        "1D": 51.9,
-        "1W": 66.7,
+        "1D": 54.7,
+        "1W": 67.5,
         "1M": null
       },
       "status": "success",
       "successful_timeframes": 2,
-      "timestamp": "2025-08-19T07:40:05.266605"
+      "timestamp": "2025-08-19T09:55:59.259426"
     },
     "CSELK-MERC.N0000": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x5557d6f8b01a <unknown>\n#1 0x5557d6a2aa70 <unknown>\n#2 0x5557d6a7c907 <unknown>\n#3 0x5557d6a7cb01 <unknown>\n#4 0x5557d6acad54 <unknown>\n#5 0x5557d6aa240d <unknown>\n#6 0x5557d6ac814f <unknown>\n#7 0x5557d6aa21b3 <unknown>\n#8 0x5557d6a6e59b <unknown>\n#9 0x5557d6a6f971 <unknown>\n#10 0x5557d6f501eb <unknown>\n#11 0x5557d6f53f39 <unknown>\n#12 0x5557d6f372c9 <unknown>\n#13 0x5557d6f54ae8 <unknown>\n#14 0x5557d6f1bbaf <unknown>\n#15 0x5557d6f780a8 <unknown>\n#16 0x5557d6f78286 <unknown>\n#17 0x5557d6f89ff6 <unknown>\n#18 0x7fe76d09caa4 <unknown>\n#19 0x7fe76d129c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:40:14.802691"
+      "error": "Error: Message: \nStacktrace:\n#0 0x55dd8ea9c01a <unknown>\n#1 0x55dd8e53ba70 <unknown>\n#2 0x55dd8e58d907 <unknown>\n#3 0x55dd8e58db01 <unknown>\n#4 0x55dd8e5dbd54 <unknown>\n#5 0x55dd8e5b340d <unknown>\n#6 0x55dd8e5d914f <unknown>\n#7 0x55dd8e5b31b3 <unknown>\n#8 0x55dd8e57f59b <unknown>\n#9 0x55dd8e580971 <unknown>\n#10 0x55dd8ea611eb <unknown>\n#11 0x55dd8ea64f39 <unknown>\n#12 0x55dd8ea482c9 <unknown>\n#13 0x55dd8ea65ae8 <unknown>\n#14 0x55dd8ea2cbaf <unknown>\n#15 0x55dd8ea890a8 <unknown>\n#16 0x55dd8ea89286 <unknown>\n#17 0x55dd8ea9aff6 <unknown>\n#18 0x7f686489caa4 <unknown>\n#19 0x7f6864929c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:56:06.032699"
     },
     "CSELK-MGT.N0000": {
       "rsi_data": {
-        "1D": 46.1,
-        "1W": 46.8,
-        "1M": 51.9
+        "1D": 43.0,
+        "1W": 45.8,
+        "1M": 51.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:16.485696"
+      "timestamp": "2025-08-19T09:56:10.213317"
     },
     "CSELK-MHDL.N0000": {
       "rsi_data": {
-        "1D": 53.2,
-        "1W": 66.5,
-        "1M": 76.4
+        "1D": 57.4,
+        "1W": 69.0,
+        "1M": 79.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:26.037901"
+      "timestamp": "2025-08-19T09:56:17.067718"
     },
     "CSELK-MRH.N0000": {
       "rsi_data": {
@@ -1970,17 +1762,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:27.751516"
+      "timestamp": "2025-08-19T09:56:21.214525"
     },
     "CSELK-MSL.N0000": {
       "rsi_data": {
-        "1D": 49.91,
-        "1W": 56.7,
-        "1M": 62.49
+        "1D": 51.84,
+        "1W": 57.78,
+        "1M": 63.22
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:37.239706"
+      "timestamp": "2025-08-19T09:56:27.928552"
     },
     "CSELK-MULL.N0000": {
       "rsi_data": {
@@ -1990,7 +1782,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:38.929558"
+      "timestamp": "2025-08-19T09:56:32.261920"
     },
     "CSELK-NAMU.N0000": {
       "rsi_data": {
@@ -2000,17 +1792,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:48.472440"
+      "timestamp": "2025-08-19T09:56:38.939999"
     },
     "CSELK-NDB.N0000": {
       "rsi_data": {
-        "1D": 70.48,
-        "1W": 75.62,
-        "1M": 74.97
+        "1D": 69.16,
+        "1W": 75.4,
+        "1M": 74.86
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:40:59.559501"
+      "timestamp": "2025-08-19T09:56:49.883021"
     },
     "CSELK-NAVF.U0000": {
       "rsi_data": {
@@ -2020,27 +1812,27 @@
       },
       "status": "success",
       "successful_timeframes": 2,
-      "timestamp": "2025-08-19T07:41:06.124029"
+      "timestamp": "2025-08-19T09:56:59.237266"
     },
     "CSELK-NHL.N0000": {
       "rsi_data": {
-        "1D": 73.5,
-        "1W": 82.3,
-        "1M": 70.9
+        "1D": 71.2,
+        "1W": 81.7,
+        "1M": 70.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:10.719921"
+      "timestamp": "2025-08-19T09:57:00.862808"
     },
     "CSELK-NTB.N0000": {
       "rsi_data": {
-        "1D": 90.16,
-        "1W": 82.14,
-        "1M": 87.32
+        "1D": 89.95,
+        "1W": 81.97,
+        "1M": 87.25
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:17.371609"
+      "timestamp": "2025-08-19T09:57:10.371305"
     },
     "CSELK-NTB.X0000": {
       "rsi_data": {
@@ -2050,37 +1842,37 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:21.910780"
+      "timestamp": "2025-08-19T09:57:11.749147"
     },
     "CSELK-PACK.N0000": {
       "rsi_data": {
-        "1D": 44.1,
-        "1W": 51.3,
-        "1M": 48.5
+        "1D": 46.1,
+        "1W": 52.3,
+        "1M": 49.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:28.352618"
+      "timestamp": "2025-08-19T09:57:21.441153"
     },
     "CSELK-SHAW.N0000": {
       "rsi_data": {
-        "1D": 61.02,
-        "1W": 76.51,
-        "1M": 81.53
+        "1D": 60.87,
+        "1W": 76.34,
+        "1M": 81.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:32.970828"
+      "timestamp": "2025-08-19T09:57:23.819314"
     },
     "CSELK-TILE.N0000": {
       "rsi_data": {
-        "1D": 43.3,
-        "1W": 46.6,
-        "1M": 51.3
+        "1D": 41.9,
+        "1W": 45.8,
+        "1M": 50.9
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:39.381487"
+      "timestamp": "2025-08-19T09:57:32.330843"
     },
     "CSELK-TYRE.N0000": {
       "rsi_data": {
@@ -2090,7 +1882,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:44.065771"
+      "timestamp": "2025-08-19T09:57:34.830291"
     },
     "CSELK-WAPO.N0000": {
       "rsi_data": {
@@ -2100,67 +1892,67 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:50.430354"
+      "timestamp": "2025-08-19T09:57:43.332708"
     },
     "CSELK-AAIC.N0000": {
       "rsi_data": {
-        "1D": 61.9,
-        "1W": 66.7,
-        "1M": 59.2
+        "1D": 63.0,
+        "1W": 67.2,
+        "1M": 59.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:41:55.115020"
+      "timestamp": "2025-08-19T09:57:45.861062"
     },
     "CSELK-AUTO.N0000": {
       "rsi_data": {
-        "1D": 79.9,
-        "1W": 70.51,
-        "1M": 63.29
+        "1D": 79.82,
+        "1W": 70.44,
+        "1M": 63.24
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:01.538569"
+      "timestamp": "2025-08-19T09:57:54.419561"
     },
     "CSELK-CARE.N0000": {
       "rsi_data": {
-        "1D": 47.4,
-        "1W": 48.0,
-        "1M": 54.6
+        "1D": 47.1,
+        "1W": 47.8,
+        "1M": 54.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:06.234296"
-    },
-    "CSELK-CFLB.N0000": {
-      "rsi_data": {
-        "1D": 61.2,
-        "1W": 74.8,
-        "1M": 81.2
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:12.642832"
+      "timestamp": "2025-08-19T09:57:56.965647"
     },
     "CSELK-COCO.N0000": {
       "rsi_data": {
-        "1D": 60.1,
-        "1W": 63.9,
-        "1M": 55.4
+        "1D": 56.4,
+        "1W": 62.7,
+        "1M": 54.7
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:17.275763"
+      "timestamp": "2025-08-19T09:58:07.812889"
+    },
+    "CSELK-CFLB.N0000": {
+      "rsi_data": {
+        "1D": 65.0,
+        "1W": 77.6,
+        "1M": 81.5
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T09:58:10.223760"
     },
     "CSELK-COCO.X0000": {
       "rsi_data": {
-        "1D": 55.9,
-        "1W": 66.9,
-        "1M": 56.2
+        "1D": 58.8,
+        "1W": 68.3,
+        "1M": 56.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:23.643457"
+      "timestamp": "2025-08-19T09:58:18.762032"
     },
     "CSELK-COF.U0000": {
       "rsi_data": {
@@ -2170,7 +1962,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:28.421135"
+      "timestamp": "2025-08-19T09:58:21.044346"
     },
     "CSELK-CRL.N0000": {
       "rsi_data": {
@@ -2180,37 +1972,37 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:34.659853"
+      "timestamp": "2025-08-19T09:58:30.214525"
     },
     "CSELK-CSD.N0000": {
       "rsi_data": {
-        "1D": 51.1,
-        "1W": 64.9,
-        "1M": 73.2
+        "1D": 47.5,
+        "1W": 62.0,
+        "1M": 71.0
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:39.386761"
+      "timestamp": "2025-08-19T09:58:31.975512"
     },
     "CSELK-GLAS.N0000": {
       "rsi_data": {
-        "1D": 60.8,
-        "1W": 77.1,
-        "1M": 89.8
+        "1D": 57.5,
+        "1W": 76.4,
+        "1M": 89.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:45.757433"
+      "timestamp": "2025-08-19T09:58:41.264526"
     },
     "CSELK-HPWR.N0000": {
       "rsi_data": {
-        "1D": 70.2,
-        "1W": 70.4,
-        "1M": 71.2
+        "1D": 71.7,
+        "1W": 71.3,
+        "1M": 71.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:50.489359"
+      "timestamp": "2025-08-19T09:58:43.951900"
     },
     "CSELK-IDL.N0000": {
       "rsi_data": {
@@ -2220,27 +2012,27 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:42:56.939182"
+      "timestamp": "2025-08-19T09:58:52.321507"
     },
     "CSELK-KHC.N0000": {
       "rsi_data": {
-        "1D": 77.2,
-        "1W": 76.7,
-        "1M": 73.4
+        "1D": 76.8,
+        "1W": 76.4,
+        "1M": 73.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:01.595443"
+      "timestamp": "2025-08-19T09:58:54.896365"
     },
     "CSELK-LHCL.N0000": {
       "rsi_data": {
-        "1D": 56.7,
-        "1W": 58.8,
-        "1M": 48.5
+        "1D": 55.7,
+        "1W": 58.2,
+        "1M": 48.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:08.043330"
+      "timestamp": "2025-08-19T09:59:03.261703"
     },
     "CSELK-LHL.N0000": {
       "rsi_data": {
@@ -2250,87 +2042,63 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:15.468099"
+      "timestamp": "2025-08-19T09:59:05.812645"
     },
     "CSELK-NEH.N0000": {
-      "rsi_data": {
-        "1D": 65.45,
-        "1W": 86.52,
-        "1M": 79.98
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:19.174530"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5581f814b01a <unknown>\n#1 0x5581f7beaa70 <unknown>\n#2 0x5581f7c3c907 <unknown>\n#3 0x5581f7c3cb01 <unknown>\n#4 0x5581f7c8ad54 <unknown>\n#5 0x5581f7c6240d <unknown>\n#6 0x5581f7c8814f <unknown>\n#7 0x5581f7c621b3 <unknown>\n#8 0x5581f7c2e59b <unknown>\n#9 0x5581f7c2f971 <unknown>\n#10 0x5581f81101eb <unknown>\n#11 0x5581f8113f39 <unknown>\n#12 0x5581f80f72c9 <unknown>\n#13 0x5581f8114ae8 <unknown>\n#14 0x5581f80dbbaf <unknown>\n#15 0x5581f81380a8 <unknown>\n#16 0x5581f8138286 <unknown>\n#17 0x5581f8149ff6 <unknown>\n#18 0x7faaf7a9caa4 <unknown>\n#19 0x7faaf7b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:59:28.410386"
     },
     "CSELK-ODEL.N0000": {
-      "rsi_data": {
-        "1D": 51.1,
-        "1W": 53.7,
-        "1M": 42.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:26.643748"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x556335c4201a <unknown>\n#1 0x5563356e1a70 <unknown>\n#2 0x556335733907 <unknown>\n#3 0x556335733b01 <unknown>\n#4 0x556335781d54 <unknown>\n#5 0x55633575940d <unknown>\n#6 0x55633577f14f <unknown>\n#7 0x5563357591b3 <unknown>\n#8 0x55633572559b <unknown>\n#9 0x556335726971 <unknown>\n#10 0x556335c071eb <unknown>\n#11 0x556335c0af39 <unknown>\n#12 0x556335bee2c9 <unknown>\n#13 0x556335c0bae8 <unknown>\n#14 0x556335bd2baf <unknown>\n#15 0x556335c2f0a8 <unknown>\n#16 0x556335c2f286 <unknown>\n#17 0x556335c40ff6 <unknown>\n#18 0x7f57a5c9caa4 <unknown>\n#19 0x7f57a5d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:59:30.882207"
     },
     "CSELK-OFEQ.N0000": {
-      "rsi_data": {
-        "1D": 49.87,
-        "1W": 51.15,
-        "1M": 58.13
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:30.288436"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55e5cf57801a <unknown>\n#1 0x55e5cf017a70 <unknown>\n#2 0x55e5cf069907 <unknown>\n#3 0x55e5cf069b01 <unknown>\n#4 0x55e5cf0b7d54 <unknown>\n#5 0x55e5cf08f40d <unknown>\n#6 0x55e5cf0b514f <unknown>\n#7 0x55e5cf08f1b3 <unknown>\n#8 0x55e5cf05b59b <unknown>\n#9 0x55e5cf05c971 <unknown>\n#10 0x55e5cf53d1eb <unknown>\n#11 0x55e5cf540f39 <unknown>\n#12 0x55e5cf5242c9 <unknown>\n#13 0x55e5cf541ae8 <unknown>\n#14 0x55e5cf508baf <unknown>\n#15 0x55e5cf5650a8 <unknown>\n#16 0x55e5cf565286 <unknown>\n#17 0x55e5cf576ff6 <unknown>\n#18 0x7f8ba5e9caa4 <unknown>\n#19 0x7f8ba5f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:59:53.524268"
     },
     "CSELK-ONAL.N0000": {
-      "rsi_data": {
-        "1D": 54.6,
-        "1W": 67.4,
-        "1M": 65.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:37.733212"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55b643aa101a <unknown>\n#1 0x55b643540a70 <unknown>\n#2 0x55b643592907 <unknown>\n#3 0x55b643592b01 <unknown>\n#4 0x55b6435e0d54 <unknown>\n#5 0x55b6435b840d <unknown>\n#6 0x55b6435de14f <unknown>\n#7 0x55b6435b81b3 <unknown>\n#8 0x55b64358459b <unknown>\n#9 0x55b643585971 <unknown>\n#10 0x55b643a661eb <unknown>\n#11 0x55b643a69f39 <unknown>\n#12 0x55b643a4d2c9 <unknown>\n#13 0x55b643a6aae8 <unknown>\n#14 0x55b643a31baf <unknown>\n#15 0x55b643a8e0a8 <unknown>\n#16 0x55b643a8e286 <unknown>\n#17 0x55b643a9fff6 <unknown>\n#18 0x7fc93909caa4 <unknown>\n#19 0x7fc939129c3c <unknown>\n",
+      "timestamp": "2025-08-19T09:59:55.968455"
     },
     "CSELK-OSEA.N0000": {
-      "rsi_data": {
-        "1D": 63.6,
-        "1W": 76.8,
-        "1M": 84.5
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:41.384229"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55928d46701a <unknown>\n#1 0x55928cf06a70 <unknown>\n#2 0x55928cf58907 <unknown>\n#3 0x55928cf58b01 <unknown>\n#4 0x55928cfa6d54 <unknown>\n#5 0x55928cf7e40d <unknown>\n#6 0x55928cfa414f <unknown>\n#7 0x55928cf7e1b3 <unknown>\n#8 0x55928cf4a59b <unknown>\n#9 0x55928cf4b971 <unknown>\n#10 0x55928d42c1eb <unknown>\n#11 0x55928d42ff39 <unknown>\n#12 0x55928d4132c9 <unknown>\n#13 0x55928d430ae8 <unknown>\n#14 0x55928d3f7baf <unknown>\n#15 0x55928d4540a8 <unknown>\n#16 0x55928d454286 <unknown>\n#17 0x55928d465ff6 <unknown>\n#18 0x7f348249caa4 <unknown>\n#19 0x7f3482529c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:00:18.687458"
     },
     "CSELK-PABC.N0000": {
-      "rsi_data": {
-        "1D": 73.3,
-        "1W": 87.2,
-        "1M": 84.8
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:48.772575"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5585c3b4201a <unknown>\n#1 0x5585c35e1a70 <unknown>\n#2 0x5585c3633907 <unknown>\n#3 0x5585c3633b01 <unknown>\n#4 0x5585c3681d54 <unknown>\n#5 0x5585c365940d <unknown>\n#6 0x5585c367f14f <unknown>\n#7 0x5585c36591b3 <unknown>\n#8 0x5585c362559b <unknown>\n#9 0x5585c3626971 <unknown>\n#10 0x5585c3b071eb <unknown>\n#11 0x5585c3b0af39 <unknown>\n#12 0x5585c3aee2c9 <unknown>\n#13 0x5585c3b0bae8 <unknown>\n#14 0x5585c3ad2baf <unknown>\n#15 0x5585c3b2f0a8 <unknown>\n#16 0x5585c3b2f286 <unknown>\n#17 0x5585c3b40ff6 <unknown>\n#18 0x7eff0ea9caa4 <unknown>\n#19 0x7eff0eb29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:00:21.184053"
     },
     "CSELK-PALM.N0000": {
       "rsi_data": {
-        "1D": 50.9,
-        "1W": 53.8,
-        "1M": 61.2
+        "1D": 48.5,
+        "1W": 52.1,
+        "1M": 60.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:52.501495"
+      "timestamp": "2025-08-19T10:00:29.690415"
     },
     "CSELK-PAP.N0000": {
       "rsi_data": {
-        "1D": 54.6,
-        "1W": 68.7,
-        "1M": 86.5
+        "1D": 52.3,
+        "1W": 68.2,
+        "1M": 85.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:43:59.903499"
+      "timestamp": "2025-08-19T10:00:32.250684"
     },
     "CSELK-PARA.N0000": {
       "rsi_data": {
@@ -2340,7 +2108,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:03.547633"
+      "timestamp": "2025-08-19T10:00:40.639690"
     },
     "CSELK-PARQ.N0000": {
       "rsi_data": {
@@ -2350,127 +2118,95 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:10.931123"
+      "timestamp": "2025-08-19T10:00:43.743457"
     },
     "CSELK-PEG.N0000": {
-      "rsi_data": {
-        "1D": 47.9,
-        "1W": 52.0,
-        "1M": 57.1
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:14.854468"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56147235d01a <unknown>\n#1 0x561471dfca70 <unknown>\n#2 0x561471e4e907 <unknown>\n#3 0x561471e4eb01 <unknown>\n#4 0x561471e9cd54 <unknown>\n#5 0x561471e7440d <unknown>\n#6 0x561471e9a14f <unknown>\n#7 0x561471e741b3 <unknown>\n#8 0x561471e4059b <unknown>\n#9 0x561471e41971 <unknown>\n#10 0x5614723221eb <unknown>\n#11 0x561472325f39 <unknown>\n#12 0x5614723092c9 <unknown>\n#13 0x561472326ae8 <unknown>\n#14 0x5614722edbaf <unknown>\n#15 0x56147234a0a8 <unknown>\n#16 0x56147234a286 <unknown>\n#17 0x56147235bff6 <unknown>\n#18 0x7f9bbf69caa4 <unknown>\n#19 0x7f9bbf729c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:01:05.946148"
     },
     "CSELK-PINS.N0000": {
-      "rsi_data": {
-        "1D": 57.1,
-        "1W": 69.9,
-        "1M": 70.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:22.031165"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55d64d85501a <unknown>\n#1 0x55d64d2f4a70 <unknown>\n#2 0x55d64d346907 <unknown>\n#3 0x55d64d346b01 <unknown>\n#4 0x55d64d394d54 <unknown>\n#5 0x55d64d36c40d <unknown>\n#6 0x55d64d39214f <unknown>\n#7 0x55d64d36c1b3 <unknown>\n#8 0x55d64d33859b <unknown>\n#9 0x55d64d339971 <unknown>\n#10 0x55d64d81a1eb <unknown>\n#11 0x55d64d81df39 <unknown>\n#12 0x55d64d8012c9 <unknown>\n#13 0x55d64d81eae8 <unknown>\n#14 0x55d64d7e5baf <unknown>\n#15 0x55d64d8420a8 <unknown>\n#16 0x55d64d842286 <unknown>\n#17 0x55d64d853ff6 <unknown>\n#18 0x7f575449caa4 <unknown>\n#19 0x7f5754529c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:01:08.901182"
     },
     "CSELK-PLC.N0000": {
-      "rsi_data": {
-        "1D": 48.9,
-        "1W": 66.2,
-        "1M": 76.0
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:25.953716"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x556f0ed1f01a <unknown>\n#1 0x556f0e7bea70 <unknown>\n#2 0x556f0e810907 <unknown>\n#3 0x556f0e810b01 <unknown>\n#4 0x556f0e85ed54 <unknown>\n#5 0x556f0e83640d <unknown>\n#6 0x556f0e85c14f <unknown>\n#7 0x556f0e8361b3 <unknown>\n#8 0x556f0e80259b <unknown>\n#9 0x556f0e803971 <unknown>\n#10 0x556f0ece41eb <unknown>\n#11 0x556f0ece7f39 <unknown>\n#12 0x556f0eccb2c9 <unknown>\n#13 0x556f0ece8ae8 <unknown>\n#14 0x556f0ecafbaf <unknown>\n#15 0x556f0ed0c0a8 <unknown>\n#16 0x556f0ed0c286 <unknown>\n#17 0x556f0ed1dff6 <unknown>\n#18 0x7fdf3b29caa4 <unknown>\n#19 0x7fdf3b329c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:01:31.141279"
     },
     "CSELK-PLR.N0000": {
-      "rsi_data": {
-        "1D": 76.2,
-        "1W": 83.5,
-        "1M": 82.2
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:33.099006"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56263253701a <unknown>\n#1 0x562631fd6a70 <unknown>\n#2 0x562632028907 <unknown>\n#3 0x562632028b01 <unknown>\n#4 0x562632076d54 <unknown>\n#5 0x56263204e40d <unknown>\n#6 0x56263207414f <unknown>\n#7 0x56263204e1b3 <unknown>\n#8 0x56263201a59b <unknown>\n#9 0x56263201b971 <unknown>\n#10 0x5626324fc1eb <unknown>\n#11 0x5626324fff39 <unknown>\n#12 0x5626324e32c9 <unknown>\n#13 0x562632500ae8 <unknown>\n#14 0x5626324c7baf <unknown>\n#15 0x5626325240a8 <unknown>\n#16 0x562632524286 <unknown>\n#17 0x562632535ff6 <unknown>\n#18 0x7f3f8a09caa4 <unknown>\n#19 0x7f3f8a129c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:01:33.999518"
     },
     "CSELK-PMB.N0000": {
-      "rsi_data": {
-        "1D": 71.9,
-        "1W": 77.2,
-        "1M": 83.3
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:37.004101"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x558da1e2601a <unknown>\n#1 0x558da18c5a70 <unknown>\n#2 0x558da1917907 <unknown>\n#3 0x558da1917b01 <unknown>\n#4 0x558da1965d54 <unknown>\n#5 0x558da193d40d <unknown>\n#6 0x558da196314f <unknown>\n#7 0x558da193d1b3 <unknown>\n#8 0x558da190959b <unknown>\n#9 0x558da190a971 <unknown>\n#10 0x558da1deb1eb <unknown>\n#11 0x558da1deef39 <unknown>\n#12 0x558da1dd22c9 <unknown>\n#13 0x558da1defae8 <unknown>\n#14 0x558da1db6baf <unknown>\n#15 0x558da1e130a8 <unknown>\n#16 0x558da1e13286 <unknown>\n#17 0x558da1e24ff6 <unknown>\n#18 0x7f8c5489caa4 <unknown>\n#19 0x7f8c54929c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:01:56.261636"
     },
     "CSELK-RAL.N0000": {
-      "rsi_data": {
-        "1D": 49.4,
-        "1W": 54.7,
-        "1M": 52.1
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:44.179750"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5576d8daa01a <unknown>\n#1 0x5576d8849a70 <unknown>\n#2 0x5576d889b907 <unknown>\n#3 0x5576d889bb01 <unknown>\n#4 0x5576d88e9d54 <unknown>\n#5 0x5576d88c140d <unknown>\n#6 0x5576d88e714f <unknown>\n#7 0x5576d88c11b3 <unknown>\n#8 0x5576d888d59b <unknown>\n#9 0x5576d888e971 <unknown>\n#10 0x5576d8d6f1eb <unknown>\n#11 0x5576d8d72f39 <unknown>\n#12 0x5576d8d562c9 <unknown>\n#13 0x5576d8d73ae8 <unknown>\n#14 0x5576d8d3abaf <unknown>\n#15 0x5576d8d970a8 <unknown>\n#16 0x5576d8d97286 <unknown>\n#17 0x5576d8da8ff6 <unknown>\n#18 0x7fb64569caa4 <unknown>\n#19 0x7fb645729c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:01:59.120814"
     },
     "CSELK-RCH.N0000": {
-      "rsi_data": {
-        "1D": 61.41,
-        "1W": 76.26,
-        "1M": 79.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:48.065851"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5650d1d4101a <unknown>\n#1 0x5650d17e0a70 <unknown>\n#2 0x5650d1832907 <unknown>\n#3 0x5650d1832b01 <unknown>\n#4 0x5650d1880d54 <unknown>\n#5 0x5650d185840d <unknown>\n#6 0x5650d187e14f <unknown>\n#7 0x5650d18581b3 <unknown>\n#8 0x5650d182459b <unknown>\n#9 0x5650d1825971 <unknown>\n#10 0x5650d1d061eb <unknown>\n#11 0x5650d1d09f39 <unknown>\n#12 0x5650d1ced2c9 <unknown>\n#13 0x5650d1d0aae8 <unknown>\n#14 0x5650d1cd1baf <unknown>\n#15 0x5650d1d2e0a8 <unknown>\n#16 0x5650d1d2e286 <unknown>\n#17 0x5650d1d3fff6 <unknown>\n#18 0x7f332a09caa4 <unknown>\n#19 0x7f332a129c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:02:21.412545"
     },
     "CSELK-RCL.N0000": {
-      "rsi_data": {
-        "1D": 58.3,
-        "1W": 65.9,
-        "1M": 61.0
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:55.255943"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55f66258a01a <unknown>\n#1 0x55f662029a70 <unknown>\n#2 0x55f66207b907 <unknown>\n#3 0x55f66207bb01 <unknown>\n#4 0x55f6620c9d54 <unknown>\n#5 0x55f6620a140d <unknown>\n#6 0x55f6620c714f <unknown>\n#7 0x55f6620a11b3 <unknown>\n#8 0x55f66206d59b <unknown>\n#9 0x55f66206e971 <unknown>\n#10 0x55f66254f1eb <unknown>\n#11 0x55f662552f39 <unknown>\n#12 0x55f6625362c9 <unknown>\n#13 0x55f662553ae8 <unknown>\n#14 0x55f66251abaf <unknown>\n#15 0x55f6625770a8 <unknown>\n#16 0x55f662577286 <unknown>\n#17 0x55f662588ff6 <unknown>\n#18 0x7fcea7a9caa4 <unknown>\n#19 0x7fcea7b29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:02:24.215580"
     },
     "CSELK-RENU.N0000": {
       "rsi_data": {
-        "1D": 65.56,
-        "1W": 76.26,
-        "1M": 81.42
+        "1D": 67.61,
+        "1W": 77.06,
+        "1M": 81.88
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:44:59.193465"
+      "timestamp": "2025-08-19T10:02:32.492324"
     },
     "CSELK-REXP.N0000": {
       "rsi_data": {
-        "1D": 47.03,
-        "1W": 46.9,
-        "1M": 38.6
+        "1D": 53.0,
+        "1W": 49.9,
+        "1M": 39.62
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:06.385828"
+      "timestamp": "2025-08-19T10:02:35.058581"
     },
     "CSELK-RFL.N0000": {
       "rsi_data": {
-        "1D": 51.6,
-        "1W": 55.5,
-        "1M": 62.1
+        "1D": 48.0,
+        "1W": 53.9,
+        "1M": 61.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:10.233033"
+      "timestamp": "2025-08-19T10:02:43.339430"
     },
     "CSELK-RGEM.N0000": {
       "rsi_data": {
-        "1D": 68.5,
-        "1W": 60.7,
-        "1M": 55.3
+        "1D": 70.5,
+        "1W": 61.5,
+        "1M": 55.7
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:17.405705"
+      "timestamp": "2025-08-19T10:02:45.991231"
     },
     "CSELK-RHL.N0000": {
       "rsi_data": {
@@ -2480,7 +2216,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:21.303498"
+      "timestamp": "2025-08-19T10:02:54.453731"
     },
     "CSELK-RHL.X0000": {
       "rsi_data": {
@@ -2490,7 +2226,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:28.543219"
+      "timestamp": "2025-08-19T10:02:56.807664"
     },
     "CSELK-RHTL.N0000": {
       "rsi_data": {
@@ -2500,7 +2236,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:32.389624"
+      "timestamp": "2025-08-19T10:03:10.905933"
     },
     "CSELK-RICH.N0000": {
       "rsi_data": {
@@ -2510,77 +2246,51 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:39.588598"
-    },
-    "CSELK-RIL.N0000": {
-      "rsi_data": {
-        "1D": 48.6,
-        "1W": 72.4,
-        "1M": 81.0
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:43.609200"
+      "timestamp": "2025-08-19T10:03:10.912383"
     },
     "CSELK-RPBH.N0000": {
-      "rsi_data": {
-        "1D": 66.3,
-        "1W": 87.1,
-        "1M": 82.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:50.656784"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55defc13b01a <unknown>\n#1 0x55defbbdaa70 <unknown>\n#2 0x55defbc2c907 <unknown>\n#3 0x55defbc2cb01 <unknown>\n#4 0x55defbc7ad54 <unknown>\n#5 0x55defbc5240d <unknown>\n#6 0x55defbc7814f <unknown>\n#7 0x55defbc521b3 <unknown>\n#8 0x55defbc1e59b <unknown>\n#9 0x55defbc1f971 <unknown>\n#10 0x55defc1001eb <unknown>\n#11 0x55defc103f39 <unknown>\n#12 0x55defc0e72c9 <unknown>\n#13 0x55defc104ae8 <unknown>\n#14 0x55defc0cbbaf <unknown>\n#15 0x55defc1280a8 <unknown>\n#16 0x55defc128286 <unknown>\n#17 0x55defc139ff6 <unknown>\n#18 0x7fe1a8c9caa4 <unknown>\n#19 0x7fe1a8d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:03:36.232851"
     },
-    "CSELK-RWSL.N0000": {
-      "rsi_data": {
-        "1D": 79.2,
-        "1W": 78.0,
-        "1M": 83.3
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:45:54.692577"
+    "CSELK-RIL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x5617425f701a <unknown>\n#1 0x561742096a70 <unknown>\n#2 0x5617420e8907 <unknown>\n#3 0x5617420e8b01 <unknown>\n#4 0x561742136d54 <unknown>\n#5 0x56174210e40d <unknown>\n#6 0x56174213414f <unknown>\n#7 0x56174210e1b3 <unknown>\n#8 0x5617420da59b <unknown>\n#9 0x5617420db971 <unknown>\n#10 0x5617425bc1eb <unknown>\n#11 0x5617425bff39 <unknown>\n#12 0x5617425a32c9 <unknown>\n#13 0x5617425c0ae8 <unknown>\n#14 0x561742587baf <unknown>\n#15 0x5617425e40a8 <unknown>\n#16 0x5617425e4286 <unknown>\n#17 0x5617425f5ff6 <unknown>\n#18 0x7f4bb5c9caa4 <unknown>\n#19 0x7f4bb5d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:03:36.233826"
     },
     "CSELK-SAMP.N0000": {
-      "rsi_data": {
-        "1D": 68.58,
-        "1W": 78.0,
-        "1M": 77.79
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:01.708449"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55cbb170901a <unknown>\n#1 0x55cbb11a8a70 <unknown>\n#2 0x55cbb11fa907 <unknown>\n#3 0x55cbb11fab01 <unknown>\n#4 0x55cbb1248d54 <unknown>\n#5 0x55cbb122040d <unknown>\n#6 0x55cbb124614f <unknown>\n#7 0x55cbb12201b3 <unknown>\n#8 0x55cbb11ec59b <unknown>\n#9 0x55cbb11ed971 <unknown>\n#10 0x55cbb16ce1eb <unknown>\n#11 0x55cbb16d1f39 <unknown>\n#12 0x55cbb16b52c9 <unknown>\n#13 0x55cbb16d2ae8 <unknown>\n#14 0x55cbb1699baf <unknown>\n#15 0x55cbb16f60a8 <unknown>\n#16 0x55cbb16f6286 <unknown>\n#17 0x55cbb1707ff6 <unknown>\n#18 0x7f48f009caa4 <unknown>\n#19 0x7f48f0129c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:04:01.502993"
+    },
+    "CSELK-RWSL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56510fbbf01a <unknown>\n#1 0x56510f65ea70 <unknown>\n#2 0x56510f6b0907 <unknown>\n#3 0x56510f6b0b01 <unknown>\n#4 0x56510f6fed54 <unknown>\n#5 0x56510f6d640d <unknown>\n#6 0x56510f6fc14f <unknown>\n#7 0x56510f6d61b3 <unknown>\n#8 0x56510f6a259b <unknown>\n#9 0x56510f6a3971 <unknown>\n#10 0x56510fb841eb <unknown>\n#11 0x56510fb87f39 <unknown>\n#12 0x56510fb6b2c9 <unknown>\n#13 0x56510fb88ae8 <unknown>\n#14 0x56510fb4fbaf <unknown>\n#15 0x56510fbac0a8 <unknown>\n#16 0x56510fbac286 <unknown>\n#17 0x56510fbbdff6 <unknown>\n#18 0x7efc9529caa4 <unknown>\n#19 0x7efc95329c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:04:01.505757"
     },
     "CSELK-SCAP.N0000": {
       "rsi_data": {
-        "1D": 51.0,
-        "1W": 53.6,
-        "1M": 46.0
+        "1D": 54.7,
+        "1W": 55.8,
+        "1M": 46.5
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:05.914993"
+      "timestamp": "2025-08-19T10:04:13.006343"
     },
     "CSELK-SDB.N0000": {
       "rsi_data": {
-        "1D": 67.6,
-        "1W": 66.3,
-        "1M": 62.9
+        "1D": 68.3,
+        "1W": 66.8,
+        "1M": 63.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:12.946043"
-    },
-    "CSELK-SDF.N0000": {
-      "rsi_data": {
-        "1D": 45.3,
-        "1W": 66.5,
-        "1M": 73.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:17.056659"
+      "timestamp": "2025-08-19T10:04:13.006886"
     },
     "CSELK-SEMB.N0000": {
       "rsi_data": {
@@ -2590,7 +2300,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:24.099562"
+      "timestamp": "2025-08-19T10:04:24.374545"
+    },
+    "CSELK-SDF.N0000": {
+      "rsi_data": {
+        "1D": 43.8,
+        "1W": 65.5,
+        "1M": 73.1
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T10:04:24.417908"
     },
     "CSELK-SEMB.X0000": {
       "rsi_data": {
@@ -2600,7 +2320,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:28.509801"
+      "timestamp": "2025-08-19T10:04:35.559427"
     },
     "CSELK-SERV.N0000": {
       "rsi_data": {
@@ -2610,83 +2330,55 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:35.265445"
+      "timestamp": "2025-08-19T10:04:35.722894"
     },
     "CSELK-SEYB.N0000": {
-      "rsi_data": {
-        "1D": 75.7,
-        "1W": 77.4,
-        "1M": 76.9
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:39.685183"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55fbdc57b01a <unknown>\n#1 0x55fbdc01aa70 <unknown>\n#2 0x55fbdc06c907 <unknown>\n#3 0x55fbdc06cb01 <unknown>\n#4 0x55fbdc0bad54 <unknown>\n#5 0x55fbdc09240d <unknown>\n#6 0x55fbdc0b814f <unknown>\n#7 0x55fbdc0921b3 <unknown>\n#8 0x55fbdc05e59b <unknown>\n#9 0x55fbdc05f971 <unknown>\n#10 0x55fbdc5401eb <unknown>\n#11 0x55fbdc543f39 <unknown>\n#12 0x55fbdc5272c9 <unknown>\n#13 0x55fbdc544ae8 <unknown>\n#14 0x55fbdc50bbaf <unknown>\n#15 0x55fbdc5680a8 <unknown>\n#16 0x55fbdc568286 <unknown>\n#17 0x55fbdc579ff6 <unknown>\n#18 0x7ff79c09caa4 <unknown>\n#19 0x7ff79c129c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:05:00.754847"
     },
     "CSELK-SEYB.X0000": {
-      "rsi_data": {
-        "1D": 72.8,
-        "1W": 78.2,
-        "1M": 75.5
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:46.410544"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x557d8d11501a <unknown>\n#1 0x557d8cbb4a70 <unknown>\n#2 0x557d8cc06907 <unknown>\n#3 0x557d8cc06b01 <unknown>\n#4 0x557d8cc54d54 <unknown>\n#5 0x557d8cc2c40d <unknown>\n#6 0x557d8cc5214f <unknown>\n#7 0x557d8cc2c1b3 <unknown>\n#8 0x557d8cbf859b <unknown>\n#9 0x557d8cbf9971 <unknown>\n#10 0x557d8d0da1eb <unknown>\n#11 0x557d8d0ddf39 <unknown>\n#12 0x557d8d0c12c9 <unknown>\n#13 0x557d8d0deae8 <unknown>\n#14 0x557d8d0a5baf <unknown>\n#15 0x557d8d1020a8 <unknown>\n#16 0x557d8d102286 <unknown>\n#17 0x557d8d113ff6 <unknown>\n#18 0x7f13b8e9caa4 <unknown>\n#19 0x7f13b8f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:05:00.933187"
     },
     "CSELK-SFCL.N0000": {
-      "rsi_data": {
-        "1D": 45.24,
-        "1W": 52.86,
-        "1M": 59.12
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:50.920127"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x562b5b7fb01a <unknown>\n#1 0x562b5b29aa70 <unknown>\n#2 0x562b5b2ec907 <unknown>\n#3 0x562b5b2ecb01 <unknown>\n#4 0x562b5b33ad54 <unknown>\n#5 0x562b5b31240d <unknown>\n#6 0x562b5b33814f <unknown>\n#7 0x562b5b3121b3 <unknown>\n#8 0x562b5b2de59b <unknown>\n#9 0x562b5b2df971 <unknown>\n#10 0x562b5b7c01eb <unknown>\n#11 0x562b5b7c3f39 <unknown>\n#12 0x562b5b7a72c9 <unknown>\n#13 0x562b5b7c4ae8 <unknown>\n#14 0x562b5b78bbaf <unknown>\n#15 0x562b5b7e80a8 <unknown>\n#16 0x562b5b7e8286 <unknown>\n#17 0x562b5b7f9ff6 <unknown>\n#18 0x7fbf34c9caa4 <unknown>\n#19 0x7fbf34d29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:05:26.042537"
     },
     "CSELK-SFIN.N0000": {
-      "rsi_data": {
-        "1D": 80.7,
-        "1W": 85.0,
-        "1M": 89.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:46:57.532620"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55e90609c01a <unknown>\n#1 0x55e905b3ba70 <unknown>\n#2 0x55e905b8d907 <unknown>\n#3 0x55e905b8db01 <unknown>\n#4 0x55e905bdbd54 <unknown>\n#5 0x55e905bb340d <unknown>\n#6 0x55e905bd914f <unknown>\n#7 0x55e905bb31b3 <unknown>\n#8 0x55e905b7f59b <unknown>\n#9 0x55e905b80971 <unknown>\n#10 0x55e9060611eb <unknown>\n#11 0x55e906064f39 <unknown>\n#12 0x55e9060482c9 <unknown>\n#13 0x55e906065ae8 <unknown>\n#14 0x55e90602cbaf <unknown>\n#15 0x55e9060890a8 <unknown>\n#16 0x55e906089286 <unknown>\n#17 0x55e90609aff6 <unknown>\n#18 0x7f39fb09caa4 <unknown>\n#19 0x7f39fb129c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:05:26.151360"
     },
     "CSELK-SHL.N0000": {
-      "rsi_data": {
-        "1D": 49.9,
-        "1W": 48.7,
-        "1M": 41.6
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:02.151226"
-    },
-    "CSELK-SHOT.N0000": {
-      "rsi_data": {
-        "1D": 57.2,
-        "1W": 56.5,
-        "1M": 63.4
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:13.153544"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x55af1ef4d01a <unknown>\n#1 0x55af1e9eca70 <unknown>\n#2 0x55af1ea3e907 <unknown>\n#3 0x55af1ea3eb01 <unknown>\n#4 0x55af1ea8cd54 <unknown>\n#5 0x55af1ea6440d <unknown>\n#6 0x55af1ea8a14f <unknown>\n#7 0x55af1ea641b3 <unknown>\n#8 0x55af1ea3059b <unknown>\n#9 0x55af1ea31971 <unknown>\n#10 0x55af1ef121eb <unknown>\n#11 0x55af1ef15f39 <unknown>\n#12 0x55af1eef92c9 <unknown>\n#13 0x55af1ef16ae8 <unknown>\n#14 0x55af1eeddbaf <unknown>\n#15 0x55af1ef3a0a8 <unknown>\n#16 0x55af1ef3a286 <unknown>\n#17 0x55af1ef4bff6 <unknown>\n#18 0x7fea87e9caa4 <unknown>\n#19 0x7fea87f29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:05:51.259221"
     },
     "CSELK-SHL.W0000": {
       "rsi_data": null,
       "status": "failed",
-      "error": "Error: Message: \nStacktrace:\n#0 0x563e1d22c01a <unknown>\n#1 0x563e1cccba70 <unknown>\n#2 0x563e1cd1d907 <unknown>\n#3 0x563e1cd1db01 <unknown>\n#4 0x563e1cd6bd54 <unknown>\n#5 0x563e1cd4340d <unknown>\n#6 0x563e1cd6914f <unknown>\n#7 0x563e1cd431b3 <unknown>\n#8 0x563e1cd0f59b <unknown>\n#9 0x563e1cd10971 <unknown>\n#10 0x563e1d1f11eb <unknown>\n#11 0x563e1d1f4f39 <unknown>\n#12 0x563e1d1d82c9 <unknown>\n#13 0x563e1d1f5ae8 <unknown>\n#14 0x563e1d1bcbaf <unknown>\n#15 0x563e1d2190a8 <unknown>\n#16 0x563e1d219286 <unknown>\n#17 0x563e1d22aff6 <unknown>\n#18 0x7ff3c189caa4 <unknown>\n#19 0x7ff3c1929c3c <unknown>\n",
-      "timestamp": "2025-08-19T07:47:23.715783"
+      "error": "Error: Message: \nStacktrace:\n#0 0x563ea56e001a <unknown>\n#1 0x563ea517fa70 <unknown>\n#2 0x563ea51d1907 <unknown>\n#3 0x563ea51d1b01 <unknown>\n#4 0x563ea521fd54 <unknown>\n#5 0x563ea51f740d <unknown>\n#6 0x563ea521d14f <unknown>\n#7 0x563ea51f71b3 <unknown>\n#8 0x563ea51c359b <unknown>\n#9 0x563ea51c4971 <unknown>\n#10 0x563ea56a51eb <unknown>\n#11 0x563ea56a8f39 <unknown>\n#12 0x563ea568c2c9 <unknown>\n#13 0x563ea56a9ae8 <unknown>\n#14 0x563ea5670baf <unknown>\n#15 0x563ea56cd0a8 <unknown>\n#16 0x563ea56cd286 <unknown>\n#17 0x563ea56deff6 <unknown>\n#18 0x7f383169caa4 <unknown>\n#19 0x7f3831729c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:05:51.367704"
+    },
+    "CSELK-SHOT.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x56234eef701a <unknown>\n#1 0x56234e996a70 <unknown>\n#2 0x56234e9e8907 <unknown>\n#3 0x56234e9e8b01 <unknown>\n#4 0x56234ea36d54 <unknown>\n#5 0x56234ea0e40d <unknown>\n#6 0x56234ea3414f <unknown>\n#7 0x56234ea0e1b3 <unknown>\n#8 0x56234e9da59b <unknown>\n#9 0x56234e9db971 <unknown>\n#10 0x56234eebc1eb <unknown>\n#11 0x56234eebff39 <unknown>\n#12 0x56234eea32c9 <unknown>\n#13 0x56234eec0ae8 <unknown>\n#14 0x56234ee87baf <unknown>\n#15 0x56234eee40a8 <unknown>\n#16 0x56234eee4286 <unknown>\n#17 0x56234eef5ff6 <unknown>\n#18 0x7f642c89caa4 <unknown>\n#19 0x7f642c929c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:06:16.452242"
     },
     "CSELK-SHOT.X0000": {
-      "rsi_data": {
-        "1D": 60.1,
-        "1W": 59.4,
-        "1M": 65.5
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:24.227110"
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Error: Message: \nStacktrace:\n#0 0x556e496be01a <unknown>\n#1 0x556e4915da70 <unknown>\n#2 0x556e491af907 <unknown>\n#3 0x556e491afb01 <unknown>\n#4 0x556e491fdd54 <unknown>\n#5 0x556e491d540d <unknown>\n#6 0x556e491fb14f <unknown>\n#7 0x556e491d51b3 <unknown>\n#8 0x556e491a159b <unknown>\n#9 0x556e491a2971 <unknown>\n#10 0x556e496831eb <unknown>\n#11 0x556e49686f39 <unknown>\n#12 0x556e4966a2c9 <unknown>\n#13 0x556e49687ae8 <unknown>\n#14 0x556e4964ebaf <unknown>\n#15 0x556e496ab0a8 <unknown>\n#16 0x556e496ab286 <unknown>\n#17 0x556e496bcff6 <unknown>\n#18 0x7ff0cda9caa4 <unknown>\n#19 0x7ff0cdb29c3c <unknown>\n",
+      "timestamp": "2025-08-19T10:06:16.609820"
     },
     "CSELK-SIGV.N0000": {
       "rsi_data": {
@@ -2696,17 +2388,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:34.952738"
+      "timestamp": "2025-08-19T10:06:27.827332"
     },
     "CSELK-SIL.N0000": {
       "rsi_data": {
-        "1D": 62.53,
-        "1W": 61.33,
-        "1M": 54.16
+        "1D": 64.01,
+        "1W": 62.52,
+        "1M": 54.82
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:35.458170"
+      "timestamp": "2025-08-19T10:06:27.945052"
     },
     "CSELK-SING.N0000": {
       "rsi_data": {
@@ -2716,7 +2408,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:46.366350"
+      "timestamp": "2025-08-19T10:06:39.077900"
     },
     "CSELK-SINH.N0000": {
       "rsi_data": {
@@ -2726,17 +2418,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:46.731120"
+      "timestamp": "2025-08-19T10:06:39.256356"
     },
     "CSELK-SINS.N0000": {
       "rsi_data": {
-        "1D": 73.8,
-        "1W": 85.5,
-        "1M": 89.4
+        "1D": 73.3,
+        "1W": 84.5,
+        "1M": 89.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:58.008689"
+      "timestamp": "2025-08-19T10:06:50.192623"
     },
     "CSELK-SIRA.N0000": {
       "rsi_data": {
@@ -2746,47 +2438,47 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:47:58.057266"
+      "timestamp": "2025-08-19T10:06:50.382736"
     },
     "CSELK-SLND.N0000": {
       "rsi_data": {
-        "1D": 58.4,
-        "1W": 59.79,
-        "1M": 57.15
+        "1D": 64.61,
+        "1W": 72.2,
+        "1M": 60.91
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:09.394743"
+      "timestamp": "2025-08-19T10:07:01.635547"
     },
     "CSELK-SLTL.N0000": {
       "rsi_data": {
-        "1D": 60.4,
-        "1W": 51.9,
-        "1M": 43.4
+        "1D": 61.7,
+        "1W": 52.7,
+        "1M": 43.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:09.523225"
+      "timestamp": "2025-08-19T10:07:01.714704"
     },
     "CSELK-SMOT.N0000": {
       "rsi_data": {
-        "1D": 49.11,
-        "1W": 73.31,
-        "1M": 79.46
+        "1D": 49.69,
+        "1W": 73.8,
+        "1M": 79.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:20.740715"
+      "timestamp": "2025-08-19T10:07:12.969111"
     },
     "CSELK-SUN.N0000": {
       "rsi_data": {
-        "1D": 59.7,
-        "1W": 70.9,
-        "1M": 76.8
+        "1D": 61.5,
+        "1W": 71.3,
+        "1M": 77.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:20.895116"
+      "timestamp": "2025-08-19T10:07:13.093112"
     },
     "CSELK-SWAD.N0000": {
       "rsi_data": {
@@ -2796,17 +2488,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:32.064615"
+      "timestamp": "2025-08-19T10:07:24.247262"
     },
     "CSELK-TAFL.N0000": {
       "rsi_data": {
-        "1D": 38.02,
-        "1W": 66.33,
-        "1M": 71.72
+        "1D": 39.01,
+        "1W": 67.15,
+        "1M": 72.28
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:32.266961"
+      "timestamp": "2025-08-19T10:07:24.398174"
     },
     "CSELK-TAJ.N0000": {
       "rsi_data": {
@@ -2816,17 +2508,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:43.370997"
+      "timestamp": "2025-08-19T10:07:35.576590"
     },
     "CSELK-TANG.N0000": {
       "rsi_data": {
-        "1D": 61.8,
-        "1W": 73.49,
-        "1M": 77.94
+        "1D": 58.53,
+        "1W": 72.25,
+        "1M": 75.36
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:43.598824"
+      "timestamp": "2025-08-19T10:07:35.734559"
     },
     "CSELK-TESS.N0000": {
       "rsi_data": {
@@ -2836,17 +2528,17 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:54.846288"
+      "timestamp": "2025-08-19T10:07:46.650006"
     },
     "CSELK-TESS.X0000": {
       "rsi_data": {
-        "1D": 47.4,
-        "1W": 53.4,
-        "1M": 55.9
+        "1D": 54.8,
+        "1W": 62.0,
+        "1M": 61.8
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:48:55.041120"
+      "timestamp": "2025-08-19T10:07:47.211004"
     },
     "CSELK-TJL.N0000": {
       "rsi_data": {
@@ -2856,57 +2548,67 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:06.446459"
+      "timestamp": "2025-08-19T10:07:57.774725"
     },
     "CSELK-TKYO.N0000": {
       "rsi_data": {
-        "1D": 54.7,
-        "1W": 59.1,
-        "1M": 69.6
+        "1D": 51.4,
+        "1W": 57.8,
+        "1M": 68.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:06.477671"
+      "timestamp": "2025-08-19T10:07:58.336718"
     },
     "CSELK-TKYO.X0000": {
       "rsi_data": {
-        "1D": 59.4,
-        "1W": 61.9,
-        "1M": 70.2
+        "1D": 57.8,
+        "1W": 61.1,
+        "1M": 69.9
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:17.794269"
+      "timestamp": "2025-08-19T10:08:10.613775"
     },
     "CSELK-TPL.N0000": {
       "rsi_data": {
-        "1D": 66.79,
-        "1W": 69.09,
-        "1M": 69.05
+        "1D": 54.2,
+        "1W": 62.32,
+        "1M": 65.89
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:17.956002"
-    },
-    "CSELK-TRAN.N0000": {
-      "rsi_data": {
-        "1D": 69.5,
-        "1W": 74.3,
-        "1M": 65.7
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:29.085968"
+      "timestamp": "2025-08-19T10:08:10.648783"
     },
     "CSELK-TSML.N0000": {
       "rsi_data": {
-        "1D": 75.9,
-        "1W": 71.0,
-        "1M": 58.0
+        "1D": 74.8,
+        "1W": 73.6,
+        "1M": 59.7
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:29.263545"
+      "timestamp": "2025-08-19T10:08:21.995198"
+    },
+    "CSELK-TRAN.N0000": {
+      "rsi_data": {
+        "1D": 69.3,
+        "1W": 74.2,
+        "1M": 65.6
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T10:08:21.999055"
+    },
+    "CSELK-UAL.N0000": {
+      "rsi_data": {
+        "1D": 48.6,
+        "1W": 60.2,
+        "1M": 67.7
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T10:08:33.481069"
     },
     "CSELK-UBC.N0000": {
       "rsi_data": {
@@ -2916,27 +2618,7 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:40.566889"
-    },
-    "CSELK-UAL.N0000": {
-      "rsi_data": {
-        "1D": 47.0,
-        "1W": 59.3,
-        "1M": 67.1
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:40.651832"
-    },
-    "CSELK-UCAR.N0000": {
-      "rsi_data": {
-        "1D": 74.96,
-        "1W": 72.23,
-        "1M": 68.39
-      },
-      "status": "success",
-      "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:52.140957"
+      "timestamp": "2025-08-19T10:08:33.513640"
     },
     "CSELK-UBF.N0000": {
       "rsi_data": {
@@ -2946,17 +2628,27 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:49:52.458485"
+      "timestamp": "2025-08-19T10:08:44.941427"
     },
-    "CSELK-UDPL.N0000": {
+    "CSELK-UCAR.N0000": {
       "rsi_data": {
-        "1D": 78.32,
-        "1W": 66.94,
-        "1M": 68.0
+        "1D": 76.82,
+        "1W": 73.44,
+        "1M": 69.15
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:03.598290"
+      "timestamp": "2025-08-19T10:08:44.975029"
+    },
+    "CSELK-UDPL.N0000": {
+      "rsi_data": {
+        "1D": 77.93,
+        "1W": 66.68,
+        "1M": 67.88
+      },
+      "status": "success",
+      "successful_timeframes": 3,
+      "timestamp": "2025-08-19T10:08:56.200584"
     },
     "CSELK-UML.N0000": {
       "rsi_data": {
@@ -2966,57 +2658,57 @@
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:03.853813"
+      "timestamp": "2025-08-19T10:08:56.290438"
     },
     "CSELK-VFIN.N0000": {
       "rsi_data": {
-        "1D": 76.83,
-        "1W": 84.48,
-        "1M": 90.13
+        "1D": 77.3,
+        "1W": 84.62,
+        "1M": 90.19
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:14.936538"
+      "timestamp": "2025-08-19T10:09:07.463706"
     },
     "CSELK-VLL.N0000": {
       "rsi_data": {
-        "1D": 72.3,
-        "1W": 72.7,
-        "1M": 85.0
+        "1D": 74.1,
+        "1W": 73.6,
+        "1M": 85.3
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:15.157355"
+      "timestamp": "2025-08-19T10:09:07.571930"
     },
     "CSELK-VLL.X0000": {
       "rsi_data": {
-        "1D": 75.9,
-        "1W": 90.8,
-        "1M": 90.5
+        "1D": 73.2,
+        "1W": 90.4,
+        "1M": 90.2
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:26.266390"
+      "timestamp": "2025-08-19T10:09:18.869195"
     },
     "CSELK-VONE.N0000": {
       "rsi_data": {
-        "1D": 53.2,
-        "1W": 80.1,
-        "1M": 71.8
+        "1D": 55.8,
+        "1W": 82.5,
+        "1M": 72.4
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:26.656368"
+      "timestamp": "2025-08-19T10:09:18.931752"
     },
     "CSELK-VPEL.N0000": {
       "rsi_data": {
-        "1D": 50.8,
-        "1W": 62.3,
-        "1M": 73.6
+        "1D": 47.5,
+        "1W": 59.9,
+        "1M": 72.6
       },
       "status": "success",
       "successful_timeframes": 3,
-      "timestamp": "2025-08-19T07:50:37.486651"
+      "timestamp": "2025-08-19T10:09:29.771301"
     }
   }
 }
