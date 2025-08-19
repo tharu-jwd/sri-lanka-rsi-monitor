@@ -483,7 +483,7 @@ class MultiTimeframeRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Updates daily at 4 PM</p>
+            <p>Updates daily at 3:30 PM</p>
             <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
         </div>
     </div>
