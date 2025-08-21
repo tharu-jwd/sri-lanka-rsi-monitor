@@ -1,6 +1,15 @@
+#!/usr/bin/env python3
+"""
+Multi-Timeframe RSI Scraper for Sri Lankan Stocks
+Optimized for GitHub Actions with robust error handling and rate limiting
+"""
+
 import time
 import json
 import os
+import random
+import argparse
+import sys
 from datetime import datetime, timezone, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -12,141 +21,239 @@ from selenium.common.exceptions import TimeoutException, WebDriverException
 from webdriver_manager.chrome import ChromeDriverManager
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-class MultiTimeframeRSIScraper:
-    def __init__(self, base_url, symbols):
+class EnhancedMultiTimeframeRSIScraper:
+    def __init__(self, base_url, symbols, max_workers=1, batch_size=50, rate_limit_delay=2):
         self.base_url = base_url
         self.symbols = symbols
         self.results = {}
         self.timeframes = ['1D', '1W', '1M']
-    
+        self.max_workers = max_workers
+        self.batch_size = batch_size
+        self.rate_limit_delay = rate_limit_delay
+        self.failed_symbols = []
+        self.retry_count = 3
+        
     def create_driver(self):
-        """Create a Chrome driver for scraping"""
+        """Create a Chrome driver with enhanced options for stability"""
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--window-size=1920,1080")
-        chrome_options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36")
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--disable-plugins")
+        chrome_options.add_argument("--disable-images")
+        chrome_options.add_argument("--disable-javascript")
+        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        chrome_options.add_experimental_option('useAutomationExtension', False)
+        
+        # Randomize user agent to appear more natural
+        user_agents = [
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        ]
+        chrome_options.add_argument(f"--user-agent={random.choice(user_agents)}")
         
         try:
             service = Service(ChromeDriverManager().install())
             driver = webdriver.Chrome(service=service, options=chrome_options)
-            driver.implicitly_wait(5)
+            driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            driver.implicitly_wait(3)
             return driver
         except Exception as e:
-            print(f"Error creating Chrome driver: {e}")
+            print(f"❌ Error creating Chrome driver: {e}")
             return None
     
     def build_url(self, symbol):
         """Build complete URL for a given symbol"""
         return self.base_url.replace("{SYMBOL}", symbol)
     
-    def fetch_rsi_for_timeframe(self, driver, timeframe):
-        """Fetch RSI for a specific timeframe"""
+    def wait_with_jitter(self, base_delay=None):
+        """Add random delay to avoid rate limiting"""
+        delay = base_delay or self.rate_limit_delay
+        jitter = random.uniform(0.8, 1.3)
+        time.sleep(delay * jitter)
+    
+    def fetch_rsi_for_timeframe(self, driver, timeframe, symbol):
+        """Fetch RSI for a specific timeframe with enhanced error handling"""
         try:
-            # Click on the timeframe button
-            timeframe_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.ID, timeframe))
-            )
-            timeframe_button.click()
+            # Click on the timeframe button with retry
+            for attempt in range(3):
+                try:
+                    timeframe_button = WebDriverWait(driver, 10).until(
+                        EC.element_to_be_clickable((By.ID, timeframe))
+                    )
+                    driver.execute_script("arguments[0].click();", timeframe_button)
+                    break
+                except Exception as e:
+                    if attempt == 2:
+                        print(f"    ⚠️  Failed to click {timeframe} button after 3 attempts")
+                        return None
+                    time.sleep(1)
             
             # Wait for data to update
             time.sleep(2)
             
-            # Wait for RSI row to be present
-            rsi_row = WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.XPATH, "//tr[contains(., 'Relative Strength Index')]"))
-            )
+            # Wait for RSI row to be present with multiple selectors
+            rsi_selectors = [
+                "//tr[contains(., 'Relative Strength Index')]",
+                "//tr[contains(., 'RSI')]",
+                "//tr[contains(@data-field-key, 'RSI')]"
+            ]
             
-            # Get the value cell
-            value_cell = driver.find_element(By.XPATH, "//tr[contains(., 'Relative Strength Index')]//td[2]")
-            rsi_text = value_cell.text.strip()
+            rsi_row = None
+            for selector in rsi_selectors:
+                try:
+                    rsi_row = WebDriverWait(driver, 12).until(
+                        EC.presence_of_element_located((By.XPATH, selector))
+                    )
+                    break
+                except:
+                    continue
+            
+            if not rsi_row:
+                return None
+            
+            # Get the value cell with multiple attempts
+            value_selectors = [
+                "//tr[contains(., 'Relative Strength Index')]//td[2]",
+                "//tr[contains(., 'RSI')]//td[2]",
+                "//tr[contains(., 'Relative Strength Index')]//td[last()]"
+            ]
+            
+            rsi_text = None
+            for selector in value_selectors:
+                try:
+                    value_cell = driver.find_element(By.XPATH, selector)
+                    rsi_text = value_cell.text.strip()
+                    if rsi_text and rsi_text not in ["—", "", "N/A", "Loading...", "--"]:
+                        break
+                except:
+                    continue
             
             # Wait for data to load if showing placeholder
             retry_count = 0
-            while rsi_text in ["—", "", "N/A", "Loading...", "--"] and retry_count < 5:
+            while rsi_text in ["—", "", "N/A", "Loading...", "--", None] and retry_count < 6:
                 time.sleep(1)
-                value_cell = driver.find_element(By.XPATH, "//tr[contains(., 'Relative Strength Index')]//td[2]")
-                rsi_text = value_cell.text.strip()
+                for selector in value_selectors:
+                    try:
+                        value_cell = driver.find_element(By.XPATH, selector)
+                        rsi_text = value_cell.text.strip()
+                        if rsi_text and rsi_text not in ["—", "", "N/A", "Loading...", "--"]:
+                            break
+                    except:
+                        continue
                 retry_count += 1
             
-            if rsi_text in ["—", "", "N/A", "Loading...", "--"]:
+            if not rsi_text or rsi_text in ["—", "", "N/A", "Loading...", "--"]:
                 return None
             
-            return float(rsi_text.replace(',', ''))
-            
+            # Parse the RSI value
+            try:
+                # Remove any non-numeric characters except decimal point
+                cleaned_text = ''.join(c for c in rsi_text if c.isdigit() or c == '.')
+                rsi_value = float(cleaned_text)
+                
+                # Validate RSI range (0-100)
+                if 0 <= rsi_value <= 100:
+                    return rsi_value
+                else:
+                    return None
+                    
+            except (ValueError, TypeError):
+                return None
+                
         except Exception as e:
-            print(f"    Error fetching {timeframe}: {e}")
             return None
     
-    def fetch_single_stock_all_timeframes(self, symbol):
-        """Fetch RSI for all timeframes for a single stock"""
+    def fetch_single_stock_all_timeframes(self, symbol, attempt=1):
+        """Fetch RSI for all timeframes for a single stock with retry logic"""
         driver = None
+        
         try:
             driver = self.create_driver()
             if not driver:
-                return symbol, None, "Could not create Chrome driver"
+                return symbol, None, f"Could not create Chrome driver (attempt {attempt})"
             
             url = self.build_url(symbol)
+            driver.set_page_load_timeout(30)
             driver.get(url)
+            
+            # Wait for page to load with multiple indicators
+            page_loaded = False
+            for selector in [
+                "//tr[contains(., 'Relative Strength Index')]",
+                "//tr[contains(., 'RSI')]",
+                ".tv-data-table",
+                "[data-name='technicals']"
+            ]:
+                try:
+                    WebDriverWait(driver, 20).until(
+                        EC.presence_of_element_located((By.XPATH, selector))
+                    )
+                    page_loaded = True
+                    break
+                except:
+                    continue
+            
+            if not page_loaded:
+                return symbol, None, f"Page did not load properly (attempt {attempt})"
+            
+            # Additional stabilization time
             time.sleep(3)
             
-            # Wait for page to load
-            WebDriverWait(driver, 20).until(
-                EC.presence_of_element_located((By.XPATH, "//tr[contains(., 'Relative Strength Index')]"))
-            )
-            
             rsi_data = {}
-            for timeframe in self.timeframes:
-                rsi_value = self.fetch_rsi_for_timeframe(driver, timeframe)
-                rsi_data[timeframe] = rsi_value
-                
-            return symbol, rsi_data, None
+            successful_timeframes = 0
             
+            for timeframe in self.timeframes:
+                self.wait_with_jitter(0.8)  # Small delay between timeframes
+                rsi_value = self.fetch_rsi_for_timeframe(driver, timeframe, symbol)
+                rsi_data[timeframe] = rsi_value
+                if rsi_value is not None:
+                    successful_timeframes += 1
+            
+            # Consider it successful if we got at least one timeframe
+            if successful_timeframes > 0:
+                return symbol, rsi_data, None
+            else:
+                return symbol, None, f"No timeframes successful (attempt {attempt})"
+                
         except Exception as e:
-            return symbol, None, f"Error: {e}"
+            error_msg = f"Error on attempt {attempt}: {str(e)[:100]}"
+            return symbol, None, error_msg
         finally:
             if driver:
-                driver.quit()
-    
-    def fetch_all_rsi(self):
-        """Fetch RSI for all symbols and timeframes using parallel processing"""
-        print(f"🚀 Multi-Timeframe RSI Fetch - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print(f"📊 Processing {len(self.symbols)} symbols with {len(self.timeframes)} timeframes each...")
-        print("=" * 70)
-        
-        results = {}
-        failed_count = 0
-        
-        # Use parallel processing with 2 workers to avoid overwhelming the server
-        with ThreadPoolExecutor(max_workers=2) as executor:
-            # Submit all tasks
-            future_to_symbol = {
-                executor.submit(self.fetch_single_stock_all_timeframes, symbol): symbol 
-                for symbol in self.symbols
-            }
-            
-            # Collect results as they complete
-            for i, future in enumerate(as_completed(future_to_symbol), 1):
-                symbol = future_to_symbol[future]
-                clean_symbol = symbol.replace("CSELK-", "")
-                
-                print(f"[{i:2d}/{len(self.symbols)}] {clean_symbol:<12}", end=" ")
-                
                 try:
-                    symbol_result, rsi_data, error = future.result()
+                    driver.quit()
+                except:
+                    pass
+    
+    def process_batch(self, batch_symbols):
+        """Process a batch of symbols sequentially for better stability"""
+        batch_results = {}
+        
+        for i, symbol in enumerate(batch_symbols, 1):
+            clean_symbol = symbol.replace("CSELK-", "")
+            print(f"    [{i:2d}/{len(batch_symbols)}] {clean_symbol:<15}", end=" ")
+            
+            success = False
+            for attempt in range(self.retry_count):
+                try:
+                    symbol_result, rsi_data, error = self.fetch_single_stock_all_timeframes(symbol, attempt + 1)
                     
                     if rsi_data is not None:
-                        # Check how many timeframes were successful
                         successful_timeframes = sum(1 for v in rsi_data.values() if v is not None)
                         
                         if successful_timeframes > 0:
-                            results[symbol] = {
+                            batch_results[symbol] = {
                                 'rsi_data': rsi_data,
                                 'status': 'success',
                                 'successful_timeframes': successful_timeframes,
-                                'timestamp': datetime.now().isoformat()
+                                'timestamp': datetime.now().isoformat(),
+                                'attempts': attempt + 1
                             }
                             
                             # Show summary
@@ -159,54 +266,142 @@ class MultiTimeframeRSIScraper:
                                     timeframe_summary.append(f"{tf}:--")
                             
                             print(f"✅ {' '.join(timeframe_summary)}")
-                        else:
-                            results[symbol] = {
-                                'rsi_data': rsi_data,
-                                'status': 'failed',
-                                'error': 'No timeframes successful',
-                                'timestamp': datetime.now().isoformat()
-                            }
-                            failed_count += 1
-                            print(f"❌ No data for any timeframe")
+                            success = True
+                            break
+                    
+                    # If we got here, it failed
+                    if attempt < self.retry_count - 1:
+                        print(f"⏳ Retry {attempt + 2}/{self.retry_count}")
+                        self.wait_with_jitter(3)  # Wait before retry
                     else:
-                        results[symbol] = {
+                        batch_results[symbol] = {
                             'rsi_data': None,
                             'status': 'failed',
-                            'error': error,
-                            'timestamp': datetime.now().isoformat()
+                            'error': error or "All attempts failed",
+                            'timestamp': datetime.now().isoformat(),
+                            'attempts': attempt + 1
                         }
-                        failed_count += 1
-                        print(f"❌ {error}")
+                        print(f"❌ Failed after {self.retry_count} attempts")
+                        self.failed_symbols.append(symbol)
                         
                 except Exception as e:
-                    results[symbol] = {
-                        'rsi_data': None,
-                        'status': 'failed',
-                        'error': f"Processing error: {e}",
-                        'timestamp': datetime.now().isoformat()
-                    }
-                    failed_count += 1
-                    print(f"❌ Processing error")
+                    if attempt < self.retry_count - 1:
+                        print(f"⏳ Exception, retry {attempt + 2}/{self.retry_count}")
+                        self.wait_with_jitter(3)
+                    else:
+                        batch_results[symbol] = {
+                            'rsi_data': None,
+                            'status': 'failed',
+                            'error': f"Exception: {str(e)[:100]}",
+                            'timestamp': datetime.now().isoformat(),
+                            'attempts': attempt + 1
+                        }
+                        print(f"❌ Exception after {self.retry_count} attempts")
+                        self.failed_symbols.append(symbol)
+            
+            # Rate limiting between stocks
+            if i < len(batch_symbols):
+                self.wait_with_jitter()
         
-        print("=" * 70)
-        print(f"✅ Success: {len(results) - failed_count}/{len(self.symbols)}")
-        print(f"❌ Failed: {failed_count}/{len(self.symbols)}")
+        return batch_results
+    
+    def fetch_all_rsi(self):
+        """Fetch RSI for all symbols using batch processing"""
+        print(f"🚀 Enhanced Multi-Timeframe RSI Fetch - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"📊 Processing {len(self.symbols)} symbols in batches of {self.batch_size}")
+        print(f"⚙️  Config: workers={self.max_workers}, rate_limit={self.rate_limit_delay}s, retries={self.retry_count}")
+        print("=" * 85)
         
-        self.results = results
-        return results
+        all_results = {}
+        total_batches = (len(self.symbols) + self.batch_size - 1) // self.batch_size
+        start_time = time.time()
+        
+        # Process in batches
+        for batch_num in range(total_batches):
+            start_idx = batch_num * self.batch_size
+            end_idx = min(start_idx + self.batch_size, len(self.symbols))
+            batch_symbols = self.symbols[start_idx:end_idx]
+            
+            print(f"\n📦 Batch {batch_num + 1}/{total_batches} ({len(batch_symbols)} symbols)")
+            print("-" * 70)
+            
+            batch_start_time = time.time()
+            batch_results = self.process_batch(batch_symbols)
+            batch_time = time.time() - batch_start_time
+            
+            all_results.update(batch_results)
+            
+            # Show batch statistics
+            batch_successful = len([r for r in batch_results.values() if r['status'] == 'success'])
+            print(f"📈 Batch {batch_num + 1} complete: {batch_successful}/{len(batch_symbols)} successful ({batch_time:.1f}s)")
+            
+            # Delay between batches (longer delay)
+            if batch_num < total_batches - 1:
+                delay = self.rate_limit_delay * 3
+                print(f"⏸️  Waiting {delay:.1f}s before next batch...")
+                time.sleep(delay)
+        
+        # Final statistics
+        total_time = time.time() - start_time
+        successful_count = len([r for r in all_results.values() if r['status'] == 'success'])
+        failed_count = len(all_results) - successful_count
+        
+        print("\n" + "=" * 85)
+        print(f"🎯 FINAL RESULTS:")
+        print(f"   ✅ Success: {successful_count}/{len(self.symbols)} ({successful_count/len(self.symbols)*100:.1f}%)")
+        print(f"   ❌ Failed: {failed_count}/{len(self.symbols)} ({failed_count/len(self.symbols)*100:.1f}%)")
+        print(f"   ⏱️  Total time: {total_time/60:.1f} minutes")
+        print(f"   📊 Average: {total_time/len(self.symbols):.1f}s per stock")
+        
+        if self.failed_symbols and len(self.failed_symbols) <= 20:
+            clean_failed = [s.replace('CSELK-', '') for s in self.failed_symbols]
+            print(f"   🔍 Failed symbols: {', '.join(clean_failed)}")
+        elif len(self.failed_symbols) > 20:
+            clean_failed = [s.replace('CSELK-', '') for s in self.failed_symbols[:15]]
+            print(f"   🔍 Failed symbols: {', '.join(clean_failed)}... (+{len(self.failed_symbols)-15} more)")
+        
+        self.results = all_results
+        return all_results
     
     def save_daily_data(self):
-        """Save daily RSI data to JSON file"""
+        """Save daily RSI data to JSON file with comprehensive metadata"""
         timestamp = datetime.now()
         
+        # Calculate success metrics
+        successful_results = {k: v for k, v in self.results.items() if v['status'] == 'success'}
+        failed_results = {k: v for k, v in self.results.items() if v['status'] == 'failed'}
+        
+        # Calculate timeframe success rates
+        timeframe_stats = {}
+        for tf in self.timeframes:
+            successful_tf = sum(1 for r in successful_results.values() 
+                              if r['rsi_data'].get(tf) is not None)
+            timeframe_stats[tf] = {
+                'successful': successful_tf,
+                'total': len(successful_results),
+                'success_rate': successful_tf / len(successful_results) * 100 if successful_results else 0
+            }
+        
         daily_data = {
-            'date': timestamp.strftime('%Y-%m-%d'),
-            'timestamp': timestamp.isoformat(),
-            'timeframes': self.timeframes,
-            'total_symbols': len(self.symbols),
-            'successful_fetches': len([r for r in self.results.values() if r['status'] == 'success']),
-            'failed_fetches': len([r for r in self.results.values() if r['status'] == 'failed']),
-            'data': self.results
+            'metadata': {
+                'date': timestamp.strftime('%Y-%m-%d'),
+                'timestamp': timestamp.isoformat(),
+                'timeframes': self.timeframes,
+                'total_symbols': len(self.symbols),
+                'successful_fetches': len(successful_results),
+                'failed_fetches': len(failed_results),
+                'success_rate': len(successful_results) / len(self.symbols) * 100 if self.symbols else 0,
+                'timeframe_stats': timeframe_stats,
+                'scraper_config': {
+                    'max_workers': self.max_workers,
+                    'batch_size': self.batch_size,
+                    'rate_limit_delay': self.rate_limit_delay,
+                    'retry_count': self.retry_count
+                },
+                'version': '2.0'
+            },
+            'data': self.results,
+            'failed_symbols': self.failed_symbols
         }
         
         # Create directory if it doesn't exist
@@ -217,15 +412,20 @@ class MultiTimeframeRSIScraper:
         with open(filename, 'w') as f:
             json.dump(daily_data, f, indent=2)
         
-        # Also save to latest.json for the webpage
+        # Save to latest.json for the webpage (only successful data)
+        latest_data = {
+            'metadata': daily_data['metadata'],
+            'data': successful_results
+        }
+        
         with open('latest_rsi.json', 'w') as f:
-            json.dump(daily_data, f, indent=2)
+            json.dump(latest_data, f, indent=2)
         
         print(f"💾 Data saved to {filename} and latest_rsi.json")
         return filename
     
     def generate_html_page(self):
-        """Generate HTML page with multi-timeframe support"""
+        """Generate HTML page with enhanced features and error reporting"""
         # Convert to Sri Lanka time (UTC+5:30)
         utc_now = datetime.utcnow()
         sl_timezone = timezone(timedelta(hours=5, minutes=30))
@@ -233,6 +433,17 @@ class MultiTimeframeRSIScraper:
         
         # Get successful results for display
         successful_results = {k: v for k, v in self.results.items() if v['status'] == 'success'}
+        success_rate = len(successful_results) / len(self.symbols) * 100 if self.symbols else 0
+        
+        # Calculate timeframe statistics
+        timeframe_stats = {}
+        for tf in self.timeframes:
+            successful_tf = sum(1 for r in successful_results.values() 
+                              if r['rsi_data'].get(tf) is not None)
+            timeframe_stats[tf] = {
+                'count': successful_tf,
+                'rate': successful_tf / len(successful_results) * 100 if successful_results else 0
+            }
         
         html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -271,6 +482,25 @@ class MultiTimeframeRSIScraper:
             margin: 10px 0 0 0;
             opacity: 0.9;
         }}
+        .status-bar {{
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }}
+        .status-item {{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9em;
+        }}
+        .status-success {{ color: #28a745; }}
+        .status-warning {{ color: #ffc107; }}
+        .status-error {{ color: #dc3545; }}
         .timeframe-selector {{
             padding: 20px 30px;
             background: #f8f9fa;
@@ -322,6 +552,14 @@ class MultiTimeframeRSIScraper:
             border-color: #667eea;
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }}
+        .stat-number {{
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }}
+        .oversold {{ color: #27ae5f; }}
+        .overbought {{ color: #e74c3c; }}
+        .neutral {{ color: #1299f3; }}
         .filter-info {{
             background: #e3f2fd;
             border: 1px solid #2196f3;
@@ -338,17 +576,6 @@ class MultiTimeframeRSIScraper:
             text-decoration: underline;
             margin-left: 10px;
         }}
-        .filter-info .clear-filter:hover {{
-            color: #b71c1c;
-        }}
-        .stat-number {{
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }}
-        .oversold {{ color: #27ae5f; }}
-        .overbought {{ color: #e74c3c; }}
-        .neutral {{ color: #1299f3; }}
         .table-container {{
             padding: 0 30px 30px 30px;
         }}
@@ -368,14 +595,11 @@ class MultiTimeframeRSIScraper:
             color: #555;
             cursor: pointer;
             user-select: none;
-            position: relative;
             position: sticky;
             top: 0;
             z-index: 10;
         }}
-        th:hover {{
-            background: #e9ecef;
-        }}
+        th:hover {{ background: #e9ecef; }}
         th.sortable::after {{
             content: ' ↕️';
             font-size: 0.8em;
@@ -406,15 +630,9 @@ class MultiTimeframeRSIScraper:
             font-size: 1.1em;
             text-align: center;
         }}
-        .rsi-oversold {{
-            color: #27ae5f;
-        }}
-        .rsi-overbought {{
-            color: #e74c3c;
-        }}
-        .rsi-neutral {{
-            color: #1299f3;
-        }}
+        .rsi-oversold {{ color: #27ae5f; }}
+        .rsi-overbought {{ color: #e74c3c; }}
+        .rsi-neutral {{ color: #1299f3; }}
         .no-data {{
             color: #999;
             font-style: italic;
@@ -426,9 +644,7 @@ class MultiTimeframeRSIScraper:
             font-size: 0.9em;
         }}
         @media (max-width: 768px) {{
-            .container {{
-                margin: 10px;
-            }}
+            .container {{ margin: 10px; }}
             .stats {{
                 grid-template-columns: 1fr;
                 padding: 20px;
@@ -437,9 +653,8 @@ class MultiTimeframeRSIScraper:
                 padding: 0 15px 20px 15px;
                 overflow-x: auto;
             }}
-            .company-cell {{
-                min-width: 150px;
-            }}
+            .company-cell {{ min-width: 150px; }}
+            .status-bar {{ flex-direction: column; align-items: flex-start; }}
         }}
     </style>
 </head>
@@ -449,7 +664,7 @@ class MultiTimeframeRSIScraper:
             <h1>Daily RSI Monitor</h1>
             <p>Colombo Stock Exchange</p>
         </div>
-        
+                
         <div class="timeframe-selector">
             <label class="selector-label">Select Timeframe:</label>
             <select class="timeframe-dropdown" id="timeframeSelect" onchange="switchTimeframe()">
@@ -483,8 +698,9 @@ class MultiTimeframeRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Updates daily at 4:30 PM</p>
-            <p>Last successful update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
+            <p>Updats daily at 3:30 PM</p>
+            <p>Last Successful Update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
+            <p><strong>Success Rate:</strong> {success_rate:.1f}% | <strong>Timeframes:</strong> {', '.join(self.timeframes)}</p>
         </div>
     </div>
 
@@ -518,10 +734,10 @@ class MultiTimeframeRSIScraper:
         const timeframes = {json.dumps(self.timeframes)};
         let currentTimeframe = '1D';
         let currentSort = {{ column: 2, direction: 'asc' }};
-        let currentFilter = null; // 'oversold', 'overbought', 'neutral', or null
+        let currentFilter = null;
 
         function getTimeframeIndex(timeframe) {{
-            return timeframes.indexOf(timeframe) + 2; // +2 because first two columns are symbol and company
+            return timeframes.indexOf(timeframe) + 2;
         }}
 
         function updateStats(timeframe) {{
@@ -532,7 +748,7 @@ class MultiTimeframeRSIScraper:
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {{
                     total++;
-                    if (rsiValue < 50) oversold++;
+                    if (rsiValue < 30) oversold++;
                     else if (rsiValue > 70) overbought++;
                     else neutral++;
                 }}
@@ -541,39 +757,34 @@ class MultiTimeframeRSIScraper:
             document.getElementById('statsSection').innerHTML = `
                 <div class="stat-card" onclick="filterStocks('oversold')" id="oversoldCard">
                     <div class="stat-number">${{oversold}}</div>
-                    <div class="oversold">Oversold Stocks</div>
-                    <small>(RSI < 50)</small>
+                    <div class="oversold">Oversold</div>
+                    <small>(RSI < 30)</small>
                 </div>
                 <div class="stat-card" onclick="filterStocks('overbought')" id="overboughtCard">
                     <div class="stat-number">${{overbought}}</div>
-                    <div class="overbought">Overbought Stocks</div>
+                    <div class="overbought">Overbought</div>
                     <small>(RSI > 70)</small>
                 </div>
                 <div class="stat-card" onclick="filterStocks('neutral')" id="neutralCard">
                     <div class="stat-number">${{neutral}}</div>
-                    <div class="neutral">Neutral Stocks</div>
-                    <small>(RSI 50-70)</small>
+                    <div class="neutral">Neutral</div>
+                    <small>(RSI 30-70)</small>
                 </div>
                 <div class="stat-card" onclick="filterStocks('all')" id="allCard">
                     <div class="stat-number">${{total}}</div>
-                    <div>Monitored</div>
-                    <small>out of 304 stocks</small>
+                    <div>Total Stocks</div>
+                    <small>with data</small>
                 </div>
             `;
             
-            // Reapply active state if filter is active
             if (currentFilter) {{
                 const activeCard = document.getElementById(currentFilter + 'Card');
-                if (activeCard) {{
-                    activeCard.classList.add('active');
-                }}
+                if (activeCard) activeCard.classList.add('active');
             }}
         }}
 
         function getFilteredData(data, filter) {{
-            if (!filter || filter === 'all') {{
-                return data;
-            }}
+            if (!filter || filter === 'all') return data;
             
             const timeframeIndex = getTimeframeIndex(currentTimeframe);
             
@@ -582,14 +793,10 @@ class MultiTimeframeRSIScraper:
                 if (rsiValue === null) return false;
                 
                 switch(filter) {{
-                    case 'oversold':
-                        return rsiValue < 50;
-                    case 'overbought':
-                        return rsiValue > 70;
-                    case 'neutral':
-                        return rsiValue >= 50 && rsiValue <= 70;
-                    default:
-                        return true;
+                    case 'oversold': return rsiValue < 30;
+                    case 'overbought': return rsiValue > 70;
+                    case 'neutral': return rsiValue >= 30 && rsiValue <= 70;
+                    default: return true;
                 }}
             }});
         }}
@@ -603,21 +810,10 @@ class MultiTimeframeRSIScraper:
             }}
             
             let filterText = '';
-            let countText = '';
-            
             switch(currentFilter) {{
-                case 'oversold':
-                    filterText = 'Oversold Stocks (RSI < 50)';
-                    countText = 'green';
-                    break;
-                case 'overbought':
-                    filterText = 'Overbought Stocks (RSI > 70)';
-                    countText = 'red';
-                    break;
-                case 'neutral':
-                    filterText = 'Neutral Stocks (RSI 50-70)';
-                    countText = 'orange';
-                    break;
+                case 'oversold': filterText = 'Oversold Stocks (RSI < 30)'; break;
+                case 'overbought': filterText = 'Overbought Stocks (RSI > 70)'; break;
+                case 'neutral': filterText = 'Neutral Stocks (RSI 30-70)'; break;
             }}
             
             const filteredData = getFilteredData(stockData, currentFilter);
@@ -630,47 +826,27 @@ class MultiTimeframeRSIScraper:
         }}
 
         function filterStocks(filterType) {{
-            // Remove active class from all cards
             document.querySelectorAll('.stat-card').forEach(card => {{
                 card.classList.remove('active');
             }});
             
-            // Set current filter
             currentFilter = filterType === 'all' ? null : filterType;
             
-            // Add active class to clicked card
-            if (filterType !== 'all') {{
-                const activeCard = document.getElementById(filterType + 'Card');
-                if (activeCard) {{
-                    activeCard.classList.add('active');
-                }}
-            }} else {{
-                const allCard = document.getElementById('allCard');
-                if (allCard) {{
-                    allCard.classList.add('active');
-                }}
-            }}
+            const activeCard = document.getElementById((filterType === 'all' ? 'all' : filterType) + 'Card');
+            if (activeCard) activeCard.classList.add('active');
             
-            // Update filter info
             updateFilterInfo();
-            
-            // Apply filter and re-sort
             sortTable(currentSort.column);
         }}
 
         function clearFilter() {{
             currentFilter = null;
-            
-            // Remove active class from all cards
             document.querySelectorAll('.stat-card').forEach(card => {{
                 card.classList.remove('active');
             }});
             
-            // Add active to "all" card
             const allCard = document.getElementById('allCard');
-            if (allCard) {{
-                allCard.classList.add('active');
-            }}
+            if (allCard) allCard.classList.add('active');
             
             updateFilterInfo();
             sortTable(currentSort.column);
@@ -678,10 +854,7 @@ class MultiTimeframeRSIScraper:
 
         function updateTableBody(data, timeframe) {{
             const timeframeIndex = getTimeframeIndex(timeframe);
-            
-            // Apply current filter
             const filteredData = getFilteredData(data, currentFilter);
-            
             const tbody = document.getElementById('stockTableBody');
             tbody.innerHTML = '';
             
@@ -721,7 +894,7 @@ class MultiTimeframeRSIScraper:
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {{
                     rsiTd.textContent = rsiValue.toFixed(1);
-                    if (rsiValue < 50) {{
+                    if (rsiValue < 30) {{
                         rsiTd.classList.add('rsi-oversold');
                     }} else if (rsiValue > 70) {{
                         rsiTd.classList.add('rsi-overbought');
@@ -741,10 +914,8 @@ class MultiTimeframeRSIScraper:
         function sortTable(columnIndex) {{
             const headers = document.querySelectorAll('th.sortable');
             
-            // Remove previous sort classes
             headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
             
-            // Determine sort direction
             if (currentSort.column === columnIndex) {{
                 currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
             }} else {{
@@ -752,26 +923,23 @@ class MultiTimeframeRSIScraper:
             }}
             currentSort.column = columnIndex;
             
-            // Add sort class to current header
             const currentHeader = headers[columnIndex];
             currentHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
             
-            // Sort the data
             const timeframeIndex = getTimeframeIndex(currentTimeframe);
             const sortedData = [...stockData].sort((a, b) => {{
                 let valueA, valueB;
                 
-                if (columnIndex === 0) {{ // Symbol
+                if (columnIndex === 0) {{
                     valueA = a[0].toLowerCase();
                     valueB = b[0].toLowerCase();
-                }} else if (columnIndex === 1) {{ // Company
+                }} else if (columnIndex === 1) {{
                     valueA = a[1].toLowerCase();
                     valueB = b[1].toLowerCase();
-                }} else if (columnIndex === 2) {{ // RSI Value
+                }} else if (columnIndex === 2) {{
                     valueA = a[timeframeIndex];
                     valueB = b[timeframeIndex];
                     
-                    // Handle null values
                     if (valueA === null && valueB === null) return 0;
                     if (valueA === null) return 1;
                     if (valueB === null) return -1;
@@ -791,22 +959,14 @@ class MultiTimeframeRSIScraper:
             const select = document.getElementById('timeframeSelect');
             currentTimeframe = select.value;
             
-            // Update header
-            document.getElementById('rsiHeader').textContent = `RSI`;
-            
-            // Update stats
             updateStats(currentTimeframe);
-            
-            // Update filter info
             updateFilterInfo();
-            
-            // Update table
             sortTable(currentSort.column);
         }}
 
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {{
-            switchTimeframe(); // Initialize with default timeframe
+            switchTimeframe();
             sortTable(2); // Sort by RSI by default
         }});
     </script>
@@ -818,9 +978,12 @@ class MultiTimeframeRSIScraper:
         
         successful_count = len(successful_results)
         print(f"📄 Generated index.html with {successful_count} stocks and {len(self.timeframes)} timeframes")
+        print(f"📊 Success rate: {success_rate:.1f}%")
         return 'index.html'
 
-# Stock symbols with company names
+
+# PLACEHOLDER: Add your stock data here
+# Format: [{"symbol": "CSELK-SYMBOL.N0000", "company": "Company Name"}, ...]
 STOCK_DATA = [
     {"symbol": "CSELK-ABAN.N0000", "company": "ABANS ELECTRICALS PLC"},
     {"symbol": "CSELK-AFSL.N0000", "company": "ABANS FINANCE PLC"},
@@ -1128,19 +1291,63 @@ STOCK_DATA = [
     {"symbol": "CSELK-VPEL.N0000", "company": "VALLIBEL POWER ERATHNA PLC"}
 ]
 
-# Extract just symbols for backward compatibility
+# Extract symbols and create mapping
 STOCK_SYMBOLS = [stock["symbol"] for stock in STOCK_DATA]
-
-# Create a mapping for easy lookup
 SYMBOL_TO_COMPANY = {stock["symbol"]: stock["company"] for stock in STOCK_DATA}
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Multi-Timeframe RSI Scraper for GitHub Pages')
+    parser.add_argument('--batch-size', type=int, default=50, help='Number of stocks per batch')
+    parser.add_argument('--max-workers', type=int, default=1, help='Maximum parallel workers')
+    parser.add_argument('--rate-limit', type=float, default=2.0, help='Rate limit delay in seconds')
+    parser.add_argument('--retry-count', type=int, default=3, help='Number of retry attempts')
+    parser.add_argument('--max-stocks', type=int, default=None, help='Maximum number of stocks to process')
+    parser.add_argument('--resume-from', type=int, default=0, help='Resume from stock index')
+    parser.add_argument('--github-actions', action='store_true', help='Optimize for GitHub Actions environment')
+    
+    args = parser.parse_args()
+    
+    # GitHub Actions optimizations
+    if args.github_actions:
+        args.batch_size = min(args.batch_size, 15)
+        args.max_workers = 1
+        args.rate_limit = max(args.rate_limit, 4.0)
+        print("🤖 GitHub Actions mode: Using conservative settings")
+    
     print("🤖 Multi-Timeframe RSI Scraper for GitHub Pages")
     print("=" * 60)
+    print(f"⚙️  Configuration:")
+    print(f"   • Batch size: {args.batch_size}")
+    print(f"   • Max workers: {args.max_workers}")
+    print(f"   • Rate limit: {args.rate_limit}s")
+    print(f"   • Retry count: {args.retry_count}")
+    if args.max_stocks:
+        print(f"   • Max stocks: {args.max_stocks}")
+    print()
+    
+    # Validate stock data
+    if not STOCK_DATA:
+        print("❌ ERROR: No stock data found!")
+        print("Please add your stock symbols to the STOCK_DATA list in the script.")
+        sys.exit(1)
+    
+    # Select stock subset if specified
+    stocks_to_process = STOCK_SYMBOLS[args.resume_from:]
+    if args.max_stocks:
+        stocks_to_process = stocks_to_process[:args.max_stocks]
+    
+    print(f"📊 Processing {len(stocks_to_process)} stocks (starting from index {args.resume_from})")
     
     # Initialize scraper
     base_url = "https://tradingview.com/symbols/{SYMBOL}/technicals/"
-    scraper = MultiTimeframeRSIScraper(base_url, STOCK_SYMBOLS)
+    scraper = EnhancedMultiTimeframeRSIScraper(
+        base_url, 
+        stocks_to_process,
+        max_workers=args.max_workers,
+        batch_size=args.batch_size,
+        rate_limit_delay=args.rate_limit
+    )
+    scraper.retry_count = args.retry_count
     
     # Fetch all RSI data for all timeframes
     results = scraper.fetch_all_rsi()
@@ -1152,13 +1359,31 @@ if __name__ == "__main__":
         # Generate HTML page
         html_file = scraper.generate_html_page()
         
+        successful_count = len([r for r in results.values() if r['status'] == 'success'])
+        success_rate = successful_count / len(stocks_to_process) * 100
+        
         print("\n🎉 Multi-timeframe RSI fetch completed!")
         print(f"📊 Generated files:")
         print(f"   • {json_file} (daily data with all timeframes)")
         print(f"   • latest_rsi.json (for API access)")
         print(f"   • {html_file} (GitHub Pages website)")
-        print(f"\n📈 Timeframes included: {', '.join(scraper.timeframes)}")
+        print(f"\n📈 Results:")
+        print(f"   • Success rate: {success_rate:.1f}% ({successful_count}/{len(stocks_to_process)})")
+        print(f"   • Timeframes: {', '.join(scraper.timeframes)}")
+        
+        if scraper.failed_symbols:
+            print(f"   • Failed symbols: {len(scraper.failed_symbols)}")
+        
         print("\n📤 Ready to upload to GitHub!")
+        
+        # Exit with appropriate code based on success rate
+        if success_rate < 30:
+            print("❌ CRITICAL: Success rate below 30%")
+            sys.exit(1)
+        elif success_rate < 60:
+            print("⚠️  WARNING: Success rate below 60%")
+            # Don't exit with error, but flag it
         
     else:
         print("❌ No data retrieved. Check your internet connection and try again.")
+        sys.exit(1)
