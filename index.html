@@ -251,9 +251,8 @@
         </div>
         
         <div class="footer">
-            <p>Updats daily at 3:30 PM</p>
-            <p>Last Successful Update: 2025-08-21 19:58:30</p>
-            <p><strong>Success Rate:</strong> 96.7% | <strong>Timeframes:</strong> 1D, 1W, 1M</p>
+            <p>Updates daily at 5:00 PM</p>
+            <p>Last Successful Update: 2025-08-22 02:46:09</p>
         </div>
     </div>
 
@@ -353,6 +352,7 @@
             ["SOY.N0000", "CONVENIENCE FOODS LANKA PLC", 72.71, 78.22, 79.48],
             ["DPL.N0000", "DANKOTUWA PORCELAIN PLC", 47.5, 47.2, 49.1],
             ["DFCC.N0000", "DFCC BANK PLC", 77.34, 83.26, 78.15],
+            ["DIAL.N0000", "DIALOG AXIATA PLC", 90.4, 91.6, 83.3],
             ["CALF.N0000", "DIALOG FINANCE PLC", 60.8, 70.4, 66.8],
             ["DIMO.N0000", "DIESEL & MOTOR ENGINEERING PLC", 53.41, 62.6, 70.0],
             ["PKME.N0000", "DIGITAL MOBILITY SOLUTIONS LANKA PLC", 76.04, 88.02, null],
@@ -417,7 +417,6 @@
             ["KPHL.N0000", "KAPRUKA HOLDINGS PLC", 57.8, 56.1, 45.2],
             ["KVAL.N0000", "KELANI VALLEY PLANTATIONS PLC", 50.7, 58.8, 58.4],
             ["LALU.N0000", "LANKA ALUMINIUM INDUSTRIES PLC", 52.0, 71.3, 73.0],
-            ["LAMB.N0000", "KOTMALE HOLDINGS PLC", 68.39, 75.78, 74.55],
             ["LCBF.N0000", "LANKA CREDIT AND BUSINESS FINANCE PLC", 64.3, 76.0, 75.0],
             ["LCEY.N0000", "LANKEM CEYLON PLC", 48.5, 50.1, 56.0],
             ["LDEV.N0000", "LANKEM DEVELOPMENTS PLC", 51.3, 61.7, 61.7],
@@ -471,8 +470,8 @@
             ["COCO.N0000", "RENUKA FOODS PLC", 73.8, 71.9, 60.5],
             ["COCO.X0000", "RENUKA FOODS PLC", 71.7, 75.8, 61.2],
             ["COF.U0000", "SENFIN SECURITIES LIMITED", 55.2, 54.2, 50.7],
+            ["CRL.N0000", "SOFTLOGIC FINANCE PLC", 54.1, 54.0, 45.1],
             ["CSD.N0000", "SEYLAN DEVELOPMENTS PLC", 47.0, 61.6, 70.7],
-            ["GLAS.N0000", "PGP GLASS CEYLON PLC", 53.7, 74.8, 89.4],
             ["HPWR.N0000", "RESUS ENERGY PLC", 73.4, 73.7, 71.9],
             ["IDL.N0000", "SERENDIB ENGINEERING GROUP PLC", 29.3, 28.3, 36.3],
             ["KHC.N0000", "THE KANDY HOTELS COMPANY (1938) PLC", 86.2, 83.6, 78.7],
@@ -493,6 +492,7 @@
             ["PLC.N0000", "PEOPLE'S LEASING & FINANCE PLC", 54.4, 69.2, 77.9],
             ["PLR.N0000", "PRIME LANDS RESIDENCIES PLC", 71.5, 82.6, 82.1],
             ["PMB.N0000", "PMF FINANCE PLC", 81.6, 82.7, 86.5],
+            ["RAL.N0000", "RENUKA AGRI FOODS PLC", 63.3, 63.8, 55.8],
             ["RCH.N0000", "RENUKA HOTELS PLC", 61.13, 76.36, 79.92],
             ["RCL.N0000", "ROYAL CERAMICS LANKA PLC", 63.4, 69.5, 62.6],
             ["RENU.N0000", "RENUKA CITY HOTELS PLC.", 62.02, 76.26, 81.42],
@@ -572,7 +572,7 @@
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {
                     total++;
-                    if (rsiValue < 30) oversold++;
+                    if (rsiValue < 50) oversold++;
                     else if (rsiValue > 70) overbought++;
                     else neutral++;
                 }
@@ -596,8 +596,8 @@
                 </div>
                 <div class="stat-card" onclick="filterStocks('all')" id="allCard">
                     <div class="stat-number">${total}</div>
-                    <div>Total Stocks</div>
-                    <small>with data</small>
+                    <div>Total Monitored</div>
+                    <small>out of 303</small>
                 </div>
             `;
             
@@ -617,9 +617,9 @@
                 if (rsiValue === null) return false;
                 
                 switch(filter) {
-                    case 'oversold': return rsiValue < 30;
+                    case 'oversold': return rsiValue < 50;
                     case 'overbought': return rsiValue > 70;
-                    case 'neutral': return rsiValue >= 30 && rsiValue <= 70;
+                    case 'neutral': return rsiValue >= 50 && rsiValue <= 70;
                     default: return true;
                 }
             });
@@ -635,9 +635,9 @@
             
             let filterText = '';
             switch(currentFilter) {
-                case 'oversold': filterText = 'Oversold Stocks (RSI < 30)'; break;
+                case 'oversold': filterText = 'Oversold Stocks (RSI < 50)'; break;
                 case 'overbought': filterText = 'Overbought Stocks (RSI > 70)'; break;
-                case 'neutral': filterText = 'Neutral Stocks (RSI 30-70)'; break;
+                case 'neutral': filterText = 'Neutral Stocks (RSI 50-70)'; break;
             }
             
             const filteredData = getFilteredData(stockData, currentFilter);
