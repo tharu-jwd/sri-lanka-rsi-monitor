@@ -771,8 +771,8 @@ class EnhancedMultiTimeframeRSIScraper:
                 </div>
                 <div class="stat-card" onclick="filterStocks('all')" id="allCard">
                     <div class="stat-number">${{total}}</div>
-                    <div>Total Stocks</div>
-                    <small>with data</small>
+                    <div>Total Monitored</div>
+                    <small>out of 303</small>
                 </div>
             `;
             
