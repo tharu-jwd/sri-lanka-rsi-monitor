@@ -698,9 +698,8 @@ class EnhancedMultiTimeframeRSIScraper:
         </div>
         
         <div class="footer">
-            <p>Updats daily at 3:30 PM</p>
+            <p>Updats daily at 4:00 PM</p>
             <p>Last Successful Update: {sl_time.strftime('%Y-%m-%d %H:%M:%S')}</p>
-            <p><strong>Success Rate:</strong> {success_rate:.1f}% | <strong>Timeframes:</strong> {', '.join(self.timeframes)}</p>
         </div>
     </div>
 
@@ -748,7 +747,7 @@ class EnhancedMultiTimeframeRSIScraper:
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {{
                     total++;
-                    if (rsiValue < 30) oversold++;
+                    if (rsiValue < 50) oversold++;
                     else if (rsiValue > 70) overbought++;
                     else neutral++;
                 }}
@@ -793,9 +792,9 @@ class EnhancedMultiTimeframeRSIScraper:
                 if (rsiValue === null) return false;
                 
                 switch(filter) {{
-                    case 'oversold': return rsiValue < 30;
+                    case 'oversold': return rsiValue < 50;
                     case 'overbought': return rsiValue > 70;
-                    case 'neutral': return rsiValue >= 30 && rsiValue <= 70;
+                    case 'neutral': return rsiValue >= 50 && rsiValue <= 70;
                     default: return true;
                 }}
             }});
@@ -811,9 +810,9 @@ class EnhancedMultiTimeframeRSIScraper:
             
             let filterText = '';
             switch(currentFilter) {{
-                case 'oversold': filterText = 'Oversold Stocks (RSI < 30)'; break;
+                case 'oversold': filterText = 'Oversold Stocks (RSI < 50)'; break;
                 case 'overbought': filterText = 'Overbought Stocks (RSI > 70)'; break;
-                case 'neutral': filterText = 'Neutral Stocks (RSI 30-70)'; break;
+                case 'neutral': filterText = 'Neutral Stocks (RSI 50-70)'; break;
             }}
             
             const filteredData = getFilteredData(stockData, currentFilter);
