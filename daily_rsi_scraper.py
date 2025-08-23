@@ -757,7 +757,7 @@ class EnhancedMultiTimeframeRSIScraper:
                 <div class="stat-card" onclick="filterStocks('oversold')" id="oversoldCard">
                     <div class="stat-number">${{oversold}}</div>
                     <div class="oversold">Oversold</div>
-                    <small>(RSI < 30)</small>
+                    <small>(RSI < 50)</small>
                 </div>
                 <div class="stat-card" onclick="filterStocks('overbought')" id="overboughtCard">
                     <div class="stat-number">${{overbought}}</div>
@@ -767,7 +767,7 @@ class EnhancedMultiTimeframeRSIScraper:
                 <div class="stat-card" onclick="filterStocks('neutral')" id="neutralCard">
                     <div class="stat-number">${{neutral}}</div>
                     <div class="neutral">Neutral</div>
-                    <small>(RSI 30-70)</small>
+                    <small>(RSI 50-70)</small>
                 </div>
                 <div class="stat-card" onclick="filterStocks('all')" id="allCard">
                     <div class="stat-number">${{total}}</div>
@@ -893,7 +893,7 @@ class EnhancedMultiTimeframeRSIScraper:
                 const rsiValue = row[timeframeIndex];
                 if (rsiValue !== null) {{
                     rsiTd.textContent = rsiValue.toFixed(1);
-                    if (rsiValue < 30) {{
+                    if (rsiValue < 50) {{
                         rsiTd.classList.add('rsi-oversold');
                     }} else if (rsiValue > 70) {{
                         rsiTd.classList.add('rsi-overbought');
