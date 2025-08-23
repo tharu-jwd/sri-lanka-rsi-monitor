@@ -4,7 +4,6 @@ Thank you for considering contributing to the Sri Lanka RSI Monitor! This docume
 
 ## Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
 - [Development Process](#development-process)
 - [Coding Standards](#coding-standards)
@@ -283,9 +282,7 @@ Mockups, examples, etc.
 
 1. **README.md**: Overview and quick start
 2. **API Documentation**: Function/class documentation
-3. **User Guides**: Step-by-step tutorials
-4. **Developer Docs**: Internal architecture
-5. **CHANGELOG.md**: Version history
+3. **CHANGELOG.md**: Version history
 
 ### Writing Style
 
