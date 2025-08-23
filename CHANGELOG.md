@@ -5,14 +5,6 @@ All notable changes to the Sri Lanka RSI Monitor project will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-### Added
-- Comprehensive documentation suite
-- API reference documentation
-- Deployment guides for multiple platforms
-- Troubleshooting guide with common solutions
-
 ## [2.0.0] - 2025-08-22
 
 ### Added
@@ -77,51 +69,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **MINOR** (0.X.0): New features, backward compatible
 - **PATCH** (0.0.X): Bug fixes, minor improvements
 
-### Release Checklist
-- [ ] Update version in relevant files
-- [ ] Update CHANGELOG.md with release notes
-- [ ] Run full test suite
-- [ ] Tag release in Git
-- [ ] Create GitHub release
-- [ ] Deploy to production
-- [ ] Update documentation if needed
-
 ### Breaking Changes
 Breaking changes are documented with clear migration instructions:
-
-#### From 1.x to 2.x
-- **Testing**: New test requirements for contributions
-- **Dependencies**: Separated dev and production requirements
-- **CI/CD**: New GitHub Actions workflow with required checks
-
-### Migration Guide
-
-#### Upgrading to 2.0.0
-1. **Update Dependencies**:
-   ```bash
-   pip install -r requirements.txt  # Production
-   pip install -r requirements-dev.txt  # Development
-   ```
-
-2. **Run Tests**:
-   ```bash
-   python -m pytest tests/
-   ```
-
-3. **Update GitHub Settings**:
-   - Enable branch protection rules
-   - Require status checks to pass
-   - Configure required reviewers
-
-#### Development Workflow Changes
-- All PRs must pass automated tests
-- Branch protection prevents direct pushes to main
-- RSI threshold changes are automatically blocked
-
-### Contributing to Releases
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for:
-- How to propose new features
-- Release candidate testing
-- Documentation updates
-- Breaking change discussions
