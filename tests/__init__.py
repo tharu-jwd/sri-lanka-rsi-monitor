@@ -1,0 +1,1 @@
+# Tests package for Sri Lanka RSI Monitor

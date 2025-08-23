@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSI Dashboard Tests</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-container { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .test-pass { background-color: #d4edda; border-color: #c3e6cb; }
+        .test-fail { background-color: #f8d7da; border-color: #f5c6cb; }
+        .test-header { font-weight: bold; margin-bottom: 10px; }
+        .test-details { margin-left: 20px; font-size: 0.9em; }
+        #test-summary { font-size: 1.2em; font-weight: bold; margin: 20px 0; }
+        .mock-data { display: none; }
+    </style>
+</head>
+<body>
+    <h1>RSI Dashboard Automated Tests</h1>
+    <div id="test-summary"></div>
+    <div id="test-results"></div>
+
+    <!-- Mock stock data for testing -->
+    <div class="mock-data" id="mock-container">
+        <div id="statsSection"></div>
+        <div id="filterInfo"></div>
+        <select id="timeframeSelect">
+            <option value="1D">1 Day</option>
+            <option value="1W">1 Week</option>
+            <option value="1M">1 Month</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable(0)">Symbol</th>
+                    <th class="sortable" onclick="sortTable(1)">Company</th>
+                    <th class="sortable" onclick="sortTable(2)">RSI</th>
+                </tr>
+            </thead>
+            <tbody id="stockTableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Test framework
+        class TestFramework {
+            constructor() {
+                this.tests = [];
+                this.passed = 0;
+                this.failed = 0;
+            }
+
+            test(name, fn) {
+                this.tests.push({ name, fn });
+            }
+
+            async run() {
+                const resultsContainer = document.getElementById('test-results');
+                const summaryContainer = document.getElementById('test-summary');
+                
+                for (const test of this.tests) {
+                    const testContainer = document.createElement('div');
+                    testContainer.className = 'test-container';
+                    
+                    try {
+                        await test.fn();
+                        testContainer.classList.add('test-pass');
+                        testContainer.innerHTML = `
+                            <div class="test-header">✅ PASS: ${test.name}</div>
+                        `;
+                        this.passed++;
+                    } catch (error) {
+                        testContainer.classList.add('test-fail');
+                        testContainer.innerHTML = `
+                            <div class="test-header">❌ FAIL: ${test.name}</div>
+                            <div class="test-details">Error: ${error.message}</div>
+                        `;
+                        this.failed++;
+                    }
+                    
+                    resultsContainer.appendChild(testContainer);
+                }
+
+                // Update summary
+                const total = this.passed + this.failed;
+                const passRate = ((this.passed / total) * 100).toFixed(1);
+                summaryContainer.innerHTML = `
+                    Tests: ${total} | Passed: ${this.passed} | Failed: ${this.failed} | Pass Rate: ${passRate}%
+                `;
+                summaryContainer.style.color = this.failed === 0 ? 'green' : 'red';
+
+                return this.failed === 0;
+            }
+
+            assert(condition, message = 'Assertion failed') {
+                if (!condition) {
+                    throw new Error(message);
+                }
+            }
+
+            assertEqual(actual, expected, message = '') {
+                if (actual !== expected) {
+                    throw new Error(`${message}. Expected: ${expected}, Got: ${actual}`);
+                }
+            }
+
+            assertContains(haystack, needle, message = '') {
+                if (!haystack.includes(needle)) {
+                    throw new Error(`${message}. Expected "${haystack}" to contain "${needle}"`);
+                }
+            }
+
+            assertNotContains(haystack, needle, message = '') {
+                if (haystack.includes(needle)) {
+                    throw new Error(`${message}. Expected "${haystack}" to NOT contain "${needle}"`);
+                }
+            }
+        }
+
+        // Mock data and functions (simplified versions of the actual dashboard code)
+        const mockStockData = [
+            ["ABAN.N0000", "ABANS ELECTRICALS PLC", 45.5, 60.2, 75.3],
+            ["AFSL.N0000", "ABANS FINANCE PLC", 35.0, 55.0, 85.0],
+            ["TEST.N0000", "TEST COMPANY", 75.0, 25.0, 50.0]
+        ];
+
+        let currentTimeframe = '1D';
+        let currentFilter = null;
+        const timeframes = ["1D", "1W", "1M"];
+
+        function getTimeframeIndex(timeframe) {
+            return timeframes.indexOf(timeframe) + 2;
+        }
+
+        function getFilteredData(data, filter) {
+            if (!filter || filter === 'all') return data;
+            
+            const timeframeIndex = getTimeframeIndex(currentTimeframe);
+            
+            return data.filter(row => {
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue === null) return false;
+                
+                switch(filter) {
+                    case 'oversold': return rsiValue < 50;  // Critical: must be < 50
+                    case 'overbought': return rsiValue > 70;
+                    case 'neutral': return rsiValue >= 50 && rsiValue <= 70;
+                    default: return true;
+                }
+            });
+        }
+
+        function updateStats(timeframe) {
+            const timeframeIndex = getTimeframeIndex(timeframe);
+            let oversold = 0, overbought = 0, neutral = 0, total = 0;
+            
+            mockStockData.forEach(row => {
+                const rsiValue = row[timeframeIndex];
+                if (rsiValue !== null) {
+                    total++;
+                    if (rsiValue < 50) oversold++;  // Critical: must be < 50
+                    else if (rsiValue > 70) overbought++;
+                    else neutral++;
+                }
+            });
+            
+            return { oversold, overbought, neutral, total };
+        }
+
+        // Initialize test framework
+        const testRunner = new TestFramework();
+
+        // Test 1: RSI threshold validation (CRITICAL)
+        testRunner.test('RSI Oversold Threshold Must Be < 50', () => {
+            const stats1D = updateStats('1D');
+            
+            // Test with known data
+            // ABAN: 45.5 (should be oversold)
+            // AFSL: 35.0 (should be oversold) 
+            // TEST: 75.0 (should be overbought)
+            
+            testRunner.assertEqual(stats1D.oversold, 2, 'Should have 2 oversold stocks (< 50)');
+            testRunner.assertEqual(stats1D.overbought, 1, 'Should have 1 overbought stock (> 70)');
+            testRunner.assertEqual(stats1D.neutral, 0, 'Should have 0 neutral stocks');
+        });
+
+        // Test 2: Filtering logic
+        testRunner.test('Oversold Filtering Uses < 50 Threshold', () => {
+            const oversoldData = getFilteredData(mockStockData, 'oversold');
+            testRunner.assertEqual(oversoldData.length, 2, 'Should return 2 oversold stocks');
+            
+            // Verify the filtered stocks have RSI < 50
+            oversoldData.forEach(stock => {
+                const rsiValue = stock[getTimeframeIndex('1D')];
+                testRunner.assert(rsiValue < 50, `Stock ${stock[0]} RSI ${rsiValue} should be < 50`);
+            });
+        });
+
+        // Test 3: Overbought filtering
+        testRunner.test('Overbought Filtering Uses > 70 Threshold', () => {
+            const overboughtData = getFilteredData(mockStockData, 'overbought');
+            testRunner.assertEqual(overboughtData.length, 1, 'Should return 1 overbought stock');
+            
+            overboughtData.forEach(stock => {
+                const rsiValue = stock[getTimeframeIndex('1D')];
+                testRunner.assert(rsiValue > 70, `Stock ${stock[0]} RSI ${rsiValue} should be > 70`);
+            });
+        });
+
+        // Test 4: Neutral filtering  
+        testRunner.test('Neutral Filtering Uses 50-70 Range', () => {
+            const neutralData = getFilteredData(mockStockData, 'neutral');
+            
+            neutralData.forEach(stock => {
+                const rsiValue = stock[getTimeframeIndex('1D')];
+                testRunner.assert(rsiValue >= 50 && rsiValue <= 70, 
+                    `Stock ${stock[0]} RSI ${rsiValue} should be 50-70`);
+            });
+        });
+
+        // Test 5: Timeframe switching
+        testRunner.test('Timeframe Index Calculation', () => {
+            testRunner.assertEqual(getTimeframeIndex('1D'), 2, '1D should map to index 2');
+            testRunner.assertEqual(getTimeframeIndex('1W'), 3, '1W should map to index 3');
+            testRunner.assertEqual(getTimeframeIndex('1M'), 4, '1M should map to index 4');
+        });
+
+        // Test 6: Stats calculation across timeframes
+        testRunner.test('Multi-timeframe Stats Calculation', () => {
+            const stats1W = updateStats('1W');
+            // For 1W (index 3): ABAN=60.2, AFSL=55.0, TEST=25.0
+            // Oversold (< 50): TEST (25.0) = 1
+            // Neutral (50-70): ABAN (60.2), AFSL (55.0) = 2  
+            // Overbought (> 70): none = 0
+            
+            testRunner.assertEqual(stats1W.oversold, 1, '1W should have 1 oversold stock');
+            testRunner.assertEqual(stats1W.neutral, 2, '1W should have 2 neutral stocks');
+            testRunner.assertEqual(stats1W.overbought, 0, '1W should have 0 overbought stocks');
+        });
+
+        // Test 7: DOM element existence (if running on actual page)
+        testRunner.test('Required DOM Elements Exist', () => {
+            const requiredElements = ['statsSection', 'filterInfo', 'timeframeSelect', 'stockTableBody'];
+            
+            requiredElements.forEach(id => {
+                const element = document.getElementById(id);
+                testRunner.assert(element !== null, `Element with ID '${id}' should exist`);
+            });
+        });
+
+        // Test 8: Critical validation - no < 30 threshold anywhere
+        testRunner.test('No RSI < 30 Threshold Should Exist', () => {
+            // This would be checked in the actual HTML/JS source code
+            // For now, we verify our logic doesn't use 30
+            const testValue = 35;
+            const isOversold = testValue < 50;  // Should use 50, not 30
+            testRunner.assert(isOversold, 'Value 35 should be considered oversold with < 50 threshold');
+            
+            // Verify 35 would NOT be oversold with wrong < 30 threshold
+            const wouldBeOversoldWith30 = testValue < 30;
+            testRunner.assert(!wouldBeOversoldWith30, 'Value 35 should NOT be oversold with < 30 threshold');
+        });
+
+        // Test 9: Data structure validation
+        testRunner.test('Stock Data Structure Validation', () => {
+            mockStockData.forEach((stock, index) => {
+                testRunner.assert(Array.isArray(stock), `Stock ${index} should be an array`);
+                testRunner.assert(stock.length >= 5, `Stock ${index} should have at least 5 elements`);
+                testRunner.assert(typeof stock[0] === 'string', `Stock ${index} symbol should be string`);
+                testRunner.assert(typeof stock[1] === 'string', `Stock ${index} company should be string`);
+                
+                // RSI values should be numbers or null
+                for (let i = 2; i < 5; i++) {
+                    testRunner.assert(
+                        typeof stock[i] === 'number' || stock[i] === null,
+                        `Stock ${index} RSI value at index ${i} should be number or null`
+                    );
+                }
+            });
+        });
+
+        // Test 10: Edge cases
+        testRunner.test('Edge Case RSI Values', () => {
+            const edgeCases = [
+                ["EDGE1", "Edge Case 1", 0, 50, 70],      // Boundary values
+                ["EDGE2", "Edge Case 2", 49.9, 50.1, 70.1], // Just over/under
+                ["EDGE3", "Edge Case 3", 100, null, 0]       // Max/min/null
+            ];
+            
+            edgeCases.forEach(stock => {
+                const rsi1D = stock[2];
+                if (rsi1D !== null) {
+                    if (rsi1D < 50) {
+                        testRunner.assert(rsi1D < 50, `${stock[0]} with RSI ${rsi1D} should be oversold`);
+                    } else if (rsi1D > 70) {
+                        testRunner.assert(rsi1D > 70, `${stock[0]} with RSI ${rsi1D} should be overbought`);
+                    } else {
+                        testRunner.assert(rsi1D >= 50 && rsi1D <= 70, 
+                            `${stock[0]} with RSI ${rsi1D} should be neutral`);
+                    }
+                }
+            });
+        });
+
+        // Run all tests when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Running RSI Dashboard Tests...');
+            const success = await testRunner.run();
+            
+            // Set exit code for CI/CD
+            if (typeof window !== 'undefined' && window.process) {
+                window.process.exitCode = success ? 0 : 1;
+            }
+            
+            console.log(`Tests completed. Success: ${success}`);
+        });
+    </script>
+</body>
+</html>

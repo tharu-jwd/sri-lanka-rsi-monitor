@@ -1,0 +1,232 @@
+name: Run Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements-dev.txt
+        # Install Chrome for headless testing
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+    
+    - name: Run Python unit tests
+      run: |
+        python -m pytest tests/ -v --tb=short
+      continue-on-error: false
+    
+    - name: Validate stock data integrity
+      run: |
+        python -c "
+        from daily_rsi_scraper import STOCK_SYMBOLS, SYMBOL_TO_COMPANY
+        print(f'✅ Loaded {len(STOCK_SYMBOLS)} stock symbols')
+        print(f'✅ Company mapping has {len(SYMBOL_TO_COMPANY)} entries')
+        assert len(STOCK_SYMBOLS) > 0, 'No stock symbols found'
+        assert len(SYMBOL_TO_COMPANY) > 0, 'No company mappings found'
+        # Verify all symbols have company names
+        for symbol in STOCK_SYMBOLS[:10]:  # Check first 10
+            assert symbol in SYMBOL_TO_COMPANY, f'No company name for {symbol}'
+        print('✅ Stock data validation passed')
+        "
+
+  html-javascript-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install Playwright
+      run: |
+        npm install -D playwright
+        npx playwright install chromium
+    
+    - name: Run HTML/JavaScript tests
+      run: |
+        npx playwright test --config - <<EOF
+        import { test, expect } from '@playwright/test';
+        
+        test.describe('RSI Dashboard Tests', () => {
+          test('HTML structure validation', async ({ page }) => {
+            await page.goto('file://' + process.cwd() + '/tests/test_dashboard.html');
+            
+            // Wait for tests to complete
+            await page.waitForTimeout(2000);
+            
+            // Check if tests passed
+            const summary = await page.locator('#test-summary').textContent();
+            console.log('Test Summary:', summary);
+            
+            // Verify no failed tests
+            expect(summary).toMatch(/Failed: 0/);
+            expect(summary).toMatch(/Pass Rate: 100\.0%/);
+          });
+          
+          test('Critical RSI threshold validation', async ({ page }) => {
+            await page.goto('file://' + process.cwd() + '/tests/test_dashboard.html');
+            await page.waitForTimeout(2000);
+            
+            // Check that oversold threshold test passed
+            const oversoldTest = page.locator('text=RSI Oversold Threshold Must Be < 50');
+            await expect(oversoldTest).toBeVisible();
+            
+            const passIcon = oversoldTest.locator('xpath=../..').locator('text=✅ PASS');
+            await expect(passIcon).toBeVisible();
+          });
+        });
+        EOF
+
+  html-structure-validation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate main HTML file structure
+      run: |
+        if [ -f "index.html" ]; then
+          echo "✅ index.html exists"
+          
+          # Check for critical RSI threshold (must be < 50, not < 30)
+          if grep -q "rsiValue < 50" index.html; then
+            echo "✅ Correct oversold threshold (< 50) found"
+          else
+            echo "❌ ERROR: Oversold threshold < 50 not found"
+            exit 1
+          fi
+          
+          # Make sure wrong threshold is NOT present
+          if grep -q "rsiValue < 30" index.html; then
+            echo "❌ ERROR: Wrong oversold threshold (< 30) found!"
+            exit 1
+          else
+            echo "✅ Confirmed no wrong threshold (< 30)"
+          fi
+          
+          # Check for required HTML elements
+          required_elements=("timeframeSelect" "statsSection" "stockTableBody" "filterInfo")
+          for element in "${required_elements[@]}"; do
+            if grep -q "id=\"$element\"" index.html; then
+              echo "✅ Required element '$element' found"
+            else
+              echo "❌ ERROR: Required element '$element' not found"
+              exit 1
+            fi
+          done
+          
+          echo "✅ HTML structure validation passed"
+        else
+          echo "⚠️ index.html not found (may be generated dynamically)"
+        fi
+
+  json-validation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate JSON data structure
+      run: |
+        if [ -f "latest_rsi.json" ]; then
+          echo "✅ latest_rsi.json exists"
+          
+          # Validate JSON syntax
+          python -m json.tool latest_rsi.json > /dev/null
+          echo "✅ JSON syntax is valid"
+          
+          # Validate structure
+          python -c "
+          import json
+          with open('latest_rsi.json', 'r') as f:
+              data = json.load(f)
+          
+          # Check required keys
+          required_keys = ['metadata', 'data']
+          for key in required_keys:
+              assert key in data, f'Missing key: {key}'
+          
+          # Check metadata
+          metadata = data['metadata']
+          assert 'timeframes' in metadata, 'Missing timeframes in metadata'
+          assert metadata['timeframes'] == ['1D', '1W', '1M'], 'Incorrect timeframes'
+          
+          # Check data structure if not empty
+          if data['data']:
+              first_stock = next(iter(data['data'].values()))
+              assert 'rsi_data' in first_stock, 'Missing rsi_data in stock entry'
+              assert 'status' in first_stock, 'Missing status in stock entry'
+          
+          print('✅ JSON structure validation passed')
+          "
+        else
+          echo "⚠️ latest_rsi.json not found (may be generated by scraper)"
+        fi
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Security scan for sensitive data
+      run: |
+        echo "🔍 Scanning for sensitive data patterns..."
+        
+        # Check for API keys, passwords, tokens
+        if grep -r -i -E "(api[_-]?key|password|token|secret)" --include="*.py" --include="*.js" --include="*.html" .; then
+          echo "⚠️ Potential sensitive data found - please review"
+        else
+          echo "✅ No obvious sensitive data patterns found"
+        fi
+        
+        # Check for hardcoded credentials
+        if grep -r -E "password\s*=|api_key\s*=" --include="*.py" .; then
+          echo "❌ ERROR: Hardcoded credentials detected!"
+          exit 1
+        else
+          echo "✅ No hardcoded credentials found"
+        fi
+
+  requirements-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check Python requirements
+      run: |
+        echo "📦 Checking Python dependencies..."
+        
+        # Create requirements.txt if it doesn't exist
+        if [ ! -f "requirements.txt" ]; then
+          echo "Creating requirements.txt..."
+          cat > requirements.txt << EOF
+        selenium>=4.0.0
+        webdriver-manager>=3.8.0
+        EOF
+        fi
+        
+        # Install and test requirements
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
+        python -c "import selenium, webdriver_manager, pytest; print('✅ All requirements importable')"
