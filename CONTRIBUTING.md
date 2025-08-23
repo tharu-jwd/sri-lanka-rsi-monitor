@@ -330,26 +330,6 @@ try:
 except Exception:
     return None
 ```
-
-## Release Process
-
-### Versioning
-
-We follow [Semantic Versioning](https://semver.org/):
-- **MAJOR**: Breaking changes
-- **MINOR**: New features (backward compatible)
-- **PATCH**: Bug fixes
-
-### Release Checklist
-
-1. Update version numbers
-2. Update CHANGELOG.md
-3. Run full test suite
-4. Create release branch
-5. Tag release
-6. Deploy to production
-7. Update documentation
-
 ### Recognition
 
 Contributors are recognized in:
