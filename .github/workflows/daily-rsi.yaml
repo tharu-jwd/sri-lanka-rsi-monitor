@@ -45,6 +45,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add index.html latest_rsi.json rsi_data_*.json
+        git add index.html latest_rsi.json dailydata/
         git diff --staged --quiet || git commit -m "📊 Daily RSI update - $(date +'%Y-%m-%d')"
         git push
