@@ -153,6 +153,13 @@
             z-index: 10;
         }
         th:hover { background: #e9ecef; }
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+        tbody tr:hover {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
         th.sortable::after {
             content: ' ↕️';
             font-size: 0.8em;
