@@ -147,6 +147,13 @@
       "timestamp": "2025-09-22T09:19:04.437654",
       "attempts": 1
     },
+    "CSELK-ASPM.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T09:21:20.396731",
+      "attempts": 3
+    },
     "CSELK-SPEN.N0000": {
       "rsi_data": {
         "1D": 72.79,
@@ -234,6 +241,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-09-22T09:23:23.510368",
       "attempts": 1
+    },
+    "CSELK-AMCL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T09:25:37.975679",
+      "attempts": 3
     },
     "CSELK-ALHP.N0000": {
       "rsi_data": {
@@ -873,6 +887,13 @@
       "timestamp": "2025-09-22T09:48:04.500070",
       "attempts": 1
     },
+    "CSELK-CIC.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T09:50:17.465270",
+      "attempts": 3
+    },
     "CSELK-CDB.N0000": {
       "rsi_data": {
         "1D": 36.75,
@@ -1136,6 +1157,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-09-22T09:58:54.318651",
       "attempts": 1
+    },
+    "CSELK-STAF.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T10:01:07.361395",
+      "attempts": 3
     },
     "CSELK-ASCO.N0000": {
       "rsi_data": {
@@ -1510,6 +1538,20 @@
       "successful_timeframes": 3,
       "timestamp": "2025-09-22T10:15:05.532454",
       "attempts": 1
+    },
+    "CSELK-HNBF.R0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T10:17:20.692628",
+      "attempts": 3
+    },
+    "CSELK-HNBF.R0001": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T10:19:36.648607",
+      "attempts": 3
     },
     "CSELK-HNBF.X0000": {
       "rsi_data": {
@@ -2028,6 +2070,13 @@
       "timestamp": "2025-09-22T10:36:16.942925",
       "attempts": 1
     },
+    "CSELK-MAWA.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T10:38:32.865139",
+      "attempts": 3
+    },
     "CSELK-MASK.N0000": {
       "rsi_data": {
         "1D": 64.25,
@@ -2093,6 +2142,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-09-22T10:41:36.659948",
       "attempts": 1
+    },
+    "CSELK-MERC.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T10:43:51.352620",
+      "attempts": 3
     },
     "CSELK-MFPE.N0000": {
       "rsi_data": {
@@ -2368,6 +2424,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-09-22T10:52:32.797918",
       "attempts": 1
+    },
+    "CSELK-CSD.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T10:54:47.500152",
+      "attempts": 3
     },
     "CSELK-GLAS.N0000": {
       "rsi_data": {
@@ -2886,6 +2949,13 @@
       "timestamp": "2025-09-22T11:13:40.079605",
       "attempts": 1
     },
+    "CSELK-SHL.W0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T11:15:54.481164",
+      "attempts": 3
+    },
     "CSELK-SHOT.N0000": {
       "rsi_data": {
         "1D": 56.6,
@@ -3161,6 +3231,13 @@
       "timestamp": "2025-09-22T11:24:33.457363",
       "attempts": 1
     },
+    "CSELK-UBC.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-09-22T11:26:46.543420",
+      "attempts": 3
+    },
     "CSELK-UBF.N0000": {
       "rsi_data": {
         "1D": 76.5,
@@ -3260,5 +3337,18 @@
       "timestamp": "2025-09-22T11:29:07.344143",
       "attempts": 1
     }
-  }
+  },
+  "failed_symbols": [
+    "CSELK-ASPM.N0000",
+    "CSELK-AMCL.N0000",
+    "CSELK-CIC.N0000",
+    "CSELK-STAF.N0000",
+    "CSELK-HNBF.R0000",
+    "CSELK-HNBF.R0001",
+    "CSELK-MAWA.N0000",
+    "CSELK-MERC.N0000",
+    "CSELK-CSD.N0000",
+    "CSELK-SHL.W0000",
+    "CSELK-UBC.N0000"
+  ]
 }
