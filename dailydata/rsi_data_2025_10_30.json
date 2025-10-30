@@ -147,6 +147,13 @@
       "timestamp": "2025-10-30T09:17:22.676594",
       "attempts": 1
     },
+    "CSELK-ASPM.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T09:19:40.863053",
+      "attempts": 3
+    },
     "CSELK-SPEN.N0000": {
       "rsi_data": {
         "1D": 49.57,
@@ -234,6 +241,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-10-30T09:21:46.193241",
       "attempts": 1
+    },
+    "CSELK-AMCL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T09:24:03.547265",
+      "attempts": 3
     },
     "CSELK-ALHP.N0000": {
       "rsi_data": {
@@ -1533,6 +1547,20 @@
       "timestamp": "2025-10-30T10:13:03.906298",
       "attempts": 1
     },
+    "CSELK-HNBF.R0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T10:15:26.519721",
+      "attempts": 3
+    },
+    "CSELK-HNBF.R0001": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T10:17:44.204812",
+      "attempts": 3
+    },
     "CSELK-HNBF.X0000": {
       "rsi_data": {
         "1D": 52.2,
@@ -2050,6 +2078,13 @@
       "timestamp": "2025-10-30T10:36:05.543722",
       "attempts": 1
     },
+    "CSELK-MAWA.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T10:38:23.106907",
+      "attempts": 3
+    },
     "CSELK-MASK.N0000": {
       "rsi_data": {
         "1D": 37.78,
@@ -2115,6 +2150,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-10-30T10:40:41.738339",
       "attempts": 2
+    },
+    "CSELK-MERC.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "No timeframes successful (attempt 3)",
+      "timestamp": "2025-10-30T10:45:54.785081",
+      "attempts": 3
     },
     "CSELK-MFPE.N0000": {
       "rsi_data": {
@@ -2391,6 +2433,13 @@
       "timestamp": "2025-10-30T10:53:08.135437",
       "attempts": 1
     },
+    "CSELK-CSD.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T10:55:23.722017",
+      "attempts": 3
+    },
     "CSELK-GLAS.N0000": {
       "rsi_data": {
         "1D": 56.6,
@@ -2412,6 +2461,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-10-30T10:57:25.418172",
       "attempts": 1
+    },
+    "CSELK-IDL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T10:59:43.373381",
+      "attempts": 3
     },
     "CSELK-KHC.N0000": {
       "rsi_data": {
@@ -2688,6 +2744,13 @@
       "timestamp": "2025-10-30T11:07:46.891744",
       "attempts": 1
     },
+    "CSELK-RHL.N0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T11:10:02.354724",
+      "attempts": 3
+    },
     "CSELK-RHL.X0000": {
       "rsi_data": {
         "1D": 67.2,
@@ -2885,6 +2948,13 @@
       "successful_timeframes": 3,
       "timestamp": "2025-10-30T11:15:33.758154",
       "attempts": 1
+    },
+    "CSELK-SHL.W0000": {
+      "rsi_data": null,
+      "status": "failed",
+      "error": "Page did not load properly (attempt 3)",
+      "timestamp": "2025-10-30T11:17:49.373466",
+      "attempts": 3
     },
     "CSELK-SHOT.N0000": {
       "rsi_data": {
@@ -3271,5 +3341,17 @@
       "timestamp": "2025-10-30T11:33:09.966073",
       "attempts": 3
     }
-  }
+  },
+  "failed_symbols": [
+    "CSELK-ASPM.N0000",
+    "CSELK-AMCL.N0000",
+    "CSELK-HNBF.R0000",
+    "CSELK-HNBF.R0001",
+    "CSELK-MAWA.N0000",
+    "CSELK-MERC.N0000",
+    "CSELK-CSD.N0000",
+    "CSELK-IDL.N0000",
+    "CSELK-RHL.N0000",
+    "CSELK-SHL.W0000"
+  ]
 }
